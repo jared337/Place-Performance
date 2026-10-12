@@ -66,7 +66,7 @@ PP.S.home = function () {
   var placeGo = '/place/' + (sites.length === 1 ? sites[0].id : busiest.id);
   var primary = [
     tile('visitors', placeGo, PP.kpi('Visitors today', PP.fmt(tv), { icon: 'people', delta: 6.4, spark: PP.Charts.spark(trend) })),
-    tile('occupancy', placeGo, PP.kpi('People on site now', '<span>' + PP.fmt(occ) + '</span><small>/ ' + PP.fmt(cap) + '</small>', { icon: 'gauge', extra: '<div class="mt-s">' + PP.Charts.meter(occ / cap) + '</div><div class="tiny muted mt-s">' + PP.pct(occ / cap * 100) + ' of combined capacity</div>' })),
+    tile('occupancy', placeGo, PP.kpi(sites.length > 1 ? 'People across all sites now' : 'People on site now', '<span>' + PP.fmt(occ) + '</span><small>/ ' + PP.fmt(cap) + '</small>', { icon: 'gauge', extra: '<div class="mt-s">' + PP.Charts.meter(occ / cap) + '</div><div class="tiny muted mt-s">' + PP.pct(occ / cap * 100) + (sites.length > 1 ? ' of combined capacity · ' + sites.length + ' sites' : ' of capacity') + '</div>' })),
     tile('busiest', '/place/' + busiest.id, PP.kpi(sites.length > 1 ? 'Busiest site right now' : 'Busiest floor right now', '<span style="font-size:20px">' + PP.esc(sites.length > 1 ? busiest.name : PP.site(busiest.id).spaces[2 % PP.site(busiest.id).spaces.length].name) + '</span>', { icon: 'fire', extra: '<div class="row mt-s"><span class="st ' + PP.occClass(bst.occPct) + '" data-live-pct="' + busiest.id + '">' + PP.pct(bst.occPct * 100) + '</span><span class="small muted">full</span></div>' })),
     tile('dwell', placeGo, PP.kpi('Average dwell', PP.mins(PP.avg(stats.map(function (s) { return s.dwell; }))), { icon: 'clock', delta: -2.1 }))
   ];
@@ -126,7 +126,7 @@ PP.S.home = function () {
       (trendCard ? '<div class="mt">' + trendCard + '</div>' : '') : PP.locked('overview', {}));
 };
 PP.actions['home-customise'] = function () {
-  var labels = { visitors: 'Visitors today', occupancy: 'People on site now', busiest: 'Busiest site', dwell: 'Average dwell', alerts: 'Open alerts', report: 'Latest report', score: 'Performance score', insight: 'AI insight of the day', map: 'Live occupancy map', trend: 'Visitation trend' };
+  var labels = { visitors: 'Visitors today', occupancy: 'People across all sites now', busiest: 'Busiest site', dwell: 'Average dwell', alerts: 'Open alerts', report: 'Latest report', score: 'Performance score', insight: 'AI insight of the day', map: 'Live occupancy map', trend: 'Visitation trend' };
   PP.overlay.open({
     title: 'Customise your overview', size: 'sm', chips: PP.featureChips('overview'), sub: 'Choose which tiles appear on your home dashboard.',
     body: '<div class="form">' + Object.keys(labels).map(function (k) { return PP.switchHtml(labels[k], PP.homeTiles[k], 'data-input="home-tile" data-k="' + k + '"'); }).join('') + '</div>',
