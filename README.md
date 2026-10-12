@@ -1,0 +1,51 @@
+# Place Performance — clickable prototype
+
+Rayven × ITESA (Phase 26). A navigable front-end prototype built from `Place_Performance_Build_Spec.md`, using plain HTML, CSS and JavaScript (no build step) with sample data.
+
+## Run it
+
+Serve the folder over HTTP (maps and some browser features don't work from `file://`):
+
+```bash
+python -m http.server 5173
+```
+
+Then open http://localhost:5173. Map tiles need an internet connection; everything else works offline.
+
+## Preview controls (floating "Preview" pill, bottom right)
+
+- **Level 1–4**: the customer's maturity tier. Features above the tier show as locked cards with a "Preview at Level N" button, or are hidden if **Show locked** is off.
+- **Role**: Platform Admin (sees everything, plus the Platform Administration section), Portfolio Manager, or Executive. Features not nominated for a role are hidden.
+- **Customer**: multi-site (6 sites) or single site (Portfolio Overview disappears).
+- **Spec tags** (off by default): shows interface numbers, level chips, "PM only", and drill-down / overlay markers on every feature.
+- **Screen map**: all 18 interfaces and everything that opens from them, with jump links.
+
+## Place Assistant (Ask AI)
+
+The **Ask AI** button in the top bar (or Ctrl+J) opens a side panel where you can ask questions in plain language. It knows which screen and place you're looking at. It's a Level 4 · Executive feature, so it's locked below that.
+
+- **With an Anthropic API key** (gear icon in the panel): answers stream from Claude Opus 5.5, using the official `@anthropic-ai/sdk` loaded in the browser. Each question sends a snapshot of the live data (sites, floors, zones, devices, alerts, insights, reports) the current role is allowed to see. Server-side refusal fallbacks are enabled. The key is stored only in this browser's localStorage. This is fine for a prototype; a production build should call Claude from a server.
+- **Without a key** (or if the call fails): built-in answers computed from the same data cover occupancy, busiest/quietest places, peak times, dwell, zones near capacity, offline sensors, alerts, forecasts, rankings and recommendations.
+
+## Files
+
+| File | Purpose |
+|---|---|
+| `index.html` | Shell and script order |
+| `css/app.css` | Design tokens and components |
+| `js/data.js` | Spec registry (every feature with level, roles, drill-down/overlay type) and mock data |
+| `js/ui.js` | Level/role gating, cards, overlays, toasts, screen map |
+| `js/charts.js` | SVG chart kit |
+| `js/maps.js` | Leaflet maps |
+| `js/floorplan.js` | Floorplans: live occupancy, heat map, visitor flow, device pins, zone editor, building stack |
+| `js/screens-place.js` | Interface 3 — Place Detail (Site → Space → Zone) and its overlays |
+| `js/screens-customer.js` | Interfaces 1, 2, 4–12 |
+| `js/screens-admin.js` | Interfaces 13–18 |
+| `js/assistant.js` | Place Assistant: Claude streaming, data context, built-in answers, chat panel |
+| `js/app.js` | Router, guards, shell, preview bar, live ticker |
+
+## Notes on interpretation
+
+- Review feedback in `Place_Performance_Spec_ReadOnly.html` is applied: Data Integrations leads with **Request an integration** (ITESA configures connections) and the overlay only holds customer-editable settings; Report Detail shows full report content; portfolio features are Level 3+.
+- Per the spec, User Profile and Alerts are Portfolio Manager only, so an Executive doesn't see them.
+- The Platform Administrator still sees the customer app at the customer's current level (the level is the customer's subscription).
