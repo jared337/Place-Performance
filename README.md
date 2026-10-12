@@ -2,6 +2,8 @@
 
 Rayven × ITESA (Phase 26). A navigable front-end prototype built from `Place_Performance_Build_Spec.md`, using plain HTML, CSS and JavaScript (no build step) with sample data.
 
+**Live prototype: https://jared337.github.io/Place-Performance/**
+
 ## Run it
 
 Serve the folder over HTTP (maps and some browser features don't work from `file://`):
