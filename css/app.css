@@ -836,3 +836,8 @@ body.ai-open #preview-bar { right: 440px; }
 .li.click:hover::after { border-color: var(--accent); transform: translateX(3px) rotate(45deg); }
 .li.click:hover .li-t { color: var(--accent); }
 .tbl tr.click:hover td .name { color: var(--accent); }
+
+/* login error (demo password gate) */
+.login-err { background: #fef2f2; color: #b91c1c; border-radius: 8px; padding: 8px 12px; font-size: 13px; font-weight: 500; }
+.input.input-err { border-color: #ef4444; box-shadow: 0 0 0 3px rgba(239,68,68,.15); animation: shake .35s; }
+@keyframes shake { 25% { transform: translateX(-5px); } 75% { transform: translateX(5px); } }

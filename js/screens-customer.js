@@ -23,11 +23,12 @@ PP.S.login = function () {
       '<button class="btn btn-brand mt" data-action="login-mode" data-v="signin">Back to sign in</button>';
   } else {
     form = '<h2>Sign in</h2><p class="muted">Welcome back to Meridian Place Insights.</p>' +
-      '<div class="form mt"><label class="field"><span>Username or email</span><input class="input" type="text" placeholder="name@meridianpg.com.au" autocomplete="off"></label>' +
-      '<label class="field"><span class="row-between"><span>Password</span><a class="small" data-action="login-mode" data-v="forgot" href="#">Forgot password?</a></span><input class="input" type="password" placeholder="••••••••••" autocomplete="off"></label>' +
+      '<div class="form mt"><label class="field"><span>Username or email</span><input class="input" type="text" id="login-email" value="enter@placePerformance.com.au" autocomplete="off"></label>' +
+      '<label class="field"><span class="row-between"><span>Password</span><a class="small" data-action="login-mode" data-v="forgot" href="#">Forgot password?</a></span><input class="input" type="password" id="login-pw" placeholder="Enter your password" autocomplete="off"></label>' +
+      '<div class="login-err" id="login-err" role="alert" hidden>Incorrect password. Please try again.</div>' +
       '<label class="switch small"><input type="checkbox" checked><span class="track"></span>Keep me signed in</label>' +
       '<button class="btn btn-brand" data-action="login-submit">Sign in</button>' +
-      (PP.state.level >= 3 ? '<div class="divider">or</div><button class="btn" data-action="login-submit">' + PP.icon('shield') + 'Sign in with Meridian SSO</button><div class="tiny muted">SSO is configured by your administrator in User Profile (Level 3+).</div>' : '') +
+      (PP.state.level >= 3 ? '<div class="divider">or</div><button class="btn" data-action="login-sso">' + PP.icon('shield') + 'Sign in with Meridian SSO</button><div class="tiny muted">SSO is configured by your administrator in User Profile (Level 3+).</div>' : '') +
       '</div>';
   }
   return '<div class="login-wrap"><div class="login-art">' + art +
@@ -35,10 +36,23 @@ PP.S.login = function () {
     '<div><h1>Know how every place is performing.</h1><p>Live visitation, occupancy and insight across the Meridian portfolio.</p></div>' +
     '<div class="powered">Powered by Place Performance · Rayven × ITESA</div></div>' +
     '<div class="login-form"><div class="login-card"><div class="row annot" style="margin-bottom:14px"><span class="chip chip-iface">Interface 1</span>' + PP.featureChips('branded-login') + '</div>' + form +
-    '<p class="tiny muted mt">Prototype: any details work, no real authentication.</p></div></div></div>';
+    '</div></div></div>';
 };
 PP.actions['login-mode'] = function (el) { PP.loginMode = el.getAttribute('data-v'); PP.render(true); };
-PP.actions['login-submit'] = function () { PP.loginMode = 'signin'; PP.go(PP.defaultRoute()); };
+/* Demo gate only: the password is checked in the browser, so this is not real security. */
+PP.DEMO_PASSWORD = 'qwerty';
+PP.authed = function () { try { return sessionStorage.getItem('pp_authed') === '1'; } catch (e) { return !!PP._authed; } };
+PP.setAuthed = function (v) { PP._authed = v; try { v ? sessionStorage.setItem('pp_authed', '1') : sessionStorage.removeItem('pp_authed'); } catch (e) { /* storage blocked */ } };
+PP.actions['login-submit'] = function () {
+  var pw = document.getElementById('login-pw'), err = document.getElementById('login-err');
+  if (pw && pw.value === PP.DEMO_PASSWORD) { PP.setAuthed(true); PP.loginMode = 'signin'; PP.go(PP.defaultRoute()); return; }
+  if (err) err.hidden = false;
+  if (pw) { pw.classList.add('input-err'); pw.value = ''; pw.focus(); }
+};
+PP.actions['login-sso'] = function () { PP.toast('SSO is not available in this demo. Sign in with your password.'); };
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Enter' && e.target && (e.target.id === 'login-pw' || e.target.id === 'login-email')) { e.preventDefault(); PP.actions['login-submit'](); }
+});
 
 /* =========================================================
    2 · Home Dashboard

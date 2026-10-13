@@ -109,6 +109,8 @@ PP.render = function (keepScroll) {
   var route = null, m = null;
   for (var i = 0; i < PP.ROUTES.length; i++) { m = path.match(PP.ROUTES[i].re); if (m) { route = PP.ROUTES[i]; break; } }
   if (!route) { location.hash = PP.defaultRoute(); return; }
+  if (route.screen !== 'login' && !PP.authed()) { location.hash = '/login'; return; }
+  if (route.screen === 'login') PP.setAuthed(false);
   var prev = PP.current ? PP.current.path : null;
   PP.current = { path: path, route: route };
   PP.crumbs = null;
