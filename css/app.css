@@ -841,3 +841,24 @@ body.ai-open #preview-bar { right: 440px; }
 .login-err { background: #fef2f2; color: #b91c1c; border-radius: 8px; padding: 8px 12px; font-size: 13px; font-weight: 500; }
 .input.input-err { border-color: #ef4444; box-shadow: 0 0 0 3px rgba(239,68,68,.15); animation: shake .35s; }
 @keyframes shake { 25% { transform: translateX(-5px); } 75% { transform: translateX(5px); } }
+
+/* login panel aligned with the marketing website: pastel gradient, navy type */
+.login-art { background: radial-gradient(90% 80% at 0% 0%, #f7c6e3 0%, rgba(247,198,227,0) 60%), radial-gradient(80% 80% at 100% 10%, #c9c4ff 0%, rgba(201,196,255,0) 60%), radial-gradient(90% 90% at 20% 100%, #fde3c2 0%, rgba(253,227,194,0) 55%), linear-gradient(135deg, #f3e8ff, #e0e7ff); color: #0a2540; }
+.login-art svg.bg { opacity: .35; }
+.login-art svg.bg g[stroke] { stroke: #8b8fd8; }
+.login-art svg.bg g[fill="#fff"] { fill: #a5a8e6; }
+.login-art .cust { color: #0a2540; }
+.login-art .cust .pp-mark { background: linear-gradient(135deg, #635bff, #a960ee 55%, #00d4ff); color: #fff; box-shadow: 0 4px 12px rgba(99,91,255,.35); font-weight: 700; }
+.login-art h1 { color: #0a2540; font-weight: 700; letter-spacing: -0.04em; }
+.login-art p { color: #33475b; font-size: 16px; line-height: 1.6; max-width: 460px; }
+.login-eyebrow { display: inline-flex !important; align-items: center; gap: 8px; background: rgba(255,255,255,.75); padding: 6px 12px; border-radius: 999px; font-size: 13px !important; font-weight: 600; color: #0a2540 !important; margin-bottom: 18px; }
+.login-pitch h1 { margin-bottom: 14px; }
+.live-dot { width: 8px; height: 8px; border-radius: 50%; background: #10b981; box-shadow: 0 0 0 0 rgba(16,185,129,.55); animation: livePing 2s infinite; flex-shrink: 0; }
+@keyframes livePing { 75% { box-shadow: 0 0 0 8px rgba(16,185,129,0); } }
+.login-stat { display: inline-flex; align-items: center; gap: 12px; margin-top: 22px; background: #fff; border-radius: 12px; padding: 11px 16px; box-shadow: 0 13px 27px -5px rgba(50,50,93,.25), 0 8px 16px -8px rgba(0,0,0,.2); }
+.login-stat small { display: block; font-size: 12px; color: #6b7c93; }
+.login-stat b { font-size: 15px; color: #0a2540; }
+.login-art .powered { color: #425466; }
+.login-card .btn-brand { background: #0a2540; border-color: #0a2540; }
+.login-card .btn-brand:hover { background: #1a3a5f; }
+.login-card a.small { color: #635bff; }

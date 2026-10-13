@@ -15,26 +15,29 @@ PP.S.login = function () {
   var form;
   if (PP.loginMode === 'forgot') {
     form = '<h2>Reset your password</h2><p class="muted">Enter your work email and we\'ll send a reset link.</p>' +
-      '<div class="form mt"><label class="field"><span>Work email</span><input class="input" type="email" placeholder="name@meridianpg.com.au"></label>' +
+      '<div class="form mt"><label class="field"><span>Work email</span><input class="input" type="email" placeholder="you@organisation.com.au"></label>' +
       '<button class="btn btn-brand" data-action="login-mode" data-v="sent">Send reset link</button>' +
       '<button class="btn btn-ghost" data-action="login-mode" data-v="signin">' + PP.icon('back') + 'Back to sign in</button></div>';
   } else if (PP.loginMode === 'sent') {
     form = '<div class="li-ico tint-green" style="width:48px;height:48px;margin-bottom:14px">' + PP.icon('mail') + '</div><h2>Check your inbox</h2><p class="muted">If that address has an account, a reset link is on its way. It expires in 30 minutes.</p>' +
       '<button class="btn btn-brand mt" data-action="login-mode" data-v="signin">Back to sign in</button>';
   } else {
-    form = '<h2>Sign in</h2><p class="muted">Welcome back to Meridian Place Insights.</p>' +
+    form = '<h2>Sign in</h2><p class="muted">Welcome back to Place Performance.</p>' +
       '<div class="form mt"><label class="field"><span>Username or email</span><input class="input" type="text" id="login-email" value="enter@placePerformance.com.au" autocomplete="off"></label>' +
       '<label class="field"><span class="row-between"><span>Password</span><a class="small" data-action="login-mode" data-v="forgot" href="#">Forgot password?</a></span><input class="input" type="password" id="login-pw" placeholder="Enter your password" autocomplete="off"></label>' +
       '<div class="login-err" id="login-err" role="alert" hidden>Incorrect password. Please try again.</div>' +
       '<label class="switch small"><input type="checkbox" checked><span class="track"></span>Keep me signed in</label>' +
       '<button class="btn btn-brand" data-action="login-submit">Sign in</button>' +
-      (PP.state.level >= 3 ? '<div class="divider">or</div><button class="btn" data-action="login-sso">' + PP.icon('shield') + 'Sign in with Meridian SSO</button><div class="tiny muted">SSO is configured by your administrator in User Profile (Level 3+).</div>' : '') +
+      (PP.state.level >= 3 ? '<div class="divider">or</div><button class="btn" data-action="login-sso">' + PP.icon('shield') + 'Sign in with SSO</button><div class="tiny muted">SSO is configured by your administrator in User Profile (Level 3+).</div>' : '') +
       '</div>';
   }
   return '<div class="login-wrap"><div class="login-art">' + art +
-    '<div class="cust"><div class="cust-logo">' + PP.CUSTOMER.initials + '</div>' + PP.CUSTOMER.name + '</div>' +
-    '<div><h1>Know how every place is performing.</h1><p>Live visitation, occupancy and insight across the Meridian portfolio.</p></div>' +
-    '<div class="powered">Powered by Place Performance · Rayven × ITESA</div></div>' +
+    '<div class="cust"><div class="cust-logo pp-mark">PP</div>Place Performance</div>' +
+    '<div class="login-pitch"><p class="login-eyebrow"><span class="live-dot"></span>For councils, universities, government and property owners</p>' +
+    '<h1>Know how your places are really used.</h1>' +
+    '<p>Live occupancy, alerts, reports and AI forecasts for your buildings and public spaces, from privacy-safe sensors installed and supported by our Australian team.</p>' +
+    '<div class="login-stat"><span class="live-dot"></span><div><small>Harbourside Library · live</small><b>412 people · 82% of capacity</b></div></div></div>' +
+    '<div class="powered">Sensors, software and AI for places that matter.</div></div>' +
     '<div class="login-form"><div class="login-card"><div class="row annot" style="margin-bottom:14px"><span class="chip chip-iface">Interface 1</span>' + PP.featureChips('branded-login') + '</div>' + form +
     '</div></div></div>';
 };
@@ -934,7 +937,7 @@ PP.inputs['user-role'] = function () { PP.toast('Role updated'); };
 PP.actions['user-invite'] = function () {
   PP.overlay.open({
     title: 'Invite user', size: 'sm', chips: PP.featureChips('user-mgmt'),
-    body: '<div class="form"><label class="field"><span>Email</span><input class="input" type="email" placeholder="name@meridianpg.com.au"></label><label class="field"><span>Role</span><select class="select"><option>Portfolio Manager</option><option>Executive</option></select></label><label class="field"><span>Site access</span><div class="pills"><span class="pill on click">All sites</span>' + PP.sites().map(function (s) { return '<span class="pill click">' + s.name + '</span>'; }).join('') + '</div></label></div>',
+    body: '<div class="form"><label class="field"><span>Email</span><input class="input" type="email" placeholder="you@organisation.com.au"></label><label class="field"><span>Role</span><select class="select"><option>Portfolio Manager</option><option>Executive</option></select></label><label class="field"><span>Site access</span><div class="pills"><span class="pill on click">All sites</span>' + PP.sites().map(function (s) { return '<span class="pill click">' + s.name + '</span>'; }).join('') + '</div></label></div>',
     footer: '<button class="btn" data-action="ov-close">Cancel</button><button class="btn btn-primary" data-action="save-close" data-msg="Invitation sent">Send invitation</button>'
   });
 };
