@@ -114,7 +114,7 @@ SOLUTIONS = [
     ('government', 'Government', 'Right-size the property portfolio', 'government'),
     ('buildings', 'Buildings &amp; property', 'Run buildings on demand', 'office'),
     ('retail', 'Retail &amp; precincts', 'Turn footfall into performance', 'food-hall'),
-    ('parks-and-streets', 'Parks, trails &amp; streets', 'People, cyclists and vehicles outdoors', 'city'),
+    ('parks-and-streets', 'Parks, trails &amp; streets', 'People, cyclists and vehicles outdoors', 'parks'),
 ]
 
 
@@ -429,7 +429,7 @@ def solution(slug, name, h1, lead, img, img_alt, shot1, shot1_alt, shot2, shot2_
 
 solution('councils', 'Councils &amp; civic', 'People counting and crowd capacity for councils.',
          'Libraries, community centres, events and customer service points, managed with live crowd numbers instead of guesswork, plus the evidence to justify funding.',
-         'civic-event', 'Community event in a civic hall', 'heatmap', 'Heat map of a library children\'s area', 'peak-periods', 'Peak periods heat grid by day and hour',
+         'civic-event', 'Crowd at a community event under the Sydney Harbour Bridge', 'heatmap', 'Heat map of a library children\'s area', 'peak-periods', 'Peak periods heat grid by day and hour',
          [('Crowd capacity and safety.', 'Live counts against fire and venue limits, with alerts before limits are reached.'),
           ('Service levels.', 'Queue and wait-time tracking at customer service points.'),
           ('Opening hours and staffing.', 'Match hours and rosters to when the community actually visits.'),
@@ -450,7 +450,7 @@ solution('councils', 'Councils &amp; civic', 'People counting and crowd capacity
 
 solution('universities', 'Universities', 'Space utilisation analytics for universities.',
          'Understand how lecture theatres, libraries and study spaces are really used, help students find space, and plan capital works on evidence rather than bookings.',
-         'study-hall', 'Students working in a university study hall', 'occupancy-history', 'Occupancy history over a week', 'floorplan', 'Live floorplan of a building level',
+         'study-hall', 'Students studying in the State Library of New South Wales reading room', 'occupancy-history', 'Occupancy history over a week', 'floorplan', 'Live floorplan of a building level',
          [('Space utilisation.', 'Booked versus actually used, room by room and hour by hour.'),
           ('Timetabling and allocation.', 'Right-size rooms to class sizes and free up under-used space.'),
           ('Student experience.', 'Show students where free study space is, live.'),
@@ -470,7 +470,7 @@ solution('universities', 'Universities', 'Space utilisation analytics for univer
 
 solution('government', 'Government', 'Office occupancy analytics for government property.',
          'Hybrid work changed how offices are used. See occupancy across every floor and site, consolidate with confidence, and report transparently to executives and ministers.',
-         'government', 'Government building', 'portfolio', 'Portfolio overview with site ranking and map', 'report', 'Weekly visitation report',
+         'government', 'Parliament House, Canberra', 'portfolio', 'Portfolio overview with site ranking and map', 'report', 'Weekly visitation report',
          [('Portfolio rationalisation.', 'Compare utilisation across buildings and identify consolidation opportunities.'),
           ('Workplace strategy.', 'Understand attendance patterns by day and floor.'),
           ('Safety and compliance.', 'Capacity monitoring and evacuation counts for public-facing sites.'),
@@ -490,7 +490,7 @@ solution('government', 'Government', 'Office occupancy analytics for government 
 
 solution('buildings', 'Buildings &amp; property', 'Occupancy analytics for commercial buildings.',
          'Clean, cool and staff spaces when people are actually there, give tenants the data to value their workplace, and prove the return on every refit.',
-         'office', 'Open-plan office', 'visitor-flow', 'Visitor flow between entrances and zones on a floor', 'device', 'Device record on a floorplan',
+         'office', 'Office tower courtyard in the Sydney CBD', 'visitor-flow', 'Visitor flow between entrances and zones on a floor', 'device', 'Device record on a floorplan',
          [('Demand-based cleaning.', 'Trigger cleans after a set number of visits, not fixed times.'),
           ('Energy and HVAC.', 'Feed occupancy into your BMS and stop conditioning empty floors.'),
           ('Tenant insights.', 'Show tenants how their space performs and support lease decisions.'),
@@ -510,7 +510,7 @@ solution('buildings', 'Buildings &amp; property', 'Occupancy analytics for comme
 
 solution('retail', 'Retail &amp; precincts', 'Footfall analytics for shopping centres and precincts.',
          'Connect visitation to sales, see which zones, tenants and events really drive results, and staff and clean for the busiest hours of each day.',
-         'food-hall', 'Busy food hall', 'peak-periods', 'Peak period heat grid', 'occupancy-history', 'Occupancy trend over a week',
+         'food-hall', 'Shopping centre atrium in Sydney', 'peak-periods', 'Peak period heat grid', 'occupancy-history', 'Occupancy trend over a week',
          [('Conversion.', 'Combine footfall with point-of-sale data to see sales per visitor.'),
           ('Peak management.', 'Staff and clean for the busiest hours of each day.'),
           ('Tenant and zone ranking.', 'Find your strongest and weakest areas.'),
@@ -530,7 +530,7 @@ solution('retail', 'Retail &amp; precincts', 'Footfall analytics for shopping ce
 
 solution('parks-and-streets', 'Parks, trails &amp; streets', 'Pedestrian, cyclist and vehicle counting for public spaces.',
          'Measure how people use parks, trails, foreshores, plazas and streets, permanently or for a single event, and see how places change before, during and after projects.',
-         'city', 'City streets and public spaces', 'occupancy-history', 'Activity trend over a week', 'peak-periods', 'Peak periods by hour and day',
+         'parks', 'People on a harbourside lawn near the Sydney Harbour Bridge', 'occupancy-history', 'Activity trend over a week', 'peak-periods', 'Peak periods by hour and day',
          [('Active transport.', 'Cyclist and pedestrian volumes and direction on shared paths and trails.'),
           ('Streets and access points.', 'Vehicle movement across roads, car parks and precinct entries.'),
           ('Before and after.', 'Measure how places change during and after infrastructure projects.'),

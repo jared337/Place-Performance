@@ -3,6 +3,17 @@
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var fmt = function (n) { return Math.round(n).toLocaleString('en-AU'); };
 
+  /* Opened from disk (file://): folder links would show a directory, so point them at index.html */
+  if (location.protocol === 'file:') {
+    document.querySelectorAll('a[href]').forEach(function (a) {
+      var h = a.getAttribute('href');
+      if (/^(https?:|mailto:|tel:|#)/.test(h)) return;
+      var parts = h.split('#');
+      if (parts[0] === '' && h !== '') return;
+      if (parts[0] === '' || /\/$/.test(parts[0])) a.setAttribute('href', parts[0] + 'index.html' + (parts[1] ? '#' + parts[1] : ''));
+    });
+  }
+
   /* ---------------- Nav ---------------- */
   var nav = document.getElementById('nav');
   var onScroll = function () { nav.classList.toggle('scrolled', window.scrollY > 10); };
