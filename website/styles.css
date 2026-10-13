@@ -640,3 +640,13 @@ a.fcard:hover { transform: translateY(-4px); box-shadow: var(--shadow-card); }
   .ai-fc-bars { gap: 5px; }
   .ai-fc-bars em { font-size: 9px; }
 }
+
+/* tighten the gap between inner page heroes and the first section */
+.page-hero { padding-bottom: 110px; }
+.page-hero + .sec { padding-top: 64px; }
+.page-hero + .sec-dark { margin-top: -5vw; padding-top: calc(72px + 6vw); }
+@media (max-width: 640px) {
+  .page-hero { padding-bottom: 72px; }
+  .page-hero + .sec { padding-top: 48px; }
+  .page-hero + .sec-dark { margin-top: -4vw; padding-top: calc(56px + 6vw); }
+}
