@@ -145,7 +145,7 @@ FOOTER = '''<footer class="foot">
   <div class="wrap foot-in">
     <div>
       <a class="logo" href="{R}"><span class="logo-mark">PP</span>Place Performance</a>
-      <p class="muted">Sensors, software and AI for places that matter.<br>A Rayven &times; ITESA partnership, with hardware by FootfallCam.</p>
+      <p class="muted">Sensors, software and AI for places that matter.<br>Hardware by FootfallCam. Design, install, support and platform by Place Performance.</p>
     </div>
     <div class="foot-cols">
       <div><b>Platform</b><a href="{R}platform/">Platform overview</a><a href="{R}real-time/">Real time</a><a href="{R}ai-forecasting/">AI &amp; forecasting</a><a href="{R}plans/">Plans</a><a href="{APP}" target="_blank" rel="noopener">Live demo</a></div>
@@ -210,7 +210,7 @@ def page(slug, title, desc, body, faqs=None, crumbs=None, service=None, audience
 HOME_FAQS = [
     ('What is Place Performance?', 'Place Performance is an end-to-end people counting and place analytics service. It combines privacy-safe sensors, professional installation, a real-time analytics platform and AI insights so councils, universities, government and property owners can see how their places are used and plan with evidence.'),
     ('What does Place Performance measure?', 'It measures visitor counts, entries and exits, live occupancy against capacity, peak periods, dwell time, repeat visitation, movement between zones and, outdoors, pedestrians, cyclists and vehicles. Metrics roll up from a single room to a whole portfolio of sites.'),
-    ('Is the hardware included?', 'Yes. FootfallCam 3D people counters and other sensors are selected for each environment, then designed, supplied, installed, commissioned and supported by ITESA in Australia, so you deal with one partner from sensor to insight.'),
+    ('Is the hardware included?', 'Yes. FootfallCam 3D people counters and other sensors are selected for each environment, then designed, supplied, installed, commissioned and supported by Place Performance in Australia, so you deal with one partner from sensor to insight.'),
     ('Does it identify people?', 'No. Counting happens on the device and data is masked at source, so only anonymous numbers leave the site. The approach is to measure the place, not the person. See <a href="{R}privacy-by-design/">Privacy by design</a>.'),
     ('Who is it for?', 'It is built for local councils, universities and TAFEs, state and federal government agencies, commercial property owners, shopping centres and precinct managers, and anyone responsible for libraries, civic centres, venues, parks, trails or streets.'),
     ('How quickly can we get started?', 'Most organisations start with a pilot at one site. After a site survey and sensor plan, a pilot is typically live in weeks rather than months, and you can add sites and capability levels as you grow.'),
@@ -238,13 +238,12 @@ platform_body = (
     </div>''') +
     section(split(photo('camera', 'Sensor installed outdoors', ('Measure the place', 'not the person')),
                   copy('Hardware included', 'We start with your question, not with a device.',
-                       'Every place is different. Before anything is installed, ITESA assesses the environment, movement patterns, coverage, connectivity, power and privacy needs, then selects the technology that fits.',
-                       '<ol class="steps-list"><li><b>Assess.</b> What do you need to understand, and where? Entrances, floors, rooms, paths, roads or open spaces.</li><li><b>Select.</b> FootfallCam 3D counters for entrances and areas, plus specialist sensors for cyclists, vehicles and outdoor spaces.</li><li><b>Install and commission.</b> Designed, supplied, installed and calibrated by ITESA\'s Australian team, permanent or temporary.</li><li><b>Support.</b> Every device reports a heartbeat. Local experts keep the system accurate and expand it as your needs change.</li></ol>'))) +
-    section(head('Partners', 'Three specialists, one accountable service.') + '''
+                       'Every place is different. Before anything is installed, our team assesses the environment, movement patterns, coverage, connectivity, power and privacy needs, then selects the technology that fits.',
+                       '<ol class="steps-list"><li><b>Assess.</b> What do you need to understand, and where? Entrances, floors, rooms, paths, roads or open spaces.</li><li><b>Select.</b> FootfallCam 3D counters for entrances and areas, plus specialist sensors for cyclists, vehicles and outdoor spaces.</li><li><b>Install and commission.</b> Designed, supplied, installed and calibrated by our Australian team, permanent or temporary.</li><li><b>Support.</b> Every device reports a heartbeat. Local experts keep the system accurate and expand it as your needs change.</li></ol>'))) +
+    section(head('Partners', 'Proven hardware, local expertise and an intelligent platform, delivered together.') + '''
     <div class="partner-grid reveal">
       <div class="partner"><span class="partner-role">Sensing hardware</span><h4>FootfallCam</h4><p>3D people counters designed and manufactured in the UK since 2002. Entrance and in-space counting with all processing at the edge and no personal data collected.</p><a class="link-arrow" href="https://www.footfallcam.com/" target="_blank" rel="noopener">footfallcam.com</a></div>
-      <div class="partner"><span class="partner-role">Design, install &amp; support</span><h4>ITESA</h4><p>Australian place-intelligence specialists measuring people, cyclists and vehicles across buildings, venues, parks, trails and streets, with local support from install to operation.</p><a class="link-arrow" href="https://itesa.com.au/" target="_blank" rel="noopener">itesa.com.au</a></div>
-      <div class="partner"><span class="partner-role">Analytics &amp; AI platform</span><h4>Place Performance</h4><p>Real-time dashboards, live floorplans, alerts, reporting, forecasting and AI insights across every site, space and zone, built on the Rayven platform.</p><a class="link-arrow" href="{APP}" target="_blank" rel="noopener">Try the live demo</a></div>
+      <div class="partner"><span class="partner-role">Design, install &amp; support + Analytics &amp; AI platform</span><h4>Place Performance</h4><p>Our Australian team designs, installs and supports the complete system, from site survey to ongoing maintenance. Then the platform turns the data into real-time dashboards, live floorplans, alerts, reporting, forecasting and AI insights across every site, space and zone.</p><a class="link-arrow" href="{APP}" target="_blank" rel="noopener">Try the live demo</a></div>
     </div>''', 'sec-tint') +
     section(head('Capabilities', 'Everything you need to measure, understand and act.') + cards([
         ('Live occupancy', 'People present now against capacity, refreshed every few seconds.', '{R}real-time/'),
@@ -264,15 +263,15 @@ platform_body = (
             '<div class="tour tour-rev reveal"><div class="tour-copy"><span class="tour-num">Device health</span><h3>Data you can trust</h3><p>See every sensor on your floorplans with its live status. When a device goes quiet you are alerted, and the support team is already on it.</p></div>' + shot('device', 'Device record showing a FootfallCam Pro2 counter located on the floorplan') + '</div>', 'sec-tint')
 )
 PLATFORM_FAQS = [
-    ('What hardware does Place Performance use?', 'Place Performance uses FootfallCam 3D people counters for entrance and in-space counting, plus specialist sensors for cyclists, vehicles and outdoor areas where needed. ITESA selects the right technology for each environment after assessing it.'),
-    ('Who installs and supports the sensors?', 'ITESA designs, supplies, installs, commissions and supports the complete measurement system in Australia, from the initial site survey through to ongoing maintenance and expansion.'),
+    ('What hardware does Place Performance use?', 'Place Performance uses FootfallCam 3D people counters for entrance and in-space counting, plus specialist sensors for cyclists, vehicles and outdoor areas where needed. Our team selects the right technology for each environment after assessing it.'),
+    ('Who installs and supports the sensors?', 'Place Performance designs, supplies, installs, commissions and supports the complete measurement system in Australia, from the initial site survey through to ongoing maintenance and expansion.'),
     ('Does it work outdoors?', 'Yes. Deployments can be indoor or outdoor, permanent or temporary, covering buildings, venues, parks, trails, streets and public spaces, including pedestrian, cyclist and vehicle counting.'),
     ('What systems does it integrate with?', 'It connects to point-of-sale, Wi-Fi analytics, building management systems, GIS, parking and ticketing platforms. Integrations are configured for you, and you control settings such as sync frequency and which data feeds reports.'),
     ('Can I see data for a single room as well as a whole portfolio?', 'Yes. Data is organised as portfolio, site, space and zone, so you can drill from all your locations to one building, one floor and a single room, with every metric rolling up automatically.'),
     ('How accurate is the data?', 'Accuracy depends on the sensor and environment, which is why each location is assessed and each device is calibrated during commissioning. Device health monitoring flags drift or outages so data quality stays high.'),
 ]
 page('platform', 'Platform: sensors, analytics & AI | Place Performance',
-     'How Place Performance works: FootfallCam sensors, ITESA installation and support, edge processing, real-time analytics and AI, as one service.',
+     'How Place Performance works: FootfallCam sensors, installation and support by our Australian team, edge processing, real-time analytics and AI, as one service.',
      platform_body, PLATFORM_FAQS, [('Home', ''), ('Platform', 'platform/')])
 
 # ---------------- Real time ----------------
@@ -444,7 +443,7 @@ solution('councils', 'Councils &amp; civic', 'People counting and crowd capacity
           ('Can it monitor crowd capacity at events?', 'Yes. Temporary sensors can be deployed for events to track attendance and live crowd numbers at entrances and zones, with alerts to staff before venue limits are reached.'),
           ('Does it work for public libraries?', 'Yes. Libraries are one of the most common uses: visitor counts, occupancy by area such as reading rooms and children\'s areas, peak periods, dwell time and study-room utilisation.'),
           ('Is people counting in public spaces privacy compliant?', 'Counting is anonymous. Processing happens on the device and data is masked at source, so no images or personal information are stored or transmitted, which supports councils\' privacy obligations.'),
-          ('Can it count cyclists and pedestrians on shared paths?', 'Yes. ITESA measures pedestrian and cyclist volumes and direction on shared paths, trails and in parks, so active-transport use can be tracked over time.'),
+          ('Can it count cyclists and pedestrians on shared paths?', 'Yes. Place Performance measures pedestrian and cyclist volumes and direction on shared paths, trails and in parks, so active-transport use can be tracked over time.'),
           ('Can the data support grant applications?', 'Yes. Automated visitation reports provide consistent, independent evidence of how facilities are used, which is useful for grant applications, annual reports and council briefings.')],
          'People counting, crowd capacity monitoring and visitation reporting for councils: libraries, civic centres, events, service desks, shared paths and parks.', 'People counting for local councils', 'Local government')
 
@@ -541,7 +540,7 @@ solution('parks-and-streets', 'Parks, trails &amp; streets', 'Pedestrian, cyclis
           ('Peak periods', 'Busiest times by day and season.'), ('Trends', 'Growth and change over time.'), ('Event attendance', 'Entries and crowd numbers.')],
          [('See how activity changes over time.', 'Daily, weekly and seasonal trends show how use of paths, parks and streets is growing or changing, and the effect of new infrastructure.'),
           ('Know when places are busiest.', 'Peak-period views show the busiest hours and days for each location, informing maintenance, events and safety planning.')],
-         [('Can you count cyclists and pedestrians on trails?', 'Yes. ITESA measures pedestrian and cyclist activity, including volumes and direction, on trails, shared paths and in parks, using technology selected for each outdoor environment.'),
+         [('Can you count cyclists and pedestrians on trails?', 'Yes. Place Performance measures pedestrian and cyclist activity, including volumes and direction, on trails, shared paths and in parks, using technology selected for each outdoor environment.'),
           ('Can it count vehicles?', 'Yes. Vehicle movement can be measured across roads, access points and car parks, including volumes and direction over time.'),
           ('Can sensors be installed temporarily?', 'Yes. Temporary deployments are available for events and short studies, as well as permanent installations for ongoing monitoring.'),
           ('Can it measure the impact of new infrastructure?', 'Yes. Measuring before, during and after a project shows how a new path, crossing or public space has changed how people use the area.'),
@@ -590,7 +589,7 @@ contact_body = (
       </form>
       <div class="next-steps"><h3>What happens next</h3><ol class="steps-list">
         <li><b>Walkthrough.</b> A 30-minute demo of the platform, focused on your sector.</li>
-        <li><b>Site survey.</b> ITESA assesses your locations and what you need to measure.</li>
+        <li><b>Site survey.</b> Our team assesses your locations and what you need to measure.</li>
         <li><b>Sensor plan &amp; proposal.</b> The right devices, placement and plan level for each site.</li>
         <li><b>Pilot.</b> Live data from your own site, typically within weeks.</li></ol>
         <div class="contact-alt"><p>Prefer to explore first?</p><a class="link-arrow" href="{APP}" target="_blank" rel="noopener">Open the live demo</a></div>
@@ -691,7 +690,7 @@ with open(os.path.join(OUT, 'robots.txt'), 'w', encoding='utf-8', newline='\n') 
     f.write('User-agent: *\nAllow: /\n\nSitemap: %ssitemap.xml\n' % BASE)
 
 with open(os.path.join(OUT, 'llms.txt'), 'w', encoding='utf-8', newline='\n') as f:
-    f.write('# Place Performance\n\n> End-to-end people counting and place analytics for councils, universities, government and property owners in Australia: privacy-safe sensors (FootfallCam 3D people counters), design, installation and support by ITESA, and a real-time analytics and AI platform built on Rayven.\n\n')
+    f.write('# Place Performance\n\n> End-to-end people counting and place analytics for councils, universities, government and property owners in Australia: privacy-safe sensors (FootfallCam 3D people counters), design, installation and local support by Place Performance, and a real-time analytics and AI platform built on Rayven.\n\n')
     f.write('Key facts:\n- Measures visitors, entries and exits, live occupancy vs capacity, peak periods, dwell time, repeat visitation, movement between zones, and outdoors pedestrians, cyclists and vehicles.\n- Real-time occupancy refreshes every few seconds; alerts by email, SMS, Microsoft Teams and in-app.\n- Reporting, forecasting, scenario planning, AI insights and a plain-English Place Assistant.\n- Privacy by design: processing on the device, data masked at source, no facial recognition, no personal information collected.\n- Four plan levels: Essentials, Insights, Professional, Executive. Every plan includes sensors, installation, platform and support.\n\n')
     f.write('## Pages\n')
     for u, p in zip(urls, PAGES):

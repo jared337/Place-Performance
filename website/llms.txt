@@ -1,6 +1,6 @@
 # Place Performance
 
-> End-to-end people counting and place analytics for councils, universities, government and property owners in Australia: privacy-safe sensors (FootfallCam 3D people counters), design, installation and support by ITESA, and a real-time analytics and AI platform built on Rayven.
+> End-to-end people counting and place analytics for councils, universities, government and property owners in Australia: privacy-safe sensors (FootfallCam 3D people counters), design, installation and local support by Place Performance, and a real-time analytics and AI platform built on Rayven.
 
 Key facts:
 - Measures visitors, entries and exits, live occupancy vs capacity, peak periods, dwell time, repeat visitation, movement between zones, and outdoors pedestrians, cyclists and vehicles.
@@ -11,7 +11,7 @@ Key facts:
 
 ## Pages
 - [People counting & occupancy analytics with AI](https://jared337.github.io/Place-Performance/website/): People counting and occupancy analytics for councils, universities, government and property: sensors, real-time data, alerts, forecasting and AI.
-- [Platform: sensors, analytics & AI](https://jared337.github.io/Place-Performance/website/platform/): How Place Performance works: FootfallCam sensors, ITESA installation and support, edge processing, real-time analytics and AI, as one service.
+- [Platform: sensors, analytics & AI](https://jared337.github.io/Place-Performance/website/platform/): How Place Performance works: FootfallCam sensors, installation and support by our Australian team, edge processing, real-time analytics and AI, as one service.
 - [Real-time occupancy monitoring & alerts](https://jared337.github.io/Place-Performance/website/real-time/): Live occupancy every few seconds, interactive floorplans, heat maps, visitor flow and alerts by email, SMS and Teams for every site and room.
 - [AI insights, forecasting & scenarios](https://jared337.github.io/Place-Performance/website/ai-forecasting/): Forecast visitation and occupancy, test changes with scenario planning, get daily AI recommendations and ask your buildings questions in plain English.
 - [Plans & pricing: Essentials to Executive](https://jared337.github.io/Place-Performance/website/plans/): Compare Place Performance plans, from Essentials to Executive. Every plan includes sensors, installation, platform and support. Start small and grow.
@@ -35,7 +35,7 @@ Place Performance is an end-to-end people counting and place analytics service. 
 It measures visitor counts, entries and exits, live occupancy against capacity, peak periods, dwell time, repeat visitation, movement between zones and, outdoors, pedestrians, cyclists and vehicles. Metrics roll up from a single room to a whole portfolio of sites.
 
 ### Is the hardware included?
-Yes. FootfallCam 3D people counters and other sensors are selected for each environment, then designed, supplied, installed, commissioned and supported by ITESA in Australia, so you deal with one partner from sensor to insight.
+Yes. FootfallCam 3D people counters and other sensors are selected for each environment, then designed, supplied, installed, commissioned and supported by Place Performance in Australia, so you deal with one partner from sensor to insight.
 
 ### Does it identify people?
 No. Counting happens on the device and data is masked at source, so only anonymous numbers leave the site. The approach is to measure the place, not the person. See Privacy by design.
@@ -47,10 +47,10 @@ It is built for local councils, universities and TAFEs, state and federal govern
 Most organisations start with a pilot at one site. After a site survey and sensor plan, a pilot is typically live in weeks rather than months, and you can add sites and capability levels as you grow.
 
 ### What hardware does Place Performance use?
-Place Performance uses FootfallCam 3D people counters for entrance and in-space counting, plus specialist sensors for cyclists, vehicles and outdoor areas where needed. ITESA selects the right technology for each environment after assessing it.
+Place Performance uses FootfallCam 3D people counters for entrance and in-space counting, plus specialist sensors for cyclists, vehicles and outdoor areas where needed. Our team selects the right technology for each environment after assessing it.
 
 ### Who installs and supports the sensors?
-ITESA designs, supplies, installs, commissions and supports the complete measurement system in Australia, from the initial site survey through to ongoing maintenance and expansion.
+Place Performance designs, supplies, installs, commissions and supports the complete measurement system in Australia, from the initial site survey through to ongoing maintenance and expansion.
 
 ### Does it work outdoors?
 Yes. Deployments can be indoor or outdoor, permanent or temporary, covering buildings, venues, parks, trails, streets and public spaces, including pedestrian, cyclist and vehicle counting.
@@ -140,7 +140,7 @@ Yes. Libraries are one of the most common uses: visitor counts, occupancy by are
 Counting is anonymous. Processing happens on the device and data is masked at source, so no images or personal information are stored or transmitted, which supports councils' privacy obligations.
 
 ### Can it count cyclists and pedestrians on shared paths?
-Yes. ITESA measures pedestrian and cyclist volumes and direction on shared paths, trails and in parks, so active-transport use can be tracked over time.
+Yes. Place Performance measures pedestrian and cyclist volumes and direction on shared paths, trails and in parks, so active-transport use can be tracked over time.
 
 ### Can the data support grant applications?
 Yes. Automated visitation reports provide consistent, independent evidence of how facilities are used, which is useful for grant applications, annual reports and council briefings.
@@ -206,7 +206,7 @@ No. Counting is anonymous, with processing on the device and no images or person
 Yes. Comparing footfall, dwell and conversion during a campaign with the expected baseline shows the uplift it created.
 
 ### Can you count cyclists and pedestrians on trails?
-Yes. ITESA measures pedestrian and cyclist activity, including volumes and direction, on trails, shared paths and in parks, using technology selected for each outdoor environment.
+Yes. Place Performance measures pedestrian and cyclist activity, including volumes and direction, on trails, shared paths and in parks, using technology selected for each outdoor environment.
 
 ### Can it count vehicles?
 Yes. Vehicle movement can be measured across roads, access points and car parks, including volumes and direction over time.
