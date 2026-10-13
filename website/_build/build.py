@@ -238,6 +238,7 @@ HOME_FAQS = [
     ('How quickly can we get started?', 'Most organisations start with a pilot at one site. After a site survey and sensor plan, a pilot is typically live in weeks rather than months, and you can add sites and capability levels as you grow.'),
 ]
 home_body = open(os.path.join(HERE, 'home.html'), encoding='utf-8').read().replace('{SENSOR_VIS}', SENSOR_VIS)
+home_body = home_body.replace('{HERO_ILLUS}', illus('library').replace('id="il-', 'id="ilh-').replace('#il-', '#ilh-').replace('viewBox="0 0 720 500"', 'viewBox="40 40 650 430"').replace('<figcaption>Libraries: visits at the door and live occupancy in every zone.</figcaption>', ''))
 for _k in ('library', 'campus', 'shopping', 'venue', 'street', 'park', 'office', 'service'):
     home_body = home_body.replace('{ILLUS_%s}' % _k.upper(), illus(_k))
 page('', 'People counting & occupancy analytics with AI | Place Performance',

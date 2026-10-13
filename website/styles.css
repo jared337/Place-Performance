@@ -749,3 +749,48 @@ a.fcard:hover { transform: translateY(-4px); box-shadow: var(--shadow-card); }
 .hero > .hero-gradient { opacity: .42; }
 .hero .pill-link, .hero-eyebrow { background: rgba(255,255,255,.85); }
 .hero .btn-glass { background: #fff; box-shadow: inset 0 0 0 1px rgba(10,37,64,.12); }
+
+/* hero v3: audience + what we do + value */
+.hero-v3 .hero-in { grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr); gap: 48px; }
+.hero-v3 h1 { font-size: clamp(40px, 5.4vw, 72px); }
+.hv3 { position: relative; min-height: 0; height: auto; }
+.hv3-scene .illus { background: #fff; box-shadow: var(--shadow-ui); border-radius: 18px; }
+.hv3-step { position: absolute; display: flex; align-items: center; gap: 10px; padding: 9px 14px 9px 9px; box-shadow: var(--shadow-card); }
+.hv3-step span, .hv3-num { width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; background: var(--navy); color: #fff; font-size: 13px; font-weight: 700; flex-shrink: 0; }
+.hv3-step b { display: block; font-size: 14px; }
+.hv3-step small { display: block; font-size: 12px; color: var(--muted); }
+.hv3-s1 { left: -22px; top: 22px; animation: bob 7s ease-in-out infinite; }
+.hv3-s2 { right: -18px; top: 38%; animation: bob 8s ease-in-out infinite reverse; }
+.hv3-rec { position: absolute; right: -10px; bottom: -40px; width: 320px; padding: 14px 16px; box-shadow: var(--shadow-ui); animation: bob 9s ease-in-out infinite; }
+.hv3-rec-top { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+.hv3-rec-top b { font-size: 14px; }
+.hv3-conf { margin-left: auto; font-size: 11.5px; font-weight: 600; color: #047857; background: #ecfdf5; padding: 2px 8px; border-radius: 999px; }
+.hv3-rec p { font-size: 13.5px; line-height: 1.5; color: var(--body); margin: 0; }
+.hv3-rec p b { color: var(--navy); }
+.value-strip { position: relative; z-index: 3; margin-top: -30px; padding-bottom: 70px; }
+.value-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.value { display: block; background: #fff; border-radius: 16px; padding: 20px; box-shadow: var(--shadow-card); color: var(--body); transition: transform .25s var(--ease), box-shadow .25s; }
+.value:hover { transform: translateY(-3px); box-shadow: var(--shadow-ui); }
+.value b { display: block; color: var(--navy); font-size: 16.5px; margin: 12px 0 4px; }
+.value p { font-size: 14.5px; line-height: 1.55; margin: 0; }
+.value-ico { width: 38px; height: 38px; border-radius: 11px; display: grid; place-items: center; }
+.value-ico svg { width: 21px; height: 21px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.v-red { background: #fef2f2; color: #dc2626; } .v-green { background: #ecfdf5; color: #059669; } .v-acc { background: #eef0ff; color: var(--accent); } .v-amber { background: #fffbeb; color: #d97706; }
+@media (max-width: 980px) {
+  .hero-v3 .hero-in { grid-template-columns: 1fr; }
+  .value-grid { grid-template-columns: 1fr 1fr; }
+  .hv3-rec { bottom: -30px; }
+}
+@media (max-width: 640px) {
+  .value-grid { grid-template-columns: 1fr; }
+  .value-strip { margin-top: 0; padding-bottom: 40px; }
+  .hv3-step { position: relative; left: 0; right: 0; top: 0; margin-top: 10px; animation: none; }
+  .hv3-rec { position: relative; right: 0; bottom: 0; width: auto; margin-top: 10px; animation: none; }
+}
+
+.hv3 { padding: 26px 0 64px; }
+.hv3-s1 { left: -16px; top: 0; }
+.hv3-s2 { right: -16px; left: auto; top: 0; }
+.hv3-rec { right: auto; left: 50%; bottom: 0; margin-left: -170px; width: 340px; }
+@media (max-width: 640px) { .hv3 { padding: 0; } .hv3-rec { left: 0; margin-left: 0; } }
+@media (max-width: 640px) { .hv3-s1, .hv3-s2 { left: 0; right: 0; } }

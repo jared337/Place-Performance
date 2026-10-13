@@ -1,62 +1,45 @@
 
 
 <!-- ============ HERO ============ -->
-<section class="hero">
+<section class="hero hero-v3">
   <canvas id="gradient" class="hero-gradient" aria-hidden="true"></canvas>
   <div class="hero-skew"></div>
   <div class="wrap hero-in">
     <div class="hero-copy">
-      <p class="hero-eyebrow"><span class="dot-live"></span>People counting &amp; place intelligence for Australia</p>
-      <h1>See how every place is used, in real time.</h1>
-      <p class="lead">Sensors, installation, analytics and AI in one service. Know how full every building, room and open space is right now, get alerted before it overcrowds, and plan with forecasts you can trust.</p>
+      <p class="hero-eyebrow"><span class="dot-live"></span>For councils, universities, government and property owners</p>
+      <h1>Know how your places are really used.</h1>
+      <p class="lead">We install privacy-safe sensors in your buildings and public spaces, then turn the counts into live dashboards, alerts, reports and AI forecasts. So you can keep people safe, run spaces efficiently and invest with evidence.</p>
       <div class="hero-ctas">
         <a class="btn btn-dark btn-lg" href="{R}contact/">Book a demo <i class="arr"></i></a>
-        <a class="btn btn-glass btn-lg" href="{APP}" target="_blank" rel="noopener">Try the live demo <i class="arr"></i></a>
+        <a class="btn btn-glass btn-lg" href="#scenarios">See how it works <i class="arr"></i></a>
       </div>
       <ul class="hero-checks">
-        <li>Hardware, install &amp; support included</li>
-        <li>Privacy-safe: no images leave the device</li>
-        <li>Live demo, no sign-up</li>
+        <li>Sensors, install &amp; support included</li>
+        <li>No images stored or sent</li>
+        <li>Australian team</li>
       </ul>
     </div>
 
-    <div class="hero-visual hv" aria-label="Example of the live Place Performance dashboard">
-      <div class="hv-card hv-main">
-        <div class="hv-top">
-          <div><small>Harbourside Library</small><b>Live occupancy</b></div>
-          <span class="hv-live"><span class="dot-live"></span>Live</span>
-        </div>
-        <div class="hv-kpi">
-          <div><b class="js-tick" data-base="412" data-jitter="6">412</b><span>people now</span></div>
-          <div class="hv-pct"><b>82%</b><span>of 500 capacity</span></div>
-        </div>
-        <div class="hv-bar"><i style="width:82%"></i></div>
-        <svg class="hv-chart" viewBox="0 0 440 124" preserveAspectRatio="none" aria-hidden="true">
-          <defs><linearGradient id="hvA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#635bff" stop-opacity=".28"/><stop offset="1" stop-color="#635bff" stop-opacity="0"/></linearGradient></defs>
-          <line x1="0" y1="27" x2="440" y2="27" class="hv-cap"/>
-          <path d="M0,120 L0.0,102.0 L36.7,87.0 L73.3,64.0 L110.0,50.0 L146.7,34.0 L183.3,28.0 L220.0,30.0 L220.0,120 Z" fill="url(#hvA)"/>
-          <polyline points="0.0,102.0 36.7,87.0 73.3,64.0 110.0,50.0 146.7,34.0 183.3,28.0 220.0,30.0" class="hv-line"/>
-          <polyline points="220.0,30.0 256.7,36.0 293.3,48.0 330.0,60.0 366.7,72.0 403.3,84.0 440.0,97.0" class="hv-fc"/>
-          <line x1="220.0" y1="0" x2="220.0" y2="120" class="hv-now"/>
-          <circle cx="220.0" cy="30.0" r="5" class="hv-dot"/>
-        </svg>
-        <div class="hv-axis"><span>8am</span><span>Now</span><span>8pm</span></div>
-        <ul class="hv-zones">
-          <li><span>Children's Area</span><i><b style="width:97%;background:#ef4444"></b></i><em class="r">97%</em></li>
-          <li><span>Reading Room</span><i><b style="width:84%;background:#f97316"></b></i><em class="o">84%</em></li>
-          <li><span>Study Pods</span><i><b style="width:66%;background:#f59e0b"></b></i><em class="a">66%</em></li>
-          <li><span>Caf&eacute;</span><i><b style="width:41%;background:#10b981"></b></i><em class="g">41%</em></li>
-        </ul>
+    <div class="hero-visual hv3" aria-label="Sensors measuring a library, with an AI recommendation">
+      <div class="hv3-scene">{HERO_ILLUS}</div>
+      <div class="hv-card hv3-step hv3-s1"><span>1</span><div><b>Measure</b><small>Sensors installed in your spaces</small></div></div>
+      <div class="hv-card hv3-step hv3-s2"><span>2</span><div><b>Understand</b><small>Live occupancy in every zone</small></div></div>
+      <div class="hv-card hv3-rec">
+        <div class="hv3-rec-top"><span class="hv3-num">3</span><b>Act</b><span class="hv3-conf">84% confidence</span></div>
+        <p><b>Saturday 10:30am:</b> open the Activity Room as overflow. The Children's Area is forecast to reach 96%.</p>
       </div>
-      <div class="hv-card hv-alert">
-        <span class="chip-ico">!</span>
-        <div><small>Alert &middot; just now</small><b>Children's Area at 97% capacity</b><span>Facilities team notified by SMS &amp; email</span></div>
-      </div>
-      <div class="hv-card hv-ai">
-        <span class="hv-ai-tag">Ask AI</span>
-        <p class="hv-q">When is the library quietest tomorrow?</p>
-        <p class="hv-a">Tuesday 2 to 3pm, forecast <b>38% full</b>. The best window for cleaning and maintenance.</p>
-      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VALUE STRIP ============ -->
+<section class="value-strip">
+  <div class="wrap">
+    <div class="value-grid reveal">
+      <a class="value" href="{R}places/stadiums-and-venues/"><span class="value-ico v-red"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span><b>Safer places</b><p>Live capacity alerts before a library, venue or event space gets too full.</p></a>
+      <a class="value" href="{R}solutions/buildings/"><span class="value-ico v-green"><svg viewBox="0 0 24 24"><path d="M4 19h16M7 16V9M12 16V5M17 16v-4"/></svg></span><b>Lower running costs</b><p>Clean, staff, heat and cool spaces when they are used, not by the clock.</p></a>
+      <a class="value" href="{R}solutions/government/"><span class="value-ico v-acc"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 15l3-3 2 2 3-4"/></svg></span><b>Evidence for investment</b><p>Utilisation and visitation data to justify funding, consolidate space and plan capital works.</p></a>
+      <a class="value" href="{R}solutions/universities/"><span class="value-ico v-amber"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c1-4 4-6 7-6s6 2 7 6"/></svg></span><b>Better experiences</b><p>Shorter queues, free study space found faster and services where people actually go.</p></a>
     </div>
   </div>
 </section>
