@@ -794,3 +794,11 @@ a.fcard:hover { transform: translateY(-4px); box-shadow: var(--shadow-card); }
 .hv3-rec { right: auto; left: 50%; bottom: 0; margin-left: -170px; width: 340px; }
 @media (max-width: 640px) { .hv3 { padding: 0; } .hv3-rec { left: 0; margin-left: 0; } }
 @media (max-width: 640px) { .hv3-s1, .hv3-s2 { left: 0; right: 0; } }
+
+/* plan card calls to action */
+.plan { display: flex; flex-direction: column; }
+.plan ul { flex: 1; }
+.btn-plan { margin-top: 24px; justify-content: center; background: #fff; color: var(--navy); box-shadow: inset 0 0 0 1.5px var(--navy); }
+.btn-plan:hover { background: var(--navy); color: #fff; }
+.btn-plan-hl { background: #fff; color: var(--navy); box-shadow: none; }
+.btn-plan-hl:hover { background: var(--cyan); color: var(--navy); }

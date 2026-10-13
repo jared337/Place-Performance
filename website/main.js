@@ -10,7 +10,8 @@
       if (/^(https?:|mailto:|tel:|#)/.test(h)) return;
       var parts = h.split('#');
       if (parts[0] === '' && h !== '') return;
-      if (parts[0] === '' || /\/$/.test(parts[0])) a.setAttribute('href', parts[0] + 'index.html' + (parts[1] ? '#' + parts[1] : ''));
+      var q = parts[0].split('?'), path = q[0], query = q[1] ? '?' + q[1] : '';
+      if (path === '' || /\/$/.test(path)) a.setAttribute('href', path + 'index.html' + query + (parts[1] ? '#' + parts[1] : ''));
     });
   }
 
@@ -49,6 +50,14 @@
       });
       el.addEventListener('mouseleave', function () { el.classList.remove('tilting'); el.style.transform = ''; });
     });
+  }
+
+
+  /* ---------------- Contact form: preselect plan from ?plan= ---------------- */
+  var planSel = document.getElementById('plan-select');
+  if (planSel) {
+    var m = location.search.match(/[?&]plan=([a-z]+)/);
+    if (m && planSel.querySelector('option[value="' + m[1] + '"]')) planSel.value = m[1];
   }
 
   /* ---------------- Nav ---------------- */
