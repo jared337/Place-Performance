@@ -91,7 +91,7 @@ def page_hero(eyebrow, h1, lead, visual='', crumbs=None, ctas=True):
     if crumbs:
         bc = '<nav class="crumbs" aria-label="Breadcrumb">' + ' <span>/</span> '.join(
             ('<a href="%s">%s</a>' % (h, n)) if h else '<span aria-current="page">%s</span>' % n for n, h in crumbs) + '</nav>'
-    btns = '<div class="hero-ctas"><a class="btn btn-dark btn-lg" href="{R}contact/">Book a demo <i class="arr"></i></a><a class="btn btn-ghost btn-lg" href="{APP}" target="_blank" rel="noopener">Explore the live demo <i class="arr"></i></a></div>' if ctas else ''
+    btns = '<div class="hero-ctas"><a class="btn btn-dark btn-lg" href="{R}contact/">Book a demo <i class="arr"></i></a><a class="btn btn-glass btn-lg" href="{APP}" target="_blank" rel="noopener">Try the live demo <i class="arr"></i></a></div>' if ctas else ''
     return '''<section class="hero page-hero">
   <canvas id="gradient" class="hero-gradient" aria-hidden="true"></canvas>
   <div class="hero-skew"></div>
@@ -319,7 +319,20 @@ page('real-time', 'Real-time occupancy monitoring & alerts | Place Performance',
 ai_body = (
     page_hero('AI, predictions &amp; planning', "Don't just see what happened. Know what's next.",
               'Place Performance learns the rhythm of every place to forecast demand, flag risks and recommend actions, then lets you test changes before you make them.',
-              shot('assistant-panel', 'Place Assistant answering which zones are closest to capacity'),
+              '''<div class="hv ai-hero" aria-label="Example Place Assistant conversation">
+      <div class="hv-card ai-chat">
+        <div class="ai-chat-top"><span class="ai-spark">&#10022;</span><b>Place Assistant</b><span class="hv-live"><span class="dot-live"></span>Live data</span></div>
+        <div class="ai-chat-body">
+          <p class="ai-chat-q">Will the Children's Area hit capacity this Saturday?</p>
+          <div class="ai-chat-a">
+            <p><b>Likely, yes.</b> Saturday is forecast to peak at <b class="t-red">96% at 11am</b>, driven by the school holiday story time. It stays above 85% from 10:30 to 12:30.</p>
+            <div class="ai-fc"><div class="ai-fc-bars"><i style="height:22%" class="g"><em>22%</em></i><i style="height:48%" class="g"><em>48%</em></i><i style="height:78%" class="a"><em>78%</em></i><i style="height:96%" class="r"><em>96%</em></i><i style="height:90%" class="r"><em>90%</em></i><i style="height:70%" class="a"><em>70%</em></i><i style="height:52%" class="g"><em>52%</em></i><i style="height:30%" class="g"><em>30%</em></i></div><div class="ai-fc-x"><span>9am</span><span>11am</span><span>1pm</span><span>4pm</span></div></div>
+            <p class="ai-rec"><b>Recommendation:</b> open the Activity Room as overflow from 10:30 and roster one extra staff member. <span>Confidence 84%</span></p>
+          </div>
+        </div>
+        <div class="ai-chat-in">Ask anything about your places&hellip;<span>&#8593;</span></div>
+      </div>
+    </div>''',
               [('Home', '{R}'), ('AI &amp; forecasting', None)]) +
     section('''<div class="ai-grid">
       <div class="ai-card ai-card-wide reveal"><div class="ai-text"><h3>Ask your buildings anything</h3><p>The Place Assistant answers questions in plain English using your live data, links straight to the places it mentions, and knows which screen you are looking at.</p>
