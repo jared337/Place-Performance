@@ -567,3 +567,16 @@ a.fcard:hover { transform: translateY(-4px); box-shadow: var(--shadow-card); }
   .qa-a { padding-right: 4px; }
   .qa summary h3 { font-size: 17px; }
 }
+
+/* mobile menu: consistent left alignment + CTAs */
+.nav-m-cta { display: none; }
+@media (max-width: 980px) {
+  .nav.open .nav-links { align-items: stretch; gap: 2px; padding: 8px 20px 24px; }
+  .nav.open .nav-links > a, .nav.open .nav-dd > .dd-trigger { display: block; padding: 12px 0; font-size: 17px; font-weight: 600; opacity: 1; border-bottom: 1px solid var(--line); }
+  .nav.open .nav-dd > .dd-trigger::after { display: none; }
+  .nav.open .nav-dd .dd-panel { padding: 6px 0 8px; gap: 0; }
+  .nav.open .dd-panel a { padding: 9px 12px; }
+  .nav.open .dd-panel .dd-all { border-top: 0; margin: 0; padding-top: 9px; }
+  .nav.open .nav-m-cta { display: grid; gap: 10px; margin-top: 18px; }
+  .nav.open .nav-m-cta .btn { justify-content: center; }
+}

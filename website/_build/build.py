@@ -131,6 +131,7 @@ def nav(active):
       %s
       <div class="nav-dd"><a href="{R}solutions/" class="dd-trigger%s">Solutions</a><div class="dd-panel">%s<a class="dd-all" href="{R}solutions/">All solutions</a></div></div>
       %s%s%s
+      <div class="nav-m-cta"><a class="btn btn-dark btn-lg" href="{R}contact/">Book a demo <i class="arr"></i></a><a class="btn btn-glass btn-lg" href="{APP}" target="_blank" rel="noopener">Try the live demo <i class="arr"></i></a></div>
     </nav>
     <div class="nav-cta">
       <a class="link-arrow" href="{APP}" target="_blank" rel="noopener">Live demo</a>
