@@ -437,11 +437,11 @@ PP.tickOccupancy = function () {
 
 /* ---------------- Devices ---------------- */
 PP.DEVICE_TYPES = {
-  counter: { label: '3D people counter', model: 'Xovis PC2SE' },
-  thermal: { label: 'Thermal occupancy sensor', model: 'Butlr Heatic 2+' },
-  queue: { label: 'Queue analytics sensor', model: 'Xovis PC3 (queue)' },
-  wifi: { label: 'Wi-Fi presence probe', model: 'Meraki MR46 (probe)' },
-  demo: { label: 'Demographics camera (anonymised)', model: 'Hanwha AI-Q' }
+  counter: { label: '3D people counter', model: 'FootfallCam Pro2' },
+  thermal: { label: 'Thermal occupancy sensor', model: 'Thermal area sensor' },
+  queue: { label: 'Queue analytics sensor', model: 'FootfallCam Pro2 (queue)' },
+  wifi: { label: 'Wi-Fi presence sensor', model: 'Wi-Fi presence sensor' },
+  demo: { label: 'Demographics sensor (anonymised)', model: 'AI vision sensor' }
 };
 PP.DEVICES = (function () {
   var out = [];

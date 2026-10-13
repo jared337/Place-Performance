@@ -4,6 +4,8 @@ Rayven × ITESA (Phase 26). A navigable front-end prototype built from `Place_Pe
 
 **Live prototype: https://jared337.github.io/Place-Performance/**
 
+**Marketing website: https://jared337.github.io/Place-Performance/website/** (source in `website/`; product screenshots are captured from this prototype, photography from Unsplash)
+
 ## Run it
 
 Serve the folder over HTTP (maps and some browser features don't work from `file://`):
