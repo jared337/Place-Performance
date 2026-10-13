@@ -802,3 +802,32 @@ a.fcard:hover { transform: translateY(-4px); box-shadow: var(--shadow-card); }
 .btn-plan:hover { background: var(--navy); color: #fff; }
 .btn-plan-hl { background: #fff; color: var(--navy); box-shadow: none; }
 .btn-plan-hl:hover { background: var(--cyan); color: var(--navy); }
+
+/* contact: form in the hero, above the fold */
+.hero-form .cta-form { margin: 0; box-shadow: var(--shadow-ui); }
+.page-visual .hero-form { animation: none; }
+.hero-steps { margin-top: 22px; }
+.hero-steps li { font-size: 15px; }
+.hero-alt { margin-top: 18px; font-size: 15px; color: var(--navy); }
+.page-hero .hero-in:has(.hero-form) { align-items: start; }
+.page-hero:has(.hero-form) { padding-top: 112px; }
+.page-hero:has(.hero-form) h1 { font-size: clamp(36px, 4vw, 52px); }
+
+/* plans: cards pulled up into the hero so they sit above the fold */
+.hero-plans { padding-top: 112px; padding-bottom: calc(7vw + 200px); }
+.hero-plans h1 { font-size: clamp(36px, 4vw, 52px); }
+.hero-plans + .sec-pull { margin-top: calc(-7vw - 170px); padding-top: 0; position: relative; z-index: 3; }
+.sec-pull .plan { box-shadow: var(--shadow-card); }
+@media (max-width: 640px) {
+  .hero-plans { padding-bottom: 150px; }
+  .hero-plans + .sec-pull { margin-top: -110px; }
+  .page-hero:has(.hero-form) .hero-steps, .page-hero:has(.hero-form) .hero-alt { display: none; }
+}
+
+.hero-plans { padding-top: 96px; }
+.hero-plans .hero-in-solo { grid-template-columns: minmax(0, 1000px); }
+.hero-plans .eyebrow-hero { display: none; }
+.hero-plans h1 { font-size: clamp(32px, 3.6vw, 46px); margin-top: 6px; }
+.hero-plans .lead { margin-top: 12px; max-width: 640px; }
+.sec-pull .plan { padding: 24px 22px; }
+.sec-pull .plan ul { gap: 7px; }

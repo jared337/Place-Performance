@@ -401,14 +401,14 @@ plan_table = '<div class="cmp-wrap reveal"><table class="cmp"><thead><tr><th>Cap
     '<tr><td>%s</td>%s</tr>' % (n, ''.join('<td>%s</td>' % ('<span class="yes" aria-label="Included">&#10003;</span>' if lv >= l else '<span class="no" aria-label="Not included">&ndash;</span>') for lv in range(1, 5))) for n, l in FEATURE_ROWS)
 plans_body = (
     page_hero('Plans', 'Start by measuring. Finish by transforming.',
-              'Four levels of maturity. Every level includes everything before it, so you can start small, prove value, and add capability as your organisation is ready.',
-              '', [('Home', '{R}'), ('Plans', None)]) +
+              'Four levels. Each includes everything before it, so you can start small, prove value and grow.',
+              '', [('Home', '{R}'), ('Plans', None)], ctas=False).replace('class="hero page-hero"', 'class="hero page-hero hero-plans"') +
     section('''<div class="plans reveal">
       <div class="plan"><span class="plan-n">Level 1</span><h3>Essentials</h3><p class="plan-tag">Know what's happening.</p><ul><li>Visitor counting &amp; occupancy</li><li>Peak periods &amp; dwell time</li><li>Live dashboards</li><li>Automated reports</li><li>Device health</li></ul><a class="btn btn-plan" href="{R}contact/?plan=essentials">Get a quote <i class="arr"></i></a></div>
       <div class="plan"><span class="plan-n">Level 2</span><h3>Insights</h3><p class="plan-tag">Know why it's happening.</p><ul><li>Live floorplans</li><li>Heat maps &amp; visitor flow</li><li>Zone comparison</li><li>Repeat visitation</li><li>Historical trends</li></ul><a class="btn btn-plan" href="{R}contact/?plan=insights">Get a quote <i class="arr"></i></a></div>
       <div class="plan plan-hl"><span class="plan-n">Level 3</span><h3>Professional</h3><p class="plan-tag">Improve how your place performs.</p><ul><li>Multi-site portfolio</li><li>Alert rules &amp; escalation</li><li>Queue &amp; operations</li><li>POS, Wi-Fi &amp; BMS integrations</li><li>Single sign-on</li></ul><a class="btn btn-plan btn-plan-hl" href="{R}contact/?plan=professional">Get a quote <i class="arr"></i></a></div>
       <div class="plan"><span class="plan-n">Level 4</span><h3>Executive</h3><p class="plan-tag">Lead with intelligence.</p><ul><li>Performance index &amp; benchmarking</li><li>AI insights &amp; Place Assistant</li><li>Forecasting</li><li>Scenario modelling</li><li>Board reporting packs</li></ul><a class="btn btn-plan" href="{R}contact/?plan=executive">Get a quote <i class="arr"></i></a></div>
-    </div>''' + '<p class="plans-note">Every plan includes sensors, installation, commissioning, the platform and ongoing support. Pricing depends on the number of sites and devices. <a href="{R}contact/">Talk to us for a quote</a>.</p>') +
+    </div>''' + '<p class="plans-note">Every plan includes sensors, installation, commissioning, the platform and ongoing support. Pricing depends on the number of sites and devices. <a href="{R}contact/">Talk to us for a quote</a>.</p>', 'sec-pull') +
     section(head('Compare', 'What\'s included at each level.') + plan_table, 'sec-tint')
 )
 PLANS_FAQS = [
@@ -621,26 +621,21 @@ page('privacy-by-design', 'Privacy-safe people counting | Place Performance',
      privacy_body, PRIVACY_FAQS, [('Home', ''), ('Privacy by design', 'privacy-by-design/')])
 
 # ---------------- Contact ----------------
-contact_body = (
-    page_hero('Contact', 'Book a demo.',
-              'Tell us about your places and what you want to understand. We\'ll show you the platform with data that looks like yours and scope a pilot.', '', [('Home', '{R}'), ('Contact', None)], ctas=False) +
-    section('''<div class="contact-grid">
-      <form class="cta-form" id="demo-form">
+contact_body = page_hero('Contact', 'Book a demo.',
+    'Tell us about your places and what you want to understand. We\'ll show you the platform with data that looks like yours and scope a pilot.'
+    '</p><ol class="steps-list hero-steps">'
+    '<li><b>Walkthrough.</b> A 30-minute demo, focused on your sector.</li>'
+    '<li><b>Site survey.</b> We assess your locations and what to measure.</li>'
+    '<li><b>Sensor plan &amp; proposal.</b> The right devices and plan level for each site.</li>'
+    '<li><b>Pilot.</b> Live data from your own site, typically within weeks.</li></ol><p class="hero-alt">Prefer to explore first? <a class="link-arrow" href="{APP}" target="_blank" rel="noopener">Open the live demo</a>',
+    '''<div class="hero-form"><form class="cta-form" id="demo-form">
         <div class="form-row"><label>Name<input required name="name" autocomplete="name"></label><label>Work email<input required type="email" name="email" autocomplete="email"></label></div>
         <div class="form-row"><label>Organisation<input name="org" autocomplete="organization"></label><label>Sector<select name="sector"><option>Local council</option><option>University / TAFE</option><option>Government</option><option>Commercial property</option><option>Retail &amp; precincts</option><option>Parks, trails &amp; streets</option><option>Other</option></select></label></div>
         <div class="form-row"><label>Plan of interest<select name="plan" id="plan-select"><option value="">Not sure yet</option><option value="essentials">Essentials (Level 1)</option><option value="insights">Insights (Level 2)</option><option value="professional">Professional (Level 3)</option><option value="executive">Executive (Level 4)</option></select></label><label>Number of sites<select name="sites"><option>1</option><option>2&ndash;5</option><option>6&ndash;20</option><option>20+</option></select></label></div>
-        <label>What would you like to understand?<textarea name="msg" rows="4" placeholder="e.g. how our libraries are used across the week"></textarea></label>
+        <label>What would you like to understand?<textarea name="msg" rows="3" placeholder="e.g. how our libraries are used across the week"></textarea></label>
         <button class="btn btn-dark btn-lg" type="submit">Book a demo <i class="arr"></i></button>
         <p class="form-note" id="form-note">We'll be in touch within one business day.</p>
-      </form>
-      <div class="next-steps"><h3>What happens next</h3><ol class="steps-list">
-        <li><b>Walkthrough.</b> A 30-minute demo of the platform, focused on your sector.</li>
-        <li><b>Site survey.</b> Our team assesses your locations and what you need to measure.</li>
-        <li><b>Sensor plan &amp; proposal.</b> The right devices, placement and plan level for each site.</li>
-        <li><b>Pilot.</b> Live data from your own site, typically within weeks.</li></ol>
-        <div class="contact-alt"><p>Prefer to explore first?</p><a class="link-arrow" href="{APP}" target="_blank" rel="noopener">Open the live demo</a></div>
-      </div></div>''')
-)
+      </form></div>''', [('Home', '{R}'), ('Contact', None)], ctas=False)
 CONTACT_FAQS = [
     ('How long does a demo take?', 'A walkthrough takes about 30 minutes and focuses on your sector and the questions you want to answer.'),
     ('How soon can a pilot be live?', 'After a site survey and sensor plan, a pilot at one site is typically live within weeks rather than months.'),
