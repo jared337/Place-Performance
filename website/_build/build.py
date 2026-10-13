@@ -46,6 +46,14 @@ def section(inner, cls='', id_=''):
     return '<section class="sec %s"%s><div class="wrap">%s</div></section>' % (cls, (' id="%s"' % id_) if id_ else '', inner)
 
 
+def guide(eyebrow, h2, blocks, related, cls=''):
+    """Long-form prose with contextual links, plus a related-pages aside. related: (path, title, text)."""
+    art = ''.join(('<h3>%s</h3>' % h if h else '') + '<p>%s</p>' % p for h, p in blocks)
+    aside = '<aside class="guide-aside"><p class="eyebrow">Related pages</p>' + ''.join(
+        '<a href="{R}%s"><b>%s</b><span>%s</span></a>' % r for r in related) + '</aside>'
+    return section('<div class="guide reveal"><article class="prose"><p class="eyebrow">%s</p><h2>%s</h2>%s</article>%s</div>' % (eyebrow, h2, art, aside), cls)
+
+
 def head(eyebrow, h2, lead='', light=False):
     return '<div class="sec-head %s"><p class="eyebrow">%s</p><h2>%s</h2>%s</div>' % ('light' if light else '', eyebrow, h2, '<p class="sec-lead">%s</p>' % lead if lead else '')
 
@@ -133,7 +141,7 @@ def nav(active):
     <a class="logo" href="{R}"><span class="logo-mark">PP</span>Place Performance</a>
     <nav class="nav-links" aria-label="Main">
       %s
-      <div class="nav-dd"><a href="{R}solutions/" class="dd-trigger%s">Solutions</a><div class="dd-panel">%s<a class="dd-all" href="{R}solutions/">All solutions</a></div></div>
+      <div class="nav-dd"><a href="{R}solutions/" class="dd-trigger%s">Solutions</a><div class="dd-panel">%s<a class="dd-all" href="{R}solutions/">All solutions</a><a class="dd-all dd-all-2" href="{R}places/">Browse by place</a></div></div>
       %s%s%s
       <div class="nav-m-cta"><a class="btn btn-dark btn-lg" href="{R}contact/">Book a demo <i class="arr"></i></a><a class="btn btn-glass btn-lg" href="{APP}" target="_blank" rel="noopener">Try the live demo <i class="arr"></i></a></div>
     </nav>
@@ -155,6 +163,7 @@ FOOTER = '''<footer class="foot">
     <div class="foot-cols">
       <div><b>Platform</b><a href="{R}platform/">Platform overview</a><a href="{R}real-time/">Real time</a><a href="{R}ai-forecasting/">AI &amp; forecasting</a><a href="{R}plans/">Plans</a><a href="{APP}" target="_blank" rel="noopener">Live demo</a></div>
       <div><b>Solutions</b>%s</div>
+      <div><b>Places</b><a href="{R}places/campuses/">Campuses</a><a href="{R}places/libraries/">Libraries</a><a href="{R}places/shopping-centres/">Shopping centres</a><a href="{R}places/stadiums-and-venues/">Stadiums &amp; venues</a><a href="{R}places/streets-and-laneways/">Streets &amp; laneways</a><a href="{R}places/parks-and-foreshores/">Parks &amp; foreshores</a><a href="{R}places/office-towers/">Office towers</a><a href="{R}places/government-buildings/">Government buildings</a></div>
       <div><b>Company</b><a href="{R}contact/">Contact</a><a href="{R}privacy-by-design/">Privacy by design</a><a href="{R}faq/">FAQ</a></div>
     </div>
   </div>
@@ -419,6 +428,8 @@ sol_hub = (
 SOL_FAQS = [
     ('Which organisations use Place Performance?', 'It is designed for local councils, universities and TAFEs, state and federal government agencies, commercial property owners and managers, shopping centres and precinct operators, and managers of parks, trails and streets.'),
     ('What problems does it solve?', 'The most common uses are crowd capacity and safety, space utilisation, portfolio rationalisation, demand-based operations such as cleaning and staffing, commercial performance, and measuring active transport and public spaces.'),
+    ('Which sector page should I start with?', 'Start with the sector that matches your organisation, such as councils or universities, or browse by the type of place you manage, such as libraries, campuses or parks.'),
+    ('Is the hardware the same in every sector?', 'The core technology is the same, but each deployment is designed for its environment. Indoor sites typically use FootfallCam 3D counters, while outdoor sites use sensors chosen for pedestrians, cyclists or vehicles.'),
     ('Can one organisation use it for several purposes?', 'Yes. The same sensors and data support safety, utilisation, operations and planning at the same time, and different teams see the views that matter to them.'),
 ]
 page('solutions', 'Solutions by sector | Place Performance',
@@ -616,6 +627,8 @@ contact_body = (
 CONTACT_FAQS = [
     ('How long does a demo take?', 'A walkthrough takes about 30 minutes and focuses on your sector and the questions you want to answer.'),
     ('How soon can a pilot be live?', 'After a site survey and sensor plan, a pilot at one site is typically live within weeks rather than months.'),
+    ('What information should we prepare for a demo?', 'It helps to know which places you want to measure, roughly how many entrances and rooms they have, and the decisions you want the data to support. Floorplans are useful but not required for the first conversation.'),
+    ('Is there any obligation after a demo?', 'No. A demo is a walkthrough to see whether Place Performance fits your needs. If it does, we scope a pilot together.'),
     ('Do you work outside major cities?', 'Yes. Solutions are designed and supported for Australian conditions, from busy urban spaces to parks, trails, coastal and remote locations.'),
 ]
 page('contact', 'Book a demo | Place Performance',
@@ -632,6 +645,9 @@ for g, items in ALL_GROUPS:
 page('faq', 'People counting & occupancy FAQ | Place Performance',
      'Answers to common questions about Place Performance: hardware, installation, privacy, real-time occupancy, alerts, forecasting, AI, plans and pricing.',
      faq_hub, [qa for _, items in ALL_GROUPS for qa in items], [('Home', ''), ('FAQ', 'faq/')])
+
+exec(open(os.path.join(HERE, 'content_guides.py'), encoding='utf-8').read())
+exec(open(os.path.join(HERE, 'content_places.py'), encoding='utf-8').read())
 
 # --------------------------------------------------------------------------
 # Render
@@ -686,7 +702,7 @@ def render(p):
     url = BASE + (p['slug'] + '/' if p['slug'] else '')
     faq = faq_html(p['faqs']) if p['faqs'] and p['slug'] != 'faq' else ''
     html = TEMPLATE.format(title=escape(strip(p['title'])), desc=escape(p['desc']), url=url, base=BASE, R='{R}',
-                           jsonld=jsonld(p, url), nav=nav(p['nav_key']), body=p['body'], faq=faq,
+                           jsonld=jsonld(p, url), nav=nav(p['nav_key']), body=p['body'] + GUIDES.get(p['slug'], ''), faq=faq,
                            cta=cta_band() if p['slug'] != 'contact' else '', footer=FOOTER)
     html = html.replace('{APP}', APP_URL).replace('{R}', R)
     path = os.path.join(OUT, p['slug'], 'index.html') if p['slug'] else os.path.join(OUT, 'index.html')
