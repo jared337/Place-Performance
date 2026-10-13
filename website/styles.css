@@ -743,3 +743,9 @@ a.fcard:hover { transform: translateY(-4px); box-shadow: var(--shadow-card); }
 .scn-panel { display: none; }
 .scn-panel.on { display: block; animation: scnIn .5s var(--ease); }
 @keyframes scnIn { from { opacity: 0; transform: translateY(10px); } }
+
+/* lighter hero background on every page (pastel wash over white) */
+.hero { background: #fff; }
+.hero > .hero-gradient { opacity: .42; }
+.hero .pill-link, .hero-eyebrow { background: rgba(255,255,255,.85); }
+.hero .btn-glass { background: #fff; box-shadow: inset 0 0 0 1px rgba(10,37,64,.12); }
