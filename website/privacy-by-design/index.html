@@ -156,7 +156,26 @@
   <div class="hero-skew"></div>
   <div class="wrap hero-in ">
     <div class="hero-copy"><nav class="crumbs" aria-label="Breadcrumb"><a href="../">Home</a> <span>/</span> <span aria-current="page">Privacy by design</span></nav><p class="eyebrow eyebrow-hero">Privacy by design</p><h1>Measure the place, not the person.</h1><p class="lead">Place Performance is built to understand how places are used without identifying who is there. Counting happens on the device, data is masked at source, and only anonymous numbers leave the site.</p><div class="hero-ctas"><a class="btn btn-dark btn-lg" href="../contact/">Book a demo <i class="arr"></i></a><a class="btn btn-glass btn-lg" href="https://jared337.github.io/Place-Performance/" target="_blank" rel="noopener">Try the live demo <i class="arr"></i></a></div></div>
-    <div class="page-visual"><div class="photo-card"><img src="../assets/photos/camera.jpg" alt="Sensor mounted outdoors" loading="lazy"><div class="photo-badge"><b>No images leave the device</b><span>Counts, not identities</span></div></div></div>
+    <div class="page-visual"><div class="privacy-vis" role="img" aria-label="What the sensor sees is anonymous depth data processed on the device; only counts leave the site">
+  <div class="pv-pane">
+    <p class="pv-label">What the sensor sees</p>
+    <svg viewBox="0 0 400 170" aria-hidden="true">
+      <defs><radialGradient id="pvB"><stop offset="0" stop-color="#22d3ee" stop-opacity=".8"/><stop offset=".55" stop-color="#635bff" stop-opacity=".35"/><stop offset="1" stop-color="#635bff" stop-opacity="0"/></radialGradient>
+      <pattern id="pvG" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#1e3a5f"/></pattern></defs>
+      <rect width="400" height="170" fill="url(#pvG)"/>
+      <g><ellipse cx="80" cy="70" rx="30" ry="26" fill="url(#pvB)"/><ellipse cx="160" cy="112" rx="30" ry="26" fill="url(#pvB)"/><ellipse cx="250" cy="60" rx="30" ry="26" fill="url(#pvB)"/><ellipse cx="320" cy="118" rx="30" ry="26" fill="url(#pvB)"/>
+      <animateTransform attributeName="transform" type="translate" values="0 0;10 4;0 0" dur="6s" repeatCount="indefinite"/></g>
+    </svg>
+    <p class="pv-note">Anonymous 3D depth shapes, processed and discarded on the device</p>
+  </div>
+  <div class="pv-arrow"><span>Only numbers leave the site</span></div>
+  <ul class="pv-data">
+    <li><span>Reading Room</span><b>23 people &middot; 58%</b></li>
+    <li><span>Main entrance</span><b>In 412 &middot; Out 377</b></li>
+    <li><span>Average dwell</span><b>38 min</b></li>
+  </ul>
+  <div class="pv-tags"><span>No images</span><span>No faces</span><span>No identities</span></div>
+</div></div>
   </div>
 </section><section class="sec "><div class="wrap"><div class="sec-head "><p class="eyebrow">Principles</p><h2>How privacy is built in.</h2></div><div class="fgrid fgrid-3 reveal"><div class="fcard"><h4>Edge processing</h4><p>Counting runs on the sensor itself. Video is not streamed or stored by the platform.</p></div><div class="fcard"><h4>Masked at source</h4><p>Data is anonymised on the device before anything is sent.</p></div><div class="fcard"><h4>No personal information</h4><p>No faces, names or identities are collected, only counts, occupancy and movement.</p></div><div class="fcard"><h4>Minimal collection</h4><p>The technology is chosen for the question, so only the data you need is measured.</p></div><div class="fcard"><h4>Role-based access</h4><p>Users see only the sites and features their role allows, with single sign-on support.</p></div><div class="fcard"><h4>Audit trail</h4><p>Administrative actions are logged for traceability and accountability.</p></div></div></div></section><section class="sec sec-tint"><div class="wrap"><div class="split  reveal"><div class="shot-card "><img src="../assets/screens/device.jpg" alt="Device record showing privacy mode on" loading="lazy"></div><div class="split-copy"><p class="eyebrow">Device level</p><h3>Privacy settings you can verify.</h3><p class="muted">Every device record shows its privacy mode and configuration. Demographic estimates are optional, anonymised and only used where hardware supports them and you choose to enable them.</p></div></div></div></section>
 <section class="sec sec-faq" id="faq"><div class="wrap"><div class="sec-head "><p class="eyebrow">FAQ</p><h2>Questions &amp; answers</h2></div><div class="faq"><details class="qa" open><summary><h3>Do the sensors record video?</h3><i></i></summary><div class="qa-a"><p>No video is streamed to or stored by the platform. The sensors process what they see on the device and send only anonymous counts and occupancy numbers.</p></div></details><details class="qa"><summary><h3>Can people be identified?</h3><i></i></summary><div class="qa-a"><p>No. Data is masked at source and no personal information such as faces or names is collected. The system measures how places are used, not who uses them.</p></div></details><details class="qa"><summary><h3>Does Place Performance use facial recognition?</h3><i></i></summary><div class="qa-a"><p>No. Place Performance does not use facial recognition and does not identify individuals.</p></div></details><details class="qa"><summary><h3>What data is collected?</h3><i></i></summary><div class="qa-a"><p>Counts of people entering and leaving, occupancy, dwell time, movement between zones and, where enabled and supported, anonymous demographic estimates. Outdoors it can also count cyclists and vehicles.</p></div></details><details class="qa"><summary><h3>Who can access the data?</h3><i></i></summary><div class="qa-a"><p>Only users in your organisation with an assigned role. Access can be limited to specific sites, single sign-on can be enforced, and administrative actions are recorded in an audit log.</p></div></details><details class="qa"><summary><h3>Does it support Australian privacy obligations?</h3><i></i></summary><div class="qa-a"><p>Anonymous, edge-processed counting with minimal data collection is designed to support organisations' obligations under Australian privacy law. Contact us for documentation to support your privacy impact assessment.</p></div></details></div></div></section>
@@ -164,7 +183,7 @@
   <canvas id="gradient2" class="hero-gradient" aria-hidden="true"></canvas>
   <div class="wrap cta-in cta-in-band">
     <div class="cta-copy"><h2>See your places in a new light.</h2><p>Book a 30-minute walkthrough and we'll scope a pilot for one of your sites: sensors, installation, software and insights in one agreement.</p></div>
-    <div class="cta-actions"><a class="btn btn-white btn-lg" href="../contact/">Book a demo <i class="arr"></i></a><a class="btn btn-outline btn-lg" href="https://jared337.github.io/Place-Performance/" target="_blank" rel="noopener">Explore the live demo <i class="arr"></i></a></div>
+    <div class="cta-actions"><a class="btn btn-white btn-lg" href="../contact/">Book a demo <i class="arr"></i></a><a class="btn btn-outline btn-lg" href="https://jared337.github.io/Place-Performance/" target="_blank" rel="noopener">Try the live demo <i class="arr"></i></a></div>
   </div>
 </section>
 </main>

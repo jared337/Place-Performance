@@ -650,3 +650,40 @@ a.fcard:hover { transform: translateY(-4px); box-shadow: var(--shadow-card); }
   .page-hero + .sec { padding-top: 48px; }
   .page-hero + .sec-dark { margin-top: -4vw; padding-top: calc(56px + 6vw); }
 }
+
+/* inner hero geometry: gentler angle, padding scales with width so the diagonal never reaches content */
+.page-hero > .hero-gradient, .page-hero .hero-skew { transform: skewY(-4deg); }
+.page-hero { padding-bottom: calc(7vw + 64px); }
+.page-hero + .sec-dark { margin-top: -3vw; }
+
+/* sensor illustration (replaces CCTV photo) */
+.sensor-vis { position: relative; border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-ui); aspect-ratio: 420 / 340; background: #0a2540; }
+.sensor-vis svg { width: 100%; height: 100%; display: block; }
+.sv-chip { position: absolute; top: 46px; background: rgba(255,255,255,.95); border-radius: 10px; padding: 7px 12px; box-shadow: var(--shadow-card); }
+.sv-chip small { display: block; font-size: 11px; color: var(--muted); }
+.sv-chip b { color: var(--navy); font-size: 18px; font-variant-numeric: tabular-nums; }
+.sv-in { left: 16px; } .sv-out { right: 16px; }
+.sv-badge { position: absolute; left: 16px; bottom: 16px; background: rgba(255,255,255,.95); border-radius: 12px; padding: 10px 14px; box-shadow: var(--shadow-card); }
+.sv-badge b { display: block; color: var(--navy); font-size: 14.5px; }
+.sv-badge span { font-size: 12.5px; color: var(--muted); }
+
+/* privacy illustration */
+.privacy-vis { background: #fff; border-radius: 16px; box-shadow: var(--shadow-ui); padding: 18px; animation: drift 12s ease-in-out infinite; }
+.pv-pane { background: #0a2540; border-radius: 12px; padding: 14px 14px 12px; }
+.pv-pane svg { width: 100%; height: auto; display: block; border-radius: 8px; }
+.pv-label { color: #fff; font-size: 13px; font-weight: 600; margin-bottom: 10px; }
+.pv-note { color: #8aa4c0; font-size: 12px; margin-top: 8px; }
+.pv-arrow { text-align: center; margin: 12px 0; position: relative; }
+.pv-arrow span { display: inline-block; font-size: 12.5px; font-weight: 600; color: var(--accent); background: #eef0ff; padding: 5px 12px; border-radius: 999px; }
+.pv-arrow::before { content: "\2193"; display: block; color: var(--accent); font-size: 16px; line-height: 1; margin-bottom: 6px; }
+.pv-data { list-style: none; margin: 0; padding: 0; border: 1px solid var(--line); border-radius: 12px; }
+.pv-data li { display: flex; justify-content: space-between; gap: 12px; padding: 10px 14px; font-size: 14px; }
+.pv-data li + li { border-top: 1px solid var(--line); }
+.pv-data span { color: var(--muted); }
+.pv-data b { color: var(--navy); font-variant-numeric: tabular-nums; }
+.pv-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
+.pv-tags span { font-size: 12.5px; font-weight: 600; color: #047857; background: #ecfdf5; padding: 4px 10px; border-radius: 999px; }
+.pv-tags span::before { content: "\2713  "; }
+
+/* consecutive white sections: don't double the padding */
+.sec:not(.sec-tint):not(.sec-dark):not(.cta) + .sec:not(.sec-tint):not(.sec-dark):not(.cta) { padding-top: 16px; }
