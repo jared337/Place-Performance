@@ -1,0 +1,248 @@
+# Place Performance
+
+> End-to-end people counting and place analytics for councils, universities, government and property owners in Australia: privacy-safe sensors (FootfallCam 3D people counters), design, installation and support by ITESA, and a real-time analytics and AI platform built on Rayven.
+
+Key facts:
+- Measures visitors, entries and exits, live occupancy vs capacity, peak periods, dwell time, repeat visitation, movement between zones, and outdoors pedestrians, cyclists and vehicles.
+- Real-time occupancy refreshes every few seconds; alerts by email, SMS, Microsoft Teams and in-app.
+- Reporting, forecasting, scenario planning, AI insights and a plain-English Place Assistant.
+- Privacy by design: processing on the device, data masked at source, no facial recognition, no personal information collected.
+- Four plan levels: Essentials, Insights, Professional, Executive. Every plan includes sensors, installation, platform and support.
+
+## Pages
+- [People counting & occupancy analytics with AI](https://jared337.github.io/Place-Performance/website/): People counting and occupancy analytics for councils, universities, government and property: sensors, real-time data, alerts, forecasting and AI.
+- [Platform: sensors, analytics & AI](https://jared337.github.io/Place-Performance/website/platform/): How Place Performance works: FootfallCam sensors, ITESA installation and support, edge processing, real-time analytics and AI, as one service.
+- [Real-time occupancy monitoring & alerts](https://jared337.github.io/Place-Performance/website/real-time/): Live occupancy every few seconds, interactive floorplans, heat maps, visitor flow and alerts by email, SMS and Teams for every site and room.
+- [AI insights, forecasting & scenarios](https://jared337.github.io/Place-Performance/website/ai-forecasting/): Forecast visitation and occupancy, test changes with scenario planning, get daily AI recommendations and ask your buildings questions in plain English.
+- [Plans & pricing: Essentials to Executive](https://jared337.github.io/Place-Performance/website/plans/): Compare Place Performance plans, from Essentials to Executive. Every plan includes sensors, installation, platform and support. Start small and grow.
+- [Solutions by sector](https://jared337.github.io/Place-Performance/website/solutions/): How councils, universities, government, property owners, retail precincts and public-realm managers use Place Performance for capacity and planning.
+- [People counting for councils](https://jared337.github.io/Place-Performance/website/solutions/councils/): People counting, crowd capacity monitoring and visitation reporting for councils: libraries, civic centres, events, service desks, shared paths and parks.
+- [Space utilisation for universities](https://jared337.github.io/Place-Performance/website/solutions/universities/): Space utilisation analytics for universities: measure lecture theatre, library and study space use, compare bookings with real occupancy and plan on evidence.
+- [Office occupancy for government](https://jared337.github.io/Place-Performance/website/solutions/government/): Office occupancy analytics for government: right-size property portfolios, understand hybrid attendance, monitor capacity and report transparently.
+- [Occupancy analytics for buildings](https://jared337.github.io/Place-Performance/website/solutions/buildings/): Occupancy analytics for commercial buildings: demand-based cleaning, BMS and HVAC integration, tenant insights and refit ROI, with local support.
+- [Footfall analytics for retail & precincts](https://jared337.github.io/Place-Performance/website/solutions/retail/): Footfall analytics for shopping centres and precincts: visitation by entrance and zone, conversion with POS data, peak staffing and queue monitoring.
+- [Pedestrian & cyclist counting](https://jared337.github.io/Place-Performance/website/solutions/parks-and-streets/): Pedestrian, cyclist and vehicle counting for parks, trails, streets and public spaces, permanent or temporary, with before-and-after project analysis.
+- [Privacy-safe people counting](https://jared337.github.io/Place-Performance/website/privacy-by-design/): How Place Performance counts people anonymously: edge processing, data masked at source, no video stored, no facial recognition and role-based access.
+- [Book a demo](https://jared337.github.io/Place-Performance/website/contact/): Book a 30-minute Place Performance walkthrough and scope a pilot: site survey, sensor plan, installation and live data from your own site within weeks.
+- [People counting & occupancy FAQ](https://jared337.github.io/Place-Performance/website/faq/): Answers to common questions about Place Performance: hardware, installation, privacy, real-time occupancy, alerts, forecasting, AI, plans and pricing.
+
+## Questions and answers
+
+### What is Place Performance?
+Place Performance is an end-to-end people counting and place analytics service. It combines privacy-safe sensors, professional installation, a real-time analytics platform and AI insights so councils, universities, government and property owners can see how their places are used and plan with evidence.
+
+### What does Place Performance measure?
+It measures visitor counts, entries and exits, live occupancy against capacity, peak periods, dwell time, repeat visitation, movement between zones and, outdoors, pedestrians, cyclists and vehicles. Metrics roll up from a single room to a whole portfolio of sites.
+
+### Is the hardware included?
+Yes. FootfallCam 3D people counters and other sensors are selected for each environment, then designed, supplied, installed, commissioned and supported by ITESA in Australia, so you deal with one partner from sensor to insight.
+
+### Does it identify people?
+No. Counting happens on the device and data is masked at source, so only anonymous numbers leave the site. The approach is to measure the place, not the person. See Privacy by design.
+
+### Who is it for?
+It is built for local councils, universities and TAFEs, state and federal government agencies, commercial property owners, shopping centres and precinct managers, and anyone responsible for libraries, civic centres, venues, parks, trails or streets.
+
+### How quickly can we get started?
+Most organisations start with a pilot at one site. After a site survey and sensor plan, a pilot is typically live in weeks rather than months, and you can add sites and capability levels as you grow.
+
+### What hardware does Place Performance use?
+Place Performance uses FootfallCam 3D people counters for entrance and in-space counting, plus specialist sensors for cyclists, vehicles and outdoor areas where needed. ITESA selects the right technology for each environment after assessing it.
+
+### Who installs and supports the sensors?
+ITESA designs, supplies, installs, commissions and supports the complete measurement system in Australia, from the initial site survey through to ongoing maintenance and expansion.
+
+### Does it work outdoors?
+Yes. Deployments can be indoor or outdoor, permanent or temporary, covering buildings, venues, parks, trails, streets and public spaces, including pedestrian, cyclist and vehicle counting.
+
+### What systems does it integrate with?
+It connects to point-of-sale, Wi-Fi analytics, building management systems, GIS, parking and ticketing platforms. Integrations are configured for you, and you control settings such as sync frequency and which data feeds reports.
+
+### Can I see data for a single room as well as a whole portfolio?
+Yes. Data is organised as portfolio, site, space and zone, so you can drill from all your locations to one building, one floor and a single room, with every metric rolling up automatically.
+
+### How accurate is the data?
+Accuracy depends on the sensor and environment, which is why each location is assessed and each device is calibrated during commissioning. Device health monitoring flags drift or outages so data quality stays high.
+
+### How often does occupancy data update?
+Live occupancy refreshes every few seconds on dashboards and floorplans, and sensors typically report counts every minute. Historical views aggregate the same data by hour, day, week, month and year.
+
+### What alerts can I set up?
+You can alert on occupancy above a percentage of capacity, queue wait times, entry and exit imbalances, sensor heartbeat loss, integration sync failures and unusual activity compared with what is expected, each with its own duration, scope and severity.
+
+### How are notifications delivered?
+Notifications can be sent by email, SMS, Microsoft Teams or in-app, to individuals or teams, with optional escalation to another person if an alert is not acknowledged in time.
+
+### Can I see live occupancy on a floorplan?
+Yes. You upload a floorplan for each floor, draw each room or zone as a shape, and every zone then shows its live headcount and is coloured by how full it is.
+
+### What happens if a sensor goes offline?
+Each device sends a regular heartbeat. If it stops, an alert is raised, the device is flagged on your floorplan and device list, and the support team is notified so it can be fixed quickly.
+
+### Can I monitor crowd capacity at events?
+Yes. Temporary counting can be deployed for events to track attendance, entry flow and live crowd numbers against venue limits, with alerts before limits are reached.
+
+### How does visitation forecasting work?
+Forecasts are built from each place's own history, including time of day, day of week and seasonal patterns, to predict visitation and occupancy for the weeks ahead. Each forecast includes a confidence range that widens further into the future.
+
+### What can I ask the Place Assistant?
+You can ask questions such as which rooms are over capacity, when a site is busiest, which sensors are offline, how this week compares with last, or what to focus on. Answers use your live data and link directly to the places they mention.
+
+### Which AI model powers the Place Assistant?
+The Place Assistant uses Claude, a large language model from Anthropic, given a snapshot of the data your role is allowed to see at the time you ask. Contact us for details of data handling for your organisation.
+
+### What is scenario planning?
+Scenario planning lets you change assumptions such as opening hours, capacity, staffing or layout and immediately see the projected effect on visits, peak occupancy, queue times and cost per visit, then save and compare scenarios side by side.
+
+### How are AI insights generated?
+Each morning the platform analyses trends, peaks, capacity breaches and comparisons across your sites and writes plain-language recommendations ranked by impact, each with the supporting evidence and a confidence score.
+
+### Can it help justify capital investment?
+Yes. Forecasts support the business case before you build, and investment analysis compares visitation, dwell and other outcomes before and after a project to show whether it paid off.
+
+### What is included in every plan?
+Every plan includes the sensors, site survey, installation, commissioning, the analytics platform, device health monitoring and ongoing support. Higher levels add capabilities on top of everything in the levels below.
+
+### How is Place Performance priced?
+Pricing is based on the number of sites and devices and the capability level you choose. Contact us for a quote tailored to your locations.
+
+### Can we start small and upgrade later?
+Yes. Many organisations start with Essentials at one or a few sites and move up a level when they are ready. Upgrades add features without replacing hardware or losing history.
+
+### Which level do we need for multiple sites?
+Multi-site portfolio views, site ranking and outlier flags start at Professional (Level 3). Portfolio-wide performance index and external benchmarking are part of Executive (Level 4).
+
+### Which level includes AI and forecasting?
+AI insights, the Place Assistant, forecasting, scenario modelling, investment analysis and board reporting packs are included in Executive (Level 4).
+
+### Can we run a pilot first?
+Yes. A pilot at one site is the most common way to start. It proves accuracy and value with your own data before you commit to a wider rollout.
+
+### Which organisations use Place Performance?
+It is designed for local councils, universities and TAFEs, state and federal government agencies, commercial property owners and managers, shopping centres and precinct operators, and managers of parks, trails and streets.
+
+### What problems does it solve?
+The most common uses are crowd capacity and safety, space utilisation, portfolio rationalisation, demand-based operations such as cleaning and staffing, commercial performance, and measuring active transport and public spaces.
+
+### Can one organisation use it for several purposes?
+Yes. The same sensors and data support safety, utilisation, operations and planning at the same time, and different teams see the views that matter to them.
+
+### How do councils use people counting?
+Councils use people counting to manage crowd capacity and safety in libraries, civic centres and events, to set opening hours and staffing around real demand, to monitor service-desk queues, and to report visitation as evidence for funding and planning.
+
+### Can it monitor crowd capacity at events?
+Yes. Temporary sensors can be deployed for events to track attendance and live crowd numbers at entrances and zones, with alerts to staff before venue limits are reached.
+
+### Does it work for public libraries?
+Yes. Libraries are one of the most common uses: visitor counts, occupancy by area such as reading rooms and children's areas, peak periods, dwell time and study-room utilisation.
+
+### Is people counting in public spaces privacy compliant?
+Counting is anonymous. Processing happens on the device and data is masked at source, so no images or personal information are stored or transmitted, which supports councils' privacy obligations.
+
+### Can it count cyclists and pedestrians on shared paths?
+Yes. ITESA measures pedestrian and cyclist volumes and direction on shared paths, trails and in parks, so active-transport use can be tracked over time.
+
+### Can the data support grant applications?
+Yes. Automated visitation reports provide consistent, independent evidence of how facilities are used, which is useful for grant applications, annual reports and council briefings.
+
+### How do universities measure space utilisation?
+Sensors count how many people are in each room or zone throughout the day. Comparing actual occupancy with capacity and bookings shows true utilisation by room, building and time of week.
+
+### Can it compare bookings with actual use?
+Yes. Measured occupancy can be compared with timetabled or booked use to identify rooms that are booked but empty and classes that need larger or smaller rooms.
+
+### Can students see free study spaces?
+Yes. Live occupancy can be shown on floorplans so students and staff can see which study rooms and library areas have space right now.
+
+### Does it identify individual students?
+No. Counting is anonymous, with processing on the device and no images or personal information collected.
+
+### Can it support capital planning decisions?
+Yes. Utilisation trends and demand forecasts show whether more space is really needed or existing space can be used better, before committing to new buildings.
+
+### How can government agencies right-size office space?
+By measuring actual occupancy on every floor over time, agencies can see average and peak utilisation by day, identify consistently under-used floors and buildings, and consolidate based on evidence rather than headcount or bookings.
+
+### Can it measure hybrid work attendance?
+Yes. Occupancy by floor and day of the week shows hybrid attendance patterns, such as low use on Mondays and Fridays, without tracking individuals.
+
+### Is the data anonymous?
+Yes. Sensors count people without identifying them, with processing on the device and no images or personal information collected.
+
+### Can it support evacuation and safety requirements?
+Live occupancy shows how many people are in each building and floor at any moment, supporting capacity limits and emergency management at public-facing sites.
+
+### Where is the data hosted?
+Hosting arrangements can be discussed to meet your agency's data and security requirements. Contact us with your requirements.
+
+### How can occupancy data reduce building operating costs?
+Occupancy data lets you clean, heat, cool and light spaces based on actual use. Integrating it with a building management system means empty floors are not conditioned, and cleaning is triggered by visits rather than fixed schedules.
+
+### Does it integrate with building management systems?
+Yes. Occupancy can be shared with building management systems such as HVAC and lighting controls, and integrations are configured for you.
+
+### Can tenants see their own data?
+Yes. Access can be limited by site and tenancy, so tenants see occupancy and utilisation for their own space.
+
+### Can it prove the value of a refit?
+Yes. Investment analysis compares occupancy, utilisation and dwell before and after a refit to show whether it achieved its goals.
+
+### How accurate are the sensors?
+FootfallCam 3D counters are calibrated during commissioning, and continuous device health monitoring flags issues early so data stays reliable.
+
+### How do shopping centres use footfall data?
+Shopping centres use footfall data to understand visitation by entrance, zone and time, measure conversion with sales data, rank zones and tenants, staff for peaks, and evaluate the impact of events and campaigns.
+
+### Can footfall be combined with sales data?
+Yes. Point-of-sale integrations combine visitation with sales to calculate conversion and sales per visitor by site and zone.
+
+### Can it measure queue wait times?
+Yes. Queue sensors at service desks and food courts measure queue length and wait time against your targets, with alerts when targets are at risk.
+
+### Does it identify shoppers?
+No. Counting is anonymous, with processing on the device and no images or personal information collected.
+
+### Can it measure the impact of a promotion or event?
+Yes. Comparing footfall, dwell and conversion during a campaign with the expected baseline shows the uplift it created.
+
+### Can you count cyclists and pedestrians on trails?
+Yes. ITESA measures pedestrian and cyclist activity, including volumes and direction, on trails, shared paths and in parks, using technology selected for each outdoor environment.
+
+### Can it count vehicles?
+Yes. Vehicle movement can be measured across roads, access points and car parks, including volumes and direction over time.
+
+### Can sensors be installed temporarily?
+Yes. Temporary deployments are available for events and short studies, as well as permanent installations for ongoing monitoring.
+
+### Can it measure the impact of new infrastructure?
+Yes. Measuring before, during and after a project shows how a new path, crossing or public space has changed how people use the area.
+
+### Do outdoor sensors need mains power and connectivity?
+Power and connectivity are assessed for each location during design, and the technology is chosen to suit what is available, including remote environments.
+
+### Do the sensors record video?
+No video is streamed to or stored by the platform. The sensors process what they see on the device and send only anonymous counts and occupancy numbers.
+
+### Can people be identified?
+No. Data is masked at source and no personal information such as faces or names is collected. The system measures how places are used, not who uses them.
+
+### Does Place Performance use facial recognition?
+No. Place Performance does not use facial recognition and does not identify individuals.
+
+### What data is collected?
+Counts of people entering and leaving, occupancy, dwell time, movement between zones and, where enabled and supported, anonymous demographic estimates. Outdoors it can also count cyclists and vehicles.
+
+### Who can access the data?
+Only users in your organisation with an assigned role. Access can be limited to specific sites, single sign-on can be enforced, and administrative actions are recorded in an audit log.
+
+### Does it support Australian privacy obligations?
+Anonymous, edge-processed counting with minimal data collection is designed to support organisations' obligations under Australian privacy law. Contact us for documentation to support your privacy impact assessment.
+
+### How long does a demo take?
+A walkthrough takes about 30 minutes and focuses on your sector and the questions you want to answer.
+
+### How soon can a pilot be live?
+After a site survey and sensor plan, a pilot at one site is typically live within weeks rather than months.
+
+### Do you work outside major cities?
+Yes. Solutions are designed and supported for Australian conditions, from busy urban spaces to parks, trails, coastal and remote locations.
