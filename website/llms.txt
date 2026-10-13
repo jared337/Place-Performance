@@ -1,6 +1,6 @@
 # Place Performance
 
-> End-to-end people counting and place analytics for councils, universities, government and property owners in Australia: privacy-safe sensors (FootfallCam 3D people counters), design, installation and local support by Place Performance, and a real-time analytics and AI platform built on Rayven.
+> End-to-end people counting and place analytics for councils, universities, government and property owners in Australia: privacy-safe 3D people counting sensors, design, installation and local support by Place Performance, and a real-time analytics and AI platform built on Rayven.
 
 Key facts:
 - Measures visitors, entries and exits, live occupancy vs capacity, peak periods, dwell time, repeat visitation, movement between zones, and outdoors pedestrians, cyclists and vehicles.
@@ -11,7 +11,7 @@ Key facts:
 
 ## Pages
 - [People counting & occupancy analytics with AI](https://jared337.github.io/Place-Performance/website/): People counting and occupancy analytics for councils, universities, government and property: sensors, real-time data, alerts, forecasting and AI.
-- [Platform: sensors, analytics & AI](https://jared337.github.io/Place-Performance/website/platform/): How Place Performance works: FootfallCam sensors, installation and support by our Australian team, edge processing, real-time analytics and AI, as one service.
+- [Platform: sensors, analytics & AI](https://jared337.github.io/Place-Performance/website/platform/): How Place Performance works: 3D sensors, installation and support by our Australian team, edge processing, real-time analytics and AI, as one service.
 - [Real-time occupancy monitoring & alerts](https://jared337.github.io/Place-Performance/website/real-time/): Live occupancy every few seconds, interactive floorplans, heat maps, visitor flow and alerts by email, SMS and Teams for every site and room.
 - [AI insights, forecasting & scenarios](https://jared337.github.io/Place-Performance/website/ai-forecasting/): Forecast visitation and occupancy, test changes with scenario planning, get daily AI recommendations and ask your buildings questions in plain English.
 - [Plans & pricing: Essentials to Executive](https://jared337.github.io/Place-Performance/website/plans/): Compare Place Performance plans, from Essentials to Executive. Every plan includes sensors, installation, platform and support. Start small and grow.
@@ -44,7 +44,7 @@ Place Performance is an end-to-end people counting and place analytics service. 
 It measures visitor counts, entries and exits, live occupancy against capacity, peak periods, dwell time, repeat visitation, movement between zones and, outdoors, pedestrians, cyclists and vehicles. Metrics roll up from a single room to a whole portfolio of sites.
 
 ### Is the hardware included?
-Yes. FootfallCam 3D people counters and other sensors are selected for each environment, then designed, supplied, installed, commissioned and supported by Place Performance in Australia, so you deal with one partner from sensor to insight.
+Yes. 3D people counters and other sensors are selected for each environment, then designed, supplied, installed, commissioned and supported by Place Performance in Australia, so you deal with one partner from sensor to insight.
 
 ### Does it identify people?
 No. Counting happens on the device and data is masked at source, so only anonymous numbers leave the site. The approach is to measure the place, not the person. See Privacy by design.
@@ -56,7 +56,7 @@ It is built for local councils, universities and TAFEs, state and federal govern
 Most organisations start with a pilot at one site. After a site survey and sensor plan, a pilot is typically live in weeks rather than months, and you can add sites and capability levels as you grow.
 
 ### What hardware does Place Performance use?
-Place Performance uses FootfallCam 3D people counters for entrance and in-space counting, plus specialist sensors for cyclists, vehicles and outdoor areas where needed. Our team selects the right technology for each environment after assessing it.
+Place Performance uses commercial-grade 3D people counters for entrance and in-space counting, plus specialist sensors for cyclists, vehicles and outdoor areas where needed. Our team selects the right technology for each environment after assessing it.
 
 ### Who installs and supports the sensors?
 Place Performance designs, supplies, installs, commissions and supports the complete measurement system in Australia, from the initial site survey through to ongoing maintenance and expansion.
@@ -137,7 +137,7 @@ The most common uses are crowd capacity and safety, space utilisation, portfolio
 Start with the sector that matches your organisation, such as councils or universities, or browse by the type of place you manage, such as libraries, campuses or parks.
 
 ### Is the hardware the same in every sector?
-The core technology is the same, but each deployment is designed for its environment. Indoor sites typically use FootfallCam 3D counters, while outdoor sites use sensors chosen for pedestrians, cyclists or vehicles.
+The core technology is the same, but each deployment is designed for its environment. Indoor sites typically use 3D people counters, while outdoor sites use sensors chosen for pedestrians, cyclists or vehicles.
 
 ### Can one organisation use it for several purposes?
 Yes. The same sensors and data support safety, utilisation, operations and planning at the same time, and different teams see the views that matter to them.
@@ -203,7 +203,7 @@ Yes. Access can be limited by site and tenancy, so tenants see occupancy and uti
 Yes. Investment analysis compares occupancy, utilisation and dwell before and after a refit to show whether it achieved its goals.
 
 ### How accurate are the sensors?
-FootfallCam 3D counters are calibrated during commissioning, and continuous device health monitoring flags issues early so data stays reliable.
+The 3D counters are calibrated during commissioning, and continuous device health monitoring flags issues early so data stays reliable.
 
 ### How do shopping centres use footfall data?
 Shopping centres use footfall data to understand visitation by entrance, zone and time, measure conversion with sales data, rank zones and tenants, staff for peaks, and evaluate the impact of events and campaigns.
@@ -407,7 +407,7 @@ Yes. Scheduled reports and board packs summarise attendance, utilisation and tre
 Indoor places such as libraries, university buildings, shopping centres, offices and government buildings, and outdoor places such as streets, laneways, parks, foreshores, trails and event spaces.
 
 ### Are different sensors used indoors and outdoors?
-Yes. Indoors, FootfallCam 3D people counters are typically used at entrances and over zones. Outdoors, sensors are chosen for each environment to count pedestrians, cyclists and vehicles.
+Yes. Indoors, 3D people counters are typically used at entrances and over zones. Outdoors, sensors are chosen for each environment to count pedestrians, cyclists and vehicles.
 
 ### How is a sensor plan chosen for each place?
 Every location starts with a site survey covering entrances, layout, ceiling heights, mounting options, power, connectivity and privacy needs. The sensor plan is then designed around the questions you want to answer.

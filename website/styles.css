@@ -720,3 +720,26 @@ a.fcard:hover { transform: translateY(-4px); box-shadow: var(--shadow-card); }
 .pr-card:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; border-radius: 18px; }
 .dd-panel .dd-all-2 { border-top: 0; margin-top: 0; padding-top: 4px; }
 @media (max-width: 1200px) { .hv-ai { right: -6px; } .shot-overlap { right: 0; } }
+
+/* animated isometric illustrations */
+.illus { margin: 0; background: linear-gradient(180deg, #fbfcfe, #f3f6fa); border-radius: 18px; box-shadow: inset 0 0 0 1px var(--line); overflow: hidden; }
+.illus svg { display: block; width: 100%; height: auto; }
+.illus figcaption { padding: 0 20px 16px; font-size: 14px; color: var(--muted); }
+.iflow { stroke-dasharray: 12 12; animation: iflow 1.1s linear infinite; }
+@keyframes iflow { to { stroke-dashoffset: -24; } }
+@media (prefers-reduced-motion: reduce) { .iflow { animation: none; } }
+
+/* illustration sections, scenario tabs, 3D tilt */
+.sec-illus .sec-head { margin-bottom: 28px; }
+.illus-wide { max-width: 980px; margin: 0 auto; perspective: 1400px; }
+.illus { transform-style: preserve-3d; transition: transform .5s var(--ease), box-shadow .5s; will-change: transform; }
+.illus.tilting { transition: transform .12s linear; box-shadow: 0 30px 60px -30px rgba(10,37,64,.25); }
+.split .illus { box-shadow: var(--shadow-ui); }
+.scn-tabs { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 0 auto 26px; max-width: 900px; }
+.scn-tab { border: 0; cursor: pointer; font: 600 14px/1 var(--font); color: var(--navy); background: var(--tint); padding: 10px 16px; border-radius: 999px; box-shadow: inset 0 0 0 1px var(--line); transition: background .2s, color .2s; }
+.scn-tab:hover { background: #eef0ff; }
+.scn-tab.on { background: var(--navy); color: #fff; box-shadow: none; }
+.scn-stage { max-width: 980px; margin: 0 auto; perspective: 1400px; }
+.scn-panel { display: none; }
+.scn-panel.on { display: block; animation: scnIn .5s var(--ease); }
+@keyframes scnIn { from { opacity: 0; transform: translateY(10px); } }

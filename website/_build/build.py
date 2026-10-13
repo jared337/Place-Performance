@@ -15,6 +15,9 @@ OUT = os.path.dirname(HERE)  # website/
 BASE = 'https://jared337.github.io/Place-Performance/website/'
 APP_URL = 'https://jared337.github.io/Place-Performance/'
 SITE = 'Place Performance'
+import sys
+sys.path.insert(0, HERE)
+from illus import illus  # noqa: E402
 TODAY = date.today().isoformat()
 
 # --------------------------------------------------------------------------
@@ -52,6 +55,10 @@ def guide(eyebrow, h2, blocks, related, cls=''):
     aside = '<aside class="guide-aside"><p class="eyebrow">Related pages</p>' + ''.join(
         '<a href="{R}%s"><b>%s</b><span>%s</span></a>' % r for r in related) + '</aside>'
     return section('<div class="guide reveal"><article class="prose"><p class="eyebrow">%s</p><h2>%s</h2>%s</article>%s</div>' % (eyebrow, h2, art, aside), cls)
+
+
+def in_practice(scene, h2='How it works on site.', lead='Sensors count people as they move through each space. Counting happens on the device, and the numbers appear in the platform within seconds.'):
+    return section(head('In practice', h2, lead) + '<div class="illus-wide reveal">%s</div>' % illus(scene), 'sec-illus')
 
 
 def head(eyebrow, h2, lead='', light=False):
@@ -111,6 +118,7 @@ def page_hero(eyebrow, h1, lead, visual='', crumbs=None, ctas=True):
 
 
 SENSOR_VIS = '<div class="sensor-vis" role="img" aria-label="Ceiling-mounted 3D people counter counting people in and out across an entrance line, processed on the device">\n  <svg viewBox="0 0 420 340" preserveAspectRatio="xMidYMid slice" aria-hidden="true">\n    <defs>\n      <radialGradient id="svBlob"><stop offset="0" stop-color="#22d3ee" stop-opacity=".55"/><stop offset="1" stop-color="#22d3ee" stop-opacity="0"/></radialGradient>\n      <linearGradient id="svCone" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#635bff" stop-opacity=".45"/><stop offset="1" stop-color="#635bff" stop-opacity=".04"/></linearGradient>\n      <pattern id="svGrid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="#1e3a5f" stroke-width="1"/></pattern>\n    </defs>\n    <rect width="420" height="340" fill="#0a2540"/>\n    <rect y="30" width="420" height="310" fill="url(#svGrid)"/>\n    <path d="M210 30 L40 340 L380 340 Z" fill="url(#svCone)"/>\n    <line x1="30" y1="185" x2="390" y2="185" stroke="#f59e0b" stroke-width="2" stroke-dasharray="8 7"/>\n    <text x="34" y="176" fill="#f59e0b" font-size="11" font-weight="600" font-family="Inter,sans-serif">COUNT LINE</text>\n    <g class="sv-p"><circle cx="90" cy="0" r="13" fill="url(#svBlob)"/><circle cx="90" cy="0" r="5" fill="#a5f3fc"/><animateTransform attributeName="transform" type="translate" from="0 40" to="0 300" dur="6s" begin="0s" repeatCount="indefinite"/></g><g class="sv-p"><circle cx="150" cy="0" r="13" fill="url(#svBlob)"/><circle cx="150" cy="0" r="5" fill="#a5f3fc"/><animateTransform attributeName="transform" type="translate" from="0 300" to="0 40" dur="7.5s" begin="-3s" repeatCount="indefinite"/></g><g class="sv-p"><circle cx="215" cy="0" r="13" fill="url(#svBlob)"/><circle cx="215" cy="0" r="5" fill="#a5f3fc"/><animateTransform attributeName="transform" type="translate" from="0 40" to="0 300" dur="5.5s" begin="-1.5s" repeatCount="indefinite"/></g><g class="sv-p"><circle cx="270" cy="0" r="13" fill="url(#svBlob)"/><circle cx="270" cy="0" r="5" fill="#a5f3fc"/><animateTransform attributeName="transform" type="translate" from="0 300" to="0 40" dur="8s" begin="-5s" repeatCount="indefinite"/></g><g class="sv-p"><circle cx="330" cy="0" r="13" fill="url(#svBlob)"/><circle cx="330" cy="0" r="5" fill="#a5f3fc"/><animateTransform attributeName="transform" type="translate" from="0 40" to="0 300" dur="6.5s" begin="-2.2s" repeatCount="indefinite"/></g><g class="sv-p"><circle cx="120" cy="0" r="13" fill="url(#svBlob)"/><circle cx="120" cy="0" r="5" fill="#a5f3fc"/><animateTransform attributeName="transform" type="translate" from="0 300" to="0 40" dur="9s" begin="-6s" repeatCount="indefinite"/></g><g class="sv-p"><circle cx="300" cy="0" r="13" fill="url(#svBlob)"/><circle cx="300" cy="0" r="5" fill="#a5f3fc"/><animateTransform attributeName="transform" type="translate" from="0 40" to="0 300" dur="7s" begin="-4s" repeatCount="indefinite"/></g>\n    <rect width="420" height="30" fill="#132f4f"/>\n    <rect x="178" y="18" width="64" height="22" rx="8" fill="#e8edf5"/>\n    <circle cx="198" cy="29" r="5" fill="#0a2540"/><circle cx="222" cy="29" r="5" fill="#0a2540"/>\n    <circle cx="198" cy="29" r="2" fill="#22d3ee"/><circle cx="222" cy="29" r="2" fill="#22d3ee"/>\n  </svg>\n  <div class="sv-chip sv-in"><small>In today</small><b class="js-tick" data-base="1284" data-jitter="3">1,284</b></div>\n  <div class="sv-chip sv-out"><small>Out today</small><b class="js-tick" data-base="1197" data-jitter="3">1,197</b></div>\n  <div class="sv-badge"><b>Counted on the device</b><span>3D depth sensing &middot; no images leave the site</span></div>\n</div>'
+SENSOR_VIS = illus('entrance')
 PRIVACY_VIS = '<div class="privacy-vis" role="img" aria-label="What the sensor sees is anonymous depth data processed on the device; only counts leave the site">\n  <div class="pv-pane">\n    <p class="pv-label">What the sensor sees</p>\n    <svg viewBox="0 0 400 170" aria-hidden="true">\n      <defs><radialGradient id="pvB"><stop offset="0" stop-color="#22d3ee" stop-opacity=".8"/><stop offset=".55" stop-color="#635bff" stop-opacity=".35"/><stop offset="1" stop-color="#635bff" stop-opacity="0"/></radialGradient>\n      <pattern id="pvG" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#1e3a5f"/></pattern></defs>\n      <rect width="400" height="170" fill="url(#pvG)"/>\n      <g><ellipse cx="80" cy="70" rx="30" ry="26" fill="url(#pvB)"/><ellipse cx="160" cy="112" rx="30" ry="26" fill="url(#pvB)"/><ellipse cx="250" cy="60" rx="30" ry="26" fill="url(#pvB)"/><ellipse cx="320" cy="118" rx="30" ry="26" fill="url(#pvB)"/>\n      <animateTransform attributeName="transform" type="translate" values="0 0;10 4;0 0" dur="6s" repeatCount="indefinite"/></g>\n    </svg>\n    <p class="pv-note">Anonymous 3D depth shapes, processed and discarded on the device</p>\n  </div>\n  <div class="pv-arrow"><span>Only numbers leave the site</span></div>\n  <ul class="pv-data">\n    <li><span>Reading Room</span><b>23 people &middot; 58%</b></li>\n    <li><span>Main entrance</span><b>In 412 &middot; Out 377</b></li>\n    <li><span>Average dwell</span><b>38 min</b></li>\n  </ul>\n  <div class="pv-tags"><span>No images</span><span>No faces</span><span>No identities</span></div>\n</div>'
 
 
@@ -158,7 +166,7 @@ FOOTER = '''<footer class="foot">
   <div class="wrap foot-in">
     <div>
       <a class="logo" href="{R}"><span class="logo-mark">PP</span>Place Performance</a>
-      <p class="muted">Sensors, software and AI for places that matter.<br>Hardware by FootfallCam. Design, install, support and platform by Place Performance.</p>
+      <p class="muted">Sensors, software and AI for places that matter.<br>Hardware, installation, support and platform, delivered by one Australian team.</p>
     </div>
     <div class="foot-cols">
       <div><b>Platform</b><a href="{R}platform/">Platform overview</a><a href="{R}real-time/">Real time</a><a href="{R}ai-forecasting/">AI &amp; forecasting</a><a href="{R}plans/">Plans</a><a href="{APP}" target="_blank" rel="noopener">Live demo</a></div>
@@ -224,12 +232,14 @@ def page(slug, title, desc, body, faqs=None, crumbs=None, service=None, audience
 HOME_FAQS = [
     ('What is Place Performance?', 'Place Performance is an end-to-end people counting and place analytics service. It combines privacy-safe sensors, professional installation, a real-time analytics platform and AI insights so councils, universities, government and property owners can see how their places are used and plan with evidence.'),
     ('What does Place Performance measure?', 'It measures visitor counts, entries and exits, live occupancy against capacity, peak periods, dwell time, repeat visitation, movement between zones and, outdoors, pedestrians, cyclists and vehicles. Metrics roll up from a single room to a whole portfolio of sites.'),
-    ('Is the hardware included?', 'Yes. FootfallCam 3D people counters and other sensors are selected for each environment, then designed, supplied, installed, commissioned and supported by Place Performance in Australia, so you deal with one partner from sensor to insight.'),
+    ('Is the hardware included?', 'Yes. 3D people counters and other sensors are selected for each environment, then designed, supplied, installed, commissioned and supported by Place Performance in Australia, so you deal with one partner from sensor to insight.'),
     ('Does it identify people?', 'No. Counting happens on the device and data is masked at source, so only anonymous numbers leave the site. The approach is to measure the place, not the person. See <a href="{R}privacy-by-design/">Privacy by design</a>.'),
     ('Who is it for?', 'It is built for local councils, universities and TAFEs, state and federal government agencies, commercial property owners, shopping centres and precinct managers, and anyone responsible for libraries, civic centres, venues, parks, trails or streets.'),
     ('How quickly can we get started?', 'Most organisations start with a pilot at one site. After a site survey and sensor plan, a pilot is typically live in weeks rather than months, and you can add sites and capability levels as you grow.'),
 ]
 home_body = open(os.path.join(HERE, 'home.html'), encoding='utf-8').read().replace('{SENSOR_VIS}', SENSOR_VIS)
+for _k in ('library', 'campus', 'shopping', 'venue', 'street', 'park', 'office', 'service'):
+    home_body = home_body.replace('{ILLUS_%s}' % _k.upper(), illus(_k))
 page('', 'People counting & occupancy analytics with AI | Place Performance',
      'People counting and occupancy analytics for councils, universities, government and property: sensors, real-time data, alerts, forecasting and AI.',
      home_body, HOME_FAQS, nav_key='home')
@@ -242,7 +252,7 @@ platform_body = (
               [('Home', '{R}'), ('Platform', None)]) +
     section(head('How it works', 'Four layers, delivered as one service.') + '''
     <div class="pipeline reveal">
-      <div class="pipe-step"><div class="pipe-ico"><svg viewBox="0 0 24 24"><path d="M4 7h11l3-3v16l-3-3H4z"/><circle cx="9" cy="12" r="2.5"/></svg></div><h3>1. Sensors</h3><p>FootfallCam 3D people counters at entrances and in spaces, plus specialist sensors for cyclists, vehicles and outdoor areas.</p></div>
+      <div class="pipe-step"><div class="pipe-ico"><svg viewBox="0 0 24 24"><path d="M4 7h11l3-3v16l-3-3H4z"/><circle cx="9" cy="12" r="2.5"/></svg></div><h3>1. Sensors</h3><p>3D people counters at entrances and in spaces, plus specialist sensors for cyclists, vehicles and outdoor areas.</p></div>
       <div class="pipe-flow"><span></span><span></span><span></span></div>
       <div class="pipe-step"><div class="pipe-ico"><svg viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="2"/><path d="M9 9h6v6H9zM9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg></div><h3>2. Edge processing</h3><p>Counting happens on the device and data is masked at source. Only anonymous counts are sent onward.</p></div>
       <div class="pipe-flow"><span></span><span></span><span></span></div>
@@ -253,11 +263,12 @@ platform_body = (
     section(split(SENSOR_VIS,
                   copy('Hardware included', 'We start with your question, not with a device.',
                        'Every place is different. Before anything is installed, our team assesses the environment, movement patterns, coverage, connectivity, power and privacy needs, then selects the technology that fits.',
-                       '<ol class="steps-list"><li><b>Assess.</b> What do you need to understand, and where? Entrances, floors, rooms, paths, roads or open spaces.</li><li><b>Select.</b> FootfallCam 3D counters for entrances and areas, plus specialist sensors for cyclists, vehicles and outdoor spaces.</li><li><b>Install and commission.</b> Designed, supplied, installed and calibrated by our Australian team, permanent or temporary.</li><li><b>Support.</b> Every device reports a heartbeat. Local experts keep the system accurate and expand it as your needs change.</li></ol>'))) +
-    section(head('Partners', 'Proven hardware, local expertise and an intelligent platform, delivered together.') + '''
-    <div class="partner-grid reveal">
-      <div class="partner"><span class="partner-role">Sensing hardware</span><h4>FootfallCam</h4><p>3D people counters designed and manufactured in the UK since 2002. Entrance and in-space counting with all processing at the edge and no personal data collected.</p><a class="link-arrow" href="https://www.footfallcam.com/" target="_blank" rel="noopener">footfallcam.com</a></div>
-      <div class="partner"><span class="partner-role">Design, install &amp; support + Analytics &amp; AI platform</span><h4>Place Performance</h4><p>Our Australian team designs, installs and supports the complete system, from site survey to ongoing maintenance. Then the platform turns the data into real-time dashboards, live floorplans, alerts, reporting, forecasting and AI insights across every site, space and zone.</p><a class="link-arrow" href="{APP}" target="_blank" rel="noopener">Try the live demo</a></div>
+                       '<ol class="steps-list"><li><b>Assess.</b> What do you need to understand, and where? Entrances, floors, rooms, paths, roads or open spaces.</li><li><b>Select.</b> 3D people counters for entrances and areas, plus specialist sensors for cyclists, vehicles and outdoor spaces.</li><li><b>Install and commission.</b> Designed, supplied, installed and calibrated by our Australian team, permanent or temporary.</li><li><b>Support.</b> Every device reports a heartbeat. Local experts keep the system accurate and expand it as your needs change.</li></ol>'))) +
+    section(head('One service', 'Proven hardware, local expertise and an intelligent platform, delivered together.') + '''
+    <div class="pillar-grid reveal">
+      <div class="partner"><span class="partner-role">Proven hardware</span><h4>3D people counters</h4><p>Commercial-grade 3D sensors with all processing on the device and no personal data collected, plus specialist sensors for cyclists, vehicles and outdoor spaces.</p><a class="link-arrow" href="{R}privacy-by-design/">How counting stays anonymous</a></div>
+      <div class="partner"><span class="partner-role">Local expertise</span><h4>Australian team</h4><p>We survey, design, install, calibrate and support every deployment, from the first site visit to ongoing maintenance and expansion.</p><a class="link-arrow" href="{R}platform/">How we deliver</a></div>
+      <div class="partner"><span class="partner-role">Intelligent platform</span><h4>Place Performance</h4><p>Real-time dashboards, live floorplans, alerts, reporting, forecasting and AI insights across every site, space and zone.</p><a class="link-arrow" href="{APP}" target="_blank" rel="noopener">Try the live demo</a></div>
     </div>''', 'sec-tint') +
     section(head('Capabilities', 'Everything you need to measure, understand and act.') + cards([
         ('Live occupancy', 'People present now against capacity, refreshed every few seconds.', '{R}real-time/'),
@@ -274,10 +285,10 @@ platform_body = (
         ('Security &amp; access', 'Roles, site-level permissions, single sign-on and an audit log.', '{R}privacy-by-design/'),
     ])) +
     section('<div class="tour reveal"><div class="tour-copy"><span class="tour-num">Reporting</span><h3>Reports that run themselves</h3><p>Weekly visitation summaries, monthly capacity reports and device health, scheduled to the right inboxes. Board-ready executive packs are generated each quarter.</p></div>' + shot('report', 'Weekly visitation summary report') + '</div>'
-            '<div class="tour tour-rev reveal"><div class="tour-copy"><span class="tour-num">Device health</span><h3>Data you can trust</h3><p>See every sensor on your floorplans with its live status. When a device goes quiet you are alerted, and the support team is already on it.</p></div>' + shot('device', 'Device record showing a FootfallCam Pro2 counter located on the floorplan') + '</div>', 'sec-tint')
+            '<div class="tour tour-rev reveal"><div class="tour-copy"><span class="tour-num">Device health</span><h3>Data you can trust</h3><p>See every sensor on your floorplans with its live status. When a device goes quiet you are alerted, and the support team is already on it.</p></div>' + shot('device', 'Device record showing a 3D people counter located on the floorplan') + '</div>', 'sec-tint')
 )
 PLATFORM_FAQS = [
-    ('What hardware does Place Performance use?', 'Place Performance uses FootfallCam 3D people counters for entrance and in-space counting, plus specialist sensors for cyclists, vehicles and outdoor areas where needed. Our team selects the right technology for each environment after assessing it.'),
+    ('What hardware does Place Performance use?', 'Place Performance uses commercial-grade 3D people counters for entrance and in-space counting, plus specialist sensors for cyclists, vehicles and outdoor areas where needed. Our team selects the right technology for each environment after assessing it.'),
     ('Who installs and supports the sensors?', 'Place Performance designs, supplies, installs, commissions and supports the complete measurement system in Australia, from the initial site survey through to ongoing maintenance and expansion.'),
     ('Does it work outdoors?', 'Yes. Deployments can be indoor or outdoor, permanent or temporary, covering buildings, venues, parks, trails, streets and public spaces, including pedestrian, cyclist and vehicle counting.'),
     ('What systems does it integrate with?', 'It connects to point-of-sale, Wi-Fi analytics, building management systems, GIS, parking and ticketing platforms. Integrations are configured for you, and you control settings such as sync frequency and which data feeds reports.'),
@@ -285,7 +296,7 @@ PLATFORM_FAQS = [
     ('How accurate is the data?', 'Accuracy depends on the sensor and environment, which is why each location is assessed and each device is calibrated during commissioning. Device health monitoring flags drift or outages so data quality stays high.'),
 ]
 page('platform', 'Platform: sensors, analytics & AI | Place Performance',
-     'How Place Performance works: FootfallCam sensors, installation and support by our Australian team, edge processing, real-time analytics and AI, as one service.',
+     'How Place Performance works: 3D sensors, installation and support by our Australian team, edge processing, real-time analytics and AI, as one service.',
      platform_body, PLATFORM_FAQS, [('Home', ''), ('Platform', 'platform/')])
 
 # ---------------- Real time ----------------
@@ -306,6 +317,7 @@ realtime_body = (
         </div>
       </div></div></section>''' +
     section(split(shot('heatmap', 'Heat map of a zone replayed through the day'), copy('Inside each space', 'Heat maps and visitor flow.', 'See where people concentrate within a room and replay the day hour by hour. Visitor flow traces the most common paths between entrances and zones, so you can fix pinch points and place services where people go.'))) +
+    in_practice('venue', 'Crowd capacity, live.', 'Counters at every gate measure arrivals as they happen, zone occupancy is compared with each limit, and the right team is alerted before an area fills.') +
     section('<div class="alert-band alert-band-light reveal"><div class="alert-copy"><p class="eyebrow">Alerts &amp; notifications</p><h3>Know before the queue forms or the room overflows.</h3><p>Set thresholds on occupancy, wait times, sensor health or anything unusual. The right people are notified by email, SMS, Teams or in-app, with escalation if nobody responds.</p><div class="toast-stack" id="toast-stack"></div></div>' + shot('alerts', 'Alerts feed and alert rules', 'tilt') + '</div>', 'sec-tint') +
     section(head('What you can monitor', 'Real-time signals that matter.') + cards([
         ('Occupancy vs capacity', 'Live counts against fire, venue or comfort limits for every zone.'),
@@ -429,7 +441,7 @@ SOL_FAQS = [
     ('Which organisations use Place Performance?', 'It is designed for local councils, universities and TAFEs, state and federal government agencies, commercial property owners and managers, shopping centres and precinct operators, and managers of parks, trails and streets.'),
     ('What problems does it solve?', 'The most common uses are crowd capacity and safety, space utilisation, portfolio rationalisation, demand-based operations such as cleaning and staffing, commercial performance, and measuring active transport and public spaces.'),
     ('Which sector page should I start with?', 'Start with the sector that matches your organisation, such as councils or universities, or browse by the type of place you manage, such as libraries, campuses or parks.'),
-    ('Is the hardware the same in every sector?', 'The core technology is the same, but each deployment is designed for its environment. Indoor sites typically use FootfallCam 3D counters, while outdoor sites use sensors chosen for pedestrians, cyclists or vehicles.'),
+    ('Is the hardware the same in every sector?', 'The core technology is the same, but each deployment is designed for its environment. Indoor sites typically use 3D people counters, while outdoor sites use sensors chosen for pedestrians, cyclists or vehicles.'),
     ('Can one organisation use it for several purposes?', 'Yes. The same sensors and data support safety, utilisation, operations and planning at the same time, and different teams see the views that matter to them.'),
 ]
 page('solutions', 'Solutions by sector | Place Performance',
@@ -437,10 +449,14 @@ page('solutions', 'Solutions by sector | Place Performance',
      sol_hub, SOL_FAQS, [('Home', ''), ('Solutions', 'solutions/')], nav_key='solutions')
 
 # ---------------- Individual solutions ----------------
+SECTOR_SCENE = {'councils': 'library', 'universities': 'campus', 'government': 'service', 'buildings': 'office', 'retail': 'shopping', 'parks-and-streets': 'park'}
+
+
 def solution(slug, name, h1, lead, img, img_alt, shot1, shot1_alt, shot2, shot2_alt, outcomes, metrics, scenarios, faqs, desc, service, audience):
     body = (
         page_hero(name, h1, lead, photo(img, img_alt), [('Home', '{R}'), ('Solutions', '{R}solutions/'), (name, None)]) +
         section(head('Outcomes', 'What you can achieve.') + ticks(outcomes, 'ticks-grid reveal')) +
+        in_practice(SECTOR_SCENE[slug]) +
         section(split(shot(shot1, shot1_alt), copy('In the platform', scenarios[0][0], scenarios[0][1])) +
                 '<div style="height:80px"></div>' +
                 split(copy('In the platform', scenarios[1][0], scenarios[1][1]), shot(shot2, shot2_alt), True), 'sec-tint') +
@@ -533,7 +549,7 @@ solution('buildings', 'Buildings &amp; property', 'Occupancy analytics for comme
           ('Does it integrate with building management systems?', 'Yes. Occupancy can be shared with building management systems such as HVAC and lighting controls, and integrations are configured for you.'),
           ('Can tenants see their own data?', 'Yes. Access can be limited by site and tenancy, so tenants see occupancy and utilisation for their own space.'),
           ('Can it prove the value of a refit?', 'Yes. Investment analysis compares occupancy, utilisation and dwell before and after a refit to show whether it achieved its goals.'),
-          ('How accurate are the sensors?', 'FootfallCam 3D counters are calibrated during commissioning, and continuous device health monitoring flags issues early so data stays reliable.')],
+          ('How accurate are the sensors?', 'The 3D counters are calibrated during commissioning, and continuous device health monitoring flags issues early so data stays reliable.')],
          'Occupancy analytics for commercial buildings: demand-based cleaning, BMS and HVAC integration, tenant insights and refit ROI, with local support.', 'Occupancy analytics for commercial buildings', 'Property owners and managers')
 
 solution('retail', 'Retail &amp; precincts', 'Footfall analytics for shopping centres and precincts.',
@@ -724,7 +740,7 @@ with open(os.path.join(OUT, 'robots.txt'), 'w', encoding='utf-8', newline='\n') 
     f.write('User-agent: *\nAllow: /\n\nSitemap: %ssitemap.xml\n' % BASE)
 
 with open(os.path.join(OUT, 'llms.txt'), 'w', encoding='utf-8', newline='\n') as f:
-    f.write('# Place Performance\n\n> End-to-end people counting and place analytics for councils, universities, government and property owners in Australia: privacy-safe sensors (FootfallCam 3D people counters), design, installation and local support by Place Performance, and a real-time analytics and AI platform built on Rayven.\n\n')
+    f.write('# Place Performance\n\n> End-to-end people counting and place analytics for councils, universities, government and property owners in Australia: privacy-safe 3D people counting sensors, design, installation and local support by Place Performance, and a real-time analytics and AI platform built on Rayven.\n\n')
     f.write('Key facts:\n- Measures visitors, entries and exits, live occupancy vs capacity, peak periods, dwell time, repeat visitation, movement between zones, and outdoors pedestrians, cyclists and vehicles.\n- Real-time occupancy refreshes every few seconds; alerts by email, SMS, Microsoft Teams and in-app.\n- Reporting, forecasting, scenario planning, AI insights and a plain-English Place Assistant.\n- Privacy by design: processing on the device, data masked at source, no facial recognition, no personal information collected.\n- Four plan levels: Essentials, Insights, Professional, Executive. Every plan includes sensors, installation, platform and support.\n\n')
     f.write('## Pages\n')
     for u, p in zip(urls, PAGES):

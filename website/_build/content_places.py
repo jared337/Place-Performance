@@ -13,6 +13,7 @@ PLACES = [
     ('government-buildings', 'Government', 'Canberra, ACT', 'Portfolio occupancy', 'government', 'Parliament House in Canberra'),
 ]
 PLACE_BY = {p[0]: p for p in PLACES}
+PLACE_SCENE = {'campuses': 'campus', 'libraries': 'library', 'shopping-centres': 'shopping', 'stadiums-and-venues': 'venue', 'streets-and-laneways': 'street', 'parks-and-foreshores': 'park', 'office-towers': 'office', 'government-buildings': 'service'}
 
 EXTRA_BLOCKS = {
     'campuses': ('Typical uses on campus', 'Estates teams use utilisation data to consolidate under-used rooms, timetabling teams to match class sizes to rooms, library teams to plan exam-period hours, and student services to publish live study space. Facilities teams use visit counts to schedule cleaning in high-traffic buildings, and safety teams use live occupancy for large lecture theatres and event spaces.'),
@@ -52,6 +53,7 @@ def place_page(slug, h1, lead, seo_title, desc, why_h2, why, measures, shot_spec
     body = (
         page_hero(name, h1, lead, photo(img, alt, (tag, 'Pictured: ' + city)), [('Home', '{R}'), ('Places', '{R}places/'), (name, None)]) +
         guide('Why measure', why_h2, why, related[:5]) +
+        in_practice(PLACE_SCENE[slug]) +
         section(head('What you can measure', 'The numbers that matter here.') + cards(measures), 'sec-tint') +
         section(split(shot(s_src, s_alt), copy('In the platform', s_h3, s_p))) +
         section('<div class="install-grid reveal"><div>' + head('How it is installed', 'From site survey to live data.', 'Our Australian team designs, installs and supports every deployment, so you deal with one partner from the first survey to ongoing maintenance.') +
@@ -64,7 +66,7 @@ def place_page(slug, h1, lead, seo_title, desc, why_h2, why, measures, shot_spec
 
 
 INSTALL_INDOOR = [('Survey.', 'We assess entrances, ceiling heights, layout, lighting, power, network and privacy needs.'),
-                  ('Design.', 'A sensor plan places FootfallCam 3D counters at entrances and over the zones you want to measure.'),
+                  ('Design.', 'A sensor plan places 3D people counters at entrances and over the zones you want to measure.'),
                   ('Install and calibrate.', 'Devices are installed, commissioned and checked for accuracy against manual counts.'),
                   ('Support.', 'Every device reports a heartbeat, and our team is alerted if one needs attention.')]
 
@@ -283,7 +285,7 @@ places_hub = (
 )
 PLACES_FAQS = [
     ('What kinds of places can Place Performance measure?', 'Indoor places such as libraries, university buildings, shopping centres, offices and government buildings, and outdoor places such as streets, laneways, parks, foreshores, trails and event spaces.'),
-    ('Are different sensors used indoors and outdoors?', 'Yes. Indoors, FootfallCam 3D people counters are typically used at entrances and over zones. Outdoors, sensors are chosen for each environment to count pedestrians, cyclists and vehicles.'),
+    ('Are different sensors used indoors and outdoors?', 'Yes. Indoors, 3D people counters are typically used at entrances and over zones. Outdoors, sensors are chosen for each environment to count pedestrians, cyclists and vehicles.'),
     ('How is a sensor plan chosen for each place?', 'Every location starts with a site survey covering entrances, layout, ceiling heights, mounting options, power, connectivity and privacy needs. The sensor plan is then designed around the questions you want to answer.'),
     ('Can temporary counting be used for events?', 'Yes. Temporary deployments suit festivals, markets and short studies, alongside permanent installations for ongoing monitoring.'),
     ('Can one organisation measure several types of place?', 'Yes. All places appear in one platform with consistent metrics, so different kinds of site can be compared side by side.'),

@@ -14,6 +14,43 @@
     });
   }
 
+
+  /* ---------------- Illustration counters (synchronised with SMIL walkers) ---------------- */
+  document.querySelectorAll('[data-inc]').forEach(function (el) {
+    var parts = el.getAttribute('data-inc').split(','), period = parseFloat(parts[0]) * 1000, first = parseFloat(parts[1]) * 1000;
+    var n = parseInt(el.textContent.replace(/[^0-9]/g, ''), 10) || 0;
+    var bump = function () { n += 1; el.textContent = fmt(n); };
+    first = ((first % period) + period) % period;
+    setTimeout(function () { bump(); setInterval(bump, period); }, first);
+  });
+
+
+  /* ---------------- Scenario tabs + 3D tilt on illustrations ---------------- */
+  var scnTabs = [].slice.call(document.querySelectorAll('.scn-tab'));
+  if (scnTabs.length) {
+    var auto = true;
+    var showScn = function (k) {
+      scnTabs.forEach(function (t) { var on = t.dataset.scn === k; t.classList.toggle('on', on); t.setAttribute('aria-selected', on); });
+      document.querySelectorAll('.scn-panel').forEach(function (p) { p.classList.toggle('on', p.dataset.scn === k); });
+    };
+    scnTabs.forEach(function (t) { t.addEventListener('click', function () { auto = false; showScn(t.dataset.scn); }); });
+    if (!reduce) setInterval(function () {
+      if (!auto) return;
+      var i = scnTabs.findIndex(function (t) { return t.classList.contains('on'); });
+      showScn(scnTabs[(i + 1) % scnTabs.length].dataset.scn);
+    }, 9000);
+  }
+  if (!reduce && window.matchMedia('(hover: hover)').matches) {
+    document.querySelectorAll('.illus').forEach(function (el) {
+      el.addEventListener('mousemove', function (e) {
+        var r = el.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+        el.classList.add('tilting');
+        el.style.transform = 'rotateX(' + (-y * 7).toFixed(2) + 'deg) rotateY(' + (x * 9).toFixed(2) + 'deg)';
+      });
+      el.addEventListener('mouseleave', function () { el.classList.remove('tilting'); el.style.transform = ''; });
+    });
+  }
+
   /* ---------------- Nav ---------------- */
   var nav = document.getElementById('nav');
   var onScroll = function () { nav.classList.toggle('scrolled', window.scrollY > 10); };

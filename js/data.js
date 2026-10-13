@@ -437,9 +437,9 @@ PP.tickOccupancy = function () {
 
 /* ---------------- Devices ---------------- */
 PP.DEVICE_TYPES = {
-  counter: { label: '3D people counter', model: 'FootfallCam Pro2' },
+  counter: { label: '3D people counter', model: 'PC-3D Pro' },
   thermal: { label: 'Thermal occupancy sensor', model: 'Thermal area sensor' },
-  queue: { label: 'Queue analytics sensor', model: 'FootfallCam Pro2 (queue)' },
+  queue: { label: 'Queue analytics sensor', model: 'PC-3D Queue' },
   wifi: { label: 'Wi-Fi presence sensor', model: 'Wi-Fi presence sensor' },
   demo: { label: 'Demographics sensor (anonymised)', model: 'AI vision sensor' }
 };
