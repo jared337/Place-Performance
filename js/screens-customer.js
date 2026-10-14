@@ -28,7 +28,6 @@ PP.S.login = function () {
       '<div class="login-err" id="login-err" role="alert" hidden>Incorrect password. Please try again.</div>' +
       '<label class="switch small"><input type="checkbox" checked><span class="track"></span>Keep me signed in</label>' +
       '<button class="btn btn-brand" data-action="login-submit">Sign in</button>' +
-      (PP.state.level >= 3 ? '<div class="divider">or</div><button class="btn" data-action="login-sso">' + PP.icon('shield') + 'Sign in with SSO</button><div class="tiny muted">SSO is configured by your administrator in User Profile (Level 3+).</div>' : '') +
       '</div>';
   }
   return '<div class="login-wrap"><div class="login-art">' + art +
@@ -52,7 +51,6 @@ PP.actions['login-submit'] = function () {
   if (err) err.hidden = false;
   if (pw) { pw.classList.add('input-err'); pw.value = ''; pw.focus(); }
 };
-PP.actions['login-sso'] = function () { PP.toast('SSO is not available in this demo. Sign in with your password.'); };
 document.addEventListener('keydown', function (e) {
   if (e.key === 'Enter' && e.target && (e.target.id === 'login-pw' || e.target.id === 'login-email')) { e.preventDefault(); PP.actions['login-submit'](); }
 });
