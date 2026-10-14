@@ -952,21 +952,10 @@ PP.S.profile = function () {
     body: '<div class="grid g-2"><div class="form"><div class="row"><span class="avatar" style="width:56px;height:56px;font-size:18px;background:' + me.color + '">' + PP.initials(me.who) + '</span><button class="btn btn-sm">' + PP.icon('upload') + 'Change photo</button></div>' +
       '<label class="field"><span>Full name</span><input class="input" value="' + me.who + '"></label><label class="field"><span>Email</span><input class="input" value="' + me.email + '"></label><label class="field"><span>Mobile</span><input class="input" value="+61 4•• ••• 218"></label>' +
       '<button class="btn" style="justify-self:start" data-action="toast" data-msg="Password change email sent">' + PP.icon('key') + 'Change password</button></div>' +
-      '<div><div class="small strong" style="margin-bottom:8px">Notifications</div><table class="tbl"><thead><tr><th>Alert type</th><th>Email</th><th>SMS</th><th>In-app</th></tr></thead><tbody>' +
-      [['High severity', 1, 1, 1], ['Medium severity', 1, 0, 1], ['Low severity', 0, 0, 1], ['Device offline', 1, 0, 1], ['Scheduled reports', 1, 0, 0]].map(function (r) { return '<tr><td>' + r[0] + '</td>' + [1, 2, 3].map(function (i) { return '<td><input type="checkbox"' + (r[i] ? ' checked' : '') + ' style="accent-color:var(--accent)"></td>'; }).join('') + '</tr>'; }).join('') +
+      '<div><div class="small strong" style="margin-bottom:8px">Notifications</div><table class="tbl"><thead><tr><th>Alert type</th><th>Email</th><th>SMS</th></tr></thead><tbody>' +
+      [['High severity', 1, 1, 1], ['Medium severity', 1, 0, 1], ['Low severity', 0, 0, 1], ['Device offline', 1, 0, 1], ['Scheduled reports', 1, 0, 0]].map(function (r) { return '<tr><td>' + r[0] + '</td>' + [1, 2].map(function (i) { return '<td><input type="checkbox"' + (r[i] ? ' checked' : '') + ' style="accent-color:var(--accent)"></td>'; }).join('') + '</tr>'; }).join('') +
       '</tbody></table><div class="mt">' + PP.switchHtml('Weekly digest email', true) + '</div><div class="mt-s">' + PP.switchHtml('Quiet hours 10pm–7am', true) + '</div></div></div>',
     footer: '<button class="btn btn-primary" data-action="toast" data-msg="Profile saved">Save</button>'
   });
-  var sso = PP.card('sso', {
-    sub: 'Let users sign in through your organisation\'s identity provider, common for universities and councils',
-    body: '<div class="grid g-2"><div class="form"><label class="field"><span>Identity provider</span><select class="select"><option>Microsoft Entra ID (Azure AD)</option><option>Okta</option><option>Google Workspace</option><option>Generic SAML 2.0</option><option>Generic OIDC</option></select></label>' +
-      '<label class="field"><span>Metadata URL</span><input class="input mono" value="https://login.microsoftonline.com/meridianpg/federationmetadata.xml"></label>' +
-      '<label class="field"><span>Entity ID</span><input class="input mono" value="urn:placeperformance:meridian"></label>' +
-      '<label class="field"><span>Signing certificate</span><div class="row"><span class="pill">meridian-sso-2026.cer · expires 14 Mar 2027</span><button class="btn btn-sm">' + PP.icon('upload') + 'Replace</button></div></label></div>' +
-      '<div class="form"><div class="field"><span>Status</span>' + PP.switchHtml('Enable single sign-on', true) + '</div><div class="field">' + PP.switchHtml('Require SSO for all users (disable passwords)', false) + '<small>Keep at least one password admin until SSO is tested.</small></div>' +
-      '<label class="field"><span>Default role for new SSO users</span><select class="select"><option>Executive (read-only)</option><option>Portfolio Manager</option></select></label>' +
-      '<label class="field"><span>Allowed email domains</span><input class="input" value="meridianpg.com.au"></label></div></div>',
-    footer: '<button class="btn" data-action="toast" data-msg="Test sign-in succeeded">Test connection</button><button class="btn btn-primary" data-action="toast" data-msg="SSO settings saved">Save SSO settings</button>'
-  });
-  return PP.pageHead({ title: 'User Profile', screen: 'profile', sub: 'Your personal settings, separate from organisation-wide administration.' }) + '<div class="stack">' + personal + sso + '</div>';
+  return PP.pageHead({ title: 'User Profile', screen: 'profile', sub: 'Your personal settings, separate from organisation-wide administration.' }) + '<div class="stack">' + personal + '</div>';
 };
