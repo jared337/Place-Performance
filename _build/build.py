@@ -96,7 +96,7 @@ def cta_band():
   <canvas id="gradient2" class="hero-gradient" aria-hidden="true"></canvas>
   <div class="wrap cta-in cta-in-band">
     <div class="cta-copy"><h2>See your places in a new light.</h2><p>Book a 30-minute walkthrough and we'll scope a pilot for one of your sites: sensors, installation, software and insights in one agreement.</p></div>
-    <div class="cta-actions"><a class="btn btn-white btn-lg" href="{R}contact/">Book a demo <i class="arr"></i></a><a class="btn btn-outline btn-lg" href="{APP}" target="_blank" rel="noopener">Try the live demo <i class="arr"></i></a></div>
+    <div class="cta-actions"><a class="btn btn-white btn-lg" href="{R}contact/">Book a demo <i class="arr"></i></a></div>
   </div>
 </section>'''
 
@@ -106,7 +106,7 @@ def page_hero(eyebrow, h1, lead, visual='', crumbs=None, ctas=True):
     if crumbs:
         bc = '<nav class="crumbs" aria-label="Breadcrumb">' + ' <span>/</span> '.join(
             ('<a href="%s">%s</a>' % (h, n)) if h else '<span aria-current="page">%s</span>' % n for n, h in crumbs) + '</nav>'
-    btns = '<div class="hero-ctas"><a class="btn btn-dark btn-lg" href="{R}contact/">Book a demo <i class="arr"></i></a><a class="btn btn-glass btn-lg" href="{APP}" target="_blank" rel="noopener">Try the live demo <i class="arr"></i></a></div>' if ctas else ''
+    btns = '<div class="hero-ctas"><a class="btn btn-dark btn-lg" href="{R}contact/">Book a demo <i class="arr"></i></a></div>' if ctas else ''
     return '''<section class="hero page-hero">
   <canvas id="gradient" class="hero-gradient" aria-hidden="true"></canvas>
   <div class="hero-skew"></div>
@@ -151,10 +151,9 @@ def nav(active):
       %s
       <div class="nav-dd"><a href="{R}solutions/" class="dd-trigger%s">Solutions</a><div class="dd-panel">%s<a class="dd-all" href="{R}solutions/">All solutions</a><a class="dd-all dd-all-2" href="{R}places/">Browse by place</a></div></div>
       %s%s%s
-      <div class="nav-m-cta"><a class="btn btn-dark btn-lg" href="{R}contact/">Book a demo <i class="arr"></i></a><a class="btn btn-glass btn-lg" href="{APP}" target="_blank" rel="noopener">Try the live demo <i class="arr"></i></a></div>
+      <div class="nav-m-cta"><a class="btn btn-dark btn-lg" href="{R}contact/">Book a demo <i class="arr"></i></a></div>
     </nav>
     <div class="nav-cta">
-      <a class="link-arrow" href="{APP}" target="_blank" rel="noopener">Live demo</a>
       <a class="btn btn-dark" href="{R}contact/">Book a demo <i class="arr"></i></a>
     </div>
     <button class="nav-burger" aria-label="Menu" id="burger"><span></span><span></span></button>
@@ -169,7 +168,7 @@ FOOTER = '''<footer class="foot">
       <p class="muted">Sensors, software and AI for places that matter.<br>Hardware, installation, support and platform, delivered by one Australian team.</p>
     </div>
     <div class="foot-cols">
-      <div><b>Platform</b><a href="{R}platform/">Platform overview</a><a href="{R}real-time/">Real time</a><a href="{R}ai-forecasting/">AI &amp; forecasting</a><a href="{R}plans/">Plans</a><a href="{APP}" target="_blank" rel="noopener">Live demo</a></div>
+      <div><b>Platform</b><a href="{R}platform/">Platform overview</a><a href="{R}real-time/">Real time</a><a href="{R}ai-forecasting/">AI &amp; forecasting</a><a href="{R}plans/">Plans</a></div>
       <div><b>Solutions</b>%s</div>
       <div><b>Places</b><a href="{R}places/campuses/">Campuses</a><a href="{R}places/libraries/">Libraries</a><a href="{R}places/shopping-centres/">Shopping centres</a><a href="{R}places/stadiums-and-venues/">Stadiums &amp; venues</a><a href="{R}places/streets-and-laneways/">Streets &amp; laneways</a><a href="{R}places/parks-and-foreshores/">Parks &amp; foreshores</a><a href="{R}places/office-towers/">Office towers</a><a href="{R}places/government-buildings/">Government buildings</a></div>
       <div><b>Company</b><a href="{R}contact/">Contact</a><a href="{R}privacy-by-design/">Privacy by design</a><a href="{R}faq/">FAQ</a></div>
@@ -278,7 +277,7 @@ platform_body = (
     <div class="pillar-grid reveal">
       <div class="partner"><span class="partner-role">Proven hardware</span><h4>3D people counters</h4><p>Commercial-grade 3D sensors with all processing on the device and no personal data collected, plus specialist sensors for cyclists, vehicles and outdoor spaces.</p><a class="link-arrow" href="{R}privacy-by-design/">How counting stays anonymous</a></div>
       <div class="partner"><span class="partner-role">Local expertise</span><h4>Australian team</h4><p>We survey, design, install, calibrate and support every deployment, from the first site visit to ongoing maintenance and expansion.</p><a class="link-arrow" href="{R}platform/">How we deliver</a></div>
-      <div class="partner"><span class="partner-role">Intelligent platform</span><h4>Place Performance</h4><p>Real-time dashboards, live floorplans, alerts, reporting, forecasting and AI insights across every site, space and zone.</p><a class="link-arrow" href="{APP}" target="_blank" rel="noopener">Try the live demo</a></div>
+      <div class="partner"><span class="partner-role">Intelligent platform</span><h4>Place Performance</h4><p>Real-time dashboards, live floorplans, alerts, reporting, forecasting and AI insights across every site, space and zone.</p><a class="link-arrow" href="{R}real-time/">See it in real time</a></div>
     </div>''', 'sec-tint') +
     section(head('Capabilities', 'Everything you need to measure, understand and act.') + cards([
         ('Live occupancy', 'People present now against capacity, refreshed every few seconds.', '{R}real-time/'),
@@ -636,7 +635,7 @@ contact_body = page_hero('Contact', 'Book a demo.',
     '<li><b>Walkthrough.</b> A 30-minute demo, focused on your sector.</li>'
     '<li><b>Site survey.</b> We assess your locations and what to measure.</li>'
     '<li><b>Sensor plan &amp; proposal.</b> The right devices and plan level for each site.</li>'
-    '<li><b>Pilot.</b> Live data from your own site, typically within weeks.</li></ol><p class="hero-alt">Prefer to explore first? <a class="link-arrow" href="{APP}" target="_blank" rel="noopener">Open the live demo</a>',
+    '<li><b>Pilot.</b> Live data from your own site, typically within weeks.</li></ol>',
     '''<div class="hero-form"><form class="cta-form" id="demo-form">
         <div class="form-row"><label>Name<input required name="name" autocomplete="name"></label><label>Work email<input required type="email" name="email" autocomplete="email"></label></div>
         <div class="form-row"><label>Organisation<input name="org" autocomplete="organization"></label><label>Sector<select name="sector"><option>Local council</option><option>University / TAFE</option><option>Government</option><option>Commercial property</option><option>Retail &amp; precincts</option><option>Parks, trails &amp; streets</option><option>Other</option></select></label></div>

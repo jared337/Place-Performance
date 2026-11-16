@@ -79,7 +79,7 @@ GUIDES['privacy-by-design'] = guide('Guide', 'How anonymous people counting work
 GUIDES['contact'] = guide('Guide', 'What to expect from a demo and pilot.', [
     (None, 'A demo is a 30-minute walkthrough of the platform using data shaped like your own places. We focus on the questions you want to answer, whether that is crowd capacity in a ' + L('libraries', 'library') + ', utilisation on a ' + L('campuses', 'campus') + ' or occupancy across a ' + L('government', 'government portfolio') + '.'),
     ('The site survey', 'If a pilot makes sense, our team surveys your locations: entrances, ceiling heights, layouts, power, connectivity and privacy requirements. From that we prepare a sensor plan and recommend a ' + L('plans', 'plan level') + '.'),
-    ('Your pilot', 'A pilot at one site is typically live within weeks. You get the same ' + L('realtime', 'real-time dashboards') + ', floorplans and reports as a full deployment, using your own data, so you can judge accuracy and value before rolling out further. Want to look around first? Try the live demo or read the ' + L('faq', 'frequently asked questions') + '.'),
+    ('Your pilot', 'A pilot at one site is typically live within weeks. You get the same ' + L('realtime', 'real-time dashboards') + ', floorplans and reports as a full deployment, using your own data, so you can judge accuracy and value before rolling out further. Want to know more? Read the' + L('faq', 'frequently asked questions') + '.'),
 ], [R('plans', 'Plans', 'Compare capability levels'), R('platform', 'Platform', 'How the service works'), R('privacy', 'Privacy by design', 'How counting stays anonymous'), R('faq', 'FAQ', 'Answers to common questions')])
 
 # ---------------- Sector guides ----------------
