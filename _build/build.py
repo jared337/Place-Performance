@@ -75,9 +75,9 @@ def cards(items, cols=3):
     return '<div class="fgrid fgrid-%d reveal">%s</div>' % (cols, ''.join(out))
 
 
-def photo_cards(items):
+def photo_cards(items, folder='photos'):
     return '<div class="pgrid reveal">%s</div>' % ''.join(
-        '<a class="pcard" href="%s"><img src="{R}assets/photos/%s.jpg" alt="%s" loading="lazy"><div><h4>%s</h4><p>%s</p><span class="link-arrow">Explore</span></div></a>' % (href, img, escape(t), t, d)
+        '<a class="pcard" href="%s"><img src="{R}assets/%s/%s.jpg" alt="%s" loading="lazy"><div><h4>%s</h4><p>%s</p><span class="link-arrow">Explore</span></div></a>' % (href, folder, img, escape(t), t, d)
         for t, d, img, href in items)
 
 
@@ -506,11 +506,11 @@ def solution(slug, name, h1, lead, img, img_alt, shot1, shot1_alt, shot2, shot2_
                 '<div style="height:80px"></div>' +
                 split(copy('In the platform', scenarios[1][0], scenarios[1][1]), shot(shot2, shot2_alt), True), 'sec-tint') +
         section(head('Metrics', 'The numbers you get.') + cards([(m, d) for m, d in metrics])) +
-        section(head('Related', 'Explore more.') + cards([
-            ('Real-time monitoring', 'Live occupancy, floorplans and alerts.', '{R}real-time/'),
-            ('AI &amp; forecasting', 'Forecasts, scenarios and the Place Assistant.', '{R}ai-forecasting/'),
-            ('Privacy by design', 'Counts, not identities.', '{R}privacy-by-design/'),
-        ]), 'sec-tint')
+        section(head('Related', 'Explore more.') + photo_cards([
+            ('Real-time monitoring', 'Live occupancy, floorplans and alerts.', 'floorplan', '{R}real-time/'),
+            ('AI &amp; forecasting', 'Forecasts, scenarios and the Place Assistant.', 'forecast', '{R}ai-forecasting/'),
+            ('Privacy by design', 'Counts, not identities.', 'device', '{R}privacy-by-design/'),
+        ], 'screens'), 'sec-tint')
     )
     page('solutions/' + slug, '%s | Place Performance' % SEO_TITLES[slug], desc, body, faqs,
          [('Home', ''), ('Solutions', 'solutions/'), (strip(name), 'solutions/%s/' % slug)], service=service, audience=audience, nav_key='solutions')
