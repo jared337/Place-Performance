@@ -138,6 +138,40 @@ SOLUTIONS = [
 ]
 
 
+def _bracket(x1, y1, x2, y2, c='#22d3ee', n=24):
+    """Four L-shaped corner marks framing a detected person on a photo overlay."""
+    return ('<g fill="none" stroke="%s" stroke-width="4" stroke-linecap="round">'
+            '<path d="M%d %d v%d M%d %d h%d"/><path d="M%d %d v%d M%d %d h%d"/>'
+            '<path d="M%d %d v%d M%d %d h%d"/><path d="M%d %d v%d M%d %d h%d"/></g>') % (
+        c, x1, y1, n, x1, y1, n,  x2, y1, n, x2, y1, -n,
+        x1, y2, -n, x1, y2, n,  x2, y2, -n, x2, y2, -n)
+
+
+def lidar_photo():
+    """A real photo (laneway) with a LiDAR field, count line, detection zone and highlighted people overlaid."""
+    defs = ('<defs><linearGradient id="lb" x1="0" y1="0" x2="0" y2="1">'
+            '<stop offset="0" stop-color="#22d3ee" stop-opacity=".04"/><stop offset="1" stop-color="#22d3ee" stop-opacity=".34"/></linearGradient>'
+            '<filter id="lcard" x="-20%" y="-30%" width="140%" height="170%"><feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0a2540" flood-opacity=".35"/></filter></defs>')
+    beam = '<polygon points="1200,250 852,548 870,890 560,885 648,545" fill="url(#lb)"><animate attributeName="opacity" values=".65;1;.65" dur="3s" repeatCount="indefinite"/></polygon>'
+    zone = '<polygon points="648,545 852,548 870,890 560,885" fill="#22d3ee" fill-opacity=".12" stroke="#22d3ee" stroke-width="3" stroke-dasharray="12 9"/>'
+    line = '<line x1="648" y1="545" x2="852" y2="548" stroke="#ffd23f" stroke-width="5"/>'
+    brackets = _bracket(648, 498, 756, 892) + _bracket(798, 512, 906, 884) + _bracket(690, 452, 752, 662)
+    sensor = ('<line x1="1320" y1="266" x2="1214" y2="250" stroke="#0a2540" stroke-width="6" stroke-linecap="round"/>'
+              '<rect x="1150" y="210" width="88" height="48" rx="10" fill="#1f2937" stroke="#3b4656" stroke-width="2"/>'
+              '<circle cx="1172" cy="234" r="5" fill="#22d3ee"/><circle cx="1216" cy="234" r="5" fill="#22d3ee"/>'
+              '<g transform="translate(1194 300)"><rect x="-54" y="-22" width="108" height="26" rx="7" fill="#1f2937"/><path d="M-6 4h12l-6 7z" fill="#1f2937"/>'
+              '<text x="0" y="-4" text-anchor="middle" fill="#fff" font-size="13" font-weight="600">LiDAR sensor</text></g>')
+    pop = '<text x="556" y="516" text-anchor="middle" font-size="26" font-weight="800" fill="#ffd23f">IN +1<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.1;.8;1" dur="3s" repeatCount="indefinite"/></text>'
+    badge = ('<g transform="translate(70 70)" filter="url(#lcard)"><rect width="252" height="66" rx="12" fill="#fff"/>'
+             '<circle cx="26" cy="26" r="6" fill="#06b6d4"/><text x="44" y="30" font-size="15" fill="#6b7c93">Pedestrians today</text>'
+             '<text x="26" y="52" font-size="22" font-weight="700" fill="#0a2540"><tspan class="js-tick" data-base="12408" data-jitter="6">12,408</tspan></text></g>')
+    svg = ('<svg viewBox="0 0 1400 934" preserveAspectRatio="xMidYMid slice" aria-hidden="true" font-family="Inter, -apple-system, Segoe UI, sans-serif">'
+           + defs + beam + zone + line + brackets + sensor + pop + badge + '</svg>')
+    return ('<figure class="lidar-shot"><div class="lidar-shot-frame">'
+            '<img src="{R}assets/photos/city.jpg" alt="A busy laneway with a LiDAR count field and count line overlaid on the walking path" loading="lazy" width="1400" height="934">'
+            + svg + '</div><figcaption>The LiDAR field and count line shown on a laneway &mdash; people are counted as anonymous shapes, with no faces or images.</figcaption></figure>')
+
+
 def nav(active):
     def a(slug, label):
         on = ' aria-current="page" class="on"' if active == slug else ''
@@ -269,6 +303,8 @@ platform_body = (
         ('One cable to fit', 'A single network cable carries both power and data, so a unit goes in quickly and cleanly with little disruption to the space.', None),
         ('Built to keep running', 'A sealed, weather-resistant housing rated for years of continuous, unattended operation, indoors or outdoors.', None),
     ]), 'sec-tint') +
+    section(head('On site', 'What the sensor sees on the ground.',
+                 'The sensor projects a 3D field over the space and a count line across it. Anyone crossing is counted as an anonymous shape &mdash; no faces, no images.') + '<div class="reveal">' + lidar_photo() + '</div>') +
     section(split(SENSOR_VIS,
                   copy('Hardware included', 'We start with your question, not with a device.',
                        'Every place is different. Before anything is installed, our team assesses the environment, movement patterns, coverage, connectivity, power and privacy needs, then selects the technology that fits.',

@@ -385,6 +385,11 @@ p { margin: 0; }
 .form-note { font-size: 13px; color: var(--muted); }
 .form-note.ok { color: var(--green); font-weight: 600; }
 .form-note.err { color: #dc2626; font-weight: 600; }
+.lidar-shot { margin: 0; }
+.lidar-shot-frame { position: relative; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-card); }
+.lidar-shot-frame img { display: block; width: 100%; height: auto; }
+.lidar-shot-frame svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.lidar-shot figcaption { margin-top: 14px; font-size: 14.5px; color: var(--muted); text-align: center; }
 
 /* ---------------- Footer ---------------- */
 .foot { padding: 70px 0 30px; background: var(--tint); }
