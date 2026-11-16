@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://jared337.github.io/Place-Performance/website/sitemap.xml
