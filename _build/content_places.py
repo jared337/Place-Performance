@@ -15,6 +15,18 @@ PLACES = [
 PLACE_BY = {p[0]: p for p in PLACES}
 PLACE_SCENE = {'campuses': 'campus', 'libraries': 'library', 'shopping-centres': 'shopping', 'stadiums-and-venues': 'venue', 'streets-and-laneways': 'street', 'parks-and-foreshores': 'park', 'office-towers': 'office', 'government-buildings': 'service'}
 
+
+def _rel_img(path):
+    """Photo filename for a related solution/place path, for the 'Explore more' image cards."""
+    path = path.strip('/')
+    if path.startswith('places/') and path[7:] in PLACE_BY:
+        return PLACE_BY[path[7:]][4]
+    if path.startswith('solutions/'):
+        for sl, _n, _d, img in SOLUTIONS:
+            if sl == path[10:]:
+                return img
+    return 'city'
+
 EXTRA_BLOCKS = {
     'campuses': ('Typical uses on campus', 'Estates teams use utilisation data to consolidate under-used rooms, timetabling teams to match class sizes to rooms, library teams to plan exam-period hours, and student services to publish live study space. Facilities teams use visit counts to schedule cleaning in high-traffic buildings, and safety teams use live occupancy for large lecture theatres and event spaces.'),
     'libraries': ('Typical uses in libraries', 'Branch managers use peak-period data to set rosters, program teams measure attendance at story time and events, facilities teams schedule cleaning after busy periods, and library leaders compare branches to decide where to invest. In university libraries, live occupancy helps students find a seat during exam weeks.'),
@@ -59,7 +71,7 @@ def place_page(slug, h1, lead, seo_title, desc, why_h2, why, measures, shot_spec
         section('<div class="install-grid reveal"><div>' + head('How it is installed', 'From site survey to live data.', 'Our Australian team designs, installs and supports every deployment, so you deal with one partner from the first survey to ongoing maintenance.') +
                 '<p><a class="link-arrow" href="{R}platform/">How the platform works</a></p></div><ol class="steps-list">' +
                 ''.join('<li><b>%s</b> %s</li>' % s for s in install) + '</ol></div>', 'sec-tint') +
-        section(head('Explore more', 'Related solutions and places.') + cards([(t, d, '{R}' + p) for p, t, d in related[5:]]))
+        section(head('Explore more', 'Related solutions and places.') + photo_cards([(t, d, _rel_img(p), '{R}' + p) for p, t, d in related[5:]]))
     )
     page('places/' + slug, seo_title + ' | Place Performance', desc, body, faqs,
          [('Home', ''), ('Places', 'places/'), (strip(name), 'places/%s/' % slug)], service=service, nav_key='solutions')
