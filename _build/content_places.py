@@ -66,7 +66,7 @@ def place_page(slug, h1, lead, seo_title, desc, why_h2, why, measures, shot_spec
 
 
 INSTALL_INDOOR = [('Survey.', 'We assess entrances, ceiling heights, layout, lighting, power, network and privacy needs.'),
-                  ('Design.', 'A sensor plan places 3D people counters at entrances and over the zones you want to measure.'),
+                  ('Design.', 'A sensor plan places LiDAR counters at entrances and over the zones you want to measure.'),
                   ('Install and calibrate.', 'Devices are installed, commissioned and checked for accuracy against manual counts.'),
                   ('Support.', 'Every device reports a heartbeat, and our team is alerted if one needs attention.')]
 
@@ -116,7 +116,7 @@ place_page('libraries', 'People counting and live occupancy for libraries.',
    [R('councils', 'Councils &amp; civic', 'Community facilities'), R('universities', 'Universities', 'University libraries'), R('realtime', 'Real time', 'Live floorplans and alerts'),
     R('ai', 'AI &amp; forecasting', 'Forecast busy days'), R('privacy', 'Privacy by design', 'Anonymous counting'),
     R('councils', 'Councils &amp; civic', 'How councils use people counting'), R('campuses', 'Campuses', 'Study space utilisation'), R('govbuildings', 'Government', 'Public-facing buildings')],
-   [('How do libraries count visitors?', 'Ceiling-mounted 3D sensors at each entrance count people in and out. Additional sensors over key zones measure live occupancy in areas such as reading rooms and children\'s spaces.'),
+   [('How do libraries count visitors?', 'LiDAR counters at each entrance count people in and out, with additional sensors over key zones measuring live occupancy in areas such as reading rooms and children\'s spaces.'),
     ('Can a library see how full each area is right now?', 'Yes. Each zone is drawn on a floorplan and shows its live headcount, coloured by how full it is, with alerts before limits are reached.'),
     ('Is library people counting anonymous?', 'Yes. Processing happens on the device and no images or personal information are collected, only anonymous counts.'),
     ('Can visitation data be used for funding reports?', 'Yes. Scheduled reports provide consistent, independent visitation numbers for annual reports, grant applications and briefings.')],
@@ -139,7 +139,7 @@ place_page('shopping-centres', 'Footfall analytics for shopping centres.',
    [R('retail', 'Retail &amp; precincts', 'Footfall and conversion'), R('streets', 'Streets &amp; laneways', 'Precinct counting'), R('ai', 'AI &amp; forecasting', 'Campaign analysis'),
     R('realtime', 'Real time', 'Live occupancy and queues'), R('plans', 'Plans', 'Integrations at Professional'),
     R('retail', 'Retail &amp; precincts', 'How centres use footfall data'), R('streets', 'Streets &amp; laneways', 'Pedestrian counts around the centre'), R('venues', 'Stadiums &amp; venues', 'Event crowds')],
-   [('How is footfall measured in a shopping centre?', '3D people counters above each entrance count people in and out, and sensors in key zones measure occupancy and movement through the centre.'),
+   [('How is footfall measured in a shopping centre?', 'LiDAR counters above each entrance count people in and out, and sensors in key zones measure occupancy and movement through the centre.'),
     ('Can footfall be linked to sales?', 'Yes. Point-of-sale integrations combine visits with sales to calculate conversion and sales per visitor by zone.'),
     ('Can it monitor food court queues?', 'Yes. Queue sensors measure queue length and wait time, with alerts when service targets are at risk.'),
     ('Does footfall counting identify shoppers?', 'No. Counting is anonymous and processed on the device, with no images or personal information collected.')],
@@ -240,7 +240,7 @@ place_page('office-towers', 'Floor and amenity utilisation for office towers.',
    [R('buildings', 'Buildings &amp; property', 'Commercial property'), R('government', 'Government', 'Public sector offices'), R('realtime', 'Real time', 'Live floorplans'),
     R('ai', 'AI &amp; forecasting', 'Refit analysis'), R('plans', 'Plans', 'BMS integration at Professional'),
     R('buildings', 'Buildings &amp; property', 'How owners use occupancy data'), R('govbuildings', 'Government buildings', 'Agency portfolios'), R('campuses', 'Campuses', 'Room utilisation')],
-   [('How is office occupancy measured?', 'Ceiling-mounted sensors count people entering floors and zones and measure how many are present, giving live and historical occupancy per floor, room and amenity.'),
+   [('How is office occupancy measured?', 'LiDAR counters at entrances and over zones count people entering floors and measure how many are present, giving live and historical occupancy per floor, room and amenity.'),
     ('Can it show hybrid work attendance patterns?', 'Yes. Occupancy by floor and weekday shows hybrid patterns without tracking individuals.'),
     ('Does it integrate with the building management system?', 'Yes. Occupancy can be shared with HVAC and lighting controls so empty floors are not conditioned.'),
     ('Can tenants see their own data?', 'Yes. Access can be limited by site and tenancy.')],
@@ -277,7 +277,7 @@ places_hub = (
     section(photo_cards([(n, tag + ' &middot; pictured: ' + city, img, '{R}places/%s/' % s) for s, n, city, tag, img, _ in PLACES])) +
     guide('Guide', 'Why the type of place matters.', [
         (None, 'A library, a stadium and a shared path all need people counting, but the questions, the sensors and the way they are installed are different. Each place page explains what is measured, how sensors are installed and which features matter most.'),
-        ('Indoor places', L('libraries', 'Libraries') + ', ' + L('campuses', 'campuses') + ', ' + L('shopping', 'shopping centres') + ', ' + L('offices', 'office towers') + ' and ' + L('govbuildings', 'government buildings') + ' typically use ceiling-mounted 3D counters at entrances and over key zones, with ' + L('realtime', 'live floorplans') + ' showing occupancy room by room.'),
+        ('Indoor places', L('libraries', 'Libraries') + ', ' + L('campuses', 'campuses') + ', ' + L('shopping', 'shopping centres') + ', ' + L('offices', 'office towers') + ' and ' + L('govbuildings', 'government buildings') + ' typically use LiDAR counters at entrances and over key zones, with' + L('realtime', 'live floorplans') + ' showing occupancy room by room.'),
         ('Outdoor places', L('streets', 'Streets and laneways') + ' and ' + L('foreshores', 'parks and foreshores') + ' use sensors chosen for each environment to count pedestrians, cyclists and, where needed, vehicles. See ' + L('parks', 'parks, trails and streets') + '.'),
         ('Events and venues', L('venues', 'Stadiums and venues') + ' combine gate counting with zone occupancy and capacity alerts, permanently or temporarily for a single event.'),
         ('One platform for all of them', 'Whatever the mix, everything appears in one ' + L('platform', 'platform') + ' with consistent metrics, so a council can compare its libraries, parks and town centre side by side. Browse by sector on the ' + L('solutions', 'solutions page') + '.'),
@@ -285,7 +285,7 @@ places_hub = (
 )
 PLACES_FAQS = [
     ('What kinds of places can Place Performance measure?', 'Indoor places such as libraries, university buildings, shopping centres, offices and government buildings, and outdoor places such as streets, laneways, parks, foreshores, trails and event spaces.'),
-    ('Are different sensors used indoors and outdoors?', 'Yes. Indoors, 3D people counters are typically used at entrances and over zones. Outdoors, sensors are chosen for each environment to count pedestrians, cyclists and vehicles.'),
+    ('Are different sensors used indoors and outdoors?', 'Yes. Indoors, LiDAR counters are typically used at entrances and over zones, and across open areas for crowds. Outdoors, sensors are chosen for each environment to count pedestrians, cyclists and vehicles.'),
     ('How is a sensor plan chosen for each place?', 'Every location starts with a site survey covering entrances, layout, ceiling heights, mounting options, power, connectivity and privacy needs. The sensor plan is then designed around the questions you want to answer.'),
     ('Can temporary counting be used for events?', 'Yes. Temporary deployments suit festivals, markets and short studies, alongside permanent installations for ongoing monitoring.'),
     ('Can one organisation measure several types of place?', 'Yes. All places appear in one platform with consistent metrics, so different kinds of site can be compared side by side.'),

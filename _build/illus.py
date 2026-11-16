@@ -1,7 +1,7 @@
 """Animated isometric scene illustrations (original artwork, generated as inline SVG).
 
 Each scene is a light-grey isometric space with shaded 3D boxes, walking people,
-a labelled 3D people counter with its count zone, IN/OUT pop-ups timed to people
+a labelled LiDAR counter with its count zone, IN/OUT pop-ups timed to people
 crossing the zone, animated flow arrows and live badges.
 """
 import math
@@ -83,8 +83,8 @@ class Scene:
         self.layers['zone'].append('<g fill="none" stroke="%s" stroke-width="2.2" stroke-linecap="round" opacity=".55"><path d="M%s %sl-14 7m14 -7l-5 -3m5 3l-2 5"/><path d="M%s %sl14 -7m-14 7l5 3m-5 -3l2 -5"/></g>' % (
             ACC, f2(cx + 4), f2(cy - 6), f2(cx - 4), f2(cy + 6)))
 
-    def sensor(self, x, y, z=3.6, label='3D people counter', beam=None):
-        """Ceiling sensor with pulsing beam onto beam=(x,y,w,d) and a dark label tag."""
+    def sensor(self, x, y, z=3.6, label='LiDAR counter', beam=None):
+        """Overhead or area sensor with pulsing beam onto beam=(x,y,w,d) and a dark label tag."""
         if beam:
             bx, by, bw, bd = beam
             s = self.p(x + .3, y + .3, z)
@@ -225,7 +225,7 @@ def entrance():
     s.walker([(8.6, 12.5), (8.7, .5)], D, -6, count=(.70, 'IN +1', '#16a34a', (6.6, 3.2, 2.2)))
     s.badge(13.2, 6.2, 2.4, 'In today', '1,284', '#16a34a', inc=(D / 2, 0.70 * D))
     s.badge(13.4, 9.6, 1.6, 'Out today', '1,197', ACC, inc=(D, 0.25 * D + 3.5))
-    return s.render('Animated illustration of a 3D people counter above a doorway counting people in and out', 'Entrance counting: people in and out, processed on the device.')
+    return s.render('Animated illustration of a LiDAR counter over a doorway counting people in and out', 'Entrance counting: people in and out, processed on the device.')
 
 
 def library():
@@ -300,7 +300,7 @@ def venue():
         s.box(gx, 8.6, 0, .35, 1.2, 1.1, DARK, layer='back')
         s.box(gx + 1.8, 8.6, 0, .35, 1.2, 1.1, DARK, layer='back')
         s.zone(gx + .4, 8.6, 1.4, 1.2)
-    s.sensor(8.5, 8.8, 3.4, label='3D people counters', beam=(7.6, 8.6, 1.4, 1.2))
+    s.sensor(8.5, 8.8, 3.4, label='LiDAR counters', beam=(7.6, 8.6, 1.4, 1.2))
     D = 6.0
     for gi, gx in enumerate((3.2, 7.2, 11.2)):
         for j in range(2):
