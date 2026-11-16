@@ -57,7 +57,7 @@ p { margin: 0; }
 .nav.scrolled { background: rgba(255,255,255,.82); backdrop-filter: saturate(180%) blur(14px); box-shadow: 0 1px 0 rgba(10,37,64,.06); }
 .nav-in { display: flex; align-items: center; gap: 32px; height: 68px; }
 .logo { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 18px; color: var(--navy); letter-spacing: -.02em; }
-.logo-mark { width: 30px; height: 30px; border-radius: 9px; display: grid; place-items: center; color: #fff; font-size: 12px; background: linear-gradient(135deg, #635bff, #a960ee 55%, #00d4ff); box-shadow: 0 4px 12px rgba(99,91,255,.35); }
+.logo-mark { width: 30px; height: 30px; border-radius: 9px; display: grid; place-items: center; color: #fff; font-size: 12px; background: linear-gradient(135deg, #635bff, #00d4ff); box-shadow: 0 4px 12px rgba(99,91,255,.35); }
 .nav-links { display: flex; gap: 26px; margin-left: 12px; }
 .nav-links a { color: var(--navy); font-weight: 500; font-size: 15px; opacity: .85; }
 .nav-links a:hover { opacity: 1; }
@@ -195,7 +195,8 @@ p { margin: 0; }
 .pipeline { display: grid; grid-template-columns: 1fr 56px 1fr 56px 1fr 56px 1fr; align-items: start; gap: 0; margin-bottom: 96px; }
 .pipe-step { background: #fff; border-radius: var(--radius); padding: 24px 22px; box-shadow: var(--shadow-soft); min-height: 220px; transition: transform .3s var(--ease), box-shadow .3s; }
 .pipe-step:hover { transform: translateY(-4px); box-shadow: var(--shadow-card); }
-.pipe-ico { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; background: linear-gradient(135deg, #635bff, #a960ee); margin-bottom: 18px; box-shadow: 0 6px 16px rgba(99,91,255,.35); }
+.pipe-ico { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; background: linear-gradient(135deg, #4f8dff, #06b6d4); margin-bottom: 18px; box-shadow: 0 6px 16px rgba(79,141,255,.35); }
+.pipeline .pipe-step:last-child .pipe-ico { background: linear-gradient(135deg, #635bff, #a960ee); box-shadow: 0 6px 16px rgba(99,91,255,.35); }
 .pipe-ico svg { width: 22px; height: 22px; fill: none; stroke: #fff; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .pipe-step h3 { font-size: 17px; margin-bottom: 8px; }
 .pipe-step p { font-size: 14.5px; line-height: 1.55; }
@@ -232,7 +233,7 @@ p { margin: 0; }
 .partners-head h3 { font-size: 28px; line-height: 1.25; letter-spacing: -.025em; }
 .partner-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 900px; margin: 0 auto; }
 .partner { border-radius: var(--radius); padding: 28px; background: #fff; box-shadow: var(--shadow-soft); position: relative; overflow: hidden; transition: transform .3s var(--ease), box-shadow .3s; }
-.partner::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 4px; background: linear-gradient(90deg, #635bff, #a960ee, #00d4ff); }
+.partner::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 4px; background: linear-gradient(90deg, #635bff, #00d4ff); }
 .partner:hover { transform: translateY(-4px); box-shadow: var(--shadow-card); }
 .partner-role { font-size: 13px; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: .06em; }
 .partner h4 { font-size: 24px; margin: 10px 0 12px; }
@@ -831,3 +832,10 @@ a.fcard:hover { transform: translateY(-4px); box-shadow: var(--shadow-card); }
 .hero-plans .lead { margin-top: 12px; max-width: 640px; }
 .sec-pull .plan { padding: 24px 22px; }
 .sec-pull .plan ul { gap: 7px; }
+
+/* subtle tech texture behind every hero (nested outlines + dots), under the colour wash */
+.hero::before { content: ""; position: absolute; z-index: 0; top: -40px; right: -120px; width: min(980px, 85vw); aspect-ratio: 1; background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20900%20900%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%235b5fc7%22%20stroke-width%3D%221.4%22%3E%3Crect%20x%3D%2260%22%20y%3D%2260%22%20width%3D%22780%22%20height%3D%22780%22%20rx%3D%2210%22/%3E%3Crect%20x%3D%2290%22%20y%3D%2290%22%20width%3D%22720%22%20height%3D%22720%22%20rx%3D%2210%22/%3E%3Crect%20x%3D%22120%22%20y%3D%22120%22%20width%3D%22660%22%20height%3D%22660%22%20rx%3D%2210%22/%3E%3Crect%20x%3D%22150%22%20y%3D%22150%22%20width%3D%22600%22%20height%3D%22600%22%20rx%3D%2210%22/%3E%3Crect%20x%3D%22180%22%20y%3D%22180%22%20width%3D%22540%22%20height%3D%22540%22%20rx%3D%2210%22/%3E%3Crect%20x%3D%22210%22%20y%3D%22210%22%20width%3D%22480%22%20height%3D%22480%22%20rx%3D%2210%22/%3E%3Crect%20x%3D%22240%22%20y%3D%22240%22%20width%3D%22420%22%20height%3D%22420%22%20rx%3D%2210%22/%3E%3Crect%20x%3D%22270%22%20y%3D%22270%22%20width%3D%22360%22%20height%3D%22360%22%20rx%3D%2210%22/%3E%3Crect%20x%3D%22300%22%20y%3D%22300%22%20width%3D%22300%22%20height%3D%22300%22%20rx%3D%2210%22/%3E%3Crect%20x%3D%22330%22%20y%3D%22330%22%20width%3D%22240%22%20height%3D%22240%22%20rx%3D%2210%22/%3E%3Crect%20x%3D%22360%22%20y%3D%22360%22%20width%3D%22180%22%20height%3D%22180%22%20rx%3D%2210%22/%3E%3C/g%3E%3Cg%20fill%3D%22%235b5fc7%22%3E%3Ccircle%20cx%3D%22351%22%20cy%3D%22174%22%20r%3D%223.4%22/%3E%3Ccircle%20cx%3D%2269%22%20cy%3D%2294%22%20r%3D%224.9%22/%3E%3Ccircle%20cx%3D%22116%22%20cy%3D%22394%22%20r%3D%224.0%22/%3E%3Ccircle%20cx%3D%22539%22%20cy%3D%22239%22%20r%3D%222.1%22/%3E%3Ccircle%20cx%3D%22464%22%20cy%3D%22448%22%20r%3D%222.2%22/%3E%3Ccircle%20cx%3D%22112%22%20cy%3D%22584%22%20r%3D%223.5%22/%3E%3Ccircle%20cx%3D%22866%22%20cy%3D%22599%22%20r%3D%222.4%22/%3E%3Ccircle%20cx%3D%22248%22%20cy%3D%22665%22%20r%3D%224.2%22/%3E%3Ccircle%20cx%3D%2283%22%20cy%3D%22610%22%20r%3D%224.0%22/%3E%3Ccircle%20cx%3D%2270%22%20cy%3D%22246%22%20r%3D%222.2%22/%3E%3Ccircle%20cx%3D%22156%22%20cy%3D%22316%22%20r%3D%223.5%22/%3E%3Ccircle%20cx%3D%22573%22%20cy%3D%22140%22%20r%3D%224.0%22/%3E%3Ccircle%20cx%3D%22593%22%20cy%3D%22855%22%20r%3D%224.4%22/%3E%3Ccircle%20cx%3D%22125%22%20cy%3D%22615%22%20r%3D%224.0%22/%3E%3Ccircle%20cx%3D%22212%22%20cy%3D%22401%22%20r%3D%222.3%22/%3E%3Ccircle%20cx%3D%22749%22%20cy%3D%2284%22%20r%3D%224.0%22/%3E%3Ccircle%20cx%3D%22653%22%20cy%3D%22230%22%20r%3D%223.7%22/%3E%3Ccircle%20cx%3D%22564%22%20cy%3D%22457%22%20r%3D%224.7%22/%3E%3Ccircle%20cx%3D%22496%22%20cy%3D%22619%22%20r%3D%225.2%22/%3E%3Ccircle%20cx%3D%22390%22%20cy%3D%22326%22%20r%3D%222.9%22/%3E%3Ccircle%20cx%3D%22204%22%20cy%3D%22735%22%20r%3D%224.7%22/%3E%3Ccircle%20cx%3D%22103%22%20cy%3D%22608%22%20r%3D%223.1%22/%3E%3Ccircle%20cx%3D%22526%22%20cy%3D%22371%22%20r%3D%224.6%22/%3E%3Ccircle%20cx%3D%22314%22%20cy%3D%22643%22%20r%3D%225.4%22/%3E%3Ccircle%20cx%3D%22140%22%20cy%3D%22544%22%20r%3D%223.5%22/%3E%3Ccircle%20cx%3D%22795%22%20cy%3D%22370%22%20r%3D%222.5%22/%3E%3Ccircle%20cx%3D%22520%22%20cy%3D%22451%22%20r%3D%222.1%22/%3E%3Ccircle%20cx%3D%22704%22%20cy%3D%2299%22%20r%3D%224.7%22/%3E%3Ccircle%20cx%3D%22606%22%20cy%3D%22828%22%20r%3D%225.1%22/%3E%3Ccircle%20cx%3D%22341%22%20cy%3D%22368%22%20r%3D%224.4%22/%3E%3C/g%3E%3C/svg%3E") center / contain no-repeat; opacity: .16; pointer-events: none;
+  -webkit-mask-image: radial-gradient(closest-side, #000 55%, transparent); mask-image: radial-gradient(closest-side, #000 55%, transparent); }
+.hero > .hero-gradient, .hero-skew { z-index: 0; }
+.hero-skew { z-index: 1; }
+@media (max-width: 640px) { .hero::before { width: 130vw; right: -45vw; top: 0; opacity: .12; } }

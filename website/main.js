@@ -73,16 +73,16 @@
     var ctx = canvas.getContext('2d');
     canvas.width = 96; canvas.height = 48; // tiny canvas, stretched by CSS = free blur
     var blobs = [
-      { c: [239, 0, 143], x: .15, y: .3, r: .55, sx: .21, sy: .17 },
+      { c: [6, 182, 212], x: .15, y: .3, r: .55, sx: .21, sy: .17 },
       { c: [110, 195, 244], x: .55, y: .2, r: .6, sx: .13, sy: .19 },
-      { c: [112, 56, 255], x: .85, y: .55, r: .65, sx: .17, sy: .11 },
+      { c: [51, 102, 230], x: .85, y: .55, r: .65, sx: .17, sy: .11 },
       { c: [255, 186, 39], x: .35, y: .85, r: .5, sx: .11, sy: .23 },
-      { c: [99, 91, 255], x: .7, y: .9, r: .55, sx: .19, sy: .13 }
+      { c: [79, 141, 255], x: .7, y: .9, r: .55, sx: .19, sy: .13 }
     ];
     var t0 = performance.now();
     function frame(now) {
       var t = (now - t0) / 1000;
-      ctx.fillStyle = '#a7b6ff'; ctx.fillRect(0, 0, 96, 48);
+      ctx.fillStyle = '#9ec6f0'; ctx.fillRect(0, 0, 96, 48);
       blobs.forEach(function (b, i) {
         var x = (b.x + Math.sin(t * b.sx + i) * .18) * 96, y = (b.y + Math.cos(t * b.sy + i * 2) * .25) * 48, r = b.r * 96;
         var g = ctx.createRadialGradient(x, y, 0, x, y, r);

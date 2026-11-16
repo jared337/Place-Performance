@@ -261,6 +261,15 @@ platform_body = (
       <div class="pipe-flow"><span></span><span></span><span></span></div>
       <div class="pipe-step"><div class="pipe-ico"><svg viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg></div><h3>4. AI insight</h3><p>Forecasts, scenario planning, ranked recommendations and a Place Assistant you can ask in plain English.</p></div>
     </div>''') +
+    section(head('The sensor', 'How the counting actually works.',
+                 'The main counting sensor fits to the ceiling and looks straight down. Rather than recording faces, it builds a 3D depth view of the space below and reads the shape and height of each person passing through, so it counts precisely without ever identifying anyone.') + cards([
+        ('3D depth sensing', 'Twin wide-angle lenses give the sensor a real sense of depth, so it counts people by shape and height from above, not by their faces. A single unit covers a whole entrance.', None),
+        ('Counting on the device', 'A dedicated AI processor inside the unit turns what it sees into counts on the spot. Only anonymous numbers ever leave it &mdash; no images are streamed or stored.', '{R}privacy-by-design/'),
+        ('Accurate in the real world', 'Up to 99.8% counting accuracy, held steady through busy crowds, shadows and low light, in the conditions real entrances throw at it.', None),
+        ('Staff and groups understood', 'On-device AI can set staff apart from visitors and recognise groups, so the numbers reflect the people you actually want to measure.', None),
+        ('One cable to fit', 'A single network cable carries both power and data, so a unit goes in quickly and cleanly with little disruption to the space.', None),
+        ('Built to keep running', 'A sealed, dust-resistant metal housing with a toughened glass lens is made for years of continuous, unattended operation.', None),
+    ]), 'sec-tint') +
     section(split(SENSOR_VIS,
                   copy('Hardware included', 'We start with your question, not with a device.',
                        'Every place is different. Before anything is installed, our team assesses the environment, movement patterns, coverage, connectivity, power and privacy needs, then selects the technology that fits.',

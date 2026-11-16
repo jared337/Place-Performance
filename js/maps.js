@@ -5,13 +5,55 @@
    Maps are created after a screen mounts and removed on unmount.
    ========================================================= */
 PP.Maps = {
-  /* Create a map inside the element with this id. Returns null if Leaflet failed to load (offline). */
+  _lf: { state: 'idle', queue: [] }, // Leaflet loader: idle | loading | ready | failed
+
+  /* Load Leaflet on demand. Some interface hosts inject the HTML part with innerHTML, so the
+     <script src> for Leaflet in the page never runs; adding the tag from JS (which does run)
+     makes the map work there too. cb(true) once L is available, cb(false) if it can't be fetched. */
+  ensureLeaflet: function (cb) {
+    var s = PP.Maps._lf;
+    if (typeof L !== 'undefined') s.state = 'ready';
+    if (s.state === 'ready') { if (cb) cb(true); return; }
+    if (s.state === 'failed') { if (cb) cb(false); return; }
+    if (cb) s.queue.push(cb);
+    if (s.state === 'loading') return;
+    s.state = 'loading';
+    var done = function (ok) {
+      s.state = ok ? 'ready' : 'failed';
+      var q = s.queue.slice(); s.queue.length = 0;
+      q.forEach(function (fn) { try { fn(ok); } catch (e) { /* ignore */ } });
+    };
+    if (!document.querySelector('link[data-pp-leaflet]')) {
+      var lk = document.createElement('link');
+      lk.rel = 'stylesheet'; lk.setAttribute('data-pp-leaflet', '1');
+      lk.href = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css';
+      document.head.appendChild(lk);
+    }
+    var sc = document.createElement('script');
+    sc.src = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js';
+    sc.async = true;
+    sc.onload = function () { done(typeof L !== 'undefined'); };
+    sc.onerror = function () { done(false); };
+    document.head.appendChild(sc);
+  },
+
+  /* Create a map inside the element with this id. Returns null if Leaflet is not ready yet
+     (the map is drawn on the next render once it loads) or failed to load (offline). */
   make: function (elId, opts) {
     opts = opts || {};
     var el = document.getElementById(elId);
     if (!el) return null;
     if (typeof L === 'undefined') {
-      el.innerHTML = '<div class="map-fallback">Map tiles need an internet connection.<br>Everything else in the prototype works offline.</div>';
+      if (PP.Maps._lf.state === 'failed') {
+        el.innerHTML = '<div class="map-fallback">Map tiles need an internet connection.<br>Everything else in the prototype works offline.</div>';
+        return null;
+      }
+      el.innerHTML = '<div class="map-fallback">Loading map…</div>';
+      PP.Maps.ensureLeaflet(function (ok) {
+        if (ok) { try { PP.render(true); } catch (e) { /* navigated away */ } return; }
+        var e2 = document.getElementById(elId);
+        if (e2) e2.innerHTML = '<div class="map-fallback">Map tiles need an internet connection.<br>Everything else in the prototype works offline.</div>';
+      });
       return null;
     }
     el.classList.add('pp-map');
