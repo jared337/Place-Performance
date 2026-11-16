@@ -169,7 +169,7 @@ def lidar_photo():
            + defs + beam + zone + line + brackets + sensor + pop + badge + '</svg>')
     return ('<figure class="lidar-shot"><div class="lidar-shot-frame">'
             '<img src="{R}assets/photos/city.jpg" alt="A busy laneway with a LiDAR count field and count line overlaid on the walking path" loading="lazy" width="1400" height="934">'
-            + svg + '</div><figcaption>The LiDAR field and count line shown on a laneway &mdash; people are counted as anonymous shapes, with no faces or images.</figcaption></figure>')
+            + svg + '</div><figcaption>The LiDAR field and count line shown on a laneway, people are counted as anonymous shapes, with no faces or images.</figcaption></figure>')
 
 
 def nav(active):
@@ -296,16 +296,16 @@ platform_body = (
       <div class="pipe-step"><div class="pipe-ico"><svg viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg></div><h3>4. AI insight</h3><p>Forecasts, scenario planning, ranked recommendations and a Place Assistant you can ask in plain English.</p></div>
     </div>''') +
     section(head('The sensor', 'How the counting actually works.',
-                 'The sensors use LiDAR &mdash; pulses of light that map the space in 3D &mdash; to detect people by their shape and movement rather than their faces. Mounted overhead at an entrance, or positioned to cover an open area or a crowd, each one counts precisely without ever identifying anyone.') + '<div class="illus-wide reveal">' + illus('crowd') + '</div>' + cards([
+                 'The sensors use LiDAR, pulses of light that map the space in 3D, to detect people by their shape and movement rather than their faces. Mounted overhead at an entrance, or positioned to cover an open area or a crowd, each one counts precisely without ever identifying anyone.') + '<div class="illus-wide reveal">' + illus('crowd') + '</div>' + cards([
         ('LiDAR 3D sensing', 'LiDAR maps the space in 3D with light, not a camera, so people are counted by shape and movement, never by their faces. One unit can cover an entrance, a wide walkway or an open area.', None),
-        ('Counting on the device', 'A processor inside each unit turns the LiDAR data into counts on the spot. Only anonymous numbers ever leave it &mdash; the sensor captures depth, not images.', '{R}privacy-by-design/'),
-        ('Accurate in any light', 'Up to 99.8% counting accuracy, held steady through busy crowds and in any lighting &mdash; LiDAR works just as well in the dark as in daylight.', None),
+        ('Counting on the device', 'A processor inside each unit turns the LiDAR data into counts on the spot. Only anonymous numbers ever leave it, the sensor captures depth, not images.', '{R}privacy-by-design/'),
+        ('Accurate in any light', 'Up to 99.8% counting accuracy, held steady through busy crowds and in any lighting, LiDAR works just as well in the dark as in daylight.', None),
         ('Groups and direction understood', 'On-device processing counts people in and out, separates groups and filters out repeat passes, so the numbers reflect genuine visits.', None),
         ('One cable to fit', 'A single network cable carries both power and data, so a unit goes in quickly and cleanly with little disruption to the space.', None),
         ('Built to keep running', 'A sealed, weather-resistant housing rated for years of continuous, unattended operation, indoors or outdoors.', None),
     ]), 'sec-tint') +
     section(head('On site', 'What the sensor sees on the ground.',
-                 'The sensor projects a 3D field over the space and a count line across it. Anyone crossing is counted as an anonymous shape &mdash; no faces, no images.') + '<div class="reveal">' + lidar_photo() + '</div>') +
+                 'The sensor projects a 3D field over the space and a count line across it. Anyone crossing is counted as an anonymous shape, no faces, no images.') + '<div class="reveal">' + lidar_photo() + '</div>') +
     section(split(SENSOR_VIS,
                   copy('Hardware included', 'We start with your question, not with a device.',
                        'Every place is different. Before anything is installed, our team assesses the environment, movement patterns, coverage, connectivity, power and privacy needs, then selects the technology that fits.',
@@ -749,21 +749,20 @@ about_body = (
         'Place Performance is a joint venture between two Australian companies: <a href="https://itesa.com.au/" target="_blank" rel="noopener">ITESA</a>, specialists in measuring how places are used, and <a href="https://rayven.io/" target="_blank" rel="noopener">Rayven</a>, builders of operational software and AI. Together we deliver the sensors, the installation and the intelligent platform as one service, designed and supported in Australia.',
         '', [('Home', '{R}'), ('About', None)], ctas=False) +
     section(head('Our vision', 'Measure the place, not the person.',
-        'We help the councils, universities, governments and property owners who run Australia\'s public and shared places understand how they are really used &mdash; counting the place, never identifying the person &mdash; so every space can be made safer, run more efficiently and planned with evidence.')) +
+        'We help the councils, universities, governments and property owners who run Australia\'s public and shared places understand how they are really used, counting the place, never identifying the person, so every space can be made safer, run more efficiently and planned with evidence.')) +
     section(head('A joint venture', 'Two specialists, one accountable partner.') +
         '<div class="partner-grid reveal">'
         '<div class="partner"><span class="partner-role">Measurement &amp; analytics</span><h4>ITESA</h4>'
-        '<p>ITESA specialises in measuring how people, cyclists and vehicles use buildings, venues, parks, trails, streets and public spaces. They bring together sensing technology, edge processing, connectivity, data management, analytics and visualisation &mdash; and they design, supply, install, commission and support complete measurement solutions across Australia.</p>'
+        '<p>ITESA specialises in measuring how people, cyclists and vehicles use buildings, venues, parks, trails, streets and public spaces. They bring together sensing technology, edge processing, connectivity, data management, analytics and visualisation, and they design, supply, install, commission and support complete measurement solutions across Australia.</p>'
         '<p class="about-addr">Level 1, 54 Wellington St<br>Collingwood, Victoria 3066</p>'
         '<a class="link-arrow" href="https://itesa.com.au/" target="_blank" rel="noopener">itesa.com.au</a></div>'
         '<div class="partner"><span class="partner-role">Operational software &amp; AI</span><h4>Rayven</h4>'
-        '<p>Rayven is an Australian operational software company. Its unified platform integrates data, automates processes and powers custom AI and apps &mdash; the real-time dashboards, alerts, reporting, forecasting and AI insight behind Place Performance. Rayven is trusted by teams across Australia and around the world.</p>'
+        '<p>Rayven is an Australian operational software company. Its unified platform integrates data, automates processes and powers custom AI and apps, the real-time dashboards, alerts, reporting, forecasting and AI insight behind Place Performance. Rayven is trusted by teams across Australia and around the world.</p>'
         '<p class="about-addr">223 Liverpool St<br>Darlinghurst, NSW 2010</p>'
         '<a class="link-arrow" href="https://rayven.io/" target="_blank" rel="noopener">rayven.io</a></div>'
         '</div>', 'sec-tint') +
     section(head('How it fits together', 'From the sensor to the decision, by one team.',
-        'ITESA brings the sensing hardware, the site surveys and the local installation and support. Rayven brings the data platform, the dashboards and the AI. Place Performance brings them together, so you deal with one Australian partner from the first site visit to the insight on the screen.')) +
-    cta_band()
+        'ITESA brings the sensing hardware, the site surveys and the local installation and support. Rayven brings the data platform, the dashboards and the AI. Place Performance brings them together, so you deal with one Australian partner from the first site visit to the insight on the screen.'))
 )
 page('about', 'About us | Place Performance',
      'Place Performance is a joint venture between ITESA (place measurement and sensing) and Rayven (operational software and AI), delivering sensors, installation and an analytics platform across Australia.',
