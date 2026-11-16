@@ -384,6 +384,7 @@ p { margin: 0; }
 .cta-form .btn { align-self: flex-start; }
 .form-note { font-size: 13px; color: var(--muted); }
 .form-note.ok { color: var(--green); font-weight: 600; }
+.form-note.err { color: #dc2626; font-weight: 600; }
 
 /* ---------------- Footer ---------------- */
 .foot { padding: 70px 0 30px; background: var(--tint); }

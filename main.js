@@ -268,13 +268,44 @@
   tabs.forEach(function (t) { t.addEventListener('click', function () { show(t.dataset.tab); }); });
   document.querySelectorAll('[data-goto]').forEach(function (a) { a.addEventListener('click', function () { show(a.dataset.goto); }); });
 
-  /* ---------------- Demo form (not connected to a backend yet) ---------------- */
+  /* ---------------- Enquiry forms (Book a demo / Get a quote / Talk to us) ---------------- */
+  // Paste your Web3Forms access key between the quotes to start receiving submissions by email.
+  // Get one free at https://web3forms.com — enter the inbox you want enquiries sent to.
+  var FORM_ACCESS_KEY = 'b187ccf5-7dea-4646-89a1-62d5ce3ced9e';
+
   var form = document.getElementById('demo-form');
   if (form) form.addEventListener('submit', function (e) {
     e.preventDefault();
     var note = document.getElementById('form-note');
-    note.textContent = 'Thanks, ' + (form.name.value.split(' ')[0] || 'there') + '. We\'ll be in touch within one business day.';
-    note.classList.add('ok');
-    form.querySelector('button').disabled = true;
+    var btn = form.querySelector('button[type=submit]') || form.querySelector('button');
+    var firstName = (form.name && form.name.value ? form.name.value.split(' ')[0] : '') || 'there';
+    var thanks = 'Thanks, ' + firstName + '. We\'ll be in touch within one business day.';
+
+    if (!FORM_ACCESS_KEY) {
+      // No backend configured yet — acknowledge without sending.
+      note.textContent = thanks; note.classList.add('ok'); btn.disabled = true;
+      return;
+    }
+
+    btn.disabled = true;
+    note.classList.remove('ok', 'err');
+    note.textContent = 'Sending…';
+
+    var data = new FormData(form);
+    data.append('access_key', FORM_ACCESS_KEY);
+    data.append('from_name', 'Place Performance website');
+    data.append('subject', 'New ' + (form.enquiry_type ? form.enquiry_type.value : 'website') + ' enquiry — Place Performance');
+
+    fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { 'Accept': 'application/json' }, body: data })
+      .then(function (r) { return r.json(); })
+      .then(function (res) {
+        if (res && res.success) { note.textContent = thanks; note.classList.add('ok'); }
+        else { throw new Error((res && res.message) || 'failed'); }
+      })
+      .catch(function () {
+        note.textContent = 'Sorry, something went wrong sending that. Please email us directly or try again.';
+        note.classList.add('err');
+        btn.disabled = false;
+      });
   });
 })();
