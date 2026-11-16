@@ -399,6 +399,9 @@ p { margin: 0; }
 .spec-table th, .spec-table td { text-align: left; padding: 14px 16px; border-bottom: 1px solid var(--line); vertical-align: top; }
 .spec-table thead th { font-size: 13px; text-transform: uppercase; letter-spacing: .05em; color: var(--accent); border-bottom: 2px solid var(--line); }
 .spec-table tbody th { font-weight: 600; color: var(--navy); white-space: nowrap; }
+.hw-diagram { max-width: 780px; margin: 4px auto 40px; }
+.hw-diagram svg { width: 100%; height: auto; display: block; background: #fff; border-radius: var(--radius); box-shadow: var(--shadow-soft); border: 1px solid rgba(10,37,64,.05); }
+.hw-diagram figcaption { margin: 14px auto 0; font-size: 14px; color: var(--muted); text-align: center; max-width: 620px; }
 
 /* ---------------- Footer ---------------- */
 .foot { padding: 70px 0 30px; background: var(--tint); }

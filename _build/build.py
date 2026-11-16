@@ -172,6 +172,65 @@ def lidar_photo():
             + svg + '</div><figcaption>The LiDAR field and count line shown on a laneway, people are counted as anonymous shapes, with no faces or images.</figcaption></figure>')
 
 
+def _diag_person(x, fy):
+    return f'<g fill="#8e98a5"><circle cx="{x}" cy="{fy-78}" r="12"/><rect x="{x-14}" y="{fy-62}" width="28" height="62" rx="13"/></g>'
+
+
+def _diag_cyclist(x, fy):
+    return (f'<g fill="none" stroke="#8e98a5" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">'
+            f'<circle cx="{x-18}" cy="{fy-11}" r="11"/><circle cx="{x+18}" cy="{fy-11}" r="11"/>'
+            f'<path d="M{x-18} {fy-11} L{x-2} {fy-34} L{x+18} {fy-11} M{x-2} {fy-34} L{x+2} {fy-11}"/></g>'
+            f'<circle cx="{x+6}" cy="{fy-44}" r="7.5" fill="#8e98a5"/>')
+
+
+def _diag_car(x, fy):
+    return (f'<g fill="#8e98a5"><rect x="{x-36}" y="{fy-24}" width="72" height="20" rx="6"/>'
+            f'<path d="M{x-24} {fy-24} Q{x-18} {fy-40} {x-2} {fy-40} L{x+12} {fy-40} Q{x+22} {fy-40} {x+28} {fy-24} Z"/></g>'
+            f'<circle cx="{x-20}" cy="{fy-2}" r="8" fill="#5b6672"/><circle cx="{x+20}" cy="{fy-2}" r="8" fill="#5b6672"/>')
+
+
+def _diag_speed(x, y, text):
+    w = int(22 + len(text) * 6.4)
+    return (f'<g transform="translate({x} {y})"><rect x="{-w//2}" y="-13" width="{w}" height="22" rx="7" fill="#fff" stroke="#e4e9f0"/>'
+            f'<text x="0" y="3" text-anchor="middle" font-size="12" font-weight="600" fill="#06b6d4">{text}</text></g>')
+
+
+def lidar_diagram():
+    cone = '<polygon points="380,62 192,278 568,278" fill="url(#ldc)"/>'
+    rays = ('<g stroke="#22d3ee" stroke-width="1.5" stroke-dasharray="4 4" opacity=".75">'
+            '<line x1="380" y1="64" x2="272" y2="212"/><line x1="380" y1="64" x2="360" y2="222"/><line x1="380" y1="64" x2="448" y2="206"/></g>')
+    people = _diag_person(272, 278) + _diag_person(360, 278) + _diag_person(448, 278)
+    return ('<figure class="hw-diagram reveal">'
+        '<svg viewBox="0 0 760 320" role="img" aria-label="Diagram of an overhead 3D depth sensor casting infrared light onto people crossing a count line and measuring the distance to each point" font-family="Inter, -apple-system, Segoe UI, sans-serif">'
+        '<defs><linearGradient id="ldc" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#22d3ee" stop-opacity=".32"/><stop offset="1" stop-color="#22d3ee" stop-opacity=".04"/></linearGradient></defs>'
+        '<rect x="0" y="36" width="760" height="9" fill="#dfe6ee"/>' + cone +
+        '<rect x="344" y="45" width="72" height="22" rx="6" fill="#1f2937"/><circle cx="366" cy="56" r="3.5" fill="#22d3ee"/><circle cx="394" cy="56" r="3.5" fill="#22d3ee"/>'
+        '<text x="380" y="28" text-anchor="middle" font-size="13" font-weight="600" fill="#0a2540">Overhead sensor</text>' + rays + people +
+        '<line x1="44" y1="278" x2="716" y2="278" stroke="#c7d0da" stroke-width="2"/>'
+        '<line x1="214" y1="278" x2="548" y2="278" stroke="#ffd23f" stroke-width="4"/>'
+        '<text x="566" y="274" font-size="12" fill="#6b7c93">Count line</text>'
+        '<text x="470" y="150" font-size="12.5" font-weight="600" fill="#06b6d4">Infrared depth</text>'
+        '</svg><figcaption>The sensor times light pulses to measure the distance to every point below, building a live 3D view of each person.</figcaption></figure>')
+
+
+def radar_diagram():
+    fan = '<polygon points="672,112 120,272 660,272" fill="url(#rdf)"/>'
+    waves = ('<g fill="none" stroke="#22d3ee" stroke-width="2.4" opacity=".8">'
+             '<path d="M648 96 Q628 112 648 128"/><path d="M636 90 Q610 112 636 134"/><path d="M624 84 Q592 112 624 140"/></g>')
+    objs = (_diag_person(548, 272) + _diag_speed(548, 168, '4 km/h') +
+            _diag_cyclist(356, 272) + _diag_speed(356, 150, '18 km/h') +
+            _diag_car(168, 272) + _diag_speed(168, 140, '42 km/h'))
+    return ('<figure class="hw-diagram reveal">'
+        '<svg viewBox="0 0 760 320" role="img" aria-label="Diagram of a pole-mounted radar sensor detecting a pedestrian, a cyclist and a vehicle at different ranges, each labelled with its speed" font-family="Inter, -apple-system, Segoe UI, sans-serif">'
+        '<defs><linearGradient id="rdf" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#22d3ee" stop-opacity=".28"/><stop offset="1" stop-color="#22d3ee" stop-opacity=".03"/></linearGradient></defs>'
+        '<line x1="30" y1="272" x2="730" y2="272" stroke="#c7d0da" stroke-width="2"/>' + fan +
+        '<rect x="676" y="118" width="8" height="154" fill="#0a2540"/>'
+        '<rect x="652" y="94" width="44" height="30" rx="7" fill="#1f2937"/><circle cx="668" cy="109" r="3.5" fill="#22d3ee"/><circle cx="682" cy="109" r="3.5" fill="#22d3ee"/>'
+        '<text x="674" y="84" text-anchor="middle" font-size="13" font-weight="600" fill="#0a2540">Radar sensor</text>' + waves + objs +
+        '<text x="300" y="302" text-anchor="middle" font-size="12.5" font-weight="600" fill="#06b6d4">Pedestrian, cyclist and vehicle, told apart by speed</text>'
+        '</svg><figcaption>Radio echoes give each object a position and a speed, so the sensor tells people, cyclists and vehicles apart and reads direction.</figcaption></figure>')
+
+
 def nav(active):
     def a(slug, label):
         on = ' aria-current="page" class="on"' if active == slug else ''
@@ -774,14 +833,14 @@ hardware_body = (
         'Place Performance is technology-agnostic. No single sensor is best everywhere, so we choose the right one for each site: indoor or outdoor, a single doorway or an open crowd, a permanent install or a one-off event. Whatever we use, the counts are accurate and anonymous, and we design, supply, install and support it all.',
         '', [('Home', '{R}'), ('Platform', '{R}platform/'), ('Hardware', None)], ctas=False) +
     section(head('3D LiDAR &amp; depth', 'Light that measures distance.',
-        'A 3D depth sensor sits above the space and sends out rapid pulses of infrared light. By timing how long each pulse takes to bounce back, it measures the exact distance to every point below it and builds a live 3D map of the scene. Looking straight down, it reads the height and shape of each person passing through, and on-device software tracks them across a count line or within a zone. Because it measures distance, not colour or features, there is nothing to identify, and it performs the same in bright sun or total darkness.') +
+        'A 3D depth sensor sits above the space and sends out rapid pulses of infrared light. By timing how long each pulse takes to bounce back, it measures the exact distance to every point below it and builds a live 3D map of the scene. Looking straight down, it reads the height and shape of each person passing through, and on-device software tracks them across a count line or within a zone. Because it measures distance, not colour or features, there is nothing to identify, and it performs the same in bright sun or total darkness.') + lidar_diagram() +
         '<div class="fgrid fgrid-3 reveal">'
         '<div class="fcard"><h4>What it is good at</h4><ul class="hw-spec"><li>Pinpoint entrance accuracy, up to 99.8%</li><li>Separates people standing close together</li><li>Ignores trolleys, bags and strollers by shape</li><li>Counts direction and live occupancy at once</li></ul></div>'
         '<div class="fcard"><h4>Where it is less suited</h4><ul class="hw-spec"><li>Needs an overhead mount at a set height</li><li>Each unit covers a doorway or defined zone</li><li>Best indoors or under cover</li></ul></div>'
         '<div class="fcard"><h4>Key specs</h4><ul class="hw-spec"><li>Time-of-flight infrared depth</li><li>Works in any light, captures no images</li><li>Single network cable (PoE)</li><li>Line, zone and occupancy counting</li></ul></div>'
         '</div>') +
     section(head('Radar (mmWave)', 'Radio that reads movement.',
-        'A millimetre-wave radar sends out high-frequency radio signals and listens for the echoes. From each echo it works out an object\'s distance and angle, giving a 3D position, and from the shift in frequency it reads the object\'s speed and direction, the same principle as a speed camera. It tracks many objects at once and sorts them into pedestrians, cyclists and vehicles by how fast they move, and adults from children by height. Radio is unaffected by light or weather and passes straight through a sealed housing, so the sensor has no exposed lens and keeps working in rain, fog, snow, glare or complete darkness.') +
+        'A millimetre-wave radar sends out high-frequency radio signals and listens for the echoes. From each echo it works out an object\'s distance and angle, giving a 3D position, and from the shift in frequency it reads the object\'s speed and direction, the same principle as a speed camera. It tracks many objects at once and sorts them into pedestrians, cyclists and vehicles by how fast they move, and adults from children by height. Radio is unaffected by light or weather and passes straight through a sealed housing, so the sensor has no exposed lens and keeps working in rain, fog, snow, glare or complete darkness.') + radar_diagram() +
         '<div class="fgrid fgrid-3 reveal">'
         '<div class="fcard"><h4>What it is good at</h4><ul class="hw-spec"><li>Outdoors and in any weather</li><li>People, cyclists and vehicles on one sensor</li><li>Range to about 10&nbsp;m for people, 20&nbsp;m for vehicles</li><li>Reads speed, direction and classification</li></ul></div>'
         '<div class="fcard"><h4>Where it is less suited</h4><ul class="hw-spec"><li>Lower detail than depth imaging</li><li>Very dense, slow crowds are harder</li><li>Classification by speed has edge cases</li></ul></div>'
