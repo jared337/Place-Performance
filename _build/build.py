@@ -178,13 +178,14 @@ def nav(active):
         return '<a href="{R}%s/"%s>%s</a>' % (slug, on, label)
     dd = ''.join('<a href="{R}solutions/%s/"><b>%s</b><span>%s</span></a>' % (s, n, d) for s, n, d, _ in SOLUTIONS)
     sol_on = ' on' if active.startswith('solutions') else ''
+    plat_on = ' on' if active in ('platform', 'real-time', 'ai-forecasting') else ''
     return '''<header class="nav" id="nav">
   <div class="wrap nav-in">
     <a class="logo" href="{R}"><span class="logo-mark">PP</span>Place Performance</a>
     <nav class="nav-links" aria-label="Main">
-      %s
+      <div class="nav-dd"><a href="{R}platform/" class="dd-trigger%s">Platform</a><div class="dd-panel"><a href="{R}platform/"><b>Platform overview</b><span>From the sensor to the decision</span></a><a href="{R}real-time/"><b>Real time</b><span>Live occupancy, floorplans and alerts</span></a><a href="{R}ai-forecasting/"><b>AI &amp; forecasting</b><span>Forecasts, scenarios and the Place Assistant</span></a></div></div>
       <div class="nav-dd"><a href="{R}solutions/" class="dd-trigger%s">Solutions</a><div class="dd-panel">%s<a class="dd-all" href="{R}solutions/">All solutions</a><a class="dd-all dd-all-2" href="{R}places/">Browse by place</a></div></div>
-      %s%s%s
+      %s
       <div class="nav-m-cta"><a class="btn btn-dark btn-lg" href="{R}contact/">Book a demo <i class="arr"></i></a></div>
     </nav>
     <div class="nav-cta">
@@ -192,7 +193,7 @@ def nav(active):
     </div>
     <button class="nav-burger" aria-label="Menu" id="burger"><span></span><span></span></button>
   </div>
-</header>''' % (a('platform', 'Platform'), sol_on, dd, a('real-time', 'Real time'), a('ai-forecasting', 'AI &amp; forecasting'), a('plans', 'Plans'))
+</header>''' % (plat_on, sol_on, dd, a('plans', 'Plans'))
 
 
 FOOTER = '''<footer class="foot">
