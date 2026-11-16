@@ -178,12 +178,12 @@ def nav(active):
         return '<a href="{R}%s/"%s>%s</a>' % (slug, on, label)
     dd = ''.join('<a href="{R}solutions/%s/"><b>%s</b><span>%s</span></a>' % (s, n, d) for s, n, d, _ in SOLUTIONS)
     sol_on = ' on' if active.startswith('solutions') else ''
-    plat_on = ' on' if active in ('platform', 'real-time', 'ai-forecasting') else ''
+    plat_on = ' on' if active in ('platform', 'real-time', 'ai-forecasting', 'hardware') else ''
     return '''<header class="nav" id="nav">
   <div class="wrap nav-in">
     <a class="logo" href="{R}"><span class="logo-mark">PP</span>Place Performance</a>
     <nav class="nav-links" aria-label="Main">
-      <div class="nav-dd"><a href="{R}platform/" class="dd-trigger%s">Platform</a><div class="dd-panel"><a href="{R}platform/"><b>Platform overview</b><span>From the sensor to the decision</span></a><a href="{R}real-time/"><b>Real time</b><span>Live occupancy, floorplans and alerts</span></a><a href="{R}ai-forecasting/"><b>AI &amp; forecasting</b><span>Forecasts, scenarios and the Place Assistant</span></a></div></div>
+      <div class="nav-dd"><a href="{R}platform/" class="dd-trigger%s">Platform</a><div class="dd-panel"><a href="{R}platform/"><b>Platform overview</b><span>From the sensor to the decision</span></a><a href="{R}hardware/"><b>Hardware</b><span>Radar, LiDAR and the right sensor per site</span></a><a href="{R}real-time/"><b>Real time</b><span>Live occupancy, floorplans and alerts</span></a><a href="{R}ai-forecasting/"><b>AI &amp; forecasting</b><span>Forecasts, scenarios and the Place Assistant</span></a></div></div>
       <div class="nav-dd"><a href="{R}solutions/" class="dd-trigger%s">Solutions</a><div class="dd-panel">%s<a class="dd-all" href="{R}solutions/">All solutions</a><a class="dd-all dd-all-2" href="{R}places/">Browse by place</a></div></div>
       %s
       <div class="nav-m-cta"><a class="btn btn-dark btn-lg" href="{R}contact/">Book a demo <i class="arr"></i></a></div>
@@ -203,7 +203,7 @@ FOOTER = '''<footer class="foot">
       <p class="muted">Sensors, software and AI for places that matter.<br>Hardware, installation, support and platform, delivered by one Australian team.</p>
     </div>
     <div class="foot-cols">
-      <div><b>Platform</b><a href="{R}platform/">Platform overview</a><a href="{R}real-time/">Real time</a><a href="{R}ai-forecasting/">AI &amp; forecasting</a><a href="{R}plans/">Plans</a></div>
+      <div><b>Platform</b><a href="{R}platform/">Platform overview</a><a href="{R}hardware/">Hardware</a><a href="{R}real-time/">Real time</a><a href="{R}ai-forecasting/">AI &amp; forecasting</a><a href="{R}plans/">Plans</a></div>
       <div><b>Solutions</b>%s</div>
       <div><b>Places</b><a href="{R}places/campuses/">Campuses</a><a href="{R}places/libraries/">Libraries</a><a href="{R}places/shopping-centres/">Shopping centres</a><a href="{R}places/stadiums-and-venues/">Stadiums &amp; venues</a><a href="{R}places/streets-and-laneways/">Streets &amp; laneways</a><a href="{R}places/parks-and-foreshores/">Parks &amp; foreshores</a><a href="{R}places/office-towers/">Office towers</a><a href="{R}places/government-buildings/">Government buildings</a></div>
       <div><b>Company</b><a href="{R}about/">About us</a><a href="{R}contact/">Book a demo</a><a href="{R}quote/">Get a quote</a><a href="{R}talk-to-us/">Talk to us</a><a href="{R}privacy-by-design/">Privacy by design</a><a href="{R}faq/">FAQ</a></div>
@@ -303,7 +303,7 @@ platform_body = (
         ('Groups and direction understood', 'On-device processing counts people in and out, separates groups and filters out repeat passes, so the numbers reflect genuine visits.', None),
         ('One cable to fit', 'A single network cable carries both power and data, so a unit goes in quickly and cleanly with little disruption to the space.', None),
         ('Built to keep running', 'A sealed, weather-resistant housing rated for years of continuous, unattended operation, indoors or outdoors.', None),
-    ]), 'sec-tint') +
+    ]) + '<p style="margin-top:28px;text-align:center"><a class="link-arrow" href="{R}hardware/">The full range of sensors we use, from LiDAR to radar</a></p>', 'sec-tint') +
     section(head('On site', 'What the sensor sees on the ground.',
                  'The sensor projects a 3D field over the space and a count line across it. Anyone crossing is counted as an anonymous shape, no faces, no images.') + '<div class="reveal">' + lidar_photo() + '</div>') +
     section(split(SENSOR_VIS,
@@ -767,6 +767,31 @@ about_body = (
 page('about', 'About us | Place Performance',
      'Place Performance is a joint venture between ITESA (place measurement and sensing) and Rayven (operational software and AI), delivering sensors, installation and an analytics platform across Australia.',
      about_body, None, [('Home', ''), ('About', 'about/')])
+
+# ---------------- Hardware ----------------
+hardware_body = (
+    page_hero('Hardware', 'The right sensor for every place.',
+        'Place Performance is technology-agnostic. No single sensor is best everywhere, so we choose the right one for each site: indoor or outdoor, a single doorway or an open crowd, a permanent install or a one-off event. Whatever we use, the counts are accurate and anonymous, and we design, supply, install and support it all.',
+        '', [('Home', '{R}'), ('Platform', '{R}platform/'), ('Hardware', None)], ctas=False) +
+    section(head('The technologies we use', 'One toolkit, matched to the place.') + cards([
+        ('3D LiDAR &amp; depth sensors', 'Overhead sensors that map the space in 3D with light. Ideal for entrances and indoor zones, they count people by shape and movement at high accuracy, with no images and no identities.', None),
+        ('Radar sensors', 'All-weather radar that detects people, cyclists and vehicles by their movement, not their appearance. It works in any light, through rain, fog and full darkness, indoors or out, and reads direction and speed as well as counts.', None),
+        ('Specialist sensors', 'For a particular question we add the right specialist sensor, from thermal to break-beam, each chosen for the environment and the metric that matters most.', None),
+    ])) +
+    section(head('How we choose', 'The best technology for your requirement.') + cards([
+        ('Indoor or outdoor', 'Sheltered entrances suit overhead 3D sensors; open, exposed sites use weatherproof radar rated for sun, rain, cold and full darkness.', None),
+        ('What you are counting', 'People through a door, or pedestrians, cyclists and vehicles on a path or road, each needs a different sensor and mounting.', None),
+        ('Permanent or temporary', 'Fixed sites run on a single network cable; remote or pop-up sites run on battery and solar with 4G, so we can measure a trail, a roadside or a single event without mains power or a wired network.', None),
+    ]), 'sec-tint') +
+    section(head('Always anonymous', 'Measure the place, not the person.',
+        'Whatever the technology, our sensors capture depth or radar signatures, never images or identities. Counting happens on the device and only anonymous numbers leave the site, so privacy is built in by design.') +
+        '<p style="text-align:center;margin-top:8px"><a class="link-arrow" href="{R}privacy-by-design/">How counting stays anonymous</a></p>') +
+    section(head('One partner', 'Specified, installed and supported by us.',
+        'We assess each site, specify the right mix of technologies, then supply, install, commission and support every sensor as one service. You deal with one Australian partner, whatever is on your sites.'), 'sec-tint')
+)
+page('hardware', 'Sensors and hardware | Place Performance',
+     'The sensing technologies behind Place Performance: 3D LiDAR, radar and specialist sensors, chosen for each site, indoor or outdoor, permanent or temporary, and always anonymous.',
+     hardware_body, None, [('Home', ''), ('Platform', 'platform/'), ('Hardware', 'hardware/')], nav_key='platform')
 
 # ---------------- FAQ hub ----------------
 ALL_GROUPS = [('General', HOME_FAQS), ('Platform &amp; hardware', PLATFORM_FAQS), ('Real time &amp; alerts', REALTIME_FAQS), ('AI &amp; forecasting', AI_FAQS),
