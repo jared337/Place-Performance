@@ -447,7 +447,37 @@ def service():
     return s.render('Animated illustration of a government service centre with queue monitoring and entrance counting', 'Service centres: queue length, wait times and visits.')
 
 
-SCENES = {'entrance': entrance, 'library': library, 'shopping': shopping, 'venue': venue, 'street': street,
+def crowd():
+    s = Scene('ic', floor='#eef3f8', grid='#e1e8f1')
+    # open plaza / public space
+    s.patch(1.2, 1.2, 13.6, 9.8, '#f6f9fc')
+    s.patch(1.2, 1.2, 13.6, 9.8, 'none', ' stroke="#d4deea" stroke-width="1.5"')
+    s.tree(2.1, 1.9)
+    s.tree(13.9, 10.2)
+    # LiDAR sensor on a pole at the edge, its beam covering the whole open area
+    s.box(14.55, 1.5, 0, .22, .22, 4.4, ('#3b4656', '#2a333f', '#151b23'), layer='back', shadow=False)
+    s.zone(2.6, 3.0, 9.8, 6.8)
+    s.sensor(14.2, 1.3, 4.4, label='LiDAR sensor', beam=(2.6, 3.0, 9.8, 6.8))
+    # the crowd spread across the open area
+    crowd_pts = [
+        (3.4, 3.6), (4.3, 4.2), (5.2, 3.7), (6.1, 4.4), (7.0, 3.8), (7.9, 4.5), (8.8, 3.9), (9.7, 4.6), (10.6, 4.0),
+        (3.8, 5.3), (4.7, 5.9), (5.6, 5.4), (6.5, 6.1), (7.4, 5.5), (8.3, 6.2), (9.2, 5.6), (10.1, 6.3), (11.0, 5.7),
+        (4.2, 7.1), (5.1, 7.7), (6.0, 7.2), (6.9, 7.9), (7.8, 7.3), (8.7, 8.0), (9.6, 7.4), (10.5, 8.1), (11.4, 7.5),
+    ]
+    for i, (x, y) in enumerate(crowd_pts):
+        tone = (P1, P2) if i % 3 else ('#b6bdc7', '#9aa3ae')
+        s.person(x, y, 0, k=.8, tone=tone)
+    # people walking into the area, counted in
+    D = 8.0
+    s.walker([(.6, 11.4), (3.4, 8.6), (5.2, 6.2)], D, 0, count=(.58, 'IN +1', '#16a34a', (1.8, 9.6, 2.0)))
+    s.walker([(15.2, 11.6), (12.0, 8.8), (10.4, 6.4)], D, -4, count=(.58, 'IN +1', '#16a34a', (14.2, 9.8, 2.0)))
+    s.badge(2.8, 1.7, 4.4, 'In area now', '1,842', '#10b981', tick=('1842', '35', '1,842'))
+    s.badge(11.8, 10.4, 1.6, 'Capacity', '68% of limit', '#f59e0b')
+    s.tag(6.8, 10.8, 0.4, 'One sensor, whole area', ACC)
+    return s.render('Animated illustration of a LiDAR sensor on a pole counting a crowd across an open plaza', 'Open-area counting: one LiDAR sensor covers a whole crowd, no overhead mount.')
+
+
+SCENES = {'entrance': entrance, 'crowd': crowd, 'library': library, 'shopping': shopping, 'venue': venue, 'street': street,
           'park': park, 'office': office, 'campus': campus, 'service': service}
 _cache = {}
 

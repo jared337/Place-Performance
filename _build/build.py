@@ -261,7 +261,7 @@ platform_body = (
       <div class="pipe-step"><div class="pipe-ico"><svg viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg></div><h3>4. AI insight</h3><p>Forecasts, scenario planning, ranked recommendations and a Place Assistant you can ask in plain English.</p></div>
     </div>''') +
     section(head('The sensor', 'How the counting actually works.',
-                 'The sensors use LiDAR &mdash; pulses of light that map the space in 3D &mdash; to detect people by their shape and movement rather than their faces. Mounted overhead at an entrance, or positioned to cover an open area or a crowd, each one counts precisely without ever identifying anyone.') + cards([
+                 'The sensors use LiDAR &mdash; pulses of light that map the space in 3D &mdash; to detect people by their shape and movement rather than their faces. Mounted overhead at an entrance, or positioned to cover an open area or a crowd, each one counts precisely without ever identifying anyone.') + '<div class="illus-wide reveal">' + illus('crowd') + '</div>' + cards([
         ('LiDAR 3D sensing', 'LiDAR maps the space in 3D with light, not a camera, so people are counted by shape and movement, never by their faces. One unit can cover an entrance, a wide walkway or an open area.', None),
         ('Counting on the device', 'A processor inside each unit turns the LiDAR data into counts on the spot. Only anonymous numbers ever leave it &mdash; the sensor captures depth, not images.', '{R}privacy-by-design/'),
         ('Accurate in any light', 'Up to 99.8% counting accuracy, held steady through busy crowds and in any lighting &mdash; LiDAR works just as well in the dark as in daylight.', None),
