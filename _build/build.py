@@ -205,7 +205,7 @@ FOOTER = '''<footer class="foot">
       <div><b>Platform</b><a href="{R}platform/">Platform overview</a><a href="{R}real-time/">Real time</a><a href="{R}ai-forecasting/">AI &amp; forecasting</a><a href="{R}plans/">Plans</a></div>
       <div><b>Solutions</b>%s</div>
       <div><b>Places</b><a href="{R}places/campuses/">Campuses</a><a href="{R}places/libraries/">Libraries</a><a href="{R}places/shopping-centres/">Shopping centres</a><a href="{R}places/stadiums-and-venues/">Stadiums &amp; venues</a><a href="{R}places/streets-and-laneways/">Streets &amp; laneways</a><a href="{R}places/parks-and-foreshores/">Parks &amp; foreshores</a><a href="{R}places/office-towers/">Office towers</a><a href="{R}places/government-buildings/">Government buildings</a></div>
-      <div><b>Company</b><a href="{R}contact/">Book a demo</a><a href="{R}quote/">Get a quote</a><a href="{R}talk-to-us/">Talk to us</a><a href="{R}privacy-by-design/">Privacy by design</a><a href="{R}faq/">FAQ</a></div>
+      <div><b>Company</b><a href="{R}about/">About us</a><a href="{R}contact/">Book a demo</a><a href="{R}quote/">Get a quote</a><a href="{R}talk-to-us/">Talk to us</a><a href="{R}privacy-by-design/">Privacy by design</a><a href="{R}faq/">FAQ</a></div>
     </div>
   </div>
   <div class="wrap foot-note">&copy; 2026 Place Performance. Photography from Unsplash.</div>
@@ -741,6 +741,32 @@ TALK_FAQS = [
 page('talk-to-us', 'Talk to us | Place Performance',
      'Get in touch with the Place Performance team. Ask about people counting, privacy, hardware or pilots, or get pointed to a demo or a quote.',
      talktous_body, TALK_FAQS, [('Home', ''), ('Talk to us', 'talk-to-us/')])
+
+# ---------------- About ----------------
+about_body = (
+    page_hero('About us', 'The team behind Place Performance.',
+        'Place Performance is a joint venture between two Australian companies: <a href="https://itesa.com.au/" target="_blank" rel="noopener">ITESA</a>, specialists in measuring how places are used, and <a href="https://rayven.io/" target="_blank" rel="noopener">Rayven</a>, builders of operational software and AI. Together we deliver the sensors, the installation and the intelligent platform as one service, designed and supported in Australia.',
+        '', [('Home', '{R}'), ('About', None)], ctas=False) +
+    section(head('Our vision', 'Measure the place, not the person.',
+        'We help the councils, universities, governments and property owners who run Australia\'s public and shared places understand how they are really used &mdash; counting the place, never identifying the person &mdash; so every space can be made safer, run more efficiently and planned with evidence.')) +
+    section(head('A joint venture', 'Two specialists, one accountable partner.') +
+        '<div class="partner-grid reveal">'
+        '<div class="partner"><span class="partner-role">Measurement &amp; analytics</span><h4>ITESA</h4>'
+        '<p>ITESA specialises in measuring how people, cyclists and vehicles use buildings, venues, parks, trails, streets and public spaces. They bring together sensing technology, edge processing, connectivity, data management, analytics and visualisation &mdash; and they design, supply, install, commission and support complete measurement solutions across Australia.</p>'
+        '<p class="about-addr">Level 1, 54 Wellington St<br>Collingwood, Victoria 3066</p>'
+        '<a class="link-arrow" href="https://itesa.com.au/" target="_blank" rel="noopener">itesa.com.au</a></div>'
+        '<div class="partner"><span class="partner-role">Operational software &amp; AI</span><h4>Rayven</h4>'
+        '<p>Rayven is an Australian operational software company. Its unified platform integrates data, automates processes and powers custom AI and apps &mdash; the real-time dashboards, alerts, reporting, forecasting and AI insight behind Place Performance. Rayven is trusted by teams across Australia and around the world.</p>'
+        '<p class="about-addr">223 Liverpool St<br>Darlinghurst, NSW 2010</p>'
+        '<a class="link-arrow" href="https://rayven.io/" target="_blank" rel="noopener">rayven.io</a></div>'
+        '</div>', 'sec-tint') +
+    section(head('How it fits together', 'From the sensor to the decision, by one team.',
+        'ITESA brings the sensing hardware, the site surveys and the local installation and support. Rayven brings the data platform, the dashboards and the AI. Place Performance brings them together, so you deal with one Australian partner from the first site visit to the insight on the screen.')) +
+    cta_band()
+)
+page('about', 'About us | Place Performance',
+     'Place Performance is a joint venture between ITESA (place measurement and sensing) and Rayven (operational software and AI), delivering sensors, installation and an analytics platform across Australia.',
+     about_body, None, [('Home', ''), ('About', 'about/')])
 
 # ---------------- FAQ hub ----------------
 ALL_GROUPS = [('General', HOME_FAQS), ('Platform &amp; hardware', PLATFORM_FAQS), ('Real time &amp; alerts', REALTIME_FAQS), ('AI &amp; forecasting', AI_FAQS),

@@ -26,6 +26,7 @@ Key facts:
 - [Book a demo](https://placeperformance.ai/contact/): Book a 30-minute Place Performance walkthrough and scope a pilot: site survey, sensor plan, installation and live data from your own site within weeks.
 - [Get a quote](https://placeperformance.ai/quote/): Get tailored Place Performance pricing: sensors, installation, the analytics platform and support, based on your sites, devices and plan level.
 - [Talk to us](https://placeperformance.ai/talk-to-us/): Get in touch with the Place Performance team. Ask about people counting, privacy, hardware or pilots, or get pointed to a demo or a quote.
+- [About us](https://placeperformance.ai/about/): Place Performance is a joint venture between ITESA (place measurement and sensing) and Rayven (operational software and AI), delivering sensors, installation and an analytics platform across Australia.
 - [People counting & occupancy FAQ](https://placeperformance.ai/faq/): Answers to common questions about Place Performance: hardware, installation, privacy, real-time occupancy, alerts, forecasting, AI, plans and pricing.
 - [Campus space utilisation monitoring](https://placeperformance.ai/places/campuses/): Measure room and space utilisation across university campuses: occupancy vs bookings, live study space, peak periods and evidence for capital planning.
 - [Library people counting & occupancy](https://placeperformance.ai/places/libraries/): People counting for public, state and university libraries: visits, live zone occupancy, peak periods, dwell time, capacity alerts and visitation reports.
