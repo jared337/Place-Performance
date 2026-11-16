@@ -391,6 +391,14 @@ p { margin: 0; }
 .lidar-shot-frame svg { position: absolute; inset: 0; width: 100%; height: 100%; }
 .lidar-shot figcaption { margin-top: 14px; font-size: 14.5px; color: var(--muted); text-align: center; }
 .about-addr { font-size: 14.5px; color: var(--muted); line-height: 1.5; margin: 14px 0 16px; }
+.hw-spec { list-style: none; padding: 0; margin: 16px 0 0; }
+.hw-spec li { position: relative; padding-left: 20px; font-size: 14px; line-height: 1.5; margin-bottom: 7px; color: var(--body); }
+.hw-spec li::before { content: ""; position: absolute; left: 0; top: 7px; width: 7px; height: 7px; border-radius: 2px; background: var(--cyan); }
+.spec-table-wrap { overflow-x: auto; }
+.spec-table { width: 100%; border-collapse: collapse; font-size: 14.5px; min-width: 580px; }
+.spec-table th, .spec-table td { text-align: left; padding: 14px 16px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.spec-table thead th { font-size: 13px; text-transform: uppercase; letter-spacing: .05em; color: var(--accent); border-bottom: 2px solid var(--line); }
+.spec-table tbody th { font-weight: 600; color: var(--navy); white-space: nowrap; }
 
 /* ---------------- Footer ---------------- */
 .foot { padding: 70px 0 30px; background: var(--tint); }

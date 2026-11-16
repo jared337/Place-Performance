@@ -773,21 +773,62 @@ hardware_body = (
     page_hero('Hardware', 'The right sensor for every place.',
         'Place Performance is technology-agnostic. No single sensor is best everywhere, so we choose the right one for each site: indoor or outdoor, a single doorway or an open crowd, a permanent install or a one-off event. Whatever we use, the counts are accurate and anonymous, and we design, supply, install and support it all.',
         '', [('Home', '{R}'), ('Platform', '{R}platform/'), ('Hardware', None)], ctas=False) +
-    section(head('The technologies we use', 'One toolkit, matched to the place.') + cards([
-        ('3D LiDAR &amp; depth sensors', 'Overhead sensors that map the space in 3D with light. Ideal for entrances and indoor zones, they count people by shape and movement at high accuracy, with no images and no identities.', None),
-        ('Radar sensors', 'All-weather radar that detects people, cyclists and vehicles by their movement, not their appearance. It works in any light, through rain, fog and full darkness, indoors or out, and reads direction and speed as well as counts.', None),
-        ('Specialist sensors', 'For a particular question we add the right specialist sensor, from thermal to break-beam, each chosen for the environment and the metric that matters most.', None),
+    section(head('3D LiDAR &amp; depth', 'Light that measures distance.',
+        'A 3D depth sensor sits above the space and sends out rapid pulses of infrared light. By timing how long each pulse takes to bounce back, it measures the exact distance to every point below it and builds a live 3D map of the scene. Looking straight down, it reads the height and shape of each person passing through, and on-device software tracks them across a count line or within a zone. Because it measures distance, not colour or features, there is nothing to identify, and it performs the same in bright sun or total darkness.') +
+        '<div class="fgrid fgrid-3 reveal">'
+        '<div class="fcard"><h4>What it is good at</h4><ul class="hw-spec"><li>Pinpoint entrance accuracy, up to 99.8%</li><li>Separates people standing close together</li><li>Ignores trolleys, bags and strollers by shape</li><li>Counts direction and live occupancy at once</li></ul></div>'
+        '<div class="fcard"><h4>Where it is less suited</h4><ul class="hw-spec"><li>Needs an overhead mount at a set height</li><li>Each unit covers a doorway or defined zone</li><li>Best indoors or under cover</li></ul></div>'
+        '<div class="fcard"><h4>Key specs</h4><ul class="hw-spec"><li>Time-of-flight infrared depth</li><li>Works in any light, captures no images</li><li>Single network cable (PoE)</li><li>Line, zone and occupancy counting</li></ul></div>'
+        '</div>') +
+    section(head('Radar (mmWave)', 'Radio that reads movement.',
+        'A millimetre-wave radar sends out high-frequency radio signals and listens for the echoes. From each echo it works out an object\'s distance and angle, giving a 3D position, and from the shift in frequency it reads the object\'s speed and direction, the same principle as a speed camera. It tracks many objects at once and sorts them into pedestrians, cyclists and vehicles by how fast they move, and adults from children by height. Radio is unaffected by light or weather and passes straight through a sealed housing, so the sensor has no exposed lens and keeps working in rain, fog, snow, glare or complete darkness.') +
+        '<div class="fgrid fgrid-3 reveal">'
+        '<div class="fcard"><h4>What it is good at</h4><ul class="hw-spec"><li>Outdoors and in any weather</li><li>People, cyclists and vehicles on one sensor</li><li>Range to about 10&nbsp;m for people, 20&nbsp;m for vehicles</li><li>Reads speed, direction and classification</li></ul></div>'
+        '<div class="fcard"><h4>Where it is less suited</h4><ul class="hw-spec"><li>Lower detail than depth imaging</li><li>Very dense, slow crowds are harder</li><li>Classification by speed has edge cases</li></ul></div>'
+        '<div class="fcard"><h4>Key specs</h4><ul class="hw-spec"><li>60&nbsp;GHz mmWave, tracks position and speed</li><li>IP65 to IP68, -25 to +65&deg;C</li><li>PoE, or battery and solar with 4G</li><li>Over 99% accuracy, captures no images</li></ul></div>'
+        '</div>', 'sec-tint') +
+    section(head('Specialist sensors', 'The right tool for a specific job.',
+        'For a particular site or metric, we add a specialist sensor, each with its own strengths.') +
+        '<div class="fgrid fgrid-3 reveal">'
+        '<div class="fcard"><h4>Thermal</h4><p>Reads the heat people naturally give off, so it detects presence in complete darkness and tells people from their surroundings without any image. Useful for low-light and privacy-sensitive outdoor spots.</p></div>'
+        '<div class="fcard"><h4>Stereo vision</h4><p>Two lenses judge depth from the small difference between their views, the way our eyes do, counting people by 3D shape on the device. A passive alternative to LiDAR for some indoor sites.</p></div>'
+        '<div class="fcard"><h4>Break-beam</h4><p>A simple infrared beam across a doorway counts each time it is interrupted. Low cost and easy to fit, with lower accuracy, for basic single-door counting.</p></div>'
+        '</div>') +
+    section(head('Side by side', 'How the main technologies compare.') +
+        '<div class="spec-table-wrap reveal"><table class="spec-table"><thead><tr><th>&nbsp;</th><th>3D LiDAR / depth</th><th>Radar (mmWave)</th></tr></thead><tbody>'
+        '<tr><th>Where it works</th><td>Indoor entrances and zones, sheltered</td><td>Indoor or outdoor, all weather</td></tr>'
+        '<tr><th>What it detects</th><td>People, by shape and height</td><td>People, cyclists and vehicles, by movement and speed</td></tr>'
+        '<tr><th>Typical range</th><td>The doorway or zone below the sensor</td><td>About 10&nbsp;m for people, up to 20&nbsp;m for vehicles</td></tr>'
+        '<tr><th>Light and weather</th><td>Any light</td><td>Any light, plus rain, fog, snow and full darkness</td></tr>'
+        '<tr><th>Mounting</th><td>Overhead</td><td>Overhead, wall or pole</td></tr>'
+        '<tr><th>Power</th><td>Single network cable (PoE)</td><td>PoE, or battery and solar</td></tr>'
+        '<tr><th>Connectivity</th><td>Wired network</td><td>Wired, Wi-Fi or 4G</td></tr>'
+        '<tr><th>Accuracy</th><td>Up to 99.8%</td><td>Over 99%</td></tr>'
+        '<tr><th>Privacy</th><td>3D depth only, no images</td><td>Radar signatures only, no images</td></tr>'
+        '</tbody></table></div>', 'sec-tint') +
+    section(head('What every sensor measures', 'Counts you can act on, processed on site.') + cards([
+        ('Lines and zones', 'Draw a count line across a doorway or a zone over an area. The sensor reports people crossing in and out, and how many are inside at any moment.', None),
+        ('Direction and dwell', 'Every count carries a direction, in or out, and zones measure how long people stay, so you see flow and dwell time, not just totals.', None),
+        ('Classification', 'Radar tells pedestrians, cyclists and vehicles apart by speed, and adults from children by height, so mixed paths and roads are counted correctly.', None),
     ])) +
     section(head('How we choose', 'The best technology for your requirement.') + cards([
         ('Indoor or outdoor', 'Sheltered entrances suit overhead 3D sensors; open, exposed sites use weatherproof radar rated for sun, rain, cold and full darkness.', None),
         ('What you are counting', 'People through a door, or pedestrians, cyclists and vehicles on a path or road, each needs a different sensor and mounting.', None),
-        ('Permanent or temporary', 'Fixed sites run on a single network cable; remote or pop-up sites run on battery and solar with 4G, so we can measure a trail, a roadside or a single event without mains power or a wired network.', None),
+        ('Permanent or temporary', 'Fixed sites run on a single network cable; remote or pop-up sites run on battery and solar with 4G, so we can measure a trail, a roadside or a single event without mains power.', None),
     ]), 'sec-tint') +
+    section(head('In practice', 'Matched to the kind of place.') + cards([
+        ('Building entrance', 'Overhead 3D LiDAR counts people in and out at the door, accurate even in crowds.', None),
+        ('Open plaza or crowd', 'Wide-area radar or LiDAR covers a whole space and counts the crowd from a single mount.', None),
+        ('Shared paths and trails', 'Radar separates walkers from cyclists and records direction, day or night.', None),
+        ('Roads and car parks', 'Radar counts vehicles and reads speed alongside pedestrians and cyclists.', None),
+        ('Remote or pop-up sites', 'Battery and solar radar with 4G measures a trail, a roadside or a single event with no mains power or wired network.', None),
+        ('A mixed portfolio', 'Different sensors across your sites, all feeding one platform and one set of reports.', None),
+    ])) +
     section(head('Always anonymous', 'Measure the place, not the person.',
         'Whatever the technology, our sensors capture depth or radar signatures, never images or identities. Counting happens on the device and only anonymous numbers leave the site, so privacy is built in by design.') +
-        '<p style="text-align:center;margin-top:8px"><a class="link-arrow" href="{R}privacy-by-design/">How counting stays anonymous</a></p>') +
+        '<p style="text-align:center;margin-top:8px"><a class="link-arrow" href="{R}privacy-by-design/">How counting stays anonymous</a></p>', 'sec-tint') +
     section(head('One partner', 'Specified, installed and supported by us.',
-        'We assess each site, specify the right mix of technologies, then supply, install, commission and support every sensor as one service. You deal with one Australian partner, whatever is on your sites.'), 'sec-tint')
+        'We assess each site, specify the right mix of technologies, then supply, install, commission and support every sensor as one service. You deal with one Australian partner, whatever is on your sites.'))
 )
 page('hardware', 'Sensors and hardware | Place Performance',
      'The sensing technologies behind Place Performance: 3D LiDAR, radar and specialist sensors, chosen for each site, indoor or outdoor, permanent or temporary, and always anonymous.',
