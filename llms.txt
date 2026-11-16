@@ -24,6 +24,8 @@ Key facts:
 - [Pedestrian & cyclist counting](https://placeperformance.ai/solutions/parks-and-streets/): Pedestrian, cyclist and vehicle counting for parks, trails, streets and public spaces, permanent or temporary, with before-and-after project analysis.
 - [Privacy-safe people counting](https://placeperformance.ai/privacy-by-design/): How Place Performance counts people anonymously: edge processing, data masked at source, no video stored, no facial recognition and role-based access.
 - [Book a demo](https://placeperformance.ai/contact/): Book a 30-minute Place Performance walkthrough and scope a pilot: site survey, sensor plan, installation and live data from your own site within weeks.
+- [Get a quote](https://placeperformance.ai/quote/): Get tailored Place Performance pricing: sensors, installation, the analytics platform and support, based on your sites, devices and plan level.
+- [Talk to us](https://placeperformance.ai/talk-to-us/): Get in touch with the Place Performance team. Ask about people counting, privacy, hardware or pilots, or get pointed to a demo or a quote.
 - [People counting & occupancy FAQ](https://placeperformance.ai/faq/): Answers to common questions about Place Performance: hardware, installation, privacy, real-time occupancy, alerts, forecasting, AI, plans and pricing.
 - [Campus space utilisation monitoring](https://placeperformance.ai/places/campuses/): Measure room and space utilisation across university campuses: occupancy vs bookings, live study space, peak periods and evidence for capital planning.
 - [Library people counting & occupancy](https://placeperformance.ai/places/libraries/): People counting for public, state and university libraries: visits, live zone occupancy, peak periods, dwell time, capacity alerts and visitation reports.
@@ -113,7 +115,7 @@ Yes. Forecasts support the business case before you build, and investment analys
 Every plan includes the sensors, site survey, installation, commissioning, the analytics platform, device health monitoring and ongoing support. Higher levels add capabilities on top of everything in the levels below.
 
 ### How is Place Performance priced?
-Pricing is based on the number of sites and devices and the capability level you choose. Contact us for a quote tailored to your locations.
+Pricing is based on the number of sites and devices and the capability level you choose. Get a quote tailored to your locations.
 
 ### Can we start small and upgrade later?
 Yes. Many organisations start with Essentials at one or a few sites and move up a level when they are ready. Upgrades add features without replacing hardware or losing history.
@@ -267,6 +269,24 @@ No. A demo is a walkthrough to see whether Place Performance fits your needs. If
 
 ### Do you work outside major cities?
 Yes. Solutions are designed and supported for Australian conditions, from busy urban spaces to parks, trails, coastal and remote locations.
+
+### What do you need to prepare a quote?
+A rough idea of how many sites and entrances you want to measure, and which outcomes matter most. Exact device counts are confirmed during the site survey.
+
+### Is installation included in the price?
+Yes. Every quote includes design, supply, installation and commissioning by our Australian team, plus ongoing support.
+
+### Can we start small?
+Yes. Most organisations start with a pilot at one site and add sites and capability levels as they grow.
+
+### Who will I talk to?
+A member of our Australian team who knows the platform and the hardware, not an outsourced call centre.
+
+### I am not ready to buy. Can I still ask questions?
+Of course. Ask about privacy, accuracy, hardware or how a pilot works, with no obligation.
+
+### What if I want pricing or a demo?
+For tailored pricing use Get a quote. To see the platform with data like yours, book a demo.
 
 ### How do you measure space utilisation on a university campus?
 Sensors count how many people are in each room or zone throughout the day. Comparing measured occupancy with each room's capacity and its bookings shows true utilisation by room, building and time of week.

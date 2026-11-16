@@ -171,7 +171,7 @@ FOOTER = '''<footer class="foot">
       <div><b>Platform</b><a href="{R}platform/">Platform overview</a><a href="{R}real-time/">Real time</a><a href="{R}ai-forecasting/">AI &amp; forecasting</a><a href="{R}plans/">Plans</a></div>
       <div><b>Solutions</b>%s</div>
       <div><b>Places</b><a href="{R}places/campuses/">Campuses</a><a href="{R}places/libraries/">Libraries</a><a href="{R}places/shopping-centres/">Shopping centres</a><a href="{R}places/stadiums-and-venues/">Stadiums &amp; venues</a><a href="{R}places/streets-and-laneways/">Streets &amp; laneways</a><a href="{R}places/parks-and-foreshores/">Parks &amp; foreshores</a><a href="{R}places/office-towers/">Office towers</a><a href="{R}places/government-buildings/">Government buildings</a></div>
-      <div><b>Company</b><a href="{R}contact/">Contact</a><a href="{R}privacy-by-design/">Privacy by design</a><a href="{R}faq/">FAQ</a></div>
+      <div><b>Company</b><a href="{R}contact/">Book a demo</a><a href="{R}quote/">Get a quote</a><a href="{R}talk-to-us/">Talk to us</a><a href="{R}privacy-by-design/">Privacy by design</a><a href="{R}faq/">FAQ</a></div>
     </div>
   </div>
   <div class="wrap foot-note">&copy; 2026 Place Performance. Photography from Unsplash.</div>
@@ -412,16 +412,16 @@ plans_body = (
               'Four levels. Each includes everything before it, so you can start small, prove value and grow.',
               '', [('Home', '{R}'), ('Plans', None)], ctas=False).replace('class="hero page-hero"', 'class="hero page-hero hero-plans"') +
     section('''<div class="plans reveal">
-      <div class="plan"><span class="plan-n">Level 1</span><h3>Essentials</h3><p class="plan-tag">Know what's happening.</p><ul><li>Visitor counting &amp; occupancy</li><li>Peak periods &amp; dwell time</li><li>Live dashboards</li><li>Automated reports</li><li>Device health</li></ul><a class="btn btn-plan" href="{R}contact/?plan=essentials">Get a quote <i class="arr"></i></a></div>
-      <div class="plan"><span class="plan-n">Level 2</span><h3>Insights</h3><p class="plan-tag">Know why it's happening.</p><ul><li>Live floorplans</li><li>Heat maps &amp; visitor flow</li><li>Zone comparison</li><li>Repeat visitation</li><li>Historical trends</li></ul><a class="btn btn-plan" href="{R}contact/?plan=insights">Get a quote <i class="arr"></i></a></div>
-      <div class="plan plan-hl"><span class="plan-n">Level 3</span><h3>Professional</h3><p class="plan-tag">Improve how your place performs.</p><ul><li>Multi-site portfolio</li><li>Alert rules &amp; escalation</li><li>Queue &amp; operations</li><li>POS, Wi-Fi &amp; BMS integrations</li><li>Single sign-on</li></ul><a class="btn btn-plan btn-plan-hl" href="{R}contact/?plan=professional">Get a quote <i class="arr"></i></a></div>
-      <div class="plan"><span class="plan-n">Level 4</span><h3>Executive</h3><p class="plan-tag">Lead with intelligence.</p><ul><li>Performance index &amp; benchmarking</li><li>AI insights &amp; Place Assistant</li><li>Forecasting</li><li>Scenario modelling</li><li>Board reporting packs</li></ul><a class="btn btn-plan" href="{R}contact/?plan=executive">Get a quote <i class="arr"></i></a></div>
-    </div>''' + '<p class="plans-note">Every plan includes sensors, installation, commissioning, the platform and ongoing support. Pricing depends on the number of sites and devices. <a href="{R}contact/">Talk to us for a quote</a>.</p>', 'sec-pull') +
+      <div class="plan"><span class="plan-n">Level 1</span><h3>Essentials</h3><p class="plan-tag">Know what's happening.</p><ul><li>Visitor counting &amp; occupancy</li><li>Peak periods &amp; dwell time</li><li>Live dashboards</li><li>Automated reports</li><li>Device health</li></ul><a class="btn btn-plan" href="{R}quote/?plan=essentials">Get a quote <i class="arr"></i></a></div>
+      <div class="plan"><span class="plan-n">Level 2</span><h3>Insights</h3><p class="plan-tag">Know why it's happening.</p><ul><li>Live floorplans</li><li>Heat maps &amp; visitor flow</li><li>Zone comparison</li><li>Repeat visitation</li><li>Historical trends</li></ul><a class="btn btn-plan" href="{R}quote/?plan=insights">Get a quote <i class="arr"></i></a></div>
+      <div class="plan plan-hl"><span class="plan-n">Level 3</span><h3>Professional</h3><p class="plan-tag">Improve how your place performs.</p><ul><li>Multi-site portfolio</li><li>Alert rules &amp; escalation</li><li>Queue &amp; operations</li><li>POS, Wi-Fi &amp; BMS integrations</li><li>Single sign-on</li></ul><a class="btn btn-plan btn-plan-hl" href="{R}quote/?plan=professional">Get a quote <i class="arr"></i></a></div>
+      <div class="plan"><span class="plan-n">Level 4</span><h3>Executive</h3><p class="plan-tag">Lead with intelligence.</p><ul><li>Performance index &amp; benchmarking</li><li>AI insights &amp; Place Assistant</li><li>Forecasting</li><li>Scenario modelling</li><li>Board reporting packs</li></ul><a class="btn btn-plan" href="{R}quote/?plan=executive">Get a quote <i class="arr"></i></a></div>
+    </div>''' + '<p class="plans-note">Every plan includes sensors, installation, commissioning, the platform and ongoing support. Pricing depends on the number of sites and devices. <a href="{R}quote/">Get a quote</a>.</p>', 'sec-pull') +
     section(head('Compare', 'What\'s included at each level.') + plan_table, 'sec-tint')
 )
 PLANS_FAQS = [
     ('What is included in every plan?', 'Every plan includes the sensors, site survey, installation, commissioning, the analytics platform, device health monitoring and ongoing support. Higher levels add capabilities on top of everything in the levels below.'),
-    ('How is Place Performance priced?', 'Pricing is based on the number of sites and devices and the capability level you choose. Contact us for a quote tailored to your locations.'),
+    ('How is Place Performance priced?', 'Pricing is based on the number of sites and devices and the capability level you choose. <a href="{R}quote/">Get a quote</a> tailored to your locations.'),
     ('Can we start small and upgrade later?', 'Yes. Many organisations start with Essentials at one or a few sites and move up a level when they are ready. Upgrades add features without replacing hardware or losing history.'),
     ('Which level do we need for multiple sites?', 'Multi-site portfolio views, site ranking and outlier flags start at Professional (Level 3). Portfolio-wide performance index and external benchmarking are part of Executive (Level 4).'),
     ('Which level includes AI and forecasting?', 'AI insights, the Place Assistant, forecasting, scenario modelling, investment analysis and board reporting packs are included in Executive (Level 4).'),
@@ -637,6 +637,7 @@ contact_body = page_hero('Contact', 'Book a demo.',
     '<li><b>Sensor plan &amp; proposal.</b> The right devices and plan level for each site.</li>'
     '<li><b>Pilot.</b> Live data from your own site, typically within weeks.</li></ol>',
     '''<div class="hero-form"><form class="cta-form" id="demo-form">
+        <input type="hidden" name="enquiry_type" value="demo">
         <div class="form-row"><label>Name<input required name="name" autocomplete="name"></label><label>Work email<input required type="email" name="email" autocomplete="email"></label></div>
         <div class="form-row"><label>Organisation<input name="org" autocomplete="organization"></label><label>Sector<select name="sector"><option>Local council</option><option>University / TAFE</option><option>Government</option><option>Commercial property</option><option>Retail &amp; precincts</option><option>Parks, trails &amp; streets</option><option>Other</option></select></label></div>
         <div class="form-row"><label>Plan of interest<select name="plan" id="plan-select"><option value="">Not sure yet</option><option value="essentials">Essentials (Level 1)</option><option value="insights">Insights (Level 2)</option><option value="professional">Professional (Level 3)</option><option value="executive">Executive (Level 4)</option></select></label><label>Number of sites<select name="sites"><option>1</option><option>2&ndash;5</option><option>6&ndash;20</option><option>20+</option></select></label></div>
@@ -654,6 +655,56 @@ CONTACT_FAQS = [
 page('contact', 'Book a demo | Place Performance',
      'Book a 30-minute Place Performance walkthrough and scope a pilot: site survey, sensor plan, installation and live data from your own site within weeks.',
      contact_body, CONTACT_FAQS, [('Home', ''), ('Contact', 'contact/')])
+
+# ---------------- Get a quote ----------------
+quote_body = page_hero('Pricing', 'Get a quote.',
+    'Tell us how many sites you have and what you want to measure, and we\'ll put together pricing for the sensors, installation and the plan level that fits.'
+    '</p><ol class="steps-list hero-steps">'
+    '<li><b>Tell us your places.</b> How many sites, entrances and spaces you want to measure.</li>'
+    '<li><b>We scope the hardware.</b> The right sensors and plan level for each location.</li>'
+    '<li><b>One clear price.</b> Sensors, installation, commissioning, platform and support, together.</li></ol>',
+    '''<div class="hero-form"><form class="cta-form" id="demo-form">
+        <input type="hidden" name="enquiry_type" value="quote">
+        <div class="form-row"><label>Name<input required name="name" autocomplete="name"></label><label>Work email<input required type="email" name="email" autocomplete="email"></label></div>
+        <div class="form-row"><label>Organisation<input name="org" autocomplete="organization"></label><label>Sector<select name="sector"><option>Local council</option><option>University / TAFE</option><option>Government</option><option>Commercial property</option><option>Retail &amp; precincts</option><option>Parks, trails &amp; streets</option><option>Other</option></select></label></div>
+        <div class="form-row"><label>Plan of interest<select name="plan" id="plan-select"><option value="">Not sure yet</option><option value="essentials">Essentials (Level 1)</option><option value="insights">Insights (Level 2)</option><option value="professional">Professional (Level 3)</option><option value="executive">Executive (Level 4)</option></select></label><label>Number of sites<select name="sites"><option>1</option><option>2&ndash;5</option><option>6&ndash;20</option><option>20+</option></select></label></div>
+        <label>What would you like to measure?<textarea name="msg" rows="3" placeholder="e.g. entrances and study spaces across six library branches"></textarea></label>
+        <button class="btn btn-dark btn-lg" type="submit">Get a quote <i class="arr"></i></button>
+        <p class="form-note" id="form-note">We'll send tailored pricing within one business day.</p>
+      </form></div>''', [('Home', '{R}'), ('Plans', '{R}plans/'), ('Get a quote', None)], ctas=False)
+QUOTE_FAQS = [
+    ('How is Place Performance priced?', 'Pricing is based on the number of sites and devices and the capability level you choose. Every quote covers the sensors, installation, commissioning, the platform and ongoing support.'),
+    ('What do you need to prepare a quote?', 'A rough idea of how many sites and entrances you want to measure, and which outcomes matter most. Exact device counts are confirmed during the site survey.'),
+    ('Is installation included in the price?', 'Yes. Every quote includes design, supply, installation and commissioning by our Australian team, plus ongoing support.'),
+    ('Can we start small?', 'Yes. Most organisations start with a pilot at one site and add sites and capability levels as they grow.'),
+]
+page('quote', 'Get a quote | Place Performance',
+     'Get tailored Place Performance pricing: sensors, installation, the analytics platform and support, based on your sites, devices and plan level.',
+     quote_body, QUOTE_FAQS, [('Home', ''), ('Plans', 'plans/'), ('Get a quote', 'quote/')], nav_key='plans')
+
+# ---------------- Talk to us ----------------
+talktous_body = page_hero('Contact', 'Talk to us.',
+    'Have a question, or not sure where to start? Send a message and our team will get back to you. Want a walkthrough instead? <a href="{R}contact/">Book a demo</a>. After pricing? <a href="{R}quote/">Get a quote</a>.'
+    '</p><ol class="steps-list hero-steps">'
+    '<li><b>Ask anything.</b> The platform, privacy, hardware or how a pilot works.</li>'
+    '<li><b>Talk to a human.</b> A local team member, not a call centre.</li>'
+    '<li><b>No obligation.</b> We\'ll point you to the right next step.</li></ol>',
+    '''<div class="hero-form"><form class="cta-form" id="demo-form">
+        <input type="hidden" name="enquiry_type" value="general">
+        <div class="form-row"><label>Name<input required name="name" autocomplete="name"></label><label>Work email<input required type="email" name="email" autocomplete="email"></label></div>
+        <label>Organisation<input name="org" autocomplete="organization"></label>
+        <label>How can we help?<textarea name="msg" rows="4" required placeholder="Tell us what you're after"></textarea></label>
+        <button class="btn btn-dark btn-lg" type="submit">Send message <i class="arr"></i></button>
+        <p class="form-note" id="form-note">We'll reply within one business day.</p>
+      </form></div>''', [('Home', '{R}'), ('Talk to us', None)], ctas=False)
+TALK_FAQS = [
+    ('Who will I talk to?', 'A member of our Australian team who knows the platform and the hardware, not an outsourced call centre.'),
+    ('I am not ready to buy. Can I still ask questions?', 'Of course. Ask about privacy, accuracy, hardware or how a pilot works, with no obligation.'),
+    ('What if I want pricing or a demo?', 'For tailored pricing use <a href="{R}quote/">Get a quote</a>. To see the platform with data like yours, <a href="{R}contact/">book a demo</a>.'),
+]
+page('talk-to-us', 'Talk to us | Place Performance',
+     'Get in touch with the Place Performance team. Ask about people counting, privacy, hardware or pilots, or get pointed to a demo or a quote.',
+     talktous_body, TALK_FAQS, [('Home', ''), ('Talk to us', 'talk-to-us/')])
 
 # ---------------- FAQ hub ----------------
 ALL_GROUPS = [('General', HOME_FAQS), ('Platform &amp; hardware', PLATFORM_FAQS), ('Real time &amp; alerts', REALTIME_FAQS), ('AI &amp; forecasting', AI_FAQS),
