@@ -57,7 +57,8 @@ p { margin: 0; }
 .nav.scrolled { background: rgba(255,255,255,.82); backdrop-filter: saturate(180%) blur(14px); box-shadow: 0 1px 0 rgba(10,37,64,.06); }
 .nav-in { display: flex; align-items: center; gap: 32px; height: 68px; }
 .logo { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 18px; color: var(--navy); letter-spacing: -.02em; }
-.logo-mark { width: 30px; height: 30px; border-radius: 9px; display: grid; place-items: center; color: #fff; font-size: 12px; background: linear-gradient(135deg, #635bff, #00d4ff); box-shadow: 0 4px 12px rgba(99,91,255,.35); }
+.logo-mark { display: inline-flex; align-items: center; }
+.logo-mark svg { height: 34px; width: auto; display: block; }
 .nav-links { display: flex; gap: 26px; margin-left: 12px; }
 .nav-links a { color: var(--navy); font-weight: 500; font-size: 15px; opacity: .85; }
 .nav-links a:hover { opacity: 1; }

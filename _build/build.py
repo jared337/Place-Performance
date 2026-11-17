@@ -241,7 +241,7 @@ def nav(active):
     plat_on = ' on' if active in ('platform', 'real-time', 'ai-forecasting', 'hardware') else ''
     return '''<header class="nav" id="nav">
   <div class="wrap nav-in">
-    <a class="logo" href="{R}"><span class="logo-mark">PP</span>Place Performance</a>
+    <a class="logo" href="{R}"><span class="logo-mark"><svg viewBox="0 0 44 42" aria-hidden="true"><defs><linearGradient id="lmg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#635bff"/><stop offset="1" stop-color="#00d4ff"/></linearGradient></defs><polygon points="16,27 28,27 35,41 9,41" fill="#22d3ee" fill-opacity=".45"/><line x1="16" y1="27" x2="9" y2="41" stroke="#22d3ee" stroke-width="1.5" stroke-dasharray="3 2.5" stroke-linecap="round"/><line x1="28" y1="27" x2="35" y2="41" stroke="#22d3ee" stroke-width="1.5" stroke-dasharray="3 2.5" stroke-linecap="round"/><rect x="3" y="2" width="38" height="22" rx="7" fill="url(#lmg)"/><text x="22" y="17.5" text-anchor="middle" font-size="13" font-weight="700" fill="#fff" font-family="Inter, -apple-system, Segoe UI, sans-serif">PP</text></svg></span>Place Performance</a>
     <nav class="nav-links" aria-label="Main">
       <div class="nav-dd"><a href="{R}platform/" class="dd-trigger%s">Platform</a><div class="dd-panel"><a href="{R}platform/"><b>Platform overview</b><span>From the sensor to the decision</span></a><a href="{R}hardware/"><b>Hardware</b><span>Radar, LiDAR and the right sensor per site</span></a><a href="{R}real-time/"><b>Real time</b><span>Live occupancy, floorplans and alerts</span></a><a href="{R}ai-forecasting/"><b>AI &amp; forecasting</b><span>Forecasts, scenarios and the Place Assistant</span></a></div></div>
       <div class="nav-dd"><a href="{R}solutions/" class="dd-trigger%s">Solutions</a><div class="dd-panel">%s<a class="dd-all" href="{R}solutions/">All solutions</a><a class="dd-all dd-all-2" href="{R}places/">Browse by place</a></div></div>
@@ -260,7 +260,7 @@ def nav(active):
 FOOTER = '''<footer class="foot">
   <div class="wrap foot-in">
     <div>
-      <a class="logo" href="{R}"><span class="logo-mark">PP</span>Place Performance</a>
+      <a class="logo" href="{R}"><span class="logo-mark"><svg viewBox="0 0 44 42" aria-hidden="true"><defs><linearGradient id="lmg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#635bff"/><stop offset="1" stop-color="#00d4ff"/></linearGradient></defs><polygon points="16,27 28,27 35,41 9,41" fill="#22d3ee" fill-opacity=".45"/><line x1="16" y1="27" x2="9" y2="41" stroke="#22d3ee" stroke-width="1.5" stroke-dasharray="3 2.5" stroke-linecap="round"/><line x1="28" y1="27" x2="35" y2="41" stroke="#22d3ee" stroke-width="1.5" stroke-dasharray="3 2.5" stroke-linecap="round"/><rect x="3" y="2" width="38" height="22" rx="7" fill="url(#lmg)"/><text x="22" y="17.5" text-anchor="middle" font-size="13" font-weight="700" fill="#fff" font-family="Inter, -apple-system, Segoe UI, sans-serif">PP</text></svg></span>Place Performance</a>
       <p class="muted">Sensors, software and AI for places that matter.<br>Hardware, installation, support and platform, delivered by one Australian team.</p>
     </div>
     <div class="foot-cols">
