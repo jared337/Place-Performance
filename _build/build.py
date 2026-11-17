@@ -268,7 +268,7 @@ FOOTER = '''<footer class="foot">
       <p class="muted">Sensors, software and AI for places that matter.<br>Hardware, installation, support and platform, delivered by one Australian team.</p>
     </div>
     <div class="foot-cols">
-      <div><b>Platform</b><a href="{R}platform/">Platform overview</a><a href="{R}hardware/">Hardware</a><a href="{R}real-time/">Real time</a><a href="{R}ai-forecasting/">AI &amp; forecasting</a><a href="{R}plans/">Plans</a></div>
+      <div><b>Platform</b><a href="{R}platform/">Platform overview</a><a href="{R}hardware/">Hardware</a><a href="{R}real-time/">Real time</a><a href="{R}ai-forecasting/">AI &amp; forecasting</a><a href="{R}plans/">Plans</a><a href="{R}compare/">Compare systems</a></div>
       <div><b>Industries</b>%s</div>
       <div><b>Places</b><a href="{R}places/campuses/">Campuses</a><a href="{R}places/libraries/">Libraries</a><a href="{R}places/shopping-centres/">Shopping centres</a><a href="{R}places/stadiums-and-venues/">Stadiums &amp; venues</a><a href="{R}places/streets-and-laneways/">Streets &amp; laneways</a><a href="{R}places/parks-and-foreshores/">Parks &amp; foreshores</a><a href="{R}places/office-towers/">Office towers</a><a href="{R}places/government-buildings/">Government buildings</a></div>
       <div><b>Company</b><a href="{R}about/">About us</a><a href="{R}contact/">Book a demo</a><a href="{R}quote/">Get a quote</a><a href="{R}talk-to-us/">Talk to us</a><a href="{R}privacy-by-design/">Privacy by design</a><a href="{R}faq/">FAQ</a></div>
@@ -284,9 +284,14 @@ FOOTER = '''<footer class="foot">
 ORG = {
     '@type': 'Organization', '@id': BASE + '#org', 'name': SITE, 'url': BASE,
     'logo': BASE + 'assets/logo.png',
+    'slogan': 'Sensors, software and AI for places that matter.',
     'description': 'End-to-end people counting and place analytics: privacy-safe sensors, installation, real-time analytics, alerts, reporting, forecasting and AI insights for councils, universities, government and property owners.',
-    'areaServed': 'AU',
-    'knowsAbout': ['people counting', 'occupancy monitoring', 'space utilisation', 'crowd capacity', 'footfall analytics', 'pedestrian and cyclist counting', 'visitor analytics'],
+    'areaServed': {'@type': 'Country', 'name': 'Australia'},
+    'parentOrganization': [
+        {'@type': 'Organization', 'name': 'Rayven', 'url': 'https://rayven.io/'},
+        {'@type': 'Organization', 'name': 'ITESA', 'url': 'https://itesa.com.au/'},
+    ],
+    'knowsAbout': ['people counting', 'occupancy monitoring', 'space utilisation', 'crowd capacity', 'footfall analytics', 'pedestrian and cyclist counting', 'visitor analytics', 'anonymous people counting', 'LiDAR people counting', 'radar people counting'],
 }
 PRODUCT = {
     '@type': 'SoftwareApplication', '@id': BASE + '#product', 'name': SITE, 'applicationCategory': 'BusinessApplication',
@@ -309,6 +314,9 @@ def jsonld(page, url):
     if page.get('faqs'):
         graph.append({'@type': 'FAQPage', 'mainEntity': [
             {'@type': 'Question', 'name': strip(q), 'acceptedAnswer': {'@type': 'Answer', 'text': strip(a)}} for q, a in page['faqs']]})
+    if page.get('schema'):
+        extra = page['schema']
+        graph.extend(extra if isinstance(extra, list) else [extra])
     return json.dumps({'@context': 'https://schema.org', '@graph': graph}, ensure_ascii=False, indent=1)
 
 
@@ -323,8 +331,8 @@ def strip(s):
 PAGES = []
 
 
-def page(slug, title, desc, body, faqs=None, crumbs=None, service=None, audience=None, nav_key=None):
-    PAGES.append(dict(slug=slug, title=title, desc=desc, body=body, faqs=faqs or [], crumbs=crumbs, service=service, audience=audience, nav_key=nav_key if nav_key is not None else slug))
+def page(slug, title, desc, body, faqs=None, crumbs=None, service=None, audience=None, nav_key=None, schema=None):
+    PAGES.append(dict(slug=slug, title=title, desc=desc, body=body, faqs=faqs or [], crumbs=crumbs, service=service, audience=audience, nav_key=nav_key if nav_key is not None else slug, schema=schema))
 
 
 # ---------------- Home ----------------
@@ -529,9 +537,23 @@ PLANS_FAQS = [
     ('Which level includes AI and forecasting?', 'AI insights, the Place Assistant, forecasting, scenario modelling, investment analysis and board reporting packs are included in Executive (Level 4).'),
     ('Can we run a pilot first?', 'Yes. A pilot at one site is the most common way to start. It proves accuracy and value with your own data before you commit to a wider rollout.'),
 ]
+PLANS_SCHEMA = {
+    '@type': 'OfferCatalog', '@id': BASE + 'plans/#catalog', 'name': 'Place Performance plans',
+    'url': BASE + 'plans/', 'provider': {'@id': BASE + '#org'},
+    'itemListElement': [
+        {'@type': 'Offer', 'name': 'Essentials', 'url': BASE + 'quote/?plan=essentials',
+         'description': "Know what's happening: visitor counting and occupancy, peak periods and dwell time, live dashboards, automated reports and device health."},
+        {'@type': 'Offer', 'name': 'Insights', 'url': BASE + 'quote/?plan=insights',
+         'description': "Know why it's happening: live floorplans, heat maps and visitor flow, zone comparison, repeat visitation and historical trends."},
+        {'@type': 'Offer', 'name': 'Professional', 'url': BASE + 'quote/?plan=professional',
+         'description': 'Improve how your place performs: multi-site portfolio, alert rules and escalation, queue and operations analytics, POS, Wi-Fi and BMS integrations and single sign-on.'},
+        {'@type': 'Offer', 'name': 'Executive', 'url': BASE + 'quote/?plan=executive',
+         'description': 'Lead with intelligence: performance index and benchmarking, AI insights and the Place Assistant, forecasting, scenario modelling and board reporting packs.'},
+    ],
+}
 page('plans', 'Plans & pricing: Essentials to Executive | Place Performance',
      'Compare Place Performance plans, from Essentials to Executive. Every plan includes sensors, installation, platform and support. Start small and grow.',
-     plans_body, PLANS_FAQS, [('Home', ''), ('Plans', 'plans/')])
+     plans_body, PLANS_FAQS, [('Home', ''), ('Plans', 'plans/')], schema=PLANS_SCHEMA)
 
 # ---------------- Solutions hub ----------------
 sol_hub = (
@@ -962,6 +984,63 @@ page('faq', 'People counting & occupancy FAQ | Place Performance',
 
 exec(open(os.path.join(HERE, 'content_guides.py'), encoding='utf-8').read())
 exec(open(os.path.join(HERE, 'content_places.py'), encoding='utf-8').read())
+
+# ---------------- Compare: people counting systems in Australia ----------------
+CMP_COLS = ['Place Performance', 'Overseas hardware + reseller', 'DIY camera analytics']
+CMP_ROWS = [
+    ('One Australian partner for hardware, install and software', 'y', 'n', 'n'),
+    ('Site survey, installation and calibration included', 'y', 'v', 'n'),
+    ('Local support and live device health monitoring', 'y', 'v', 'v'),
+    ('Anonymous by design: on-device counting, no images', 'y', 'v', 'n'),
+    ('Indoor and outdoor; people, cyclists and vehicles', 'y', 'v', 'v'),
+    ('Right sensing technology chosen per site', 'y', 'n', 'n'),
+    ('Real-time platform with forecasting and AI built in', 'y', 'v', 'v'),
+    ('Australian public-sector and council experience', 'y', 'v', 'v'),
+]
+
+
+def _cmp_mark(c):
+    if c == 'y':
+        return '<span class="yes" aria-label="Yes">&#10003;</span>'
+    if c == 'n':
+        return '<span class="no" aria-label="No">&ndash;</span>'
+    return '<span class="muted">Varies</span>'
+
+
+cmp_table = '<div class="cmp-wrap reveal"><table class="cmp"><thead><tr><th>What matters</th>%s</tr></thead><tbody>%s</tbody></table></div>' % (
+    ''.join('<th>%s</th>' % c for c in CMP_COLS),
+    ''.join('<tr><td>%s</td>%s</tr>' % (r[0], ''.join('<td>%s</td>' % _cmp_mark(x) for x in r[1:])) for r in CMP_ROWS))
+compare_body = (
+    page_hero('Compare', 'Choosing a people counting system in Australia',
+              'People counting is sold three ways: one local partner that does it end to end, an overseas hardware brand installed through a reseller, or do-it-yourself analytics added to existing cameras. Here is how they differ, and where Place Performance fits.',
+              '', [('Home', '{R}'), ('Compare', None)]) +
+    section(head('Three ways places get counted', 'Choose the model before you choose a product.') + cards([
+        ('End-to-end local partner', 'One Australian team surveys the site, supplies and installs the sensors, runs the platform and supports it. Fewer handoffs and clear accountability. This is how Place Performance works.'),
+        ('Overseas hardware and a reseller', 'A global sensor brand bought and installed through a local reseller, with analytics from the vendor. Proven hardware, but the hardware, installation, software and support can sit with different parties.'),
+        ('DIY camera analytics', 'Counting software added to existing CCTV. Low upfront cost, but accuracy, privacy and outdoor coverage depend on cameras that were never meant for counting.'),
+    ])) +
+    section(head('Compare the approaches', 'What matters when you count people in real places.') + cmp_table, 'sec-tint') +
+    section(head('Compare', 'Comparing a specific product or vendor?') + '<div class="prose"><p>If you are weighing up a global hardware brand or an Australian analytics platform, the real question is usually not the sensor on its own, but who takes responsibility for the whole system once it is live. Place Performance is the single Australian partner for the sensor, the installation, the platform and the support, with the right sensing technology chosen per site and anonymous counting by design. See ' + L('hardware', 'the hardware we use') + ' and ' + L('privacy', 'how privacy works') + '.</p></div>') +
+    section(head('Why Place Performance', 'Built for Australian places.') + cards([
+        ('One partner, locally', 'Survey, supply, install, calibrate, platform and support from a single Australian team.'),
+        ('Anonymous by design', 'Counting happens on the device. No images and no personal data leave the sensor.'),
+        ('The right sensor per site', 'LiDAR, radar or specialist sensors, chosen for indoor, outdoor, crowds or single events.'),
+        ('Public realm and public sector', 'Councils, universities, government and property teams, across Australian conditions.'),
+        ('Real time to forecast', 'Live occupancy and alerts through to reporting, forecasting, scenarios and an AI assistant.'),
+        ('Built to grow', 'Start with one site and a few devices, prove value, then scale without replacing hardware.'),
+    ]), 'sec-tint')
+)
+COMPARE_FAQS = [
+    ('What is the best people counting system in Australia?', 'The best system depends on where you are counting and who will run it. For most Australian organisations the deciding factor is not the sensor alone but whether one local partner takes responsibility for the hardware, installation, platform and support. Place Performance provides all four as a single Australian team, with the right sensing technology chosen per site and anonymous counting by design.'),
+    ('Is there an Australian alternative to overseas people counting brands?', 'Yes. Many people counting products are overseas hardware brands installed through third-party resellers. Place Performance is an end-to-end Australian alternative: one team surveys, supplies, installs, calibrates, runs the platform and supports it, indoors and outdoors.'),
+    ('Do I need cameras to count people?', 'No. Place Performance counts people without identifying them, using depth and movement sensing rather than recognisable images. Counting is processed on the device, so only anonymous numbers leave the sensor.'),
+    ('What is the difference between LiDAR and camera people counting?', 'LiDAR and depth sensors map a space in three dimensions with pulses of light and count people by shape and movement, not by their faces. They work in any light, including darkness, and do not capture recognisable images, which suits privacy-sensitive places. Camera counting relies on the image itself, which raises privacy and lighting considerations.'),
+    ('How accurate is people counting?', 'Accuracy depends on the sensor and on how well it is installed and calibrated. Place Performance uses high-accuracy sensing that is validated on site during commissioning, with continuous device health monitoring so counts stay reliable.'),
+]
+page('compare', 'People counting systems in Australia: how to choose | Place Performance',
+     'How to choose a people counting system in Australia: an end-to-end local partner versus overseas hardware and DIY camera analytics, compared. Anonymous, accurate counting indoors and outdoors.',
+     compare_body, COMPARE_FAQS, [('Home', ''), ('Compare', 'compare/')],
+     service='People counting systems in Australia', audience='Australian organisations comparing people counting systems')
 
 # --------------------------------------------------------------------------
 # Render
