@@ -246,9 +246,10 @@ def nav(active):
       <div class="nav-dd"><a href="{R}platform/" class="dd-trigger%s">Platform</a><div class="dd-panel"><a href="{R}platform/"><b>Platform overview</b><span>From the sensor to the decision</span></a><a href="{R}hardware/"><b>Hardware</b><span>Radar, LiDAR and the right sensor per site</span></a><a href="{R}real-time/"><b>Real time</b><span>Live occupancy, floorplans and alerts</span></a><a href="{R}ai-forecasting/"><b>AI &amp; forecasting</b><span>Forecasts, scenarios and the Place Assistant</span></a></div></div>
       <div class="nav-dd"><a href="{R}solutions/" class="dd-trigger%s">Solutions</a><div class="dd-panel">%s<a class="dd-all" href="{R}solutions/">All solutions</a><a class="dd-all dd-all-2" href="{R}places/">Browse by place</a></div></div>
       %s
-      <div class="nav-m-cta"><a class="btn btn-dark btn-lg" href="{R}contact/">Book a demo <i class="arr"></i></a></div>
+      <div class="nav-m-cta"><a class="btn btn-dark btn-lg" href="{R}contact/">Book a demo <i class="arr"></i></a><a class="btn btn-glass btn-lg" href="{R}talk-to-us/">Talk to us</a></div>
     </nav>
     <div class="nav-cta">
+      <a class="btn btn-ghost" href="{R}talk-to-us/">Talk to us</a>
       <a class="btn btn-dark" href="{R}contact/">Book a demo <i class="arr"></i></a>
     </div>
     <button class="nav-burger" aria-label="Menu" id="burger"><span></span><span></span></button>
