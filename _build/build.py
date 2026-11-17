@@ -237,15 +237,15 @@ def nav(active):
     def a(slug, label):
         on = ' aria-current="page" class="on"' if active == slug else ''
         return '<a href="{R}%s/"%s>%s</a>' % (slug, on, label)
-    dd = ''.join('<a href="{R}solutions/%s/"><b>%s</b><span>%s</span></a>' % (s, n, d) for s, n, d, _ in SOLUTIONS)
-    sol_on = ' on' if active.startswith('solutions') else ''
+    dd = ''.join('<a href="{R}industries/%s/"><b>%s</b><span>%s</span></a>' % (s, n, d) for s, n, d, _ in SOLUTIONS)
+    sol_on = ' on' if active.startswith('industries') else ''
     plat_on = ' on' if active in ('platform', 'real-time', 'ai-forecasting', 'hardware') else ''
     return '''<header class="nav" id="nav">
   <div class="wrap nav-in">
     <a class="logo" href="{R}"><span class="logo-mark"><svg viewBox="0 0 44 44" aria-hidden="true"><rect x="4" y="6" width="34" height="6" rx="2" fill="#00d4ff"/><rect x="4" y="16" width="27" height="6" rx="2" fill="#12bfe6"/><rect x="4" y="26" width="20" height="6" rx="2" fill="#2f8fe8"/><rect x="4" y="36" width="12" height="6" rx="2" fill="#4f8dff"/></svg></span>Place Performance</a>
     <nav class="nav-links" aria-label="Main">
       <div class="nav-dd"><a href="{R}platform/" class="dd-trigger%s">Platform</a><div class="dd-panel"><a href="{R}platform/"><b>Platform overview</b><span>From the sensor to the decision</span></a><a href="{R}hardware/"><b>Hardware</b><span>Radar, LiDAR and the right sensor per site</span></a><a href="{R}real-time/"><b>Real time</b><span>Live occupancy, floorplans and alerts</span></a><a href="{R}ai-forecasting/"><b>AI &amp; forecasting</b><span>Forecasts, scenarios and the Place Assistant</span></a></div></div>
-      <div class="nav-dd"><a href="{R}solutions/" class="dd-trigger%s">Solutions</a><div class="dd-panel">%s<a class="dd-all" href="{R}solutions/">All solutions</a><a class="dd-all dd-all-2" href="{R}places/">Browse by place</a></div></div>
+      <div class="nav-dd"><a href="{R}industries/" class="dd-trigger%s">Industries</a><div class="dd-panel">%s<a class="dd-all" href="{R}industries/">All industries</a><a class="dd-all dd-all-2" href="{R}places/">Browse by place</a></div></div>
       %s
       <div class="nav-m-cta"><a class="btn btn-dark btn-lg" href="{R}contact/">Book a demo <i class="arr"></i></a><a class="btn btn-glass btn-lg" href="{R}talk-to-us/">Talk to us</a></div>
     </nav>
@@ -266,13 +266,13 @@ FOOTER = '''<footer class="foot">
     </div>
     <div class="foot-cols">
       <div><b>Platform</b><a href="{R}platform/">Platform overview</a><a href="{R}hardware/">Hardware</a><a href="{R}real-time/">Real time</a><a href="{R}ai-forecasting/">AI &amp; forecasting</a><a href="{R}plans/">Plans</a></div>
-      <div><b>Solutions</b>%s</div>
+      <div><b>Industries</b>%s</div>
       <div><b>Places</b><a href="{R}places/campuses/">Campuses</a><a href="{R}places/libraries/">Libraries</a><a href="{R}places/shopping-centres/">Shopping centres</a><a href="{R}places/stadiums-and-venues/">Stadiums &amp; venues</a><a href="{R}places/streets-and-laneways/">Streets &amp; laneways</a><a href="{R}places/parks-and-foreshores/">Parks &amp; foreshores</a><a href="{R}places/office-towers/">Office towers</a><a href="{R}places/government-buildings/">Government buildings</a></div>
       <div><b>Company</b><a href="{R}about/">About us</a><a href="{R}contact/">Book a demo</a><a href="{R}quote/">Get a quote</a><a href="{R}talk-to-us/">Talk to us</a><a href="{R}privacy-by-design/">Privacy by design</a><a href="{R}faq/">FAQ</a></div>
     </div>
   </div>
   <div class="wrap foot-note">&copy; 2026 Place Performance. Photography from Unsplash.</div>
-</footer>''' % ''.join('<a href="{R}solutions/%s/">%s</a>' % (s, n.replace(' &amp; civic', '')) for s, n, _, _ in SOLUTIONS)
+</footer>''' % ''.join('<a href="{R}industries/%s/">%s</a>' % (s, n.replace(' &amp; civic', '')) for s, n, _, _ in SOLUTIONS)
 
 # --------------------------------------------------------------------------
 # Structured data
@@ -532,17 +532,17 @@ page('plans', 'Plans & pricing: Essentials to Executive | Place Performance',
 
 # ---------------- Solutions hub ----------------
 sol_hub = (
-    page_hero('Solutions', 'Different places, different questions. One platform.',
+    page_hero('Industries', 'Different places, different questions. One platform.',
               'Councils focus on safety and service. Universities chase utilisation. Property teams need to prove value. Place Performance answers each with the same trusted data.',
-              '', [('Home', '{R}'), ('Solutions', None)]) +
-    section(photo_cards([(n.replace('&amp;', '&amp;'), d, img, '{R}solutions/%s/' % s) for s, n, d, img in SOLUTIONS])) +
+              '', [('Home', '{R}'), ('Industries', None)]) +
+    section(photo_cards([(n.replace('&amp;', '&amp;'), d, img, '{R}industries/%s/' % s) for s, n, d, img in SOLUTIONS])) +
     section(head('By outcome', 'What organisations use it for.') + cards([
-        ('Crowd capacity &amp; safety', 'Live counts against limits with alerts before they are reached.', '{R}solutions/councils/'),
-        ('Space utilisation', 'How rooms, floors and buildings are really used, hour by hour.', '{R}solutions/universities/'),
-        ('Portfolio rationalisation', 'Consolidate and right-size property on evidence.', '{R}solutions/government/'),
-        ('Operational efficiency', 'Clean, staff and condition spaces on demand.', '{R}solutions/buildings/'),
-        ('Commercial performance', 'Connect footfall to sales and tenant performance.', '{R}solutions/retail/'),
-        ('Active transport &amp; public realm', 'Pedestrians, cyclists and vehicles across outdoor places.', '{R}solutions/parks-and-streets/'),
+        ('Crowd capacity &amp; safety', 'Live counts against limits with alerts before they are reached.', '{R}industries/councils/'),
+        ('Space utilisation', 'How rooms, floors and buildings are really used, hour by hour.', '{R}industries/universities/'),
+        ('Portfolio rationalisation', 'Consolidate and right-size property on evidence.', '{R}industries/government/'),
+        ('Operational efficiency', 'Clean, staff and condition spaces on demand.', '{R}industries/buildings/'),
+        ('Commercial performance', 'Connect footfall to sales and tenant performance.', '{R}industries/retail/'),
+        ('Active transport &amp; public realm', 'Pedestrians, cyclists and vehicles across outdoor places.', '{R}industries/parks-and-streets/'),
     ]), 'sec-tint')
 )
 SOL_FAQS = [
@@ -552,9 +552,9 @@ SOL_FAQS = [
     ('Is the hardware the same in every sector?', 'The core technology is the same, but each deployment is designed for its environment. Most sites use LiDAR people counters, mounted overhead at entrances or positioned to cover open areas and crowds, with specialist sensors for pedestrians, cyclists or vehicles where needed.'),
     ('Can one organisation use it for several purposes?', 'Yes. The same sensors and data support safety, utilisation, operations and planning at the same time, and different teams see the views that matter to them.'),
 ]
-page('solutions', 'Solutions by sector | Place Performance',
+page('industries', 'Industries | Place Performance',
      'How councils, universities, government, property owners, retail precincts and public-realm managers use Place Performance for capacity and planning.',
-     sol_hub, SOL_FAQS, [('Home', ''), ('Solutions', 'solutions/')], nav_key='solutions')
+     sol_hub, SOL_FAQS, [('Home', ''), ('Industries', 'industries/')], nav_key='industries')
 
 # ---------------- Individual solutions ----------------
 SECTOR_SCENE = {'councils': 'library', 'universities': 'campus', 'government': 'service', 'buildings': 'office', 'retail': 'shopping', 'parks-and-streets': 'park', 'marketing': 'shopping', 'hospitality': 'venue'}
@@ -562,7 +562,7 @@ SECTOR_SCENE = {'councils': 'library', 'universities': 'campus', 'government': '
 
 def solution(slug, name, h1, lead, img, img_alt, shot1, shot1_alt, shot2, shot2_alt, outcomes, metrics, scenarios, faqs, desc, service, audience):
     body = (
-        page_hero(name, h1, lead, photo(img, img_alt), [('Home', '{R}'), ('Solutions', '{R}solutions/'), (name, None)]) +
+        page_hero(name, h1, lead, photo(img, img_alt), [('Home', '{R}'), ('Industries', '{R}industries/'), (name, None)]) +
         section(head('Outcomes', 'What you can achieve.') + ticks(outcomes, 'ticks-grid reveal')) +
         in_practice(SECTOR_SCENE[slug]) +
         section(split(shot(shot1, shot1_alt), copy('In the platform', scenarios[0][0], scenarios[0][1])) +
@@ -575,8 +575,8 @@ def solution(slug, name, h1, lead, img, img_alt, shot1, shot1_alt, shot2, shot2_
             ('Privacy by design', 'Counts, not identities.', 'device', '{R}privacy-by-design/'),
         ], 'screens'), 'sec-tint')
     )
-    page('solutions/' + slug, '%s | Place Performance' % SEO_TITLES[slug], desc, body, faqs,
-         [('Home', ''), ('Solutions', 'solutions/'), (strip(name), 'solutions/%s/' % slug)], service=service, audience=audience, nav_key='solutions')
+    page('industries/' + slug, '%s | Place Performance' % SEO_TITLES[slug], desc, body, faqs,
+         [('Home', ''), ('Industries', 'industries/'), (strip(name), 'industries/%s/' % slug)], service=service, audience=audience, nav_key='industries')
 
 
 solution('councils', 'Councils &amp; civic', 'People counting and crowd capacity for councils.',
@@ -1024,6 +1024,26 @@ def render(p):
 
 
 urls = [render(p) for p in PAGES]
+
+
+def write_redirect(old_slug, target_slug):
+    """Emit a meta-refresh redirect stub so old /solutions/ URLs still resolve."""
+    target = BASE + (target_slug + '/' if target_slug else '')
+    html = ('<!doctype html>\n<html lang="en"><head><meta charset="utf-8">'
+            '<title>Redirecting</title><link rel="canonical" href="%s">'
+            '<meta http-equiv="refresh" content="0; url=%s">'
+            '<meta name="robots" content="noindex"></head>'
+            '<body><p>This page has moved to <a href="%s">%s</a>.</p></body></html>\n') % (
+        target, target, target, target)
+    path = os.path.join(OUT, old_slug, 'index.html')
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, 'w', encoding='utf-8', newline='\n') as f:
+        f.write(html)
+
+
+write_redirect('solutions', 'industries')
+for _s, _n, _d, _img in SOLUTIONS:
+    write_redirect('solutions/' + _s, 'industries/' + _s)
 
 with open(os.path.join(OUT, 'sitemap.xml'), 'w', encoding='utf-8', newline='\n') as f:
     f.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n')

@@ -15,14 +15,15 @@ Key facts:
 - [Real-time occupancy monitoring & alerts](https://placeperformance.ai/real-time/): Live occupancy every few seconds, interactive floorplans, heat maps, visitor flow and alerts by email, SMS and Teams for every site and room.
 - [AI insights, forecasting & scenarios](https://placeperformance.ai/ai-forecasting/): Forecast visitation and occupancy, test changes with scenario planning, get daily AI recommendations and ask your buildings questions in plain English.
 - [Plans & pricing: Essentials to Executive](https://placeperformance.ai/plans/): Compare Place Performance plans, from Essentials to Executive. Every plan includes sensors, installation, platform and support. Start small and grow.
-- [Solutions by sector](https://placeperformance.ai/solutions/): How councils, universities, government, property owners, retail precincts and public-realm managers use Place Performance for capacity and planning.
-- [People counting for councils](https://placeperformance.ai/solutions/councils/): People counting, crowd capacity monitoring and visitation reporting for councils: libraries, civic centres, events, service desks, shared paths and parks.
-- [Space utilisation for universities](https://placeperformance.ai/solutions/universities/): Space utilisation analytics for universities: measure lecture theatre, library and study space use, compare bookings with real occupancy and plan on evidence.
-- [Office occupancy for government](https://placeperformance.ai/solutions/government/): Office occupancy analytics for government: right-size property portfolios, understand hybrid attendance, monitor capacity and report transparently.
-- [Occupancy analytics for buildings](https://placeperformance.ai/solutions/buildings/): Occupancy analytics for commercial buildings: demand-based cleaning, BMS and HVAC integration, tenant insights and refit ROI, with local support.
-- [Footfall analytics for retail & precincts](https://placeperformance.ai/solutions/retail/): Footfall analytics for shopping centres and precincts: visitation by entrance and zone, conversion with POS data, peak staffing and queue monitoring.
-- [Footfall and zone analytics for marketing](https://placeperformance.ai/solutions/marketing/): Footfall and zone analytics for marketing teams: measure display, activation and campaign performance with zone footfall, dwell time, heat maps and before-and-after uplift.
-- [Pedestrian & cyclist counting](https://placeperformance.ai/solutions/parks-and-streets/): Pedestrian, cyclist and vehicle counting for parks, trails, streets and public spaces, permanent or temporary, with before-and-after project analysis.
+- [Industries](https://placeperformance.ai/industries/): How councils, universities, government, property owners, retail precincts and public-realm managers use Place Performance for capacity and planning.
+- [People counting for councils](https://placeperformance.ai/industries/councils/): People counting, crowd capacity monitoring and visitation reporting for councils: libraries, civic centres, events, service desks, shared paths and parks.
+- [Space utilisation for universities](https://placeperformance.ai/industries/universities/): Space utilisation analytics for universities: measure lecture theatre, library and study space use, compare bookings with real occupancy and plan on evidence.
+- [Office occupancy for government](https://placeperformance.ai/industries/government/): Office occupancy analytics for government: right-size property portfolios, understand hybrid attendance, monitor capacity and report transparently.
+- [Occupancy analytics for buildings](https://placeperformance.ai/industries/buildings/): Occupancy analytics for commercial buildings: demand-based cleaning, BMS and HVAC integration, tenant insights and refit ROI, with local support.
+- [Footfall analytics for retail & precincts](https://placeperformance.ai/industries/retail/): Footfall analytics for shopping centres and precincts: visitation by entrance and zone, conversion with POS data, peak staffing and queue monitoring.
+- [Footfall and zone analytics for marketing](https://placeperformance.ai/industries/marketing/): Footfall and zone analytics for marketing teams: measure display, activation and campaign performance with zone footfall, dwell time, heat maps and before-and-after uplift.
+- [Footfall and occupancy analytics for hospitality](https://placeperformance.ai/industries/hospitality/): Footfall and occupancy analytics for hospitality: match staffing to real covers, monitor capacity for licensing and safety, cut queues, and compare dwell and peaks across venues.
+- [Pedestrian & cyclist counting](https://placeperformance.ai/industries/parks-and-streets/): Pedestrian, cyclist and vehicle counting for parks, trails, streets and public spaces, permanent or temporary, with before-and-after project analysis.
 - [Privacy-safe people counting](https://placeperformance.ai/privacy-by-design/): How Place Performance counts people anonymously: edge processing, data masked at source, no video stored, no facial recognition and role-based access.
 - [Book a demo](https://placeperformance.ai/contact/): Book a 30-minute Place Performance walkthrough and scope a pilot: site survey, sensor plan, installation and live data from your own site within weeks.
 - [Get a quote](https://placeperformance.ai/quote/): Get tailored Place Performance pricing: sensors, installation, the analytics platform and support, based on your sites, devices and plan level.
@@ -237,6 +238,21 @@ Yes. Comparing footfall and dwell in a zone before, during and after a campaign 
 
 ### Does it combine with sales data?
 Yes. Where point-of-sale data is available, zone footfall and dwell can be combined with sales to estimate conversion and sales per visitor for a display or area.
+
+### How do hospitality venues use people-counting data?
+Venues use it to see how many guests arrive by entrance and hour, how long they stay in each zone, how busy they are against capacity, and where queues build, so they can staff for peaks, protect the guest experience and compare performance across sites.
+
+### Can it monitor capacity for licensing and safety?
+Yes. Live occupancy is tracked against your licensed or safe capacity for each space, with alerts as you approach the limit and a history you can report on.
+
+### Can it measure queues and wait times?
+Yes. Sensors at entrances, bars and service points measure queue length and wait time against your targets, with alerts when a target is at risk.
+
+### Does it identify guests?
+No. Counting is anonymous, with processing on the device and no images or personal information collected.
+
+### Can it compare multiple venues?
+Yes. Footfall, dwell, occupancy and peaks can be compared across venues, formats and regions from one place.
 
 ### Can you count cyclists and pedestrians on trails?
 Yes. Place Performance measures pedestrian and cyclist activity, including volumes and direction, on trails, shared paths and in parks, using technology selected for each outdoor environment.

@@ -22,7 +22,7 @@ def _rel_img(path):
     path = path.strip('/')
     if path.startswith('places/') and path[7:] in PLACE_BY:
         return PLACE_BY[path[7:]][4]
-    if path.startswith('solutions/'):
+    if path.startswith('industries/'):
         for sl, _n, _d, img in SOLUTIONS:
             if sl == path[10:]:
                 return img
@@ -75,10 +75,10 @@ def place_page(slug, h1, lead, seo_title, desc, why_h2, why, measures, shot_spec
         section('<div class="install-grid reveal"><div>' + head('How it is installed', 'From site survey to live data.', 'Our Australian team designs, installs and supports every deployment, so you deal with one partner from the first survey to ongoing maintenance.') +
                 '<p><a class="link-arrow" href="{R}platform/">How the platform works</a></p></div><ol class="steps-list">' +
                 ''.join('<li><b>%s</b> %s</li>' % s for s in install) + '</ol></div>', 'sec-tint') +
-        section(head('Explore more', 'Related solutions and places.') + photo_cards([(t, d, _rel_img(p), '{R}' + p) for p, t, d in related[5:]]))
+        section(head('Explore more', 'Related industries and places.') + photo_cards([(t, d, _rel_img(p), '{R}' + p) for p, t, d in related[5:]]))
     )
     page('places/' + slug, seo_title + ' | Place Performance', desc, body, faqs,
-         [('Home', ''), ('Places', 'places/'), (strip(name), 'places/%s/' % slug)], service=service, nav_key='solutions')
+         [('Home', ''), ('Places', 'places/'), (strip(name), 'places/%s/' % slug)], service=service, nav_key='industries')
 
 
 INSTALL_INDOOR = [('Survey.', 'We assess entrances, ceiling heights, layout, lighting, power, network and privacy needs.'),
@@ -95,7 +95,7 @@ place_page('campuses', 'Space utilisation for university campuses.',
     ('Utilisation room by room', 'Sensors measure how many people are in each lecture theatre, tutorial room, lab and study area throughout the day. Combined with capacity, that gives true utilisation by room, building and time of week, which timetabling and estates teams can use to right-size allocations. Read more about ' + L('universities', 'space utilisation for universities') + '.'),
     ('Helping students find space', 'Live occupancy on ' + L('realtime', 'interactive floorplans') + ' can show students which study rooms and library areas have space right now, spreading demand across buildings. Campus ' + L('libraries', 'libraries') + ' use the same data for staffing and opening hours.'),
     ('Planning the estate', 'Semester-on-semester trends and ' + L('ai', 'demand forecasts') + ' show whether a new building is really needed, or whether better use of existing space would meet demand. All counting is anonymous, as explained in ' + L('privacy', 'privacy by design') + '.'),
-], [('Utilisation %', 'Frequency and occupancy combined, per room and building.', '{R}solutions/universities/'),
+], [('Utilisation %', 'Frequency and occupancy combined, per room and building.', '{R}industries/universities/'),
     ('Booked vs used', 'Rooms reserved but empty, and classes that need a different size.', None),
     ('Live study space', 'Free and busy study areas right now, on floorplans.', '{R}real-time/'),
     ('Peak periods', 'Busiest hours by weekday, week of semester and exam period.', None),
@@ -148,7 +148,7 @@ place_page('shopping-centres', 'Footfall analytics for shopping centres.',
     ('Sales and tenant performance', 'Integrating point-of-sale data turns footfall into conversion and sales per visitor, and zone ranking highlights strong and weak areas for leasing. Read more about ' + L('retail', 'footfall analytics for retail and precincts') + '.'),
     ('Campaigns and planning', 'Comparing a promotion with the expected baseline shows the uplift it created, and ' + L('ai', 'scenario planning') + ' tests changes such as extended trading hours. Outdoor counting extends the picture to surrounding ' + L('streets', 'streets and laneways') + '.'),
 ], [('Footfall', 'Entries by door, hour and day.', None), ('Dwell time', 'How long shoppers stay.', None),
-    ('Zone ranking', 'Performance by mall, wing and tenant.', '{R}solutions/retail/'), ('Conversion', 'Sales per visitor with POS data.', None),
+    ('Zone ranking', 'Performance by mall, wing and tenant.', '{R}industries/retail/'), ('Conversion', 'Sales per visitor with POS data.', None),
     ('Queues &amp; wait', 'Food court and service desk waits.', '{R}real-time/'), ('Campaign uplift', 'Change during promotions and events.', '{R}ai-forecasting/')],
    ('peak-periods', 'Peak period heat grid for a shopping centre', 'Know the busiest hour of every day.', 'Peak-period grids show footfall by hour and weekday, so rosters, cleaning and security match the rhythm of the centre.'),
    INSTALL_INDOOR,
@@ -223,7 +223,7 @@ place_page('streets-and-laneways', 'Pedestrian counting for streets and laneways
     ('Connected to the wider precinct', 'Street counts sit alongside ' + L('shopping', 'shopping centre') + ' footfall and ' + L('foreshores', 'park visitation') + ' in one ' + L('platform', 'platform') + ', so precinct managers and ' + L('councils', 'councils') + ' can see the whole picture.'),
 ], [('Pedestrian counts', 'Volumes by location and direction.', None), ('Peak periods', 'Busiest hours by day.', None),
     ('Seasonal trends', 'Change across months and years.', '{R}ai-forecasting/'), ('Event impact', 'Activity during events vs normal.', None),
-    ('Before and after', 'The effect of streetscape projects.', '{R}solutions/parks-and-streets/'), ('Cyclists &amp; vehicles', 'Optional counting where needed.', '{R}solutions/parks-and-streets/')],
+    ('Before and after', 'The effect of streetscape projects.', '{R}industries/parks-and-streets/'), ('Cyclists &amp; vehicles', 'Optional counting where needed.', '{R}industries/parks-and-streets/')],
    ('occupancy-history', 'Activity trend for a street location across a week', 'Patterns you can plan around.', 'Hour-by-hour history shows the rhythm of each street, from the morning commute to the evening dining peak, and how it shifts across the week.'),
    [('Survey.', 'We identify counting points, mounting options, power and connectivity for each street location.'),
     ('Select.', 'The right sensor is chosen for the environment, including options for poles, awnings and building facades.'),
@@ -247,7 +247,7 @@ place_page('parks-and-foreshores', 'Visitation counting for parks and foreshores
     ('People and bikes on paths and trails', 'Counters on paths, trails and entries measure pedestrians and cyclists and their direction, showing how visitation changes by hour, day and season. Read more about ' + L('parks', 'counting in parks, trails and streets') + '.'),
     ('Events and seasonal peaks', 'Summer weekends, festivals and holidays bring very different crowds to weekday mornings. Peak-period views and ' + L('ai', 'forecasts') + ' help schedule cleaning, rangers and lifeguards, and temporary counting supports major events.'),
     ('Built for outdoor conditions', 'Each site is assessed for power and connectivity, and the technology suits coastal, urban or remote environments. Data sits alongside ' + L('streets', 'street counts') + ' and ' + L('libraries', 'community facilities') + ' for ' + L('councils', 'councils') + '.'),
-], [('Visitation', 'People entering and using each area.', None), ('Cyclists', 'Volumes and direction on shared paths.', '{R}solutions/parks-and-streets/'),
+], [('Visitation', 'People entering and using each area.', None), ('Cyclists', 'Volumes and direction on shared paths.', '{R}industries/parks-and-streets/'),
     ('Peak periods', 'Busiest hours, days and seasons.', None), ('Seasonal trends', 'Year-on-year change.', '{R}ai-forecasting/'),
     ('Event attendance', 'Crowd numbers at outdoor events.', '{R}places/stadiums-and-venues/'), ('Project impact', 'Before and after new facilities.', None)],
    ('peak-periods', 'Peak periods by hour and day for a park', 'See when open spaces are busiest.', 'Peak-period grids show the busiest hours and days at each location, informing maintenance, staffing and safety planning across the seasons.'),
@@ -274,8 +274,8 @@ place_page('office-towers', 'Floor and amenity utilisation for office towers.',
     ('Operate on demand', 'Occupancy shared with the building management system lets HVAC and lighting respond to real use, and demand-based cleaning is triggered by visits. Read more about ' + L('buildings', 'occupancy analytics for commercial buildings') + '.'),
     ('Evidence for tenants and owners', 'Tenants can see their own space, supporting workplace strategy and lease decisions, while owners use ' + L('ai', 'investment analysis') + ' to prove the value of refits. ' + L('government', 'Government agencies') + ' use the same data to right-size their office portfolios.'),
 ], [('Floor utilisation', 'Average and peak occupancy per floor.', None), ('Meeting rooms', 'Booked versus used, by room size.', None),
-    ('Hybrid attendance', 'Patterns by weekday and team floor.', '{R}solutions/government/'), ('Visitor flow', 'Movement between lifts and amenities.', '{R}real-time/'),
-    ('Cleaning triggers', 'Visits since the last clean.', '{R}solutions/buildings/'), ('Energy signal', 'Occupancy for HVAC and lighting.', None)],
+    ('Hybrid attendance', 'Patterns by weekday and team floor.', '{R}industries/government/'), ('Visitor flow', 'Movement between lifts and amenities.', '{R}real-time/'),
+    ('Cleaning triggers', 'Visits since the last clean.', '{R}industries/buildings/'), ('Energy signal', 'Occupancy for HVAC and lighting.', None)],
    ('visitor-flow', 'Visitor flow between entrances and zones on an office floor', 'See how people move through a floor.', 'Visitor flow traces the most common paths between lifts, entrances and amenities, so pinch points can be fixed and services placed where people go.'),
    INSTALL_INDOOR,
    [R('buildings', 'Buildings &amp; property', 'Commercial property'), R('government', 'Government', 'Public sector offices'), R('realtime', 'Real time', 'Live floorplans'),
@@ -296,7 +296,7 @@ place_page('government-buildings', 'Occupancy monitoring for government building
     ('Agency offices', 'Floor-by-floor occupancy over time shows average and peak use and identifies floors that are consistently under-used, supporting consolidation and workplace strategy. See ' + L('government', 'office occupancy analytics for government') + '.'),
     ('Service centres and public buildings', 'Queue and wait-time monitoring at shopfronts measures service against targets, and live occupancy supports capacity limits and emergency management at public-facing sites. Read about ' + L('realtime', 'real-time alerts') + '.'),
     ('Reporting and privacy', 'Board packs and scheduled reports go to executives and ministers automatically. Counting is anonymous and processed on the device, with role-based access and single sign-on, as described in ' + L('privacy', 'privacy by design') + '.'),
-], [('Floor utilisation', 'Average and peak occupancy per floor.', '{R}places/office-towers/'), ('Portfolio ranking', 'Buildings compared by utilisation.', '{R}solutions/government/'),
+], [('Floor utilisation', 'Average and peak occupancy per floor.', '{R}places/office-towers/'), ('Portfolio ranking', 'Buildings compared by utilisation.', '{R}industries/government/'),
     ('Queue &amp; wait', 'Service centre waits vs targets.', '{R}real-time/'), ('Live occupancy', 'People on site now for safety.', '{R}real-time/'),
     ('Attendance by weekday', 'Hybrid patterns across the week.', None), ('Board reporting', 'Executive packs, delivered automatically.', '{R}ai-forecasting/')],
    ('portfolio', 'Portfolio overview ranking buildings by utilisation on a map', 'Compare every building at once.', 'Portfolio views rank buildings by utilisation and performance, flag outliers and show where floors are consistently under-used.'),
@@ -321,8 +321,8 @@ places_hub = (
         ('Indoor places', L('libraries', 'Libraries') + ', ' + L('campuses', 'campuses') + ', ' + L('shopping', 'shopping centres') + ', ' + L('offices', 'office towers') + ' and ' + L('govbuildings', 'government buildings') + ' typically use LiDAR counters at entrances and over key zones, with' + L('realtime', 'live floorplans') + ' showing occupancy room by room.'),
         ('Outdoor places', L('streets', 'Streets and laneways') + ' and ' + L('foreshores', 'parks and foreshores') + ' use sensors chosen for each environment to count pedestrians, cyclists and, where needed, vehicles. See ' + L('parks', 'parks, trails and streets') + '.'),
         ('Events and venues', L('venues', 'Stadiums and venues') + ' combine gate counting with zone occupancy and capacity alerts, permanently or temporarily for a single event.'),
-        ('One platform for all of them', 'Whatever the mix, everything appears in one ' + L('platform', 'platform') + ' with consistent metrics, so a council can compare its libraries, parks and town centre side by side. Browse by sector on the ' + L('solutions', 'solutions page') + '.'),
-    ], [R('solutions', 'Solutions by sector', 'Councils, universities and more'), R('platform', 'Platform', 'How it works'), R('realtime', 'Real time', 'Live occupancy'), R('privacy', 'Privacy by design', 'Anonymous counting')])
+        ('One platform for all of them', 'Whatever the mix, everything appears in one ' + L('platform', 'platform') + ' with consistent metrics, so a council can compare its libraries, parks and town centre side by side. Browse by sector on the ' + L('solutions', 'industries page') + '.'),
+    ], [R('solutions', 'Industries', 'Councils, universities and more'), R('platform', 'Platform', 'How it works'), R('realtime', 'Real time', 'Live occupancy'), R('privacy', 'Privacy by design', 'Anonymous counting')])
 )
 PLACES_FAQS = [
     ('What kinds of places can Place Performance measure?', 'Indoor places such as libraries, university buildings, shopping centres, offices and government buildings, and outdoor places such as streets, laneways, parks, foreshores, trails and event spaces.'),
@@ -333,4 +333,4 @@ PLACES_FAQS = [
 ]
 page('places', 'Places we measure | Place Performance',
      'People counting for libraries, campuses, shopping centres, stadiums, streets, parks, office towers and government buildings across Australia.',
-     places_hub, PLACES_FAQS, [('Home', ''), ('Places', 'places/')], nav_key='solutions')
+     places_hub, PLACES_FAQS, [('Home', ''), ('Places', 'places/')], nav_key='industries')

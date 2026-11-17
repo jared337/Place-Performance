@@ -3,14 +3,14 @@
 
 P = {
     'home': '', 'platform': 'platform/', 'realtime': 'real-time/', 'ai': 'ai-forecasting/', 'plans': 'plans/',
-    'solutions': 'solutions/', 'privacy': 'privacy-by-design/', 'contact': 'contact/', 'faq': 'faq/', 'places': 'places/',
-    'councils': 'solutions/councils/', 'universities': 'solutions/universities/', 'government': 'solutions/government/',
-    'buildings': 'solutions/buildings/', 'retail': 'solutions/retail/', 'parks': 'solutions/parks-and-streets/',
+    'solutions': 'industries/', 'privacy': 'privacy-by-design/', 'contact': 'contact/', 'faq': 'faq/', 'places': 'places/',
+    'councils': 'industries/councils/', 'universities': 'industries/universities/', 'government': 'industries/government/',
+    'buildings': 'industries/buildings/', 'retail': 'industries/retail/', 'parks': 'industries/parks-and-streets/',
     'campuses': 'places/campuses/', 'libraries': 'places/libraries/', 'shopping': 'places/shopping-centres/',
     'venues': 'places/stadiums-and-venues/', 'streets': 'places/streets-and-laneways/', 'foreshores': 'places/parks-and-foreshores/',
     'offices': 'places/office-towers/', 'govbuildings': 'places/government-buildings/',
-    'hardware': 'hardware/', 'marketing': 'solutions/marketing/', 'exhibitions': 'places/exhibitions/',
-    'hospitality': 'solutions/hospitality/',
+    'hardware': 'hardware/', 'marketing': 'industries/marketing/', 'exhibitions': 'places/exhibitions/',
+    'hospitality': 'industries/hospitality/',
 }
 
 
@@ -62,7 +62,7 @@ GUIDES['plans'] = guide('Guide', 'Choosing the right plan level.', [
 ], [R('contact', 'Book a demo', 'Scope a pilot for your site'), R('platform', 'Platform', 'What is included end to end'), R('ai', 'AI &amp; forecasting', 'Executive capabilities'),
     R('realtime', 'Real time', 'Floorplans, alerts and live data'), R('faq', 'FAQ', 'Common questions about plans')])
 
-GUIDES['solutions'] = guide('Guide', 'One measurement platform, many kinds of place.', [
+GUIDES['industries'] = guide('Guide', 'One measurement platform, many kinds of place.', [
     (None, 'Councils, universities, agencies, property owners and precinct managers ask different questions, but they all need the same thing first: accurate, anonymous numbers about how their places are used. Place Performance provides that foundation, then shapes dashboards, alerts and reports around each sector\'s decisions.'),
     ('Choose by sector', L('councils', 'Councils') + ' focus on crowd safety, service levels and evidence for funding. ' + L('universities', 'Universities') + ' measure space utilisation against bookings. ' + L('government', 'Government agencies') + ' right-size office portfolios after the shift to hybrid work. ' + L('buildings', 'Commercial property owners') + ' clean and condition space on demand. ' + L('retail', 'Shopping centres and precincts') + ' connect footfall to sales, and ' + L('parks', 'public-realm managers') + ' count pedestrians, cyclists and vehicles outdoors.'),
     ('Choose by place', 'You can also start from the type of place you manage: ' + L('libraries', 'libraries') + ', ' + L('campuses', 'university campuses') + ', ' + L('shopping', 'shopping centres') + ', ' + L('venues', 'stadiums and venues') + ', ' + L('streets', 'streets and laneways') + ', ' + L('foreshores', 'parks and foreshores') + ', ' + L('offices', 'office towers') + ' and ' + L('govbuildings', 'government buildings') + '. Each page explains what is measured there and how sensors are installed.'),
@@ -85,7 +85,7 @@ GUIDES['contact'] = guide('Guide', 'What to expect from a demo and pilot.', [
 ], [R('plans', 'Plans', 'Compare capability levels'), R('platform', 'Platform', 'How the service works'), R('privacy', 'Privacy by design', 'How counting stays anonymous'), R('faq', 'FAQ', 'Answers to common questions')])
 
 # ---------------- Sector guides ----------------
-GUIDES['solutions/councils'] = guide('Guide', 'People counting for local government.', [
+GUIDES['industries/councils'] = guide('Guide', 'People counting for local government.', [
     (None, 'Councils run some of the most varied places in Australia: libraries, community and aquatic centres, customer service points, town halls, events, parks and shared paths. People counting gives each of them a consistent, independent measure of how the community actually uses them.'),
     ('Libraries and community centres', 'In ' + L('libraries', 'libraries') + ', sensors at the entrance count visits while zone sensors measure occupancy in reading rooms, children\'s areas and study spaces. ' + L('realtime', 'Live floorplans') + ' show where crowding builds, and alerts tell staff before a space reaches its limit. Over time, peak-period data shows whether opening hours and rosters match community demand.'),
     ('Events and outdoor spaces', 'Temporary counting can be deployed for festivals, markets and civic events to track attendance and crowd numbers at entries. Permanent outdoor sensors measure ' + L('foreshores', 'parks and foreshores') + ' and ' + L('streets', 'streets and town centres') + ', including pedestrian and cyclist counts on shared paths, so active-transport investment can be measured. See ' + L('parks', 'parks, trails and streets') + ' for more.'),
@@ -94,7 +94,7 @@ GUIDES['solutions/councils'] = guide('Guide', 'People counting for local governm
 ], [R('libraries', 'Libraries', 'Zone occupancy and study space'), R('foreshores', 'Parks &amp; foreshores', 'Visitation outdoors'), R('venues', 'Stadiums &amp; venues', 'Event crowd capacity'),
     R('streets', 'Streets &amp; laneways', 'Pedestrian counts'), R('realtime', 'Real time', 'Alerts and live floorplans')])
 
-GUIDES['solutions/universities'] = guide('Guide', 'Measuring space utilisation on campus.', [
+GUIDES['industries/universities'] = guide('Guide', 'Measuring space utilisation on campus.', [
     (None, 'Universities manage large, expensive estates, yet booking systems only show what was reserved, not what was used. Measured occupancy closes that gap, showing how lecture theatres, tutorial rooms, labs, libraries and informal study spaces are really used across the week and the semester.'),
     ('Utilisation you can act on', 'Utilisation combines frequency (how often a room is used) with occupancy (how full it is when used). Sensors provide both, room by room and hour by hour, so timetabling teams can move classes into right-sized rooms and free up space that is booked but empty. Read more about ' + L('campuses', 'measuring campuses') + '.'),
     ('A better student experience', 'Live occupancy on ' + L('realtime', 'floorplans') + ' can show students where free study space is right now, reducing time spent searching and spreading demand more evenly across buildings. University ' + L('libraries', 'libraries') + ' use the same data to staff help desks and plan opening hours around exam periods.'),
@@ -103,7 +103,7 @@ GUIDES['solutions/universities'] = guide('Guide', 'Measuring space utilisation o
 ], [R('campuses', 'Campuses', 'Room and space utilisation'), R('libraries', 'Libraries', 'Study space and help desks'), R('ai', 'AI &amp; forecasting', 'Demand forecasts'),
     R('plans', 'Plans', 'Insights and Executive levels'), R('privacy', 'Privacy by design', 'No individuals identified')])
 
-GUIDES['solutions/government'] = guide('Guide', 'Office occupancy data for the public sector.', [
+GUIDES['industries/government'] = guide('Guide', 'Office occupancy data for the public sector.', [
     (None, 'Hybrid work has changed how government offices are used. Attendance now varies by day, team and floor, and headcount or desk bookings no longer predict how much space is needed. Measured occupancy gives agencies an accurate, anonymous picture of real use.'),
     ('Right-sizing the portfolio', 'Occupancy across every floor and building, compared over months, shows average and peak utilisation and identifies floors that are consistently under-used. Portfolio views rank sites so consolidation decisions rest on evidence. See how this works for ' + L('govbuildings', 'government buildings') + ' and ' + L('offices', 'office towers') + '.'),
     ('Public-facing services', 'Service centres and shopfronts use queue and wait-time monitoring against service targets, with ' + L('realtime', 'alerts') + ' when targets are at risk. Live occupancy supports capacity limits and emergency management at sites that welcome the public.'),
@@ -112,7 +112,7 @@ GUIDES['solutions/government'] = guide('Guide', 'Office occupancy data for the p
 ], [R('govbuildings', 'Government buildings', 'Floors, shopfronts and service centres'), R('offices', 'Office towers', 'Floor and amenity utilisation'), R('ai', 'AI &amp; forecasting', 'Scenario planning'),
     R('privacy', 'Privacy by design', 'Anonymous counting'), R('plans', 'Plans', 'Professional and Executive')])
 
-GUIDES['solutions/buildings'] = guide('Guide', 'Occupancy analytics for commercial property.', [
+GUIDES['industries/buildings'] = guide('Guide', 'Occupancy analytics for commercial property.', [
     (None, 'For building owners and managers, occupancy is the link between how a building is used and what it costs to run. Measuring it accurately lets you clean, condition and staff space on demand, give tenants evidence about their workplace, and prove the value of capital works.'),
     ('Operate on demand', 'Demand-based cleaning triggers a clean after a set number of visits rather than on a fixed timetable. Occupancy shared with the building management system lets HVAC and lighting respond to real use, so empty floors are not conditioned. Live ' + L('realtime', 'floorplans and alerts') + ' keep facilities teams informed through the day.'),
     ('Tenant and amenity insight', 'Floor and tenancy occupancy, meeting room use and visitor flow between lifts, entrances and amenities show how space performs. Tenants can be given access to their own data, which supports workplace strategy and lease discussions. Read more about ' + L('offices', 'office towers') + '.'),
@@ -121,7 +121,7 @@ GUIDES['solutions/buildings'] = guide('Guide', 'Occupancy analytics for commerci
 ], [R('offices', 'Office towers', 'Floor and amenity utilisation'), R('govbuildings', 'Government buildings', 'Portfolio occupancy'), R('realtime', 'Real time', 'Floorplans and alerts'),
     R('ai', 'AI &amp; forecasting', 'Refit and investment analysis'), R('platform', 'Platform', 'Sensors and support')])
 
-GUIDES['solutions/retail'] = guide('Guide', 'Footfall analytics for shopping centres and precincts.', [
+GUIDES['industries/retail'] = guide('Guide', 'Footfall analytics for shopping centres and precincts.', [
     (None, 'Footfall is the most basic measure of a retail destination\'s health. Combined with sales, dwell and zone data it becomes a powerful tool for leasing, marketing, operations and asset strategy.'),
     ('Visitation by entrance, zone and hour', 'Entrance counters measure footfall by door, hour and day, while zone sensors show how visitors spread across malls, wings and food courts. Peak-period grids reveal the busiest hours so rosters, cleaning and security match demand. Read more about ' + L('shopping', 'shopping centres') + '.'),
     ('Conversion and tenant performance', 'Point-of-sale integrations combine footfall with sales to calculate conversion and sales per visitor by zone. Ranking zones and tenants highlights strong and weak areas and supports leasing and rent reviews.'),
@@ -130,7 +130,7 @@ GUIDES['solutions/retail'] = guide('Guide', 'Footfall analytics for shopping cen
 ], [R('shopping', 'Shopping centres', 'Footfall and dwell time'), R('streets', 'Streets &amp; laneways', 'Precinct pedestrian counts'), R('venues', 'Stadiums &amp; venues', 'Event crowds'),
     R('ai', 'AI &amp; forecasting', 'Campaign and scenario analysis'), R('realtime', 'Real time', 'Queues and live occupancy')])
 
-GUIDES['solutions/parks-and-streets'] = guide('Guide', 'Counting people, cyclists and vehicles outdoors.', [
+GUIDES['industries/parks-and-streets'] = guide('Guide', 'Counting people, cyclists and vehicles outdoors.', [
     (None, 'Outdoor places are harder to measure than buildings: there are no doors, conditions vary and power or connectivity may be limited. Yet councils and public-realm managers still need evidence of how parks, trails, foreshores, plazas and streets are used, and how that changes over time.'),
     ('Paths, trails and active transport', 'Counting on shared paths and trails measures pedestrian and cyclist volumes and direction, so the effect of new infrastructure can be tracked. Trends by day, week and season show growth and help prioritise maintenance. Read more about ' + L('foreshores', 'parks and foreshores') + '.'),
     ('Streets, plazas and town centres', 'Pedestrian counts at key points in ' + L('streets', 'streets and laneways') + ' show how activity varies by hour, day and season, supporting place management, events and economic development. Vehicle counting can be added at roads, access points and car parks.'),
