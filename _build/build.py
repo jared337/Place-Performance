@@ -861,7 +861,7 @@ page('about', 'About us | Place Performance',
 hardware_body = (
     page_hero('Hardware', 'The right sensor for every place.',
         'Place Performance is technology-agnostic. No single sensor is best everywhere, so we choose the right one for each site: indoor or outdoor, a single doorway or an open crowd, a permanent install or a one-off event. Whatever we use, the counts are accurate and anonymous, and we design, supply, install and support it all.',
-        '', [('Home', '{R}'), ('Platform', '{R}platform/'), ('Hardware', None)], ctas=False) +
+        '<div class="shot-card"><img src="{R}assets/hardware/sensor-3d.jpg" alt="A 3D people-counting sensor"></div>', [('Home', '{R}'), ('Platform', '{R}platform/'), ('Hardware', None)], ctas=False) +
     section(head('3D LiDAR &amp; depth', 'Light that measures distance.',
         'A 3D depth sensor sits above the space and sends out rapid pulses of infrared light. By timing how long each pulse takes to bounce back, it measures the exact distance to every point below it and builds a live 3D map of the scene. Looking straight down, it reads the height and shape of each person passing through, and on-device software tracks them across a count line or within a zone. Because it measures distance, not colour or features, there is nothing to identify, and it performs the same in bright sun or total darkness.') + lidar_diagram() +
         '<div class="fgrid fgrid-3 reveal">'
