@@ -246,7 +246,7 @@ def nav(active):
   <div class="wrap nav-in">
     <a class="logo" href="{R}"><span class="logo-mark"><svg viewBox="0 0 44 44" aria-hidden="true"><rect x="4" y="6" width="34" height="6" rx="2" fill="#00d4ff"/><rect x="4" y="16" width="27" height="6" rx="2" fill="#12bfe6"/><rect x="4" y="26" width="20" height="6" rx="2" fill="#2f8fe8"/><rect x="4" y="36" width="12" height="6" rx="2" fill="#4f8dff"/></svg></span>Place Performance</a>
     <nav class="nav-links" aria-label="Main">
-      <div class="nav-dd"><a href="{R}platform/" class="dd-trigger%s">Platform</a><div class="dd-panel"><a href="{R}platform/"><b>Platform overview</b><span>From the sensor to the decision</span></a><a href="{R}hardware/"><b>Hardware</b><span>Radar, LiDAR and the right sensor per site</span></a><a href="{R}real-time/"><b>Real time</b><span>Live occupancy, floorplans and alerts</span></a><a href="{R}ai-forecasting/"><b>AI &amp; forecasting</b><span>Forecasts, scenarios and the Place Assistant</span></a></div></div>
+      <div class="nav-dd"><a href="{R}platform/" class="dd-trigger%s">Platform</a><div class="dd-panel"><a href="{R}platform/"><b>Platform overview</b><span>From the sensor to the decision</span></a><a href="{R}sensors/"><b>Sensors</b><span>Radar, LiDAR and the right sensor per site</span></a><a href="{R}real-time/"><b>Real time</b><span>Live occupancy, floorplans and alerts</span></a><a href="{R}ai-forecasting/"><b>AI &amp; forecasting</b><span>Forecasts, scenarios and the Place Assistant</span></a></div></div>
       <div class="nav-dd"><a href="{R}industries/" class="dd-trigger%s">Industries</a><div class="dd-panel">%s<a class="dd-all" href="{R}industries/">All industries</a></div></div>
       <div class="nav-dd"><a href="{R}places/" class="dd-trigger%s">Places</a><div class="dd-panel">%s<a class="dd-all" href="{R}places/">All places</a></div></div>
       %s
@@ -268,7 +268,8 @@ FOOTER = '''<footer class="foot">
       <p class="muted">Sensors, software and AI for places that matter.<br>Hardware, installation, support and platform, delivered by one Australian team.</p>
     </div>
     <div class="foot-cols">
-      <div><b>Platform</b><a href="{R}platform/">Platform overview</a><a href="{R}hardware/">Hardware</a><a href="{R}real-time/">Real time</a><a href="{R}ai-forecasting/">AI &amp; forecasting</a><a href="{R}plans/">Plans</a><a href="{R}compare/">Compare systems</a><a href="{R}guides/">Guides</a><a href="{R}glossary/">Glossary</a></div>
+      <div><b>Platform</b><a href="{R}platform/">Platform overview</a><a href="{R}sensors/">Sensors</a><a href="{R}real-time/">Real time</a><a href="{R}ai-forecasting/">AI &amp; forecasting</a></div>
+      <div><b>Resources</b><a href="{R}plans/">Plans</a><a href="{R}compare/">Compare systems</a><a href="{R}guides/">Guides</a><a href="{R}glossary/">Glossary</a></div>
       <div><b>Industries</b>%s</div>
       <div><b>Places</b><a href="{R}places/campuses/">Campuses</a><a href="{R}places/libraries/">Libraries</a><a href="{R}places/shopping-centres/">Shopping centres</a><a href="{R}places/stadiums-and-venues/">Stadiums &amp; venues</a><a href="{R}places/streets-and-laneways/">Streets &amp; laneways</a><a href="{R}places/parks-and-foreshores/">Parks &amp; foreshores</a><a href="{R}places/office-towers/">Office towers</a><a href="{R}places/government-buildings/">Government buildings</a></div>
       <div><b>Company</b><a href="{R}about/">About us</a><a href="{R}contact/">Book a demo</a><a href="{R}quote/">Get a quote</a><a href="{R}talk-to-us/">Talk to us</a><a href="{R}privacy-by-design/">Privacy by design</a><a href="{R}faq/">FAQ</a></div>
@@ -376,7 +377,7 @@ platform_body = (
         ('Groups and direction understood', 'On-device processing counts people in and out, separates groups and filters out repeat passes, so the numbers reflect genuine visits.', None),
         ('One cable to fit', 'A single network cable carries both power and data, so a unit goes in quickly and cleanly with little disruption to the space.', None),
         ('Built to keep running', 'A sealed, weather-resistant housing rated for years of continuous, unattended operation, indoors or outdoors.', None),
-    ]) + '<p style="margin-top:28px;text-align:center"><a class="link-arrow" href="{R}hardware/">The full range of sensors we use, from LiDAR to radar</a></p>', 'sec-tint') +
+    ]) + '<p style="margin-top:28px;text-align:center"><a class="link-arrow" href="{R}sensors/">The full range of sensors we use, from LiDAR to radar</a></p>', 'sec-tint') +
     section(head('On site', 'What the sensor sees on the ground.',
                  'The sensor projects a 3D field over the space and a count line across it. Anyone crossing is counted as an anonymous shape, no faces, no images.') + '<div class="reveal">' + lidar_photo() + '</div>') +
     section(split(SENSOR_VIS,
@@ -906,9 +907,9 @@ page('about', 'About us | Place Performance',
 
 # ---------------- Hardware ----------------
 hardware_body = (
-    page_hero('Hardware', 'The right sensor for every place.',
+    page_hero('Sensors', 'The right sensor for every place.',
         'Place Performance is technology-agnostic. No single sensor is best everywhere, so we choose the right one for each site: indoor or outdoor, a single doorway or an open crowd, a permanent install or a one-off event. Whatever we use, the counts are accurate and anonymous, and we design, supply, install and support it all.',
-        '<div class="shot-card"><img src="{R}assets/hardware/sensor-3d.jpg" alt="A 3D people-counting sensor"></div>', [('Home', '{R}'), ('Platform', '{R}platform/'), ('Hardware', None)], ctas=False) +
+        '<div class="shot-card"><img src="{R}assets/hardware/sensor-3d.jpg" alt="A 3D people-counting sensor"></div>', [('Home', '{R}'), ('Platform', '{R}platform/'), ('Sensors', None)], ctas=False) +
     section(head('3D LiDAR &amp; depth', 'Light that measures distance.',
         'A 3D depth sensor sits above the space and sends out rapid pulses of infrared light. By timing how long each pulse takes to bounce back, it measures the exact distance to every point below it and builds a live 3D map of the scene. Looking straight down, it reads the height and shape of each person passing through, and on-device software tracks them across a count line or within a zone. Because it measures distance, not colour or features, there is nothing to identify, and it performs the same in bright sun or total darkness.') + lidar_diagram() +
         '<div class="fgrid fgrid-3 reveal">'
@@ -967,9 +968,9 @@ hardware_body = (
     section(head('One partner', 'Specified, installed and supported by us.',
         'We assess each site, specify the right mix of technologies, then supply, install, commission and support every sensor as one service. You deal with one Australian partner, whatever is on your sites.'))
 )
-page('hardware', 'Sensors and hardware | Place Performance',
+page('sensors', 'Sensors and hardware | Place Performance',
      'The sensing technologies behind Place Performance: 3D LiDAR, radar and specialist sensors, chosen for each site, indoor or outdoor, permanent or temporary, and always anonymous.',
-     hardware_body, None, [('Home', ''), ('Platform', 'platform/'), ('Hardware', 'hardware/')], nav_key='platform')
+     hardware_body, None, [('Home', ''), ('Platform', 'platform/'), ('Sensors', 'sensors/')], nav_key='platform')
 
 # ---------------- FAQ hub ----------------
 ALL_GROUPS = [('General', HOME_FAQS), ('Platform &amp; hardware', PLATFORM_FAQS), ('Real time &amp; alerts', REALTIME_FAQS), ('AI &amp; forecasting', AI_FAQS),
@@ -1010,7 +1011,7 @@ compare_body = (
         ('DIY camera analytics', 'Counting software added to existing CCTV. Low upfront cost, but accuracy, privacy and outdoor coverage depend on cameras that were never meant for counting.'),
     ])) +
     section(head('How Place Performance compares', 'Place Performance next to three widely used people counting products.') + prod_table + cmp_note, 'sec-tint') +
-    section(head('Compare', 'Comparing a specific product or vendor?') + '<div class="prose"><p>If you are weighing up a global hardware brand or an Australian analytics platform, the real question is usually not the sensor on its own, but who takes responsibility for the whole system once it is live. Place Performance is the single Australian partner for the sensor, the installation, the platform and the support, with the right sensing technology chosen per site and anonymous counting by design. See ' + L('hardware', 'the hardware we use') + ' and ' + L('privacy', 'how privacy works') + '.</p></div>') +
+    section(head('Compare', 'Comparing a specific product or vendor?') + '<div class="prose"><p>If you are weighing up a global hardware brand or an Australian analytics platform, the real question is usually not the sensor on its own, but who takes responsibility for the whole system once it is live. Place Performance is the single Australian partner for the sensor, the installation, the platform and the support, with the right sensing technology chosen per site and anonymous counting by design. See ' + L('hardware', 'the sensors we use') + ' and ' + L('privacy', 'how privacy works') + '.</p></div>') +
     section(head('Why Place Performance', 'Built for Australian places.') + cards([
         ('One partner, locally', 'Survey, supply, install, calibrate, platform and support from a single Australian team.'),
         ('Anonymous by design', 'Counting happens on the device. No images and no personal data leave the sensor.'),
@@ -1093,7 +1094,7 @@ article('how-people-counting-works', 'Guide', 'How people counting works',
          ('From count to dashboard in seconds', 'Counts are sent to the platform over a single network or mobile connection and appear within seconds. From there they become live occupancy, peak periods, dwell time, heat maps and trends, with alerts when a space approaches a limit.'),
          ('Indoors, outdoors and in any light', 'Different sites need different sensing. Overhead depth sensors suit entrances and indoor zones, while all-weather sensors count people, cyclists and vehicles outdoors, including temporary and single-event deployments on battery and mobile data.'),
          ('Keeping the numbers reliable', 'Accuracy comes from good placement and calibration during installation, then continuous device health monitoring so a sensor that goes quiet is flagged early. That is the difference between a count you report on and one you second-guess.')],
-        [('compare/', 'Compare systems', 'How the three approaches differ'), ('hardware/', 'Hardware', 'Radar, LiDAR and the right sensor per site'), ('privacy-by-design/', 'Privacy by design', 'Why counting is anonymous'), ('glossary/', 'Glossary', 'Key terms defined')],
+        [('compare/', 'Compare systems', 'How the three approaches differ'), ('sensors/', 'Sensors', 'Radar, LiDAR and the right sensor per site'), ('privacy-by-design/', 'Privacy by design', 'Why counting is anonymous'), ('glossary/', 'Glossary', 'Key terms defined')],
         [('Does people counting use cameras?', 'Not necessarily. Depth and movement sensors count people by shape without capturing recognisable images, and process the count on the device, so only anonymous numbers leave the sensor.'),
          ('How does a people counter know direction?', 'Sensors track a person as they cross a line or move through a zone, so they record entries and exits separately and can measure flow between areas.'),
          ('How quickly does the data update?', 'Counts usually appear in the platform within a few seconds, which is what makes live occupancy and capacity alerts possible.')],
@@ -1108,7 +1109,7 @@ article('lidar-vs-camera-people-counting', 'Guide', 'LiDAR vs camera people coun
          ('Radar and mmWave', 'Radar detects people and vehicles by their movement. It works outdoors in all weather, sees through rain and glare, and can run on battery, solar and mobile data, which makes it well suited to streets, parks, temporary sites and single events.'),
          ('Wi-Fi and device counting', 'Counting phones and Wi-Fi signals is cheap to deploy but estimates people indirectly. It misses anyone without a discoverable device and is affected by privacy controls in modern phones, so it is better for rough trends than exact counts.'),
          ('Which to choose', 'There is rarely a single best sensor. Indoor entrances and zones often suit overhead depth sensing, outdoor and mixed traffic suit radar, and the strongest deployments match the technology to each site. That is the approach Place Performance takes.')],
-        [('hardware/', 'Hardware', 'The sensors and how we choose them'), ('compare/', 'Compare systems', 'Approaches compared'), ('privacy-by-design/', 'Privacy by design', 'Anonymous counting'), ('glossary/', 'Glossary', 'Key terms defined')],
+        [('sensors/', 'Sensors', 'The sensors and how we choose them'), ('compare/', 'Compare systems', 'Approaches compared'), ('privacy-by-design/', 'Privacy by design', 'Anonymous counting'), ('glossary/', 'Glossary', 'Key terms defined')],
         [('Is LiDAR better than a camera for people counting?', 'For accuracy, privacy and working in any light, depth and LiDAR sensors have clear advantages because they count by shape rather than from a recognisable image. Cameras can be cost-effective where they already exist but depend more on lighting and raise more privacy considerations.'),
          ('What counts people outdoors?', 'Radar and mmWave sensors are well suited to the outdoors. They work in all weather and can run on battery, solar and mobile data, so they suit streets, parks and temporary sites.'),
          ('Is Wi-Fi tracking accurate for counting people?', 'Wi-Fi counting estimates people indirectly from devices, misses anyone without a discoverable phone, and is affected by modern privacy controls, so it is better for rough trends than exact counts.')],
@@ -1122,7 +1123,7 @@ article('how-accurate-are-people-counters', 'Guide', 'How accurate are people co
          ('What affects accuracy', 'Placement and field of view, calibration, how busy the space is, groups and tailgating, and lighting all affect the result. A sensor that is well chosen for the site and carefully commissioned will hold accuracy that a poorly placed one never reaches.'),
          ('How accuracy is measured', 'Accuracy is checked by comparing the sensor count against a known ground truth, usually a manual count over a set period, at the site itself. A figure proven in your own space matters far more than a number on a brochure.'),
          ('Keeping accuracy high over time', 'Counts drift if a sensor is knocked, obscured or goes offline. Continuous device health monitoring flags problems early, and periodic validation confirms the numbers are still right, so the data stays dependable long after installation.')],
-        [('compare/', 'Compare systems', 'Approaches compared'), ('hardware/', 'Hardware', 'The sensors and how we choose them'), ('platform/', 'Platform', 'From sensor to decision'), ('glossary/', 'Glossary', 'Key terms defined')],
+        [('compare/', 'Compare systems', 'Approaches compared'), ('sensors/', 'Sensors', 'The sensors and how we choose them'), ('platform/', 'Platform', 'From sensor to decision'), ('glossary/', 'Glossary', 'Key terms defined')],
         [('How accurate is people counting?', 'Accuracy depends on the sensor and on how well it is installed and calibrated. Well-installed 3D and depth sensors commonly reach the high nineties in percentage terms, validated against a manual count on site, with device health monitoring to keep them reliable.'),
          ('How is people counting accuracy tested?', 'By comparing the sensor count against a manual ground-truth count over a set period at the site itself, which proves accuracy in the real environment rather than in a lab.'),
          ('Why do people counts drift over time?', 'A sensor can be knocked, obscured or go offline. Continuous device health monitoring catches these early and periodic validation confirms the counts are still accurate.')],
@@ -1228,6 +1229,7 @@ def write_redirect(old_slug, target_slug):
 write_redirect('solutions', 'industries')
 for _s, _n, _d, _img in SOLUTIONS:
     write_redirect('solutions/' + _s, 'industries/' + _s)
+write_redirect('hardware', 'sensors')
 
 with open(os.path.join(OUT, 'sitemap.xml'), 'w', encoding='utf-8', newline='\n') as f:
     f.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n')
