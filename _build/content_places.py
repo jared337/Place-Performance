@@ -11,9 +11,10 @@ PLACES = [
     ('parks-and-foreshores', 'Parks &amp; foreshores', 'Sydney, NSW', 'Visitation trends', 'parks', 'People relaxing on a harbourside lawn near the Sydney Harbour Bridge'),
     ('office-towers', 'Office towers', 'Sydney, NSW', 'Floor &amp; desk utilisation', 'towers', 'Aerial view of the Sydney CBD office towers'),
     ('government-buildings', 'Government', 'Canberra, ACT', 'Portfolio occupancy', 'government', 'Parliament House in Canberra'),
+    ('exhibitions', 'Exhibitions &amp; pop-ups', 'Melbourne, VIC', 'Event &amp; booth analytics', 'civic-event', 'Crowd at a community event under the Sydney Harbour Bridge'),
 ]
 PLACE_BY = {p[0]: p for p in PLACES}
-PLACE_SCENE = {'campuses': 'campus', 'libraries': 'library', 'shopping-centres': 'shopping', 'stadiums-and-venues': 'venue', 'streets-and-laneways': 'street', 'parks-and-foreshores': 'park', 'office-towers': 'office', 'government-buildings': 'service'}
+PLACE_SCENE = {'campuses': 'campus', 'libraries': 'library', 'shopping-centres': 'shopping', 'stadiums-and-venues': 'venue', 'streets-and-laneways': 'street', 'parks-and-foreshores': 'park', 'office-towers': 'office', 'government-buildings': 'service', 'exhibitions': 'crowd'}
 
 
 def _rel_img(path):
@@ -36,6 +37,7 @@ EXTRA_BLOCKS = {
     'parks-and-foreshores': ('Typical uses in open space', 'Open space planners measure demand for new facilities, maintenance teams schedule cleaning and bin collection around peak use, active transport teams track cyclist growth on shared paths, and event teams measure the attendance of outdoor festivals and markets.'),
     'office-towers': ('Typical uses in office towers', 'Facilities managers trigger cleaning by use, engineers feed occupancy into HVAC controls, workplace strategists study hybrid attendance, leasing teams give tenants evidence about their space, and asset managers measure the effect of lobby and amenity upgrades.'),
     'government-buildings': ('Typical uses in government', 'Property teams identify consolidation opportunities, workplace teams plan for hybrid attendance, service delivery teams monitor shopfront queues against targets, security teams use live occupancy for emergency management, and executives receive regular utilisation reporting.'),
+    'exhibitions': ('Typical uses at shows', 'Organisers report attendance and engagement to exhibitors and sponsors, exhibitors measure the draw of their stands, feature-zone owners compare activations, and operations teams watch entry flow and peak times to manage the floor.'),
 }
 EXTRA_FAQS = {
     'campuses': [('Can it measure lecture theatres and labs as well as study spaces?', 'Yes. Any room or zone can be measured, from large lecture theatres to labs, tutorial rooms, libraries and informal study areas, with each one shown on its building floorplan.'),
@@ -54,6 +56,8 @@ EXTRA_FAQS = {
                       ('Does it track individual employees?', 'No. Counting is anonymous, with processing on the device and no images or personal information collected.')],
     'government-buildings': [('Can it support evacuation and emergency management?', 'Live occupancy shows how many people are in each building and floor at any moment, supporting capacity limits and emergency management.'),
                              ('Can reports go to executives automatically?', 'Yes. Scheduled reports and board packs summarise attendance, utilisation and trends without manual data gathering.')],
+    'exhibitions': [('Can exhibitors see their own stand data?', 'Yes. A zone can be reported per stand or exhibitor, so each can see the footfall and dwell their space attracted.'),
+                    ('Does it work without power or internet?', 'Yes. Battery and solar sensors with 4G run with no mains power or wired network, which suits temporary and touring deployments.')],
 }
 
 
@@ -182,6 +186,31 @@ place_page('stadiums-and-venues', 'Crowd capacity monitoring for stadiums and ve
     ('Who receives capacity alerts?', 'Alerts can go to individuals or teams by SMS, Microsoft Teams, email or in-app, with escalation if an alert is not acknowledged.'),
     ('Is venue crowd counting anonymous?', 'Yes. Processing happens on the device and only anonymous counts are sent.')],
    'Crowd capacity monitoring')
+
+place_page('exhibitions', 'People counting for exhibitions, trade shows and pop-ups.',
+           'Measure attendance, entry flow and which stands and zones draw the crowd, for a single show or a touring pop-up, with temporary sensors that need no mains power or wiring.',
+           'People counting for exhibitions and trade shows',
+           'Temporary people counting for exhibitions, trade shows and pop-ups: live attendance, entry flow, stand and zone engagement and dwell, with battery and solar sensors deployed for a single event.',
+           'Know who came, and what drew them.', [
+    (None, 'Exhibitions, trade shows and pop-ups live or die on attendance and engagement, but the space is temporary and often has no power or network. Place Performance deploys for the show, measures what matters, and packs up afterwards with the data in hand.'),
+    ('Attendance and entry flow', 'Counters at each entrance give a live attendance figure and arrival rate, so organisers can see how busy the floor is and when the peaks hit.'),
+    ('Stand and zone engagement', 'Zones drawn around stands, feature areas and activations measure how many people reach them and how long they dwell, so exhibitors and organisers can see what drew the crowd. The same approach powers ' + L('marketing', 'marketing and display analytics') + '.'),
+    ('Deployed for the event', 'Battery and solar sensors with 4G go in without mains power or cabling, measure for a day or a week, and are removed afterwards, ideal for touring pop-ups and one-off shows. See ' + L('hardware', 'the hardware we use') + '.'),
+], [('Live attendance', 'People on the floor now.', '{R}real-time/'), ('Entry rate', 'Arrivals per minute by door.', None),
+    ('Stand engagement', 'Footfall and dwell at each stand or zone.', None), ('Peak times', 'Busiest periods across the show.', None),
+    ('Dwell time', 'How long visitors stay at features.', None), ('Event comparison', 'Attendance across days and shows.', None)],
+   ('occupancy-history', 'Attendance across the days of a show', 'See the whole show at a glance.', 'Attendance by hour and day across the event shows when the floor was busiest and how each day compared, ready for the post-show report.'),
+   [('Plan.', 'We map entrances, stands and feature zones, and agree what to measure before the show.'),
+    ('Deploy.', 'Battery, solar and 4G sensors are installed on site in hours, with no mains power or cabling.'),
+    ('Measure live.', 'Attendance and engagement are live throughout the event, on any device.'),
+    ('Pack up and report.', 'Sensors are removed afterwards and you keep the full data and reports.')],
+   [R('venues', 'Stadiums &amp; venues', 'Live crowd capacity'), R('retail', 'Retail &amp; precincts', 'Footfall and zones'), R('marketing', 'Marketing', 'Display and activation data'), R('realtime', 'Real time', 'Live attendance and alerts'), R('privacy', 'Privacy by design', 'Anonymous counting'),
+    R('marketing', 'Marketing', 'Prove what activations deliver'), R('retail', 'Retail &amp; precincts', 'Turn footfall into performance'), R('venues', 'Stadiums &amp; venues', 'Event crowds')],
+   [('Can you count a one-off show or a touring pop-up?', 'Yes. Temporary deployments use battery and solar sensors with 4G, installed for a single show or moved between venues on a tour, with no mains power or wiring needed.'),
+    ('What can we measure at an exhibition?', 'Live attendance and entry rate at the doors, plus footfall and dwell at individual stands, feature areas and activations, with peak times and day-by-day comparisons.'),
+    ('How quickly can it be set up on site?', 'Temporary sensors go in within hours, are tested against the floor plan, and are removed after the event.'),
+    ('Is it anonymous?', 'Yes. Counting is anonymous, processed on the device, with no images or personal information collected.')],
+   'People counting for exhibitions and events')
 
 place_page('streets-and-laneways', 'Pedestrian counting for streets and laneways.',
            'Measure pedestrian activity in streets, laneways, plazas and town centres, hour by hour, and see how places change over time.',

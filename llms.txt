@@ -21,6 +21,7 @@ Key facts:
 - [Office occupancy for government](https://placeperformance.ai/solutions/government/): Office occupancy analytics for government: right-size property portfolios, understand hybrid attendance, monitor capacity and report transparently.
 - [Occupancy analytics for buildings](https://placeperformance.ai/solutions/buildings/): Occupancy analytics for commercial buildings: demand-based cleaning, BMS and HVAC integration, tenant insights and refit ROI, with local support.
 - [Footfall analytics for retail & precincts](https://placeperformance.ai/solutions/retail/): Footfall analytics for shopping centres and precincts: visitation by entrance and zone, conversion with POS data, peak staffing and queue monitoring.
+- [Footfall and zone analytics for marketing](https://placeperformance.ai/solutions/marketing/): Footfall and zone analytics for marketing teams: measure display, activation and campaign performance with zone footfall, dwell time, heat maps and before-and-after uplift.
 - [Pedestrian & cyclist counting](https://placeperformance.ai/solutions/parks-and-streets/): Pedestrian, cyclist and vehicle counting for parks, trails, streets and public spaces, permanent or temporary, with before-and-after project analysis.
 - [Privacy-safe people counting](https://placeperformance.ai/privacy-by-design/): How Place Performance counts people anonymously: edge processing, data masked at source, no video stored, no facial recognition and role-based access.
 - [Book a demo](https://placeperformance.ai/contact/): Book a 30-minute Place Performance walkthrough and scope a pilot: site survey, sensor plan, installation and live data from your own site within weeks.
@@ -33,6 +34,7 @@ Key facts:
 - [Library people counting & occupancy](https://placeperformance.ai/places/libraries/): People counting for public, state and university libraries: visits, live zone occupancy, peak periods, dwell time, capacity alerts and visitation reports.
 - [Shopping centre footfall counting](https://placeperformance.ai/places/shopping-centres/): Footfall counting for shopping centres: entries by door and hour, dwell time, zone and tenant ranking, conversion with POS data and queue monitoring.
 - [Crowd capacity monitoring for venues](https://placeperformance.ai/places/stadiums-and-venues/): Crowd capacity monitoring for stadiums, arenas and event venues: live attendance, entry flow by gate, zone occupancy vs limits and alerts.
+- [People counting for exhibitions and trade shows](https://placeperformance.ai/places/exhibitions/): Temporary people counting for exhibitions, trade shows and pop-ups: live attendance, entry flow, stand and zone engagement and dwell, with battery and solar sensors deployed for a single event.
 - [Pedestrian counting for streets](https://placeperformance.ai/places/streets-and-laneways/): Pedestrian counting for streets, laneways, plazas and town centres: hourly activity, peak periods, seasonal trends, events and before-and-after studies.
 - [Park & foreshore visitation counting](https://placeperformance.ai/places/parks-and-foreshores/): Visitation counting for parks, foreshores, trails and open spaces: pedestrians and cyclists, peak periods, seasonal trends, events and project impact.
 - [Office occupancy monitoring](https://placeperformance.ai/places/office-towers/): Office occupancy monitoring for commercial towers: floor and meeting room utilisation, hybrid attendance, visitor flow, demand-based cleaning and BMS integration.
@@ -224,6 +226,18 @@ No. Counting is anonymous, with processing on the device and no images or person
 ### Can it measure the impact of a promotion or event?
 Yes. Comparing footfall, dwell and conversion during a campaign with the expected baseline shows the uplift it created.
 
+### How does Place Performance help marketing teams?
+It measures how many people reach, stop at and dwell around displays, zones and activations, so marketing teams can see whether their displays and campaigns are getting the attention they planned, and compare performance across stores.
+
+### Can it measure a specific display or activation?
+Yes. A zone can be drawn around any display, aisle, pop-up or activation to measure footfall, dwell time and the share of passers-by who stop, with heat maps showing where attention concentrates.
+
+### Can it show whether a campaign worked?
+Yes. Comparing footfall and dwell in a zone before, during and after a campaign shows the uplift it created, and the same display can be compared across stores and regions.
+
+### Does it combine with sales data?
+Yes. Where point-of-sale data is available, zone footfall and dwell can be combined with sales to estimate conversion and sales per visitor for a display or area.
+
 ### Can you count cyclists and pedestrians on trails?
 Yes. Place Performance measures pedestrian and cyclist activity, including volumes and direction, on trails, shared paths and in parks, using technology selected for each outdoor environment.
 
@@ -361,6 +375,24 @@ Yes. Entry counts and arrival rates by gate show where pressure is building, so 
 
 ### Can attendance be compared across events?
 Yes. Every event is stored, so attendance, peak arrival times and zone occupancy can be compared to plan future events.
+
+### Can you count a one-off show or a touring pop-up?
+Yes. Temporary deployments use battery and solar sensors with 4G, installed for a single show or moved between venues on a tour, with no mains power or wiring needed.
+
+### What can we measure at an exhibition?
+Live attendance and entry rate at the doors, plus footfall and dwell at individual stands, feature areas and activations, with peak times and day-by-day comparisons.
+
+### How quickly can it be set up on site?
+Temporary sensors go in within hours, are tested against the floor plan, and are removed after the event.
+
+### Is it anonymous?
+Yes. Counting is anonymous, processed on the device, with no images or personal information collected.
+
+### Can exhibitors see their own stand data?
+Yes. A zone can be reported per stand or exhibitor, so each can see the footfall and dwell their space attracted.
+
+### Does it work without power or internet?
+Yes. Battery and solar sensors with 4G run with no mains power or wired network, which suits temporary and touring deployments.
 
 ### How are pedestrians counted on a street?
 Sensors mounted on poles, awnings or facades count pedestrians passing a point and their direction, using technology chosen for each location.

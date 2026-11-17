@@ -126,7 +126,7 @@ PRIVACY_VIS = '<div class="privacy-vis" role="img" aria-label="What the sensor s
 # Navigation
 # --------------------------------------------------------------------------
 
-SEO_TITLES = {'councils': 'People counting for councils', 'universities': 'Space utilisation for universities', 'government': 'Office occupancy for government', 'buildings': 'Occupancy analytics for buildings', 'retail': 'Footfall analytics for retail & precincts', 'parks-and-streets': 'Pedestrian & cyclist counting'}
+SEO_TITLES = {'councils': 'People counting for councils', 'universities': 'Space utilisation for universities', 'government': 'Office occupancy for government', 'buildings': 'Occupancy analytics for buildings', 'retail': 'Footfall analytics for retail & precincts', 'parks-and-streets': 'Pedestrian & cyclist counting', 'marketing': 'Footfall and zone analytics for marketing'}
 
 SOLUTIONS = [
     ('councils', 'Councils &amp; civic', 'Libraries, civic centres, events and service desks', 'civic-event'),
@@ -135,6 +135,7 @@ SOLUTIONS = [
     ('buildings', 'Buildings &amp; property', 'Run buildings on demand', 'office'),
     ('retail', 'Retail &amp; precincts', 'Turn footfall into performance', 'food-hall'),
     ('parks-and-streets', 'Parks, trails &amp; streets', 'People, cyclists and vehicles outdoors', 'parks'),
+    ('marketing', 'Marketing', 'Prove what displays and activations deliver', 'food-hall'),
 ]
 
 
@@ -554,7 +555,7 @@ page('solutions', 'Solutions by sector | Place Performance',
      sol_hub, SOL_FAQS, [('Home', ''), ('Solutions', 'solutions/')], nav_key='solutions')
 
 # ---------------- Individual solutions ----------------
-SECTOR_SCENE = {'councils': 'library', 'universities': 'campus', 'government': 'service', 'buildings': 'office', 'retail': 'shopping', 'parks-and-streets': 'park'}
+SECTOR_SCENE = {'councils': 'library', 'universities': 'campus', 'government': 'service', 'buildings': 'office', 'retail': 'shopping', 'parks-and-streets': 'park', 'marketing': 'shopping'}
 
 
 def solution(slug, name, h1, lead, img, img_alt, shot1, shot1_alt, shot2, shot2_alt, outcomes, metrics, scenarios, faqs, desc, service, audience):
@@ -676,6 +677,26 @@ solution('retail', 'Retail &amp; precincts', 'Footfall analytics for shopping ce
           ('Does it identify shoppers?', 'No. Counting is anonymous, with processing on the device and no images or personal information collected.'),
           ('Can it measure the impact of a promotion or event?', 'Yes. Comparing footfall, dwell and conversion during a campaign with the expected baseline shows the uplift it created.')],
          'Footfall analytics for shopping centres and precincts: visitation by entrance and zone, conversion with POS data, peak staffing and queue monitoring.', 'Footfall analytics for retail and precincts', 'Shopping centres and precinct managers')
+
+solution('marketing', 'Marketing', 'Zone analytics for marketing teams.',
+         'See whether your displays, activations and campaigns are getting the attention you planned, with footfall and zone-level data, dwell time, heat maps and before-and-after comparisons across every store.',
+         'food-hall', 'Shoppers moving through a retail centre', 'heatmap', 'Heat map of attention across a store zone', 'peak-periods', 'Footfall by hour and day',
+         [('Display and zone performance.', 'See how many people reach, stop at and dwell around each display, zone or activation.'),
+          ('Campaign uplift.', 'Compare footfall and dwell before, during and after a campaign to measure the lift it created.'),
+          ('A/B and placement testing.', 'Test two layouts, positions or creative treatments and see which draws and holds more people.'),
+          ('Attention, not anecdotes.', 'Replace guesswork with anonymous numbers on what is actually drawing the crowd.'),
+          ('Prove the spend.', 'Show the business and your brands whether an activation delivered the attention it was meant to.'),
+          ('Across every store.', 'Compare how the same display performs across sites, regions and formats.')],
+         [('Zone footfall', 'How many people enter and pass each zone.'), ('Dwell time', 'How long people linger at a display or area.'), ('Attraction &amp; capture', 'Passers-by versus those who stop and engage.'),
+          ('Heat maps', 'Where attention concentrates in a space.'), ('Campaign uplift', 'Change in footfall and dwell during a campaign.'), ('Site comparison', 'Display performance across stores and regions.')],
+         [('See where attention goes.', 'Heat maps and zone footfall show which displays, aisles and activations draw and hold people, and which are quietly ignored.'),
+          ('Measure every campaign.', 'Compare footfall, dwell and capture before, during and after an activation to prove the lift, store by store.')],
+         [('How does Place Performance help marketing teams?', 'It measures how many people reach, stop at and dwell around displays, zones and activations, so marketing teams can see whether their displays and campaigns are getting the attention they planned, and compare performance across stores.'),
+          ('Can it measure a specific display or activation?', 'Yes. A zone can be drawn around any display, aisle, pop-up or activation to measure footfall, dwell time and the share of passers-by who stop, with heat maps showing where attention concentrates.'),
+          ('Can it show whether a campaign worked?', 'Yes. Comparing footfall and dwell in a zone before, during and after a campaign shows the uplift it created, and the same display can be compared across stores and regions.'),
+          ('Does it combine with sales data?', 'Yes. Where point-of-sale data is available, zone footfall and dwell can be combined with sales to estimate conversion and sales per visitor for a display or area.'),
+          ('Does it identify shoppers?', 'No. Counting is anonymous, with processing on the device and no images or personal information collected.')],
+         'Footfall and zone analytics for marketing teams: measure display, activation and campaign performance with zone footfall, dwell time, heat maps and before-and-after uplift.', 'Footfall and zone analytics for marketing', 'Retail and brand marketing teams')
 
 solution('parks-and-streets', 'Parks, trails &amp; streets', 'Pedestrian, cyclist and vehicle counting for public spaces.',
          'Measure how people use parks, trails, foreshores, plazas and streets, permanently or for a single event, and see how places change before, during and after projects.',
