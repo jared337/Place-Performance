@@ -572,6 +572,11 @@ a.fcard:hover { transform: translateY(-4px); box-shadow: var(--shadow-card); }
 .cmp tr:hover td { background: #fafbfd; }
 .cmp .yes { color: var(--accent); font-weight: 700; }
 .cmp .no { color: #c4ccd6; }
+.cmp-text td { text-align: left; vertical-align: top; font-size: 14px; line-height: 1.45; padding: 14px; }
+.cmp-text td:first-child { font-weight: 600; color: var(--navy); }
+.cmp-text th:nth-child(2), .cmp-text td:nth-child(2) { background: rgba(0, 212, 255, .07); }
+.cmp-text th:nth-child(2) { color: var(--accent); }
+.cmp-note { margin-top: 14px; font-size: 13px; }
 
 /* CTA band */
 .cta-band { padding: 130px 0 110px; }

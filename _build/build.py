@@ -986,30 +986,20 @@ exec(open(os.path.join(HERE, 'content_guides.py'), encoding='utf-8').read())
 exec(open(os.path.join(HERE, 'content_places.py'), encoding='utf-8').read())
 
 # ---------------- Compare: people counting systems in Australia ----------------
-CMP_COLS = ['Place Performance', 'Overseas hardware + reseller', 'DIY camera analytics']
-CMP_ROWS = [
-    ('One Australian partner for hardware, install and software', 'y', 'n', 'n'),
-    ('Site survey, installation and calibration included', 'y', 'v', 'n'),
-    ('Local support and live device health monitoring', 'y', 'v', 'v'),
-    ('Anonymous by design: on-device counting, no images', 'y', 'v', 'n'),
-    ('Indoor and outdoor; people, cyclists and vehicles', 'y', 'v', 'v'),
-    ('Right sensing technology chosen per site', 'y', 'n', 'n'),
-    ('Real-time platform with forecasting and AI built in', 'y', 'v', 'v'),
-    ('Australian public-sector and council experience', 'y', 'v', 'v'),
+PROD_COLS = ['Place Performance', 'FootfallCam', 'Skyfii', 'V-Count']
+PROD_ROWS = [
+    ('Based in', 'Australia', 'United Kingdom', 'Australia (ASX:SKF)', 'Turkey'),
+    ('How you buy and install', 'One local Australian team: survey, supply, install and support', 'Hardware brand, installed through authorised resellers', 'Analytics platform, direct and through partners', 'Hardware and platform, through partners and resellers'),
+    ('Sensing technology', 'LiDAR, radar and specialist sensors, matched per site', '3D stereo-vision sensors', 'Camera, 3D, Wi-Fi and vehicle sensing', '3D stereo-vision sensors'),
+    ('Indoor and outdoor', 'Both, including cyclists and vehicles', 'Primarily indoor', 'Both', 'Primarily indoor'),
+    ('Anonymous, on-device counting', 'Yes, across all sensors', 'Yes, with 3D sensors', 'Varies by sensor type', 'Yes, with 3D sensors'),
+    ('Platform', 'Real time, forecasting and an AI assistant', 'Analytics software', 'Analytics platform', 'Analytics software'),
+    ('Main focus', 'Councils, public realm and property across Australia', 'Retail and public venues', 'Venues, retail and public spaces', 'Retail'),
 ]
-
-
-def _cmp_mark(c):
-    if c == 'y':
-        return '<span class="yes" aria-label="Yes">&#10003;</span>'
-    if c == 'n':
-        return '<span class="no" aria-label="No">&ndash;</span>'
-    return '<span class="muted">Varies</span>'
-
-
-cmp_table = '<div class="cmp-wrap reveal"><table class="cmp"><thead><tr><th>What matters</th>%s</tr></thead><tbody>%s</tbody></table></div>' % (
-    ''.join('<th>%s</th>' % c for c in CMP_COLS),
-    ''.join('<tr><td>%s</td>%s</tr>' % (r[0], ''.join('<td>%s</td>' % _cmp_mark(x) for x in r[1:])) for r in CMP_ROWS))
+prod_table = '<div class="cmp-wrap reveal"><table class="cmp cmp-text"><thead><tr><th>What to compare</th>%s</tr></thead><tbody>%s</tbody></table></div>' % (
+    ''.join('<th>%s</th>' % c for c in PROD_COLS),
+    ''.join('<tr><td>%s</td>%s</tr>' % (r[0], ''.join('<td>%s</td>' % x for x in r[1:])) for r in PROD_ROWS))
+cmp_note = '<p class="muted cmp-note">This comparison reflects publicly available information at the time of writing and is shared in good faith to help you shortlist. Vendors update their products often, so confirm current details directly with each supplier. FootfallCam, Skyfii and V-Count are trademarks of their respective owners.</p>'
 compare_body = (
     page_hero('Compare', 'Choosing a people counting system in Australia',
               'People counting is sold three ways: one local partner that does it end to end, an overseas hardware brand installed through a reseller, or do-it-yourself analytics added to existing cameras. Here is how they differ, and where Place Performance fits.',
@@ -1019,7 +1009,7 @@ compare_body = (
         ('Overseas hardware and a reseller', 'A global sensor brand bought and installed through a local reseller, with analytics from the vendor. Proven hardware, but the hardware, installation, software and support can sit with different parties.'),
         ('DIY camera analytics', 'Counting software added to existing CCTV. Low upfront cost, but accuracy, privacy and outdoor coverage depend on cameras that were never meant for counting.'),
     ])) +
-    section(head('Compare the approaches', 'What matters when you count people in real places.') + cmp_table, 'sec-tint') +
+    section(head('How Place Performance compares', 'Place Performance next to three widely used people counting products.') + prod_table + cmp_note, 'sec-tint') +
     section(head('Compare', 'Comparing a specific product or vendor?') + '<div class="prose"><p>If you are weighing up a global hardware brand or an Australian analytics platform, the real question is usually not the sensor on its own, but who takes responsibility for the whole system once it is live. Place Performance is the single Australian partner for the sensor, the installation, the platform and the support, with the right sensing technology chosen per site and anonymous counting by design. See ' + L('hardware', 'the hardware we use') + ' and ' + L('privacy', 'how privacy works') + '.</p></div>') +
     section(head('Why Place Performance', 'Built for Australian places.') + cards([
         ('One partner, locally', 'Survey, supply, install, calibrate, platform and support from a single Australian team.'),
