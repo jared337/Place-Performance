@@ -83,7 +83,7 @@ class Scene:
         self.layers['zone'].append('<g fill="none" stroke="%s" stroke-width="2.2" stroke-linecap="round" opacity=".55"><path d="M%s %sl-14 7m14 -7l-5 -3m5 3l-2 5"/><path d="M%s %sl14 -7m-14 7l5 3m-5 -3l2 -5"/></g>' % (
             ACC, f2(cx + 4), f2(cy - 6), f2(cx - 4), f2(cy + 6)))
 
-    def sensor(self, x, y, z=3.6, label='LiDAR counter', beam=None):
+    def sensor(self, x, y, z=3.6, label='People counter', beam=None):
         """Overhead or area sensor with pulsing beam onto beam=(x,y,w,d) and a dark label tag."""
         if beam:
             bx, by, bw, bd = beam
@@ -225,7 +225,7 @@ def entrance():
     s.walker([(8.6, 12.5), (8.7, .5)], D, -6, count=(.70, 'IN +1', '#16a34a', (6.6, 3.2, 2.2)))
     s.badge(13.2, 6.2, 2.4, 'In today', '1,284', '#16a34a', inc=(D / 2, 0.70 * D))
     s.badge(13.4, 9.6, 1.6, 'Out today', '1,197', ACC, inc=(D, 0.25 * D + 3.5))
-    return s.render('Animated illustration of a LiDAR counter over a doorway counting people in and out', 'Entrance counting: people in and out, processed on the device.')
+    return s.render('Animated illustration of a people counter over a doorway counting people in and out', 'Entrance counting: people in and out, processed on the device.')
 
 
 def library():
@@ -300,7 +300,7 @@ def venue():
         s.box(gx, 8.6, 0, .35, 1.2, 1.1, DARK, layer='back')
         s.box(gx + 1.8, 8.6, 0, .35, 1.2, 1.1, DARK, layer='back')
         s.zone(gx + .4, 8.6, 1.4, 1.2)
-    s.sensor(8.5, 8.8, 3.4, label='LiDAR counters', beam=(7.6, 8.6, 1.4, 1.2))
+    s.sensor(8.5, 8.8, 3.4, label='People counters', beam=(7.6, 8.6, 1.4, 1.2))
     D = 6.0
     for gi, gx in enumerate((3.2, 7.2, 11.2)):
         for j in range(2):
@@ -457,7 +457,7 @@ def crowd():
     # LiDAR sensor on a pole at the edge, its beam covering the whole open area
     s.box(14.55, 1.5, 0, .22, .22, 4.4, ('#3b4656', '#2a333f', '#151b23'), layer='back', shadow=False)
     s.zone(2.6, 3.0, 9.8, 6.8)
-    s.sensor(14.2, 1.3, 4.4, label='LiDAR sensor', beam=(2.6, 3.0, 9.8, 6.8))
+    s.sensor(14.2, 1.3, 4.4, label='People counter', beam=(2.6, 3.0, 9.8, 6.8))
     # the crowd spread across the open area
     crowd_pts = [
         (3.4, 3.6), (4.3, 4.2), (5.2, 3.7), (6.1, 4.4), (7.0, 3.8), (7.9, 4.5), (8.8, 3.9), (9.7, 4.6), (10.6, 4.0),
@@ -474,7 +474,7 @@ def crowd():
     s.badge(2.8, 1.7, 4.4, 'In area now', '1,842', '#10b981', tick=('1842', '35', '1,842'))
     s.badge(11.8, 10.4, 1.6, 'Capacity', '68% of limit', '#f59e0b')
     s.tag(6.8, 10.8, 0.4, 'One sensor, whole area', ACC)
-    return s.render('Animated illustration of a LiDAR sensor on a pole counting a crowd across an open plaza', 'Open-area counting: one LiDAR sensor covers a whole crowd, no overhead mount.')
+    return s.render('Animated illustration of a people counter on a pole counting a crowd across an open plaza', 'Open-area counting: one counter covers a whole crowd, no overhead mount.')
 
 
 SCENES = {'entrance': entrance, 'crowd': crowd, 'library': library, 'shopping': shopping, 'venue': venue, 'street': street,

@@ -162,7 +162,7 @@ def lidar_photo():
               '<rect x="1150" y="210" width="88" height="48" rx="10" fill="#1f2937" stroke="#3b4656" stroke-width="2"/>'
               '<circle cx="1172" cy="234" r="5" fill="#22d3ee"/><circle cx="1216" cy="234" r="5" fill="#22d3ee"/>'
               '<g transform="translate(1194 300)"><rect x="-54" y="-22" width="108" height="26" rx="7" fill="#1f2937"/><path d="M-6 4h12l-6 7z" fill="#1f2937"/>'
-              '<text x="0" y="-4" text-anchor="middle" fill="#fff" font-size="13" font-weight="600">LiDAR sensor</text></g>')
+              '<text x="0" y="-4" text-anchor="middle" fill="#fff" font-size="13" font-weight="600">People counter</text></g>')
     pop = '<text x="556" y="516" text-anchor="middle" font-size="26" font-weight="800" fill="#ffd23f">IN +1<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.1;.8;1" dur="3s" repeatCount="indefinite"/></text>'
     badge = ('<g transform="translate(70 70)" filter="url(#lcard)"><rect width="252" height="66" rx="12" fill="#fff"/>'
              '<circle cx="26" cy="26" r="6" fill="#06b6d4"/><text x="44" y="30" font-size="15" fill="#6b7c93">Pedestrians today</text>'
@@ -170,8 +170,8 @@ def lidar_photo():
     svg = ('<svg viewBox="0 0 1400 934" preserveAspectRatio="xMidYMid slice" aria-hidden="true" font-family="Inter, -apple-system, Segoe UI, sans-serif">'
            + defs + beam + zone + line + brackets + sensor + pop + badge + '</svg>')
     return ('<figure class="lidar-shot"><div class="lidar-shot-frame">'
-            '<img src="{R}assets/photos/city.jpg" alt="A busy laneway with a LiDAR count field and count line overlaid on the walking path" loading="lazy" width="1400" height="934">'
-            + svg + '</div><figcaption>The LiDAR field and count line shown on a laneway, people are counted as anonymous shapes, with no faces or images.</figcaption></figure>')
+            '<img src="{R}assets/photos/city.jpg" alt="A busy laneway with a count field and count line overlaid on the walking path" loading="lazy" width="1400" height="934">'
+            + svg + '</div><figcaption>The count field and count line shown on a laneway, people are counted as anonymous shapes, with no faces or images.</figcaption></figure>')
 
 
 def _diag_person(x, fy):
@@ -340,7 +340,7 @@ def page(slug, title, desc, body, faqs=None, crumbs=None, service=None, audience
 HOME_FAQS = [
     ('What is Place Performance?', 'Place Performance is an end-to-end people counting and place analytics service. It combines privacy-safe sensors, professional installation, a real-time analytics platform and AI insights so councils, universities, government and property owners can see how their places are used and plan with evidence.'),
     ('What does Place Performance measure?', 'It measures visitor counts, entries and exits, live occupancy against capacity, peak periods, dwell time, repeat visitation, movement between zones and, outdoors, pedestrians, cyclists and vehicles. Metrics roll up from a single room to a whole portfolio of sites.'),
-    ('Is the hardware included?', 'Yes. LiDAR people counters and other sensors are selected for each environment, then designed, supplied, installed, commissioned and supported by Place Performance in Australia, so you deal with one partner from sensor to insight.'),
+    ('Is the hardware included?', 'Yes. The sensors are selected for each environment, then designed, supplied, installed, commissioned and supported by Place Performance in Australia, so you deal with one partner from sensor to insight.'),
     ('Does it identify people?', 'No. Counting happens on the device and data is masked at source, so only anonymous numbers leave the site. The approach is to measure the place, not the person. See <a href="{R}privacy-by-design/">Privacy by design</a>.'),
     ('Who is it for?', 'It is built for local councils, universities and TAFEs, state and federal government agencies, commercial property owners, shopping centres and precinct managers, and anyone responsible for libraries, civic centres, venues, parks, trails or streets.'),
     ('How quickly can we get started?', 'Most organisations start with a pilot at one site. After a site survey and sensor plan, a pilot is typically live in weeks rather than months, and you can add sites and capability levels as you grow.'),
