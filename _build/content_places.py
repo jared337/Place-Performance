@@ -78,7 +78,7 @@ def place_page(slug, h1, lead, seo_title, desc, why_h2, why, measures, shot_spec
         section(head('Explore more', 'Related industries and places.') + photo_cards([(t, d, _rel_img(p), '{R}' + p) for p, t, d in related[5:]]))
     )
     page('places/' + slug, seo_title + ' | Place Performance', desc, body, faqs,
-         [('Home', ''), ('Places', 'places/'), (strip(name), 'places/%s/' % slug)], service=service, nav_key='industries')
+         [('Home', ''), ('Places', 'places/'), (strip(name), 'places/%s/' % slug)], service=service, nav_key='places')
 
 
 INSTALL_INDOOR = [('Survey.', 'We assess entrances, ceiling heights, layout, lighting, power, network and privacy needs.'),
@@ -333,4 +333,4 @@ PLACES_FAQS = [
 ]
 page('places', 'Places we measure | Place Performance',
      'People counting for libraries, campuses, shopping centres, stadiums, streets, parks, office towers and government buildings across Australia.',
-     places_hub, PLACES_FAQS, [('Home', ''), ('Places', 'places/')], nav_key='industries')
+     places_hub, PLACES_FAQS, [('Home', ''), ('Places', 'places/')], nav_key='places')

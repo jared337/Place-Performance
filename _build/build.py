@@ -240,12 +240,15 @@ def nav(active):
     dd = ''.join('<a href="{R}industries/%s/"><b>%s</b><span>%s</span></a>' % (s, n, d) for s, n, d, _ in SOLUTIONS)
     sol_on = ' on' if active.startswith('industries') else ''
     plat_on = ' on' if active in ('platform', 'real-time', 'ai-forecasting', 'hardware') else ''
+    pdd = ''.join('<a href="{R}places/%s/"><b>%s</b><span>%s</span></a>' % (p[0], p[1], p[3]) for p in PLACES)
+    pla_on = ' on' if active.startswith('places') else ''
     return '''<header class="nav" id="nav">
   <div class="wrap nav-in">
     <a class="logo" href="{R}"><span class="logo-mark"><svg viewBox="0 0 44 44" aria-hidden="true"><rect x="4" y="6" width="34" height="6" rx="2" fill="#00d4ff"/><rect x="4" y="16" width="27" height="6" rx="2" fill="#12bfe6"/><rect x="4" y="26" width="20" height="6" rx="2" fill="#2f8fe8"/><rect x="4" y="36" width="12" height="6" rx="2" fill="#4f8dff"/></svg></span>Place Performance</a>
     <nav class="nav-links" aria-label="Main">
       <div class="nav-dd"><a href="{R}platform/" class="dd-trigger%s">Platform</a><div class="dd-panel"><a href="{R}platform/"><b>Platform overview</b><span>From the sensor to the decision</span></a><a href="{R}hardware/"><b>Hardware</b><span>Radar, LiDAR and the right sensor per site</span></a><a href="{R}real-time/"><b>Real time</b><span>Live occupancy, floorplans and alerts</span></a><a href="{R}ai-forecasting/"><b>AI &amp; forecasting</b><span>Forecasts, scenarios and the Place Assistant</span></a></div></div>
-      <div class="nav-dd"><a href="{R}industries/" class="dd-trigger%s">Industries</a><div class="dd-panel">%s<a class="dd-all" href="{R}industries/">All industries</a><a class="dd-all dd-all-2" href="{R}places/">Browse by place</a></div></div>
+      <div class="nav-dd"><a href="{R}industries/" class="dd-trigger%s">Industries</a><div class="dd-panel">%s<a class="dd-all" href="{R}industries/">All industries</a></div></div>
+      <div class="nav-dd"><a href="{R}places/" class="dd-trigger%s">Places</a><div class="dd-panel">%s<a class="dd-all" href="{R}places/">All places</a></div></div>
       %s
       <div class="nav-m-cta"><a class="btn btn-dark btn-lg" href="{R}contact/">Book a demo <i class="arr"></i></a><a class="btn btn-glass btn-lg" href="{R}talk-to-us/">Talk to us</a></div>
     </nav>
@@ -255,7 +258,7 @@ def nav(active):
     </div>
     <button class="nav-burger" aria-label="Menu" id="burger"><span></span><span></span></button>
   </div>
-</header>''' % (plat_on, sol_on, dd, a('plans', 'Plans'))
+</header>''' % (plat_on, sol_on, dd, pla_on, pdd, a('plans', 'Plans'))
 
 
 FOOTER = '''<footer class="foot">
