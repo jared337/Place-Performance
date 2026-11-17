@@ -822,7 +822,7 @@ about_body = (
         '</div>', 'sec-tint') +
     section(head('Leadership', 'The people behind it.') +
         '<div class="leader-grid reveal">'
-        '<div class="leader"><div class="leader-avatar">PB</div><h4>Paul Berkovic</h4><p class="leader-role">CEO, Rayven</p>'
+        '<div class="leader"><div class="leader-avatar"><img src="{R}assets/team/paul-berkovic.jpg" alt="Paul Berkovic"></div><h4>Paul Berkovic</h4><p class="leader-role">CEO, Rayven</p>'
         '<p>Paul co-founded Rayven, the Australian operational software and AI company that powers the Place Performance platform, from live dashboards and reporting to forecasting and AI insight.</p>'
         '<a class="link-arrow" href="https://www.linkedin.com/in/paulberkovic/" target="_blank" rel="noopener">LinkedIn</a></div>'
         '<div class="leader"><div class="leader-avatar">KM</div><h4>Keven Meddings</h4><p class="leader-role">CEO, ITESA</p>'
