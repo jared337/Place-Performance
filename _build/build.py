@@ -820,8 +820,17 @@ about_body = (
         '<p class="about-addr">223 Liverpool St<br>Darlinghurst, NSW 2010</p>'
         '<a class="link-arrow" href="https://rayven.io/" target="_blank" rel="noopener">rayven.io</a></div>'
         '</div>', 'sec-tint') +
+    section(head('Leadership', 'The people behind it.') +
+        '<div class="leader-grid reveal">'
+        '<div class="leader"><div class="leader-avatar">PB</div><h4>Paul Berkovic</h4><p class="leader-role">CEO, Rayven</p>'
+        '<p>Paul co-founded Rayven, the Australian operational software and AI company that powers the Place Performance platform, from live dashboards and reporting to forecasting and AI insight.</p>'
+        '<a class="link-arrow" href="https://www.linkedin.com/in/paulberkovic/" target="_blank" rel="noopener">LinkedIn</a></div>'
+        '<div class="leader"><div class="leader-avatar">KM</div><h4>Keven Meddings</h4><p class="leader-role">CEO, ITESA</p>'
+        '<p>Keven leads ITESA, the measurement and analytics specialists behind Place Performance\'s sensing, installation and support, from entrance counters to outdoor radar across Australia.</p>'
+        '<a class="link-arrow" href="https://www.linkedin.com/in/keven-meddings-04a65291/" target="_blank" rel="noopener">LinkedIn</a></div>'
+        '</div>') +
     section(head('How it fits together', 'From the sensor to the decision, by one team.',
-        'ITESA brings the sensing hardware, the site surveys and the local installation and support. Rayven brings the data platform, the dashboards and the AI. Place Performance brings them together, so you deal with one Australian partner from the first site visit to the insight on the screen.'))
+        'ITESA brings the sensing hardware, the site surveys and the local installation and support. Rayven brings the data platform, the dashboards and the AI. Place Performance brings them together, so you deal with one Australian partner from the first site visit to the insight on the screen.'), 'sec-tint')
 )
 page('about', 'About us | Place Performance',
      'Place Performance is a joint venture between ITESA (place measurement and sensing) and Rayven (operational software and AI), delivering sensors, installation and an analytics platform across Australia.',

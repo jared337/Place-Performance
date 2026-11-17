@@ -402,6 +402,14 @@ p { margin: 0; }
 .hw-diagram { max-width: 780px; margin: 4px auto 40px; }
 .hw-diagram svg { width: 100%; height: auto; display: block; background: #fff; border-radius: var(--radius); box-shadow: var(--shadow-soft); border: 1px solid rgba(10,37,64,.05); }
 .hw-diagram figcaption { margin: 14px auto 0; font-size: 14px; color: var(--muted); text-align: center; max-width: 620px; }
+.leader-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 900px; margin: 0 auto; }
+.leader { background: #fff; border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow-soft); }
+.leader-avatar { width: 72px; height: 72px; border-radius: 50%; display: grid; place-items: center; color: #fff; font-weight: 700; font-size: 22px; background: linear-gradient(135deg, #635bff, #00d4ff); margin-bottom: 16px; overflow: hidden; }
+.leader-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.leader h4 { font-size: 20px; margin-bottom: 2px; }
+.leader-role { font-size: 14px; font-weight: 600; color: var(--accent); margin-bottom: 12px; }
+.leader p { font-size: 15px; line-height: 1.6; margin-bottom: 14px; }
+@media (max-width: 640px) { .leader-grid { grid-template-columns: 1fr; } }
 
 /* ---------------- Footer ---------------- */
 .foot { padding: 70px 0 30px; background: var(--tint); }
