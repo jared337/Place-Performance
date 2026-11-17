@@ -56,9 +56,9 @@ p { margin: 0; }
 .nav { position: fixed; inset: 0 0 auto 0; z-index: 50; transition: background .3s, box-shadow .3s, backdrop-filter .3s; }
 .nav.scrolled { background: rgba(255,255,255,.82); backdrop-filter: saturate(180%) blur(14px); box-shadow: 0 1px 0 rgba(10,37,64,.06); }
 .nav-in { display: flex; align-items: center; gap: 32px; height: 68px; }
-.logo { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 18px; color: var(--navy); letter-spacing: -.02em; }
+.logo { display: inline-flex; align-items: center; gap: 11px; font-weight: 700; font-size: 19px; color: var(--navy); letter-spacing: -.02em; }
 .logo-mark { display: inline-flex; align-items: center; }
-.logo-mark svg { height: 34px; width: auto; display: block; }
+.logo-mark svg { height: 48px; width: auto; display: block; }
 .nav-links { display: flex; gap: 26px; margin-left: 12px; }
 .nav-links a { color: var(--navy); font-weight: 500; font-size: 15px; opacity: .85; }
 .nav-links a:hover { opacity: 1; }
