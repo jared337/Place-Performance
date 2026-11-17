@@ -10,7 +10,7 @@ P = {
     'venues': 'places/stadiums-and-venues/', 'streets': 'places/streets-and-laneways/', 'foreshores': 'places/parks-and-foreshores/',
     'offices': 'places/office-towers/', 'govbuildings': 'places/government-buildings/',
     'hardware': 'hardware/', 'marketing': 'industries/marketing/', 'exhibitions': 'places/exhibitions/',
-    'hospitality': 'industries/hospitality/', 'compare': 'compare/',
+    'hospitality': 'industries/hospitality/', 'compare': 'compare/', 'guides': 'guides/', 'glossary': 'glossary/',
 }
 
 

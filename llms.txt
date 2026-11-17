@@ -42,6 +42,11 @@ Key facts:
 - [Government building occupancy](https://placeperformance.ai/places/government-buildings/): Occupancy monitoring for government buildings: agency office utilisation, service centre queues, public building capacity and transparent reporting.
 - [Places we measure](https://placeperformance.ai/places/): People counting for libraries, campuses, shopping centres, stadiums, streets, parks, office towers and government buildings across Australia.
 - [People counting systems in Australia: how to choose](https://placeperformance.ai/compare/): How to choose a people counting system in Australia: an end-to-end local partner versus overseas hardware and DIY camera analytics, compared. Anonymous, accurate counting indoors and outdoors.
+- [People counting glossary: footfall, occupancy and more](https://placeperformance.ai/glossary/): Plain-English definitions of people counting and place analytics terms: footfall, occupancy, dwell time, space utilisation, pedestrian counting, anonymous counting and more.
+- [How people counting works](https://placeperformance.ai/guides/how-people-counting-works/): How modern people counting works: anonymous on-device counting by shape and movement, real-time occupancy, and what keeps the numbers accurate, explained in plain English.
+- [LiDAR vs camera people counting](https://placeperformance.ai/guides/lidar-vs-camera-people-counting/): LiDAR, camera, radar and Wi-Fi people counting compared on accuracy, privacy, light and outdoor use, so you can match the right sensing technology to each site.
+- [How accurate are people counters?](https://placeperformance.ai/guides/how-accurate-are-people-counters/): What drives people counting accuracy, how it is measured against a ground-truth count on site, and how device health monitoring keeps counts reliable over time.
+- [Guides: how people counting and place analytics work](https://placeperformance.ai/guides/): Practical guides to people counting and place analytics: how counting works, LiDAR versus cameras, how accurate people counters are, and a glossary of key terms.
 
 ## Questions and answers
 
@@ -503,3 +508,45 @@ LiDAR and depth sensors map a space in three dimensions with pulses of light and
 
 ### How accurate is people counting?
 Accuracy depends on the sensor and on how well it is installed and calibrated. Place Performance uses high-accuracy sensing that is validated on site during commissioning, with continuous device health monitoring so counts stay reliable.
+
+### What is people counting?
+People counting is the automated measurement of how many people enter, leave or occupy a space, using sensors instead of manual tallies. Modern systems count anonymously, without identifying anyone.
+
+### What is footfall?
+Footfall is the number of people who visit a place over a period of time, such as a store, centre or street. Footfall analytics turns those counts into trends by entrance, hour, day and zone.
+
+### What is occupancy analytics?
+Occupancy analytics measures how many people are in a space at a given moment and over time, so teams can manage capacity, safety, cleaning, energy and staffing against real demand.
+
+### What is dwell time?
+Dwell time is how long people stay in a place or a particular zone. It helps separate a busy area that holds attention from one that people simply pass through.
+
+### What is space utilisation?
+Space utilisation is how much a room, floor or building is actually used compared with its capacity, measured over time. It guides consolidation, scheduling and investment decisions.
+
+### What is anonymous people counting?
+Anonymous counting measures people without identifying them. Counting is processed on the device using shape, depth or movement, so no images or personal information leave the sensor.
+
+### Does people counting use cameras?
+Not necessarily. Depth and movement sensors count people by shape without capturing recognisable images, and process the count on the device, so only anonymous numbers leave the sensor.
+
+### How does a people counter know direction?
+Sensors track a person as they cross a line or move through a zone, so they record entries and exits separately and can measure flow between areas.
+
+### How quickly does the data update?
+Counts usually appear in the platform within a few seconds, which is what makes live occupancy and capacity alerts possible.
+
+### Is LiDAR better than a camera for people counting?
+For accuracy, privacy and working in any light, depth and LiDAR sensors have clear advantages because they count by shape rather than from a recognisable image. Cameras can be cost-effective where they already exist but depend more on lighting and raise more privacy considerations.
+
+### What counts people outdoors?
+Radar and mmWave sensors are well suited to the outdoors. They work in all weather and can run on battery, solar and mobile data, so they suit streets, parks and temporary sites.
+
+### Is Wi-Fi tracking accurate for counting people?
+Wi-Fi counting estimates people indirectly from devices, misses anyone without a discoverable phone, and is affected by modern privacy controls, so it is better for rough trends than exact counts.
+
+### How is people counting accuracy tested?
+By comparing the sensor count against a manual ground-truth count over a set period at the site itself, which proves accuracy in the real environment rather than in a lab.
+
+### Why do people counts drift over time?
+A sensor can be knocked, obscured or go offline. Continuous device health monitoring catches these early and periodic validation confirms the counts are still accurate.

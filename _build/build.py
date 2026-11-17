@@ -268,7 +268,7 @@ FOOTER = '''<footer class="foot">
       <p class="muted">Sensors, software and AI for places that matter.<br>Hardware, installation, support and platform, delivered by one Australian team.</p>
     </div>
     <div class="foot-cols">
-      <div><b>Platform</b><a href="{R}platform/">Platform overview</a><a href="{R}hardware/">Hardware</a><a href="{R}real-time/">Real time</a><a href="{R}ai-forecasting/">AI &amp; forecasting</a><a href="{R}plans/">Plans</a><a href="{R}compare/">Compare systems</a></div>
+      <div><b>Platform</b><a href="{R}platform/">Platform overview</a><a href="{R}hardware/">Hardware</a><a href="{R}real-time/">Real time</a><a href="{R}ai-forecasting/">AI &amp; forecasting</a><a href="{R}plans/">Plans</a><a href="{R}compare/">Compare systems</a><a href="{R}guides/">Guides</a><a href="{R}glossary/">Glossary</a></div>
       <div><b>Industries</b>%s</div>
       <div><b>Places</b><a href="{R}places/campuses/">Campuses</a><a href="{R}places/libraries/">Libraries</a><a href="{R}places/shopping-centres/">Shopping centres</a><a href="{R}places/stadiums-and-venues/">Stadiums &amp; venues</a><a href="{R}places/streets-and-laneways/">Streets &amp; laneways</a><a href="{R}places/parks-and-foreshores/">Parks &amp; foreshores</a><a href="{R}places/office-towers/">Office towers</a><a href="{R}places/government-buildings/">Government buildings</a></div>
       <div><b>Company</b><a href="{R}about/">About us</a><a href="{R}contact/">Book a demo</a><a href="{R}quote/">Get a quote</a><a href="{R}talk-to-us/">Talk to us</a><a href="{R}privacy-by-design/">Privacy by design</a><a href="{R}faq/">FAQ</a></div>
@@ -1041,6 +1041,118 @@ page('compare', 'People counting systems in Australia: how to choose | Place Per
      'How to choose a people counting system in Australia: an end-to-end local partner versus overseas hardware and DIY camera analytics, compared. Anonymous, accurate counting indoors and outdoors.',
      compare_body, COMPARE_FAQS, [('Home', ''), ('Compare', 'compare/')],
      service='People counting systems in Australia', audience='Australian organisations comparing people counting systems')
+
+# ---------------- Glossary ----------------
+GLOSSARY = [
+    ('People counting', 'people-counting', 'People counting is the automated measurement of how many people enter, leave or occupy a space, using sensors instead of manual tallies. Modern systems count anonymously, without identifying anyone.'),
+    ('Footfall', 'footfall', 'Footfall is the number of people who visit a place over a period of time, such as a store, centre or street. Footfall analytics turns those counts into trends by entrance, hour, day and zone.'),
+    ('Occupancy analytics', 'occupancy-analytics', 'Occupancy analytics measures how many people are in a space at a given moment and over time, so teams can manage capacity, safety, cleaning, energy and staffing against real demand.'),
+    ('Live occupancy', 'live-occupancy', 'Live occupancy is the number of people currently inside a space, updated in near real time. It is often shown against a capacity limit, with alerts as the limit approaches.'),
+    ('Dwell time', 'dwell-time', 'Dwell time is how long people stay in a place or a particular zone. It helps separate a busy area that holds attention from one that people simply pass through.'),
+    ('Space utilisation', 'space-utilisation', 'Space utilisation is how much a room, floor or building is actually used compared with its capacity, measured over time. It guides consolidation, scheduling and investment decisions.'),
+    ('Pedestrian counting', 'pedestrian-counting', 'Pedestrian counting measures how many people move along a street, path or public space, often outdoors and sometimes alongside cyclist and vehicle counts, to inform planning and investment.'),
+    ('Heat map', 'heat-map', 'In place analytics, a heat map shows where people concentrate within a space, so teams can see which zones, displays or routes attract and hold attention.'),
+    ('Crowd capacity monitoring', 'crowd-capacity', 'Crowd capacity monitoring tracks live occupancy against a safe or licensed limit for a venue or zone, with alerts before the limit is reached, to protect safety and experience.'),
+    ('Anonymous counting', 'anonymous-counting', 'Anonymous counting measures people without identifying them. Counting is processed on the device using shape, depth or movement, so no images or personal information leave the sensor.'),
+    ('LiDAR people counting', 'lidar', 'LiDAR people counting maps a space in three dimensions with pulses of light and counts people by shape and movement rather than by their faces. It works in any light and does not capture recognisable images.'),
+    ('Conversion rate', 'conversion-rate', 'In retail analytics, conversion rate is the share of visitors who make a purchase, found by combining footfall with sales data. It shows whether visitation is turning into results.'),
+]
+gloss_html = '<div class="glossary prose reveal">' + ''.join('<h3 id="%s">%s</h3><p>%s</p>' % (s, t, d) for t, s, d in GLOSSARY) + '</div>'
+glossary_body = (
+    page_hero('Glossary', 'People counting and place analytics, defined',
+              'Plain-English definitions of the terms used across people counting, footfall and occupancy analytics.',
+              '', [('Home', '{R}'), ('Glossary', None)], ctas=False) +
+    section(gloss_html)
+)
+GLOSSARY_FAQS = [
+    ('What is people counting?', GLOSSARY[0][2]),
+    ('What is footfall?', GLOSSARY[1][2]),
+    ('What is occupancy analytics?', GLOSSARY[2][2]),
+    ('What is dwell time?', GLOSSARY[4][2]),
+    ('What is space utilisation?', GLOSSARY[5][2]),
+    ('What is anonymous people counting?', GLOSSARY[9][2]),
+]
+GLOSSARY_SCHEMA = {
+    '@type': 'DefinedTermSet', '@id': BASE + 'glossary/#terms',
+    'name': 'People counting and place analytics glossary', 'url': BASE + 'glossary/',
+    'hasDefinedTerm': [{'@type': 'DefinedTerm', 'name': t, 'description': d,
+                        'url': BASE + 'glossary/#' + s, 'inDefinedTermSet': {'@id': BASE + 'glossary/#terms'}}
+                       for t, s, d in GLOSSARY],
+}
+page('glossary', 'People counting glossary: footfall, occupancy and more | Place Performance',
+     'Plain-English definitions of people counting and place analytics terms: footfall, occupancy, dwell time, space utilisation, pedestrian counting, anonymous counting and more.',
+     glossary_body, GLOSSARY_FAQS, [('Home', ''), ('Glossary', 'glossary/')], schema=GLOSSARY_SCHEMA)
+
+
+# ---------------- Guides (explainer articles + hub) ----------------
+def article(slug, eyebrow, h1, lead, blocks, related, faqs, title, desc):
+    art = ''.join(('<h2>%s</h2>' % h if h else '') + '<p>%s</p>' % p for h, p in blocks)
+    aside = '<aside class="guide-aside"><p class="eyebrow">Related pages</p>' + ''.join(
+        '<a href="{R}%s"><b>%s</b><span>%s</span></a>' % r for r in related) + '</aside>'
+    prose = section('<div class="guide reveal"><article class="prose">%s</article>%s</div>' % (art, aside))
+    body = page_hero(eyebrow, h1, lead, '', [('Home', '{R}'), ('Guides', '{R}guides/'), (h1, None)], ctas=False) + prose
+    page('guides/' + slug, title, desc, body, faqs,
+         [('Home', ''), ('Guides', 'guides/'), (h1, 'guides/' + slug + '/')], service=None, nav_key='guides')
+
+
+article('how-people-counting-works', 'Guide', 'How people counting works',
+        'From the sensor on the wall to the number on your dashboard, here is how modern, anonymous people counting actually works.',
+        [('', 'People counting replaces manual clickers and guesswork with sensors that measure how many people enter, leave and occupy a space. The best systems do this anonymously, counting people as shapes in motion rather than recording who they are.'),
+         ('Counting happens on the device', 'Each sensor processes what it sees on the spot. It detects a person, follows their movement across a line or through a zone, and adds to a count. Only the anonymous numbers leave the device, so no images or personal information are sent anywhere.'),
+         ('Shapes and movement, not faces', 'Depth and movement sensing recognises the shape of a person and the direction they travel. Because it does not rely on recognisable images, it avoids the privacy and lighting problems of camera-based approaches and keeps working in the dark.'),
+         ('From count to dashboard in seconds', 'Counts are sent to the platform over a single network or mobile connection and appear within seconds. From there they become live occupancy, peak periods, dwell time, heat maps and trends, with alerts when a space approaches a limit.'),
+         ('Indoors, outdoors and in any light', 'Different sites need different sensing. Overhead depth sensors suit entrances and indoor zones, while all-weather sensors count people, cyclists and vehicles outdoors, including temporary and single-event deployments on battery and mobile data.'),
+         ('Keeping the numbers reliable', 'Accuracy comes from good placement and calibration during installation, then continuous device health monitoring so a sensor that goes quiet is flagged early. That is the difference between a count you report on and one you second-guess.')],
+        [('compare/', 'Compare systems', 'How the three approaches differ'), ('hardware/', 'Hardware', 'Radar, LiDAR and the right sensor per site'), ('privacy-by-design/', 'Privacy by design', 'Why counting is anonymous'), ('glossary/', 'Glossary', 'Key terms defined')],
+        [('Does people counting use cameras?', 'Not necessarily. Depth and movement sensors count people by shape without capturing recognisable images, and process the count on the device, so only anonymous numbers leave the sensor.'),
+         ('How does a people counter know direction?', 'Sensors track a person as they cross a line or move through a zone, so they record entries and exits separately and can measure flow between areas.'),
+         ('How quickly does the data update?', 'Counts usually appear in the platform within a few seconds, which is what makes live occupancy and capacity alerts possible.')],
+        'How people counting works | Place Performance',
+        'How modern people counting works: anonymous on-device counting by shape and movement, real-time occupancy, and what keeps the numbers accurate, explained in plain English.')
+
+article('lidar-vs-camera-people-counting', 'Guide', 'LiDAR vs camera people counting',
+        'The main ways to count people differ on accuracy, privacy, light and the outdoors. Here is how to tell them apart.',
+        [('', 'Most people counting uses one of a few sensing technologies. They are not equally good at every job, and the right choice depends on where you are counting and how much privacy matters.'),
+         ('3D LiDAR and depth sensors', 'These map a space in three dimensions and count people by shape and height, not by their faces. They are highly accurate, work in any light including darkness, handle groups and tailgating well, and do not capture recognisable images, which suits privacy-sensitive places.'),
+         ('Cameras and video analytics', 'Camera-based counting runs analytics on a video image. It can be inexpensive where cameras already exist, but accuracy depends on lighting and angle, and because it works from the image itself it raises more privacy considerations.'),
+         ('Radar and mmWave', 'Radar detects people and vehicles by their movement. It works outdoors in all weather, sees through rain and glare, and can run on battery, solar and mobile data, which makes it well suited to streets, parks, temporary sites and single events.'),
+         ('Wi-Fi and device counting', 'Counting phones and Wi-Fi signals is cheap to deploy but estimates people indirectly. It misses anyone without a discoverable device and is affected by privacy controls in modern phones, so it is better for rough trends than exact counts.'),
+         ('Which to choose', 'There is rarely a single best sensor. Indoor entrances and zones often suit overhead depth sensing, outdoor and mixed traffic suit radar, and the strongest deployments match the technology to each site. That is the approach Place Performance takes.')],
+        [('hardware/', 'Hardware', 'The sensors and how we choose them'), ('compare/', 'Compare systems', 'Approaches compared'), ('privacy-by-design/', 'Privacy by design', 'Anonymous counting'), ('glossary/', 'Glossary', 'Key terms defined')],
+        [('Is LiDAR better than a camera for people counting?', 'For accuracy, privacy and working in any light, depth and LiDAR sensors have clear advantages because they count by shape rather than from a recognisable image. Cameras can be cost-effective where they already exist but depend more on lighting and raise more privacy considerations.'),
+         ('What counts people outdoors?', 'Radar and mmWave sensors are well suited to the outdoors. They work in all weather and can run on battery, solar and mobile data, so they suit streets, parks and temporary sites.'),
+         ('Is Wi-Fi tracking accurate for counting people?', 'Wi-Fi counting estimates people indirectly from devices, misses anyone without a discoverable phone, and is affected by modern privacy controls, so it is better for rough trends than exact counts.')],
+        'LiDAR vs camera people counting | Place Performance',
+        'LiDAR, camera, radar and Wi-Fi people counting compared on accuracy, privacy, light and outdoor use, so you can match the right sensing technology to each site.')
+
+article('how-accurate-are-people-counters', 'Guide', 'How accurate are people counters?',
+        'Accuracy is the first question buyers ask. Here is what drives it, how it is measured, and how to keep counts reliable.',
+        [('', 'A people counter is only useful if you trust the number. Good systems are accurate, but accuracy is not a single fixed figure. It depends on the sensor, the installation and how the system is looked after.'),
+         ('What accuracy means', 'Accuracy is how closely the automated count matches the true number of people. Well-installed 3D and depth sensors commonly reach the high nineties in percentage terms, while simpler methods such as single beams or Wi-Fi estimates sit lower.'),
+         ('What affects accuracy', 'Placement and field of view, calibration, how busy the space is, groups and tailgating, and lighting all affect the result. A sensor that is well chosen for the site and carefully commissioned will hold accuracy that a poorly placed one never reaches.'),
+         ('How accuracy is measured', 'Accuracy is checked by comparing the sensor count against a known ground truth, usually a manual count over a set period, at the site itself. A figure proven in your own space matters far more than a number on a brochure.'),
+         ('Keeping accuracy high over time', 'Counts drift if a sensor is knocked, obscured or goes offline. Continuous device health monitoring flags problems early, and periodic validation confirms the numbers are still right, so the data stays dependable long after installation.')],
+        [('compare/', 'Compare systems', 'Approaches compared'), ('hardware/', 'Hardware', 'The sensors and how we choose them'), ('platform/', 'Platform', 'From sensor to decision'), ('glossary/', 'Glossary', 'Key terms defined')],
+        [('How accurate is people counting?', 'Accuracy depends on the sensor and on how well it is installed and calibrated. Well-installed 3D and depth sensors commonly reach the high nineties in percentage terms, validated against a manual count on site, with device health monitoring to keep them reliable.'),
+         ('How is people counting accuracy tested?', 'By comparing the sensor count against a manual ground-truth count over a set period at the site itself, which proves accuracy in the real environment rather than in a lab.'),
+         ('Why do people counts drift over time?', 'A sensor can be knocked, obscured or go offline. Continuous device health monitoring catches these early and periodic validation confirms the counts are still accurate.')],
+        'How accurate are people counters? | Place Performance',
+        'What drives people counting accuracy, how it is measured against a ground-truth count on site, and how device health monitoring keeps counts reliable over time.')
+
+guides_body = (
+    page_hero('Guides', 'Understand people counting and place analytics',
+              'Short, practical explainers on how counting works, how the technologies compare, and how to trust the numbers.',
+              '', [('Home', '{R}'), ('Guides', None)], ctas=False) +
+    section(cards([
+        ('How people counting works', 'From the sensor on the wall to the number on your dashboard, in plain English.', '{R}guides/how-people-counting-works/'),
+        ('LiDAR vs camera people counting', 'How the main sensing technologies differ on accuracy, privacy, light and the outdoors.', '{R}guides/lidar-vs-camera-people-counting/'),
+        ('How accurate are people counters?', 'What drives accuracy, how it is measured, and how to keep counts reliable.', '{R}guides/how-accurate-are-people-counters/'),
+        ('Glossary', 'Plain-English definitions of the key people counting and place analytics terms.', '{R}glossary/'),
+    ], cols=2))
+)
+page('guides', 'Guides: how people counting and place analytics work | Place Performance',
+     'Practical guides to people counting and place analytics: how counting works, LiDAR versus cameras, how accurate people counters are, and a glossary of key terms.',
+     guides_body, None, [('Home', ''), ('Guides', 'guides/')])
 
 # --------------------------------------------------------------------------
 # Render
