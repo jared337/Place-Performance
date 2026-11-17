@@ -126,7 +126,7 @@ PRIVACY_VIS = '<div class="privacy-vis" role="img" aria-label="What the sensor s
 # Navigation
 # --------------------------------------------------------------------------
 
-SEO_TITLES = {'councils': 'People counting for councils', 'universities': 'Space utilisation for universities', 'government': 'Office occupancy for government', 'buildings': 'Occupancy analytics for buildings', 'retail': 'Footfall analytics for retail & precincts', 'parks-and-streets': 'Pedestrian & cyclist counting', 'marketing': 'Footfall and zone analytics for marketing'}
+SEO_TITLES = {'councils': 'People counting for councils', 'universities': 'Space utilisation for universities', 'government': 'Office occupancy for government', 'buildings': 'Occupancy analytics for buildings', 'retail': 'Footfall analytics for retail & precincts', 'parks-and-streets': 'Pedestrian & cyclist counting', 'marketing': 'Footfall and zone analytics for marketing', 'hospitality': 'Footfall and occupancy analytics for hospitality'}
 
 SOLUTIONS = [
     ('councils', 'Councils &amp; civic', 'Libraries, civic centres, events and service desks', 'civic-event'),
@@ -136,6 +136,7 @@ SOLUTIONS = [
     ('retail', 'Retail &amp; precincts', 'Turn footfall into performance', 'food-hall'),
     ('parks-and-streets', 'Parks, trails &amp; streets', 'People, cyclists and vehicles outdoors', 'parks'),
     ('marketing', 'Marketing', 'Prove what displays and activations deliver', 'food-hall'),
+    ('hospitality', 'Hospitality', 'Staff for the rush and protect the guest experience', 'food-hall'),
 ]
 
 
@@ -556,7 +557,7 @@ page('solutions', 'Solutions by sector | Place Performance',
      sol_hub, SOL_FAQS, [('Home', ''), ('Solutions', 'solutions/')], nav_key='solutions')
 
 # ---------------- Individual solutions ----------------
-SECTOR_SCENE = {'councils': 'library', 'universities': 'campus', 'government': 'service', 'buildings': 'office', 'retail': 'shopping', 'parks-and-streets': 'park', 'marketing': 'shopping'}
+SECTOR_SCENE = {'councils': 'library', 'universities': 'campus', 'government': 'service', 'buildings': 'office', 'retail': 'shopping', 'parks-and-streets': 'park', 'marketing': 'shopping', 'hospitality': 'venue'}
 
 
 def solution(slug, name, h1, lead, img, img_alt, shot1, shot1_alt, shot2, shot2_alt, outcomes, metrics, scenarios, faqs, desc, service, audience):
@@ -698,6 +699,26 @@ solution('marketing', 'Marketing', 'Zone analytics for marketing teams.',
           ('Does it combine with sales data?', 'Yes. Where point-of-sale data is available, zone footfall and dwell can be combined with sales to estimate conversion and sales per visitor for a display or area.'),
           ('Does it identify shoppers?', 'No. Counting is anonymous, with processing on the device and no images or personal information collected.')],
          'Footfall and zone analytics for marketing teams: measure display, activation and campaign performance with zone footfall, dwell time, heat maps and before-and-after uplift.', 'Footfall and zone analytics for marketing', 'Retail and brand marketing teams')
+
+solution('hospitality', 'Hospitality', 'Footfall and occupancy analytics for hospitality venues.',
+         'See how many people come through, when they arrive, where they linger and how long they wait, so you can staff for the rush, stay within capacity and turn tables and zones faster across every venue.',
+         'food-hall', 'Guests in a busy hospitality venue', 'peak-periods', 'Covers by hour across the week', 'occupancy-history', 'Occupancy through the day',
+         [('Staff for the rush.', 'Match rosters and kitchen prep to real covers by hour and day, not guesswork.'),
+          ('Queue and wait times.', 'Watch entrances, bars and service points against wait targets and act before guests notice.'),
+          ('Capacity and safety.', 'Track live occupancy against licensed limits, with alerts as you approach them.'),
+          ('Dwell and turnover.', 'See how long guests stay in each zone and how quickly tables and areas turn over.'),
+          ('Walk-ins versus walk-bys.', 'For street-facing venues, see how many passers-by actually come in.'),
+          ('Across every venue.', 'Compare footfall, dwell and peaks across sites, formats and brands.')],
+         [('Covers &amp; footfall', 'Entries by door, hour and day.'), ('Dwell time', 'How long guests stay, by zone.'), ('Live occupancy', 'People on site against capacity.'),
+          ('Queue &amp; wait', 'Length and wait at entrances and bars.'), ('Zone use', 'Bar, dining, lounge and function areas.'), ('Peak periods', 'Your busiest hours and days.')],
+         [('Know your busiest hours.', 'Peak-period grids show covers by hour and day across the week, so rosters, kitchen prep and cleaning match real demand.'),
+          ('Keep within capacity.', 'Live occupancy tracks how many people are on site against your licensed limit, with alerts as you approach it.')],
+         [('How do hospitality venues use people-counting data?', 'Venues use it to see how many guests arrive by entrance and hour, how long they stay in each zone, how busy they are against capacity, and where queues build, so they can staff for peaks, protect the guest experience and compare performance across sites.'),
+          ('Can it monitor capacity for licensing and safety?', 'Yes. Live occupancy is tracked against your licensed or safe capacity for each space, with alerts as you approach the limit and a history you can report on.'),
+          ('Can it measure queues and wait times?', 'Yes. Sensors at entrances, bars and service points measure queue length and wait time against your targets, with alerts when a target is at risk.'),
+          ('Does it identify guests?', 'No. Counting is anonymous, with processing on the device and no images or personal information collected.'),
+          ('Can it compare multiple venues?', 'Yes. Footfall, dwell, occupancy and peaks can be compared across venues, formats and regions from one place.')],
+         'Footfall and occupancy analytics for hospitality: match staffing to real covers, monitor capacity for licensing and safety, cut queues, and compare dwell and peaks across venues.', 'Footfall and occupancy analytics for hospitality', 'Hotels, restaurants, bars and venues')
 
 solution('parks-and-streets', 'Parks, trails &amp; streets', 'Pedestrian, cyclist and vehicle counting for public spaces.',
          'Measure how people use parks, trails, foreshores, plazas and streets, permanently or for a single event, and see how places change before, during and after projects.',
