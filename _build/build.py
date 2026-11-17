@@ -830,6 +830,15 @@ about_body = (
         '', [('Home', '{R}'), ('About', None)], ctas=False) +
     section(head('Our vision', 'Measure the place, not the person.',
         'We help the councils, universities, governments and property owners who run Australia\'s public and shared places understand how they are really used, counting the place, never identifying the person, so every space can be made safer, run more efficiently and planned with evidence.')) +
+    section(head('Leadership', 'The people behind it.') +
+        '<div class="leader-grid reveal">'
+        '<div class="leader"><div class="leader-avatar"><img src="{R}assets/team/paul-berkovic.jpg" alt="Paul Berkovic"></div><h4>Paul Berkovic</h4><p class="leader-role">CEO, Rayven</p>'
+        '<p>Paul co-founded Rayven, the Australian operational software and AI company that powers the Place Performance platform, from live dashboards and reporting to forecasting and AI insight.</p>'
+        '<a class="link-arrow" href="https://www.linkedin.com/in/paulberkovic/" target="_blank" rel="noopener">LinkedIn</a></div>'
+        '<div class="leader"><div class="leader-avatar"><img src="{R}assets/team/keven-meddings.jpg" alt="Keven Meddings"></div><h4>Keven Meddings</h4><p class="leader-role">CEO, ITESA</p>'
+        '<p>Keven leads ITESA, the measurement and analytics specialists behind Place Performance\'s sensing, installation and support, from entrance counters to outdoor radar across Australia.</p>'
+        '<a class="link-arrow" href="https://www.linkedin.com/in/keven-meddings-04a65291/" target="_blank" rel="noopener">LinkedIn</a></div>'
+        '</div>', 'sec-tint') +
     section(head('A joint venture', 'Two specialists, one accountable partner.') +
         '<div class="partner-grid reveal">'
         '<div class="partner"><span class="partner-role">Measurement &amp; analytics</span><h4>ITESA</h4>'
@@ -840,15 +849,6 @@ about_body = (
         '<p>Rayven is an Australian operational software company. Its unified platform integrates data, automates processes and powers custom AI and apps, the real-time dashboards, alerts, reporting, forecasting and AI insight behind Place Performance. Rayven is trusted by teams across Australia and around the world.</p>'
         '<p class="about-addr">223 Liverpool St<br>Darlinghurst, NSW 2010</p>'
         '<a class="link-arrow" href="https://rayven.io/" target="_blank" rel="noopener">rayven.io</a></div>'
-        '</div>', 'sec-tint') +
-    section(head('Leadership', 'The people behind it.') +
-        '<div class="leader-grid reveal">'
-        '<div class="leader"><div class="leader-avatar"><img src="{R}assets/team/paul-berkovic.jpg" alt="Paul Berkovic"></div><h4>Paul Berkovic</h4><p class="leader-role">CEO, Rayven</p>'
-        '<p>Paul co-founded Rayven, the Australian operational software and AI company that powers the Place Performance platform, from live dashboards and reporting to forecasting and AI insight.</p>'
-        '<a class="link-arrow" href="https://www.linkedin.com/in/paulberkovic/" target="_blank" rel="noopener">LinkedIn</a></div>'
-        '<div class="leader"><div class="leader-avatar"><img src="{R}assets/team/keven-meddings.jpg" alt="Keven Meddings"></div><h4>Keven Meddings</h4><p class="leader-role">CEO, ITESA</p>'
-        '<p>Keven leads ITESA, the measurement and analytics specialists behind Place Performance\'s sensing, installation and support, from entrance counters to outdoor radar across Australia.</p>'
-        '<a class="link-arrow" href="https://www.linkedin.com/in/keven-meddings-04a65291/" target="_blank" rel="noopener">LinkedIn</a></div>'
         '</div>') +
     section(head('How it fits together', 'From the sensor to the decision, by one team.',
         'ITESA brings the sensing hardware, the site surveys and the local installation and support. Rayven brings the data platform, the dashboards and the AI. Place Performance brings them together, so you deal with one Australian partner from the first site visit to the insight on the screen.'), 'sec-tint')
