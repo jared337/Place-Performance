@@ -825,7 +825,7 @@ about_body = (
         '<div class="leader"><div class="leader-avatar"><img src="{R}assets/team/paul-berkovic.jpg" alt="Paul Berkovic"></div><h4>Paul Berkovic</h4><p class="leader-role">CEO, Rayven</p>'
         '<p>Paul co-founded Rayven, the Australian operational software and AI company that powers the Place Performance platform, from live dashboards and reporting to forecasting and AI insight.</p>'
         '<a class="link-arrow" href="https://www.linkedin.com/in/paulberkovic/" target="_blank" rel="noopener">LinkedIn</a></div>'
-        '<div class="leader"><div class="leader-avatar">KM</div><h4>Keven Meddings</h4><p class="leader-role">CEO, ITESA</p>'
+        '<div class="leader"><div class="leader-avatar"><img src="{R}assets/team/keven-meddings.jpg" alt="Keven Meddings"></div><h4>Keven Meddings</h4><p class="leader-role">CEO, ITESA</p>'
         '<p>Keven leads ITESA, the measurement and analytics specialists behind Place Performance\'s sensing, installation and support, from entrance counters to outdoor radar across Australia.</p>'
         '<a class="link-arrow" href="https://www.linkedin.com/in/keven-meddings-04a65291/" target="_blank" rel="noopener">LinkedIn</a></div>'
         '</div>') +
