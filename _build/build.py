@@ -905,14 +905,15 @@ hardware_body = (
         ('What you are counting', 'People through a door, or pedestrians, cyclists and vehicles on a path or road, each needs a different sensor and mounting.', None),
         ('Permanent or temporary', 'Fixed sites run on a single network cable; remote or pop-up sites run on battery and solar with 4G, so we can measure a trail, a roadside or a single event without mains power.', None),
     ]), 'sec-tint') +
-    section(head('In practice', 'Matched to the kind of place.') + cards([
-        ('Building entrance', 'Overhead 3D LiDAR counts people in and out at the door, accurate even in crowds.', None),
-        ('Open plaza or crowd', 'Wide-area radar or LiDAR covers a whole space and counts the crowd from a single mount.', None),
-        ('Shared paths and trails', 'Radar separates walkers from cyclists and records direction, day or night.', None),
-        ('Roads and car parks', 'Radar counts vehicles and reads speed alongside pedestrians and cyclists.', None),
-        ('Remote or pop-up sites', 'Battery and solar radar with 4G measures a trail, a roadside or a single event with no mains power or wired network.', None),
-        ('A mixed portfolio', 'Different sensors across your sites, all feeding one platform and one set of reports.', None),
-    ])) +
+    section(head('In practice', 'Matched to the kind of place.') +
+        '<div class="hw-usegrid reveal">'
+        '<div class="hw-use"><span class="hw-use-ico"><svg viewBox="0 0 24 24"><path d="M5 21V4h14v17"/><path d="M3 21h18"/><path d="M12 6.5v6m0 0l-2.5-2.5M12 12.5l2.5-2.5"/></svg></span><h4>Building entrance</h4><p>Overhead 3D LiDAR counts people in and out at the door, accurate even in crowds.</p></div>'
+        '<div class="hw-use"><span class="hw-use-ico"><svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="2.2"/><circle cx="16" cy="8" r="2.2"/><path d="M4 19c0-2.5 1.8-4 4-4s4 1.5 4 4"/><path d="M12 19c0-2.5 1.8-4 4-4s4 1.5 4 4"/></svg></span><h4>Open plaza or crowd</h4><p>Wide-area radar or LiDAR covers a whole space and counts the crowd from a single mount.</p></div>'
+        '<div class="hw-use"><span class="hw-use-ico"><svg viewBox="0 0 24 24"><circle cx="6" cy="17" r="3"/><circle cx="18" cy="17" r="3"/><path d="M6 17l4-7h5M9 10h4l3 7M13 10l1.5-3H17"/></svg></span><h4>Shared paths and trails</h4><p>Radar separates walkers from cyclists and records direction, day or night.</p></div>'
+        '<div class="hw-use"><span class="hw-use-ico"><svg viewBox="0 0 24 24"><path d="M4 13l1.8-4.6A2 2 0 0 1 7.7 7h8.6a2 2 0 0 1 1.9 1.4L20 13v5a1 1 0 0 1-1 1h-1.5a1 1 0 0 1-1-1v-1H7.5v1a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/><circle cx="8" cy="14.5" r="1.2"/><circle cx="16" cy="14.5" r="1.2"/></svg></span><h4>Roads and car parks</h4><p>Radar counts vehicles and reads speed alongside pedestrians and cyclists.</p></div>'
+        '<div class="hw-use"><span class="hw-use-ico"><svg viewBox="0 0 24 24"><path d="M3 20h18"/><path d="M12 4L4 20M12 4l8 16"/><path d="M12 11l-4.5 9M12 11l4.5 9"/></svg></span><h4>Remote or pop-up sites</h4><p>Battery and solar radar with 4G measures a trail, a roadside or a single event with no mains power or wired network.</p></div>'
+        '<div class="hw-use"><span class="hw-use-ico"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></svg></span><h4>A mixed portfolio</h4><p>Different sensors across your sites, all feeding one platform and one set of reports.</p></div>'
+        '</div>') +
     section(head('Always anonymous', 'Measure the place, not the person.',
         'Whatever the technology, our sensors capture depth or radar signatures, never images or identities. Counting happens on the device and only anonymous numbers leave the site, so privacy is built in by design.') +
         '<p style="text-align:center;margin-top:8px"><a class="link-arrow" href="{R}privacy-by-design/">How counting stays anonymous</a></p>', 'sec-tint') +
