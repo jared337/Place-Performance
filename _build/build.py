@@ -359,14 +359,14 @@ FIELD = [
 ]
 
 
-def field_cards(items):
-    return '<div class="field-grid reveal">' + ''.join(
+def field_cards(items, cls=''):
+    return ('<div class="field-grid reveal %s">' % cls) + ''.join(
         '<a class="field-card" href="{R}deployments/%s/"><img src="{R}assets/field/%s" alt="Place Performance people counting: %s, %s" loading="lazy"><span class="field-cap"><b>%s</b><small>%s</small></span></a>' % (s, f, t, c, t, c)
         for f, t, c, s in items) + '</div>'
 
 
 home_body = open(os.path.join(HERE, 'home.html'), encoding='utf-8').read().replace('{SENSOR_VIS}', SENSOR_VIS)
-home_body = home_body.replace('{FIELD_STRIP}', field_cards(FIELD[:6]))
+home_body = home_body.replace('{FIELD_STRIP}', field_cards(FIELD[:6], 'field-grid-3'))
 home_body = home_body.replace('{HERO_ILLUS}', illus('library').replace('id="il-', 'id="ilh-').replace('#il-', '#ilh-').replace('viewBox="0 0 720 500"', 'viewBox="40 40 650 430"').replace('<figcaption>Libraries: visits at the door and live occupancy in every zone.</figcaption>', ''))
 for _k in ('library', 'campus', 'shopping', 'venue', 'street', 'park', 'office', 'service'):
     home_body = home_body.replace('{ILLUS_%s}' % _k.upper(), illus(_k))

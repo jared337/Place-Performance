@@ -588,6 +588,9 @@ a.fcard:hover { transform: translateY(-4px); box-shadow: var(--shadow-card); }
 .field-cap { position: absolute; left: 0; right: 0; bottom: 0; padding: 32px 16px 14px; background: linear-gradient(to top, rgba(8,18,38,.88), rgba(8,18,38,0)); color: #fff; }
 .field-cap b { display: block; font-size: 15px; font-weight: 600; }
 .field-cap small { font-size: 13px; opacity: .85; }
+.field-grid-3 { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 880px) { .field-grid-3 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .field-grid-3 { grid-template-columns: 1fr; } }
 .impact-grid .fcard ul { margin: 12px 0 0; padding-left: 18px; }
 .impact-grid .fcard li { font-size: 14.5px; color: var(--body); line-height: 1.5; margin-bottom: 8px; }
 .statrow { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 28px; }
