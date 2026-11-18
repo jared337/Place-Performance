@@ -246,11 +246,11 @@ def nav(active):
   <div class="wrap nav-in">
     <a class="logo" href="{R}"><span class="logo-mark"><svg viewBox="0 0 44 44" aria-hidden="true"><rect x="4" y="6" width="34" height="6" rx="2" fill="#00d4ff"/><rect x="4" y="16" width="27" height="6" rx="2" fill="#12bfe6"/><rect x="4" y="26" width="20" height="6" rx="2" fill="#2f8fe8"/><rect x="4" y="36" width="12" height="6" rx="2" fill="#4f8dff"/></svg></span>Place Performance</a>
     <nav class="nav-links" aria-label="Main">
+      <div class="nav-m-cta"><a class="btn btn-dark btn-lg" href="{R}contact/">Book a demo <i class="arr"></i></a><a class="btn btn-glass btn-lg" href="{R}talk-to-us/">Talk to us</a><a class="btn btn-glass btn-lg" href="https://app.placeperformance.ai/login.aspx">Log in</a></div>
       <div class="nav-dd"><a href="{R}platform/" class="dd-trigger%s">Platform</a><div class="dd-panel"><a href="{R}platform/"><b>Platform overview</b><span>From the sensor to the decision</span></a><a href="{R}sensors/"><b>Sensors</b><span>Radar, LiDAR and the right sensor per site</span></a><a href="{R}real-time/"><b>Real time</b><span>Live occupancy, floorplans and alerts</span></a><a href="{R}ai-forecasting/"><b>AI &amp; forecasting</b><span>Forecasts, scenarios and the Place Assistant</span></a></div></div>
       <div class="nav-dd"><a href="{R}industries/" class="dd-trigger%s">Industries</a><div class="dd-panel">%s<a class="dd-all" href="{R}industries/">All industries</a></div></div>
       <div class="nav-dd"><a href="{R}places/" class="dd-trigger%s">Places</a><div class="dd-panel">%s<a class="dd-all" href="{R}places/">All places</a></div></div>
       %s
-      <div class="nav-m-cta"><a class="btn btn-dark btn-lg" href="{R}contact/">Book a demo <i class="arr"></i></a><a class="btn btn-glass btn-lg" href="{R}talk-to-us/">Talk to us</a><a class="btn btn-glass btn-lg" href="https://app.placeperformance.ai/login.aspx">Log in</a></div>
     </nav>
     <div class="nav-cta">
       <a class="nav-login" href="https://app.placeperformance.ai/login.aspx">Log in</a>
