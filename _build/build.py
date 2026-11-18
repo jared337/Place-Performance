@@ -250,9 +250,10 @@ def nav(active):
       <div class="nav-dd"><a href="{R}industries/" class="dd-trigger%s">Industries</a><div class="dd-panel">%s<a class="dd-all" href="{R}industries/">All industries</a></div></div>
       <div class="nav-dd"><a href="{R}places/" class="dd-trigger%s">Places</a><div class="dd-panel">%s<a class="dd-all" href="{R}places/">All places</a></div></div>
       %s
-      <div class="nav-m-cta"><a class="btn btn-dark btn-lg" href="{R}contact/">Book a demo <i class="arr"></i></a><a class="btn btn-glass btn-lg" href="{R}talk-to-us/">Talk to us</a></div>
+      <div class="nav-m-cta"><a class="btn btn-dark btn-lg" href="{R}contact/">Book a demo <i class="arr"></i></a><a class="btn btn-glass btn-lg" href="{R}talk-to-us/">Talk to us</a><a class="btn btn-glass btn-lg" href="https://app.placeperformance.ai/login.aspx">Log in</a></div>
     </nav>
     <div class="nav-cta">
+      <a class="nav-login" href="https://app.placeperformance.ai/login.aspx">Log in</a>
       <a class="btn btn-ghost" href="{R}talk-to-us/">Talk to us</a>
       <a class="btn btn-dark" href="{R}contact/">Book a demo <i class="arr"></i></a>
     </div>
