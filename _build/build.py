@@ -338,7 +338,7 @@ def page(slug, title, desc, body, faqs=None, crumbs=None, service=None, audience
 
 # ---------------- Home ----------------
 HOME_FAQS = [
-    ('What is Place Performance?', 'Place Performance is an end-to-end people counting and place analytics service. It combines privacy-safe sensors, professional installation, a real-time analytics platform and AI insights so councils, universities, government and property owners can see how their places are used and plan with evidence.'),
+    ('What is Place Performance?', 'Place Performance is an end-to-end people counting and place analytics service. It combines privacy-safe sensors, professional installation, a real-time analytics platform and AI insights so any organisation that runs buildings, venues or public spaces can see how their places are used and plan with evidence.'),
     ('What does Place Performance measure?', 'It measures visitor counts, entries and exits, live occupancy against capacity, peak periods, dwell time, repeat visitation, movement between zones and, outdoors, pedestrians, cyclists and vehicles. Metrics roll up from a single room to a whole portfolio of sites.'),
     ('Is the hardware included?', 'Yes. The sensors are selected for each environment, then designed, supplied, installed, commissioned and supported by Place Performance in Australia, so you deal with one partner from sensor to insight.'),
     ('Does it identify people?', 'No. Counting happens on the device and data is masked at source, so only anonymous numbers leave the site. The approach is to measure the place, not the person. See <a href="{R}privacy-by-design/">Privacy by design</a>.'),

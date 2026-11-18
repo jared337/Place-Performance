@@ -51,7 +51,7 @@ Key facts:
 ## Questions and answers
 
 ### What is Place Performance?
-Place Performance is an end-to-end people counting and place analytics service. It combines privacy-safe sensors, professional installation, a real-time analytics platform and AI insights so councils, universities, government and property owners can see how their places are used and plan with evidence.
+Place Performance is an end-to-end people counting and place analytics service. It combines privacy-safe sensors, professional installation, a real-time analytics platform and AI insights so any organisation that runs buildings, venues or public spaces can see how their places are used and plan with evidence.
 
 ### What does Place Performance measure?
 It measures visitor counts, entries and exits, live occupancy against capacity, peak periods, dwell time, repeat visitation, movement between zones and, outdoors, pedestrians, cyclists and vehicles. Metrics roll up from a single room to a whole portfolio of sites.
