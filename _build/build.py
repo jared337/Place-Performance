@@ -407,7 +407,7 @@ def deployment_page(d):
     body = (
         page_hero(d['label'], d['h1'], d['lead'], photo,
                   [('Home', '{R}'), ('In the field', '{R}deployments/'), (d['label'], None)]) +
-        section(head('The challenge', d['ctx_head']) + '<div class="prose reveal">%s</div>' % d['context'] + _stat_row(d.get('stats'))) +
+        section(head('The challenge', d['ctx_head']) + '<div class="prose reveal">%s</div>' % d['context']) +
         section(head('What you can measure', 'The data you get from day one.') + cards(d['data']), 'sec-tint') +
         section(head('Ways to use it', d['uc_sub']) + cards(d['use_cases'])) +
         section(head('Business impact', 'Make more money, save money and improve experiences.') +
