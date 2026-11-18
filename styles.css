@@ -641,6 +641,7 @@ a.fcard:hover { transform: translateY(-4px); box-shadow: var(--shadow-card); }
   .nav.open .dd-panel .dd-all { border-top: 0; margin: 0; padding-top: 9px; }
   .nav.open .nav-m-cta { display: grid; gap: 10px; margin-top: 18px; }
   .nav.open .nav-m-cta .btn { justify-content: center; }
+  .nav.open .nav-m-cta .btn-dark { color: #fff; }
 }
 
 /* real places band (sits under the hero) */
