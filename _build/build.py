@@ -272,7 +272,7 @@ FOOTER = '''<footer class="foot">
       <div><b>Resources</b><a href="{R}plans/">Plans</a><a href="{R}compare/">Compare systems</a><a href="{R}guides/">Guides</a><a href="{R}glossary/">Glossary</a></div>
       <div><b>Industries</b>%s</div>
       <div><b>Places</b><a href="{R}places/campuses/">Campuses</a><a href="{R}places/libraries/">Libraries</a><a href="{R}places/shopping-centres/">Shopping centres</a><a href="{R}places/stadiums-and-venues/">Stadiums &amp; venues</a><a href="{R}places/streets-and-laneways/">Streets &amp; laneways</a><a href="{R}places/parks-and-foreshores/">Parks &amp; foreshores</a><a href="{R}places/office-towers/">Office towers</a><a href="{R}places/government-buildings/">Government buildings</a></div>
-      <div><b>Company</b><a href="{R}about/">About us</a><a href="{R}contact/">Book a demo</a><a href="{R}quote/">Get a quote</a><a href="{R}talk-to-us/">Talk to us</a><a href="{R}privacy-by-design/">Privacy by design</a><a href="{R}faq/">FAQ</a></div>
+      <div><b>Company</b><a href="{R}about/">About us</a><a href="{R}deployments/">In the field</a><a href="{R}contact/">Book a demo</a><a href="{R}quote/">Get a quote</a><a href="{R}talk-to-us/">Talk to us</a><a href="{R}privacy-by-design/">Privacy by design</a><a href="{R}faq/">FAQ</a></div>
     </div>
   </div>
   <div class="wrap foot-note">&copy; 2026 Place Performance. Photography from Unsplash.</div>
@@ -345,13 +345,50 @@ HOME_FAQS = [
     ('Who is it for?', 'It is built for local councils, universities and TAFEs, state and federal government agencies, commercial property owners, shopping centres and precinct managers, and anyone responsible for libraries, civic centres, venues, parks, trails or streets.'),
     ('How quickly can we get started?', 'Most organisations start with a pilot at one site. After a site survey and sensor plan, a pilot is typically live in weeks rather than months, and you can add sites and capability levels as you grow.'),
 ]
+FIELD = [
+    ('trail-counter.jpg', 'Trail counter', 'Bushland reserve'),
+    ('sports-bar.jpg', 'Sports bar', 'Richmond, Melbourne'),
+    ('waterfront-sydney.jpg', 'Waterfront venue', 'Sydney'),
+    ('popup-melbourne.jpg', 'Retail pop-up', 'Melbourne CBD'),
+    ('expo-brisbane.jpg', 'Careers expo', 'Brisbane'),
+    ('library-sa.jpg', 'Public library', 'Semaphore, SA'),
+    ('cbd-foyer-sydney.jpg', 'CBD building foyer', 'Sydney'),
+    ('street-festival.jpg', 'Town street festival', 'Regional Australia'),
+]
+
+
+def field_cards(items):
+    return '<div class="field-grid reveal">' + ''.join(
+        '<figure class="field-card"><img src="{R}assets/field/%s" alt="Place Performance sensor deployment: %s, %s" loading="lazy"><figcaption><b>%s</b><span>%s</span></figcaption></figure>' % (f, t, c, t, c)
+        for f, t, c in items) + '</div>'
+
+
 home_body = open(os.path.join(HERE, 'home.html'), encoding='utf-8').read().replace('{SENSOR_VIS}', SENSOR_VIS)
+home_body = home_body.replace('{FIELD_STRIP}', field_cards(FIELD[:6]))
 home_body = home_body.replace('{HERO_ILLUS}', illus('library').replace('id="il-', 'id="ilh-').replace('#il-', '#ilh-').replace('viewBox="0 0 720 500"', 'viewBox="40 40 650 430"').replace('<figcaption>Libraries: visits at the door and live occupancy in every zone.</figcaption>', ''))
 for _k in ('library', 'campus', 'shopping', 'venue', 'street', 'park', 'office', 'service'):
     home_body = home_body.replace('{ILLUS_%s}' % _k.upper(), illus(_k))
 page('', 'People counting & occupancy analytics with AI | Place Performance',
      'People counting and occupancy analytics for councils, universities, government and property: sensors, real-time data, alerts, forecasting and AI.',
      home_body, HOME_FAQS, nav_key='home')
+
+# ---------------- Deployments (real-world gallery) ----------------
+deployments_body = (
+    page_hero('In the field', 'Real sensors in real Australian places',
+              'A look at Place Performance sensors installed and running on the ground: from bushland trails and parks to libraries, venues, pop-ups and major events across Australia.',
+              '', [('Home', '{R}'), ('In the field', None)]) +
+    section(field_cards(FIELD)) +
+    section(head('What these show', 'Hardware we survey, install and support ourselves.') +
+            '<div class="prose"><p>Every site is different. Our Australian team assesses each environment, then selects and installs the right sensing for it: overhead counters at entrances and indoor zones, weatherproof units on poles for trails and open spaces, and temporary deployments for pop-ups and events. See <a href="{R}sensors/">the sensors we use</a> and <a href="{R}compare/">how we compare</a>.</p></div>', 'sec-tint')
+)
+DEPLOY_FAQS = [
+    ('Where does Place Performance operate?', 'Place Performance deploys and supports sensors across Australia, in metropolitan and regional locations, indoors and outdoors.'),
+    ('Can you count people at events and temporary sites?', 'Yes. We run temporary and single-event deployments as well as permanent installs, including pop-ups, expos and festivals, using battery, solar and mobile-data sensors where there is no fixed power or network.'),
+    ('Can sensors be installed outdoors?', 'Yes. Weatherproof sensors are mounted on poles and structures to count people, cyclists and vehicles along trails, streets and open spaces, in all weather.'),
+]
+page('deployments', 'Real deployments across Australia | Place Performance',
+     'Real-world people counting deployments by Place Performance across Australia: sensors installed and running in libraries, venues, parks, trails, pop-ups and major events.',
+     deployments_body, DEPLOY_FAQS, [('Home', ''), ('In the field', 'deployments/')])
 
 # ---------------- Platform ----------------
 platform_body = (

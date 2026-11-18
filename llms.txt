@@ -11,6 +11,7 @@ Key facts:
 
 ## Pages
 - [People counting & occupancy analytics with AI](https://placeperformance.ai/): People counting and occupancy analytics for councils, universities, government and property: sensors, real-time data, alerts, forecasting and AI.
+- [Real deployments across Australia](https://placeperformance.ai/deployments/): Real-world people counting deployments by Place Performance across Australia: sensors installed and running in libraries, venues, parks, trails, pop-ups and major events.
 - [Platform: sensors, analytics & AI](https://placeperformance.ai/platform/): How Place Performance works: LiDAR sensors, installation and support by our Australian team, edge processing, real-time analytics and AI, as one service.
 - [Real-time occupancy monitoring & alerts](https://placeperformance.ai/real-time/): Live occupancy every few seconds, interactive floorplans, heat maps, visitor flow and alerts by email, SMS and Teams for every site and room.
 - [AI insights, forecasting & scenarios](https://placeperformance.ai/ai-forecasting/): Forecast visitation and occupancy, test changes with scenario planning, get daily AI recommendations and ask your buildings questions in plain English.
@@ -67,6 +68,15 @@ It is built for local councils, universities and TAFEs, state and federal govern
 
 ### How quickly can we get started?
 Most organisations start with a pilot at one site. After a site survey and sensor plan, a pilot is typically live in weeks rather than months, and you can add sites and capability levels as you grow.
+
+### Where does Place Performance operate?
+Place Performance deploys and supports sensors across Australia, in metropolitan and regional locations, indoors and outdoors.
+
+### Can you count people at events and temporary sites?
+Yes. We run temporary and single-event deployments as well as permanent installs, including pop-ups, expos and festivals, using battery, solar and mobile-data sensors where there is no fixed power or network.
+
+### Can sensors be installed outdoors?
+Yes. Weatherproof sensors are mounted on poles and structures to count people, cyclists and vehicles along trails, streets and open spaces, in all weather.
 
 ### What hardware does Place Performance use?
 Place Performance uses commercial-grade LiDAR people counters for entrance, area and crowd counting, plus specialist sensors for cyclists, vehicles and outdoor areas where needed. Our team selects the right technology for each environment after assessing it.
