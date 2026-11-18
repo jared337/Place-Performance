@@ -1557,19 +1557,99 @@ article('how-accurate-are-people-counters', 'Guide', 'How accurate are people co
         'How accurate are people counters? | Place Performance',
         'What drives people counting accuracy, how it is measured against a ground-truth count on site, and how device health monitoring keeps counts reliable over time.')
 
+article('anonymous-people-counting-privacy', 'Guide', 'Anonymous people counting and privacy',
+        'People counting measures how many, not who. Here is how modern sensors count without identifying anyone, and why that matters.',
+        [('', 'Counting people and respecting their privacy are not in tension. Modern people counting is built to measure how many people are in a space, and never who they are.'),
+         ('Counting bodies, not identities', 'Depth and movement sensors detect a person as a shape in motion and add to a count. They do not recognise faces, read features or match anyone to a record. The output is a number, not an identity.'),
+         ('Processed on the device', 'Counting happens inside the sensor. Only anonymous totals leave it, so no images or personal information travel across the network or sit in a database to be lost or misused.'),
+         ('What is never collected', 'No faces, no photographs, no names, no device identifiers and no personal information. There is nothing that could identify an individual, which is what makes the approach suitable for public and sensitive places.'),
+         ('Why it matters', 'Councils, libraries, workplaces and retailers increasingly have to show that monitoring is proportionate and privacy-safe. Anonymous counting clears that bar, and often removes the need for the consent and data-handling that camera-based approaches require.'),
+         ('A selling point, not a hurdle', 'Because it carries far fewer privacy concerns, anonymous counting is easier to deploy in community spaces, easier to explain to residents and staff, and easier to pass procurement.')],
+        [('privacy-by-design/', 'Privacy by design', 'How anonymous counting works'), ('sensors/', 'Sensors', 'The technology behind it'), ('glossary/', 'Glossary', 'Key terms defined'), ('compare/', 'Compare systems', 'Approaches compared')],
+        [('Does people counting identify individuals?', 'No. People are counted as anonymous shapes and movement. No faces, images or personal information are captured, and counting is processed on the device.'),
+         ('Is anonymous counting better for privacy than cameras?', 'Yes. Because no recognisable images are captured and nothing identifies an individual, it carries far fewer privacy concerns than camera-based approaches and is well suited to public spaces.'),
+         ('Do we need signage or consent?', 'Requirements vary by site and jurisdiction, but because no personal information is collected, anonymous counting generally involves far lighter obligations than identifying methods. Confirm specifics with your own privacy adviser.')],
+        'Anonymous people counting and privacy | Place Performance',
+        'How anonymous people counting works: counting bodies not identities, processed on the device, with no faces, images or personal information collected, and why it suits public and sensitive places.')
+
+article('people-counting-vs-wifi-tracking', 'Guide', 'People counting vs Wi-Fi tracking',
+        'Counting people directly and estimating them from phone signals are not the same. Here is how they differ on accuracy and privacy.',
+        [('', 'Two common ways to gauge how busy a space is are counting people directly with a sensor, and estimating them from the Wi-Fi and Bluetooth signals their phones give off. They produce very different numbers.'),
+         ('How Wi-Fi tracking works', 'Wi-Fi and Bluetooth tracking listens for signals from nearby phones and estimates the number of people from them. It is cheap to deploy where access points already exist, but it counts devices, not people.'),
+         ('How sensor counting works', 'A people counter detects each person directly as they cross a line or occupy a zone, and counts them on the device. It measures people, not the phones they happen to be carrying.'),
+         ('Accuracy', 'Wi-Fi estimates miss anyone without a discoverable device, double-count people carrying several, and are increasingly affected by the privacy features in modern phones that randomise or hide signals. Direct sensor counting is far more accurate and consistent.'),
+         ('Privacy', 'Wi-Fi tracking works from device identifiers, which are personal data and raise consent and handling questions. Anonymous sensor counting captures nothing that identifies a person.'),
+         ('Which to choose', 'Wi-Fi tracking can be useful for rough, large-area trends on the cheap. For accurate, privacy-safe counts of actual people at entrances, zones and events, direct sensor counting is the stronger choice.')],
+        [('sensors/', 'Sensors', 'How we count people directly'), ('compare/', 'Compare systems', 'Approaches compared'), ('privacy-by-design/', 'Privacy by design', 'Anonymous counting'), ('glossary/', 'Glossary', 'Key terms defined')],
+        [('Is Wi-Fi tracking accurate for counting people?', 'Not very. It counts devices rather than people, misses anyone without a discoverable phone, and is affected by modern privacy controls, so it is better for rough trends than exact counts.'),
+         ('Is Wi-Fi tracking a privacy risk?', 'It works from device identifiers, which are personal data and raise consent and data-handling questions. Anonymous sensor counting avoids this because it captures nothing that identifies a person.'),
+         ('Can you combine both?', 'They can be used together, but for accurate, privacy-safe counts at entrances, zones and events, direct sensor counting is the reliable source.')],
+        'People counting vs Wi-Fi tracking | Place Performance',
+        'People counting versus Wi-Fi tracking compared: counting people directly with a sensor versus estimating them from phone signals, on accuracy and privacy.')
+
+article('counting-people-outdoors', 'Guide', 'Counting people outdoors',
+        'Trails, streets, parks and events bring challenges that indoor counting does not. Here is how outdoor people counting works.',
+        [('', 'Counting people outdoors is a different problem from counting them at an indoor doorway. There is weather, often no power or network, wide open spaces, and a mix of pedestrians, cyclists and vehicles to tell apart.'),
+         ('Weather, power and connectivity', 'Outdoor sensors are weatherproof and can run on battery, solar and mobile data, so they work on remote trails, in reserves and at temporary sites where there is no fixed power or network.'),
+         ('Radar for open spaces', 'Radar sensing suits the outdoors. It works in all weather, sees through rain and glare, covers a wide area from a single mount, and detects people, cyclists and vehicles by their movement, with direction and speed.'),
+         ('People, cyclists and vehicles', 'On shared paths and streets, telling pedestrians, cyclists and vehicles apart matters. Multi-modal sensors separate them, which is what lets councils size shared paths and reduce conflict.'),
+         ('Temporary and event deployments', 'Because outdoor units need no fixed infrastructure, they can be installed for a festival, market or works period and removed afterwards, with live data throughout.'),
+         ('Accuracy outdoors', 'Open-air counting can undercount, especially in crowds, so accuracy comes from choosing the right sensor for the site and calibrating against manual counts, rather than quoting a single headline figure.')],
+        [('sensors/', 'Sensors', 'Radar, LiDAR and the right sensor'), ('industries/parks-and-streets/', 'Parks, trails and streets', 'Outdoor counting in practice'), ('deployments/trails-and-reserves/', 'Trails and reserves', 'A real deployment'), ('glossary/', 'Glossary', 'Key terms defined')],
+        [('How do you count people where there is no power or internet?', 'Outdoor counters run on battery, solar and mobile data, so they work on remote trails, in reserves and at temporary sites with no fixed power or network.'),
+         ('Can you tell pedestrians, cyclists and vehicles apart?', 'Yes. Multi-modal sensors separate pedestrians, cyclists and vehicles, with direction and speed, which is what shared paths and streets need.'),
+         ('Does it work in all weather?', 'Yes. Outdoor sensors are weatherproof, and radar in particular works through rain, glare and darkness.')],
+        'Counting people outdoors | Place Performance',
+        'How outdoor people counting works: weatherproof, solar and battery sensors, radar for open spaces, and pedestrian, cyclist and vehicle counts for trails, parks, streets and events.')
+
+article('what-is-occupancy-analytics', 'Guide', 'What occupancy analytics tells you',
+        'Footfall is how many visit. Occupancy is how many are in right now. Here is what occupancy analytics measures and why it matters.',
+        [('', 'People counting produces more than a single visitor total. Occupancy analytics turns counts into a live and historical picture of how a space is actually used.'),
+         ('Footfall versus occupancy', 'Footfall is how many people visit over a period. Occupancy is how many are inside at a given moment. You need both: footfall for demand and trends, occupancy for capacity, safety and real-time decisions.'),
+         ('Live occupancy and capacity', 'Live occupancy shows how many people are in a space right now, usually against a capacity limit, with alerts as the limit approaches. It is the number that keeps venues safe and within their limits.'),
+         ('Dwell, zones and flow', 'Beyond totals, occupancy analytics measures how long people stay, which zones they use, and how they move between them, so you can see which areas hold attention and which are passed straight through.'),
+         ('From data to decisions', 'The value is in the decisions it drives: staffing to real demand, cleaning and energy to actual use, capacity management for safety, and evidence for funding, leasing and planning.'),
+         ('Real time to forecast', 'A good platform runs from live occupancy and alerts through to reporting, forecasting and scenario planning, so you can both react now and plan ahead.')],
+        [('real-time/', 'Real time', 'Live occupancy and alerts'), ('ai-forecasting/', 'AI and forecasting', 'Forecasts and scenarios'), ('glossary/', 'Glossary', 'Key terms defined'), ('platform/', 'Platform', 'From sensor to decision')],
+        [('What is the difference between footfall and occupancy?', 'Footfall is how many people visit over a period. Occupancy is how many are inside at a given moment. Footfall shows demand and trends; occupancy supports capacity, safety and real-time decisions.'),
+         ('What is live occupancy?', 'Live occupancy is the number of people currently in a space, updated in near real time and usually shown against a capacity limit, with alerts as the limit approaches.'),
+         ('Can occupancy analytics measure specific zones?', 'Yes. Separate counts per zone give occupancy and dwell for each area, not just a single building total.')],
+        'What occupancy analytics tells you | Place Performance',
+        'What occupancy analytics measures: footfall versus occupancy, live occupancy and capacity, dwell, zones and flow, and how the data drives staffing, safety and planning decisions.')
+
+article('people-counting-for-events', 'Guide', 'People counting for events and temporary sites',
+        'Pop-ups, festivals and expos need counting that goes in fast, runs anywhere and comes out afterwards. Here is how it works.',
+        [('', 'Events and temporary sites need people counting that can be installed quickly, run without fixed infrastructure, and be removed when the event ends, all while producing numbers you can report with confidence.'),
+         ('Fast, temporary installs', 'Counters for temporary sites install quickly and can be set up for a single event, a short lease or a works period, with live dashboards from the first day.'),
+         ('No fixed power or network', 'Battery, solar and mobile-data sensors need no power or cabling at the counting point, so they work at outdoor festivals, pop-ups and sites with no fixed infrastructure.'),
+         ('Crowd safety and capacity', 'For dense temporary crowds, live occupancy and crowd density, with alert thresholds, let control teams act before conditions become unsafe.'),
+         ('Reporting to sponsors and funders', 'Objective attendance, by entrance and hour, with staff and re-entries handled, turns a busy day into a defensible number for sponsors, exhibitors and funders.'),
+         ('Removed afterwards', 'When the event ends, temporary sensors come out. You keep the data and the report without a permanent install.')],
+        [('deployments/expos-and-trade-shows/', 'Expos and trade shows', 'Events in practice'), ('deployments/street-festivals-and-town-centres/', 'Street festivals', 'Outdoor events'), ('deployments/retail-pop-ups/', 'Retail pop-ups', 'Short activations'), ('sensors/', 'Sensors', 'The technology behind it')],
+        [('How quickly can counting be set up for an event?', 'Counters for temporary sites install quickly and run on battery and mobile data, so an event can be measured from the first day with no cabling.'),
+         ('Can it be installed just for the event?', 'Yes. Temporary deployments are set up for the event and removed afterwards, with live dashboards throughout. You keep the data and the report.'),
+         ('Can it keep crowds safe?', 'Yes. Live occupancy and crowd density, with alert thresholds, let control teams manage dense crowds before conditions become unsafe.')],
+        'People counting for events and temporary sites | Place Performance',
+        'People counting for events and temporary sites: fast temporary installs on battery, solar and mobile data, crowd safety and capacity, and defensible attendance for sponsors and funders.')
+
 guides_body = (
     page_hero('Guides', 'Understand people counting and place analytics',
               'Short, practical explainers on how counting works, how the technologies compare, and how to trust the numbers.',
               '', [('Home', '{R}'), ('Guides', None)], ctas=False) +
     section(cards([
         ('How people counting works', 'From the sensor on the wall to the number on your dashboard, in plain English.', '{R}guides/how-people-counting-works/'),
+        ('What occupancy analytics tells you', 'Footfall versus occupancy, live capacity, dwell, zones and flow.', '{R}guides/what-is-occupancy-analytics/'),
         ('LiDAR vs camera people counting', 'How the main sensing technologies differ on accuracy, privacy, light and the outdoors.', '{R}guides/lidar-vs-camera-people-counting/'),
         ('How accurate are people counters?', 'What drives accuracy, how it is measured, and how to keep counts reliable.', '{R}guides/how-accurate-are-people-counters/'),
+        ('People counting vs Wi-Fi tracking', 'Counting people directly versus estimating them from phone signals.', '{R}guides/people-counting-vs-wifi-tracking/'),
+        ('Anonymous people counting and privacy', 'How sensors count how many, never who, and why that matters.', '{R}guides/anonymous-people-counting-privacy/'),
+        ('Counting people outdoors', 'Weatherproof, solar and radar sensing for trails, streets, parks and events.', '{R}guides/counting-people-outdoors/'),
+        ('People counting for events', 'Fast temporary installs, crowd safety and defensible attendance.', '{R}guides/people-counting-for-events/'),
         ('Glossary', 'Plain-English definitions of the key people counting and place analytics terms.', '{R}glossary/'),
-    ], cols=2))
+    ], cols=3))
 )
 page('guides', 'Guides: how people counting and place analytics work | Place Performance',
-     'Practical guides to people counting and place analytics: how counting works, LiDAR versus cameras, how accurate people counters are, and a glossary of key terms.',
+     'Practical guides to people counting and place analytics: how counting works, occupancy versus footfall, LiDAR versus cameras, accuracy, Wi-Fi tracking, privacy, outdoor and event counting, and a glossary.',
      guides_body, None, [('Home', ''), ('Guides', 'guides/')])
 
 # --------------------------------------------------------------------------

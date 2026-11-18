@@ -55,7 +55,12 @@ Key facts:
 - [How people counting works](https://placeperformance.ai/guides/how-people-counting-works/): How modern people counting works: anonymous on-device counting by shape and movement, real-time occupancy, and what keeps the numbers accurate, explained in plain English.
 - [LiDAR vs camera people counting](https://placeperformance.ai/guides/lidar-vs-camera-people-counting/): LiDAR, camera, radar and Wi-Fi people counting compared on accuracy, privacy, light and outdoor use, so you can match the right sensing technology to each site.
 - [How accurate are people counters?](https://placeperformance.ai/guides/how-accurate-are-people-counters/): What drives people counting accuracy, how it is measured against a ground-truth count on site, and how device health monitoring keeps counts reliable over time.
-- [Guides: how people counting and place analytics work](https://placeperformance.ai/guides/): Practical guides to people counting and place analytics: how counting works, LiDAR versus cameras, how accurate people counters are, and a glossary of key terms.
+- [Anonymous people counting and privacy](https://placeperformance.ai/guides/anonymous-people-counting-privacy/): How anonymous people counting works: counting bodies not identities, processed on the device, with no faces, images or personal information collected, and why it suits public and sensitive places.
+- [People counting vs Wi-Fi tracking](https://placeperformance.ai/guides/people-counting-vs-wifi-tracking/): People counting versus Wi-Fi tracking compared: counting people directly with a sensor versus estimating them from phone signals, on accuracy and privacy.
+- [Counting people outdoors](https://placeperformance.ai/guides/counting-people-outdoors/): How outdoor people counting works: weatherproof, solar and battery sensors, radar for open spaces, and pedestrian, cyclist and vehicle counts for trails, parks, streets and events.
+- [What occupancy analytics tells you](https://placeperformance.ai/guides/what-is-occupancy-analytics/): What occupancy analytics measures: footfall versus occupancy, live occupancy and capacity, dwell, zones and flow, and how the data drives staffing, safety and planning decisions.
+- [People counting for events and temporary sites](https://placeperformance.ai/guides/people-counting-for-events/): People counting for events and temporary sites: fast temporary installs on battery, solar and mobile data, crowd safety and capacity, and defensible attendance for sponsors and funders.
+- [Guides: how people counting and place analytics work](https://placeperformance.ai/guides/): Practical guides to people counting and place analytics: how counting works, occupancy versus footfall, LiDAR versus cameras, accuracy, Wi-Fi tracking, privacy, outdoor and event counting, and a glossary.
 
 ## Questions and answers
 
@@ -679,3 +684,42 @@ By comparing the sensor count against a manual ground-truth count over a set per
 
 ### Why do people counts drift over time?
 A sensor can be knocked, obscured or go offline. Continuous device health monitoring catches these early and periodic validation confirms the counts are still accurate.
+
+### Does people counting identify individuals?
+No. People are counted as anonymous shapes and movement. No faces, images or personal information are captured, and counting is processed on the device.
+
+### Is anonymous counting better for privacy than cameras?
+Yes. Because no recognisable images are captured and nothing identifies an individual, it carries far fewer privacy concerns than camera-based approaches and is well suited to public spaces.
+
+### Do we need signage or consent?
+Requirements vary by site and jurisdiction, but because no personal information is collected, anonymous counting generally involves far lighter obligations than identifying methods. Confirm specifics with your own privacy adviser.
+
+### Is Wi-Fi tracking a privacy risk?
+It works from device identifiers, which are personal data and raise consent and data-handling questions. Anonymous sensor counting avoids this because it captures nothing that identifies a person.
+
+### Can you combine both?
+They can be used together, but for accurate, privacy-safe counts at entrances, zones and events, direct sensor counting is the reliable source.
+
+### How do you count people where there is no power or internet?
+Outdoor counters run on battery, solar and mobile data, so they work on remote trails, in reserves and at temporary sites with no fixed power or network.
+
+### Can you tell pedestrians, cyclists and vehicles apart?
+Yes. Multi-modal sensors separate pedestrians, cyclists and vehicles, with direction and speed, which is what shared paths and streets need.
+
+### Does it work in all weather?
+Yes. Outdoor sensors are weatherproof, and radar in particular works through rain, glare and darkness.
+
+### What is the difference between footfall and occupancy?
+Footfall is how many people visit over a period. Occupancy is how many are inside at a given moment. Footfall shows demand and trends; occupancy supports capacity, safety and real-time decisions.
+
+### What is live occupancy?
+Live occupancy is the number of people currently in a space, updated in near real time and usually shown against a capacity limit, with alerts as the limit approaches.
+
+### Can occupancy analytics measure specific zones?
+Yes. Separate counts per zone give occupancy and dwell for each area, not just a single building total.
+
+### How quickly can counting be set up for an event?
+Counters for temporary sites install quickly and run on battery and mobile data, so an event can be measured from the first day with no cabling.
+
+### Can it keep crowds safe?
+Yes. Live occupancy and crowd density, with alert thresholds, let control teams manage dense crowds before conditions become unsafe.
