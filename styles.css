@@ -586,6 +586,11 @@ a.fcard:hover { transform: translateY(-4px); box-shadow: var(--shadow-card); }
 .field-cap small { font-size: 13px; opacity: .85; }
 .impact-grid .fcard ul { margin: 12px 0 0; padding-left: 18px; }
 .impact-grid .fcard li { font-size: 14.5px; color: var(--body); line-height: 1.5; margin-bottom: 8px; }
+.statrow { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 28px; }
+.stat { background: #f7f9fc; border: 1px solid #e6ebf2; border-radius: 12px; padding: 20px 22px; }
+.stat b { display: block; font-size: 30px; font-weight: 700; color: var(--accent); letter-spacing: -.02em; line-height: 1.12; }
+.stat span { display: block; font-size: 14px; color: var(--navy); margin-top: 6px; font-weight: 500; line-height: 1.4; }
+.stat em { display: block; font-size: 12px; color: #64748b; font-style: normal; margin-top: 7px; }
 
 /* CTA band */
 .cta-band { padding: 130px 0 110px; }

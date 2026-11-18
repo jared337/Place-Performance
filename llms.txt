@@ -12,7 +12,7 @@ Key facts:
 ## Pages
 - [People counting & occupancy analytics with AI](https://placeperformance.ai/): People counting and occupancy analytics for councils, universities, government and property: sensors, real-time data, alerts, forecasting and AI.
 - [Real deployments across Australia](https://placeperformance.ai/deployments/): Real-world people counting deployments by Place Performance across Australia: sensors installed and running in libraries, venues, parks, trails, pop-ups and major events.
-- [People counting for trails, parks and reserves](https://placeperformance.ai/deployments/trails-and-reserves/): Measure visitation on trails, parks and reserves with solar and battery-powered counters: visitor and cyclist counts, peaks and trends to fund, maintain and plan open space.
+- [People counting for trails, parks and reserves](https://placeperformance.ai/deployments/trails-and-reserves/): People counting for trails, parks and reserves: anonymous visitor and cyclist counts, mode split, peaks and trends from solar and battery counters, to win funding, target maintenance and plan open space.
 - [People counting for sports bars and pubs](https://placeperformance.ai/deployments/sports-bars-and-pubs/): People counting for sports bars and pubs: live occupancy, covers by hour, dwell, walk-in capture and event uplift, so you staff for the rush, stay within capacity and grow sales.
 - [People counting for waterfront and event venues](https://placeperformance.ai/deployments/waterfront-and-event-venues/): People counting for waterfront and event venues: live attendance, zone flow, dwell and capacity alerts across indoor and outdoor areas, to run events safely and size functions to demand.
 - [People counting for retail pop-ups and activations](https://placeperformance.ai/deployments/retail-pop-ups/): People counting for retail pop-ups and brand activations: footfall, capture rate, dwell and zone attention across a short run, to prove reach, justify spend and compare sites.
@@ -87,64 +87,121 @@ Yes. We run temporary and single-event deployments as well as permanent installs
 Yes. Weatherproof sensors are mounted on poles and structures to count people, cyclists and vehicles along trails, streets and open spaces, in all weather.
 
 ### Can you count people on trails without power or internet?
-Yes. Outdoor counters run on battery, solar and mobile data, so they work on remote trails and in reserves with no fixed power or network.
+Yes. Outdoor counters run on battery, solar and mobile data, so they work on remote trails and reserves with no fixed power or network.
+
+### How accurate are outdoor counts?
+Raw sensor counts can undercount, especially in groups, so accuracy comes from calibrating against manual counts and applying a correction factor per site. We are transparent about this rather than quoting a single headline figure.
 
 ### Do the counters tell pedestrians and cyclists apart?
-Yes. Where it matters, sensors separate pedestrians, cyclists and vehicles, with direction, so shared paths and access roads can be measured accurately.
+Yes. Multi-modal sensors separate pedestrians, cyclists and scooters, with direction and speed, so shared paths and access roads are measured accurately.
+
+### Will the data actually help us win grants?
+It is used as supporting evidence in capital and infrastructure bids, which funders increasingly expect. It does not guarantee a grant, but it materially strengthens the case.
 
 ### Is the counting anonymous?
 Yes. People are counted as anonymous shapes and movement. No images or personal information are captured.
 
 ### Can it monitor capacity for licensing and safety?
-Yes. Live occupancy is tracked against your licensed or safe capacity, with alerts as you approach the limit and a history you can report on.
+Yes. Live occupancy is tracked against your licensed or safe capacity, with alerts as you approach the limit and a history you can show licensing authorities.
 
 ### Does it use cameras that identify patrons?
 No. Counting is anonymous and processed on the device, so no images or personal information leave the venue.
 
+### How accurate is it on a packed Saturday?
+Good sensors hold high accuracy through crowds, but we validate against your own door data in the first weeks so you trust the number before you roster to it.
+
 ### Can it combine with our POS?
-Where point-of-sale data is available, visits can be combined with sales to show conversion and sales per visitor.
+Where point-of-sale data is available, visits are combined with sales to show conversion and sales per visitor by hour.
 
-### Can you count across indoor and outdoor areas?
-Yes. Sensors are chosen per area, so entrances, indoor zones and open decks are all measured and combined into one live picture.
+### What drives the payback?
+Mostly labour matched to demand, since labour is 25 to 35 percent of revenue, plus captured peak and game-day sales. Build the case on your own before-and-after rosters and takings.
 
-### Can it alert us before a space gets too full?
-Yes. Live occupancy is tracked against the safe or licensed limit for each zone, with alerts as the limit approaches.
+### Can you count across lots of separate indoor and outdoor spaces?
+Yes. Sensors are chosen per area and zones are defined in software, so entrances, indoor rooms and open decks are all measured and combined into one live picture.
 
-### Is it anonymous?
+### Can it hold each space within its own capacity?
+Yes. Live per-zone occupancy is tracked against each space’s safe or licensed limit, with alerts as the limit approaches.
+
+### Can we prove a function or event paid off?
+Yes. Attendance against the number booked, dwell, cross-zone flow and, with POS, spend per visitor, all compared to baseline.
+
+### Is guest data private?
 Yes. Guests are counted anonymously, with no images or personal information captured.
 
-### How quickly can a pop-up be set up to count?
-Counters for temporary sites are quick to install and can run on battery and mobile data, so a short activation can be measured from day one.
+### How accurate is it for big crowds?
+High accuracy is achievable at large scale, and we validate against your own records early so the numbers are trusted before you act on them.
 
-### Can you measure how many passers-by actually come in?
-Yes. Counting entries alongside passing traffic gives a capture rate, the share of passers-by who step inside.
+### How quickly can a pop-up be set up to count?
+Counters for temporary sites install quickly and can run on battery and mobile data, so a short activation is measured from day one with no cabling.
+
+### We have no fixed power. Is there a battery option?
+Yes. Battery-powered counters need no power at the counting point and are ready shortly after install.
+
+### Can you measure passers-by, not just entries?
+Yes, where the sensor’s field of view covers the gangway as well as the entrance. That gives a capture rate, the share of passers-by who come in. Entrance geometry matters, so we plan it with you.
+
+### Can we link it to sign-ups and sales?
+Yes. Footfall can be tied to opt-ins, QR scans and, where available, sales, so you show the activation drove buyers, not just lookers.
+
+### Is it anonymous?
+Yes. Visitors are counted anonymously, with no images or personal information captured.
 
 ### Can you count multiple entrances at once?
 Yes. Every entrance is counted and combined, so you get total attendance and flow across the whole venue in real time.
+
+### Can it exclude our staff and separate re-entries?
+Yes. Staff can be filtered out and re-entries separated from unique attendees, so published attendance is not inflated and stays defensible.
+
+### Can we show exhibitors capture rate, not just a door number?
+Yes. Sensors positioned to see both the aisle and the stand entrance give passers-by versus stand entries, which separates a weak location from a weak stand.
 
 ### Can it be installed just for the event?
 Yes. Temporary deployments are set up for the show and removed afterwards, with live dashboards for organisers throughout.
 
 ### Is counting in a public library anonymous?
-Yes. People are counted as anonymous shapes and movement, processed on the device. No images or personal information are captured, which suits a public space.
+Yes. People are counted as anonymous shapes and movement, processed on the device. No images or personal information are captured, which matters for a public space and for procurement.
+
+### How is this better than our door counter or manual tallies?
+Door counters give in-and-out totals only, and manual counts are labour-intensive and understate use. Zone occupancy adds dwell, peak versus average and room-level data, and is verifiable for funding submissions.
+
+### Can we compare branches fairly?
+Yes. Figures are normalised to visits per operating hour and per square metre, so a small branch is not judged unfairly against a central library.
+
+### Can we tie program attendance to funding?
+Yes. Occupancy in a room at an event time gives attendance evidence per program, so you can prove and scale what works.
 
 ### Can you measure occupancy in specific zones?
-Yes. Separate counts for reading rooms, children&rsquo;s areas and study spaces give live occupancy per zone, not just a door total.
+Yes. Separate counts for reading rooms, children’s areas and study spaces give live occupancy per zone, not just a door total.
 
-### Can it measure attendance at programs and events?
-Yes. Counts for event spaces measure attendance at story time, workshops and other activities.
+### Is it anonymous? Can tenants or staff object on privacy grounds?
+No cameras identify anyone and no personal information is collected. Counting is presence and movement only, which matters for works councils, tenants and multi-tenant buildings.
 
-### Can it integrate with our building management system?
-Yes. Occupancy can be shared with building management systems such as HVAC and lighting controls, with integrations configured for you.
+### Does it integrate with our building management system?
+Yes. Occupancy feeds push to the building management system so ventilation, lighting and temperature follow real occupancy, which is where the energy savings come from.
 
-### Can tenants see their own data?
-Yes. Access can be limited by site and tenancy, so tenants see occupancy for their own space.
+### In a multi-tenant building, can each tenant see only their floors?
+Yes. Access is partitioned, so the landlord sees the whole building and each tenant sees only their own tenancy.
+
+### Can it tell occupied from merely booked for meeting rooms?
+Yes. Sensing actual presence versus the calendar booking is exactly what surfaces ghost meetings and tells you how many rooms you truly need.
+
+### Does it measure zones, not just whole floors?
+Yes. Zone and neighbourhood occupancy drives cleaning, layout and experience decisions, well beyond a single floor total.
 
 ### Can you count large outdoor crowds?
 Yes. Wide-area sensors count crowds across open streets and plazas, and run on battery, solar and mobile data where there is no fixed power.
 
+### Can it keep crowds safe in real time?
+Yes. Crowd density in people per square metre, with alert thresholds, lets control teams act before conditions become unsafe.
+
+### Is footfall on its own enough?
+It is the core measure, but the strongest cases pair it with dwell time, spend data and a comparison against a control street, so you show real impact, not just more people.
+
 ### Can it be set up just for the festival?
 Yes. Temporary deployments are installed for the event and removed afterwards, with live dashboards during the day.
+
+### Is this a privacy risk in a public space?
+No. Aggregate, non-identifying counting avoids most privacy concerns, which is a key reason it is preferred for public events.
 
 ### What hardware does Place Performance use?
 Place Performance uses commercial-grade LiDAR people counters for entrance, area and crowd counting, plus specialist sensors for cyclists, vehicles and outdoor areas where needed. Our team selects the right technology for each environment after assessing it.
@@ -286,6 +343,9 @@ Occupancy data lets you clean, heat, cool and light spaces based on actual use. 
 
 ### Does it integrate with building management systems?
 Yes. Occupancy can be shared with building management systems such as HVAC and lighting controls, and integrations are configured for you.
+
+### Can tenants see their own data?
+Yes. Access can be limited by site and tenancy, so tenants see occupancy and utilisation for their own space.
 
 ### Can it prove the value of a refit?
 Yes. Investment analysis compares occupancy, utilisation and dwell before and after a refit to show whether it achieved its goals.
