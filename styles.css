@@ -62,8 +62,10 @@ p { margin: 0; }
 .nav-links { display: flex; gap: 26px; margin-left: 12px; }
 .nav-links a { color: var(--navy); font-weight: 500; font-size: 15px; opacity: .85; }
 .nav-links a:hover { opacity: 1; }
-.nav-login { color: var(--navy); font-weight: 500; font-size: 15px; opacity: .78; white-space: nowrap; }
+.nav-login { color: var(--navy); font-weight: 500; font-size: 15px; opacity: .72; white-space: nowrap; }
 .nav-login:hover { opacity: 1; }
+.nav-cta .btn-ghost { box-shadow: inset 0 0 0 1.5px rgba(15,27,51,.16); }
+.nav-cta .btn-ghost:hover { opacity: 1; background: rgba(15,27,51,.04); }
 .nav-cta { margin-left: auto; display: flex; align-items: center; gap: 20px; }
 .nav-cta .link-arrow { color: var(--navy); }
 .nav-burger { display: none; margin-left: auto; width: 40px; height: 40px; border: 0; background: rgba(255,255,255,.6); border-radius: 10px; cursor: pointer; position: relative; }
