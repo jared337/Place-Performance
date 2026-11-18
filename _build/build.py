@@ -1322,11 +1322,11 @@ about_body = (
         '<div class="partner-grid reveal">'
         '<div class="partner"><span class="partner-role">Measurement &amp; analytics</span><h4>ITESA</h4>'
         '<p>ITESA specialises in measuring how people, cyclists and vehicles use buildings, venues, parks, trails, streets and public spaces. They bring together sensing technology, edge processing, connectivity, data management, analytics and visualisation, and they design, supply, install, commission and support complete measurement solutions across Australia.</p>'
-        '<p class="about-addr">Level 1, 54 Wellington St<br>Collingwood, Victoria 3066</p>'
+        '<p class="about-addr">223 Liverpool St<br>Darlinghurst, NSW 2010</p>'
         '<a class="link-arrow" href="https://itesa.com.au/" target="_blank" rel="noopener">itesa.com.au</a></div>'
         '<div class="partner"><span class="partner-role">Operational software &amp; AI</span><h4>Rayven</h4>'
         '<p>Rayven is an Australian operational software company. Its unified platform integrates data, automates processes and powers custom AI and apps, the real-time dashboards, alerts, reporting, forecasting and AI insight behind Place Performance. Rayven is trusted by teams across Australia and around the world.</p>'
-        '<p class="about-addr">223 Liverpool St<br>Darlinghurst, NSW 2010</p>'
+        '<p class="about-addr">Level 1, 54 Wellington St<br>Collingwood, Victoria 3066</p>'
         '<a class="link-arrow" href="https://rayven.io/" target="_blank" rel="noopener">rayven.io</a></div>'
         '</div>') +
     section(head('How it fits together', 'From the sensor to the decision, by one team.',
