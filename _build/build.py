@@ -416,7 +416,7 @@ def deployment_page(d):
                 _impact_card('Save money', d['save']) +
                 _impact_card('Improve experiences', d['experience']) +
                 '</div>', 'sec-tint') +
-        section('<div class="prose reveal"><p>%s</p></div>' % d['related'])
+        section(head('Related', 'Where this fits.') + '<div class="prose reveal"><p>%s</p></div>' % d['related'])
     )
     page('deployments/' + d['slug'], d['title'], d['desc'], body, d['faqs'],
          [('Home', ''), ('In the field', 'deployments/'), (strip(d['label']), 'deployments/' + d['slug'] + '/')],
