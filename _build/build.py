@@ -348,21 +348,25 @@ HOME_FAQS = [
     ('How quickly can we get started?', 'Most organisations start with a pilot at one site. After a site survey and sensor plan, a pilot is typically live in weeks rather than months, and you can add sites and capability levels as you grow.'),
 ]
 FIELD = [
-    ('trail-counter.jpg', 'Trail counter', 'Bushland reserve', 'trails-and-reserves'),
-    ('sports-bar.jpg', 'Sports bar', 'Richmond, Melbourne', 'sports-bars-and-pubs'),
-    ('waterfront-sydney.jpg', 'Waterfront venue', 'Sydney', 'waterfront-and-event-venues'),
-    ('popup-melbourne.jpg', 'Retail pop-up', 'Melbourne CBD', 'retail-pop-ups'),
-    ('expo-brisbane.jpg', 'Careers expo', 'Brisbane', 'expos-and-trade-shows'),
-    ('library-sa.jpg', 'Public library', 'Semaphore, SA', 'public-libraries'),
-    ('cbd-foyer-sydney.jpg', 'CBD building foyer', 'Sydney', 'cbd-and-commercial-buildings'),
-    ('street-festival.jpg', 'Town street festival', 'Regional Australia', 'street-festivals-and-town-centres'),
+    ('trail-counter.jpg', 'Trail counter', 'Bushland reserve', 'deployments/trails-and-reserves/'),
+    ('university-perth.jpg', 'University campus', 'Perth, WA', 'industries/universities/'),
+    ('sports-bar.jpg', 'Sports bar', 'Richmond, Melbourne', 'deployments/sports-bars-and-pubs/'),
+    ('waterfront-sydney.jpg', 'Waterfront venue', 'Sydney', 'deployments/waterfront-and-event-venues/'),
+    ('wine-bar-sydney.jpg', 'Wine bar', 'Sydney', 'industries/hospitality/'),
+    ('library-enfield.jpg', 'Public library', 'Enfield, SA', 'deployments/public-libraries/'),
+    ('popup-melbourne.jpg', 'Retail pop-up', 'Melbourne CBD', 'deployments/retail-pop-ups/'),
+    ('expo-brisbane.jpg', 'Careers expo', 'Brisbane', 'deployments/expos-and-trade-shows/'),
+    ('store-counting-wa.jpg', 'In-store counting', 'Midlands, WA', 'industries/retail/'),
+    ('cbd-foyer-sydney.jpg', 'CBD building foyer', 'Sydney', 'deployments/cbd-and-commercial-buildings/'),
+    ('library-sa.jpg', 'Public library', 'Semaphore, SA', 'deployments/public-libraries/'),
+    ('street-festival.jpg', 'Town street festival', 'Regional Australia', 'deployments/street-festivals-and-town-centres/'),
 ]
 
 
 def field_cards(items, cls=''):
     return ('<div class="field-grid reveal %s">' % cls) + ''.join(
-        '<a class="field-card" href="{R}deployments/%s/"><img src="{R}assets/field/%s" alt="Place Performance people counting: %s, %s" loading="lazy"><span class="field-cap"><b>%s</b><small>%s</small></span></a>' % (s, f, t, c, t, c)
-        for f, t, c, s in items) + '</div>'
+        '<a class="field-card" href="{R}%s"><img src="{R}assets/field/%s" alt="Place Performance people counting: %s, %s" loading="lazy"><span class="field-cap"><b>%s</b><small>%s</small></span></a>' % (h, f, t, c, t, c)
+        for f, t, c, h in items) + '</div>'
 
 
 home_body = open(os.path.join(HERE, 'home.html'), encoding='utf-8').read().replace('{SENSOR_VIS}', SENSOR_VIS)
